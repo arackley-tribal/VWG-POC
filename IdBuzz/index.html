@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<style>
+    @font-face {
+        font-family: 'vw-head';
+        font-weight: 400;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff2') format('woff2'),
+        url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-head';
+        font-weight: 700;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Bold.woff2') format('woff2'),
+        url('./fonts/VW Head/webfonts/VWHeadWeb-Bold.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-head';
+        font-weight: 200;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Light.woff2') format('woff2'),
+        url('./fonts/VW Head/webfonts/VWHeadWeb-Light.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-text';
+        font-weight: 400;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff2') format('woff2'),
+        url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-text';
+        font-weight: 700;
+        font-display: swap;
+        src: url('./fonts/VW Text/webfonts/VWTextWeb-Bold.woff2') format('woff2'),
+        url('./fonts/VW Head/webfonts/webfonts/VWTextWeb-Bold.woff') format('woff');
+    }
+
+    html {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: #A62727;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    .main-container{
+        height: 100%;
+        width: 100%;
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.3) 100%);
+        overflow:hidden;
+        z-index: 2;
+        position: relative;
+    }
+    .radial{
+     background:radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.26) 0%, rgba(0, 188, 212, 0) 50%);
+    }
+
+    .columns {
+        display: grid;
+        grid-template-columns: 50% 50%;	
+    }
+
+    .main-car-image{
+        animation: backInRight; /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 1s; /* don't forget to set a duration! */
+    }
+
+    .main-text{
+        animation: backInLeft; /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 2s; /* don't forget to set a duration! */
+        animation-fill-mode: none;
+        font-family: vw-head,Helvetica,Arial,sans-serif;
+        color: white;
+    }
+
+    .menu-button{
+        font-family: vw-head,Helvetica,Arial,sans-serif;
+        background-color: #A62727;
+        color: white;
+        width: auto;
+        display:flex;
+        width: 260px;
+        height: 70px;
+        border-radius: 50px;
+        align-items: center
+    }
+
+    .menu-button-selector {
+        font-family: vw-text,Helvetica,Arial,sans-serif;
+        background-color: white;
+        color: black;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right:   5px;
+        height: 60px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .model-text{
+        position: absolute;
+        font-family: vw-head,Helvetica,Arial,sans-serif;
+        font-weight: bold;
+        font-size: 700px;
+        color: white;
+        z-index: 1;
+        right: -35%;
+        top: -25%;
+        mix-blend-mode: soft-light;
+    }
+</style>
+
+of a 
+<body>
+    <div class="model-text">ID.4</div>
+    <div class="main-container">
+        <div class="radial">
+            <div class="columns">
+                <div style="padding: 40px; display: flex; flex-direction: column;">
+                    <div>
+                        <div class="menu-button">
+                            <div style="font-size: 28px; font-weight: 200; flex-grow: 1; align-items: center; padding-left: 25px">Owners</div>
+                            <div class="menu-button-selector">Menu</div>
+                        </div>
+                    </div>
+                    <div class="main-text" style="margin-top: 50px; display: flex; flex-direction: column;">
+                        <div style="font-size: 60px; font-weight: 200;">Your</div>
+                        <div style="font-size: 260px; font-weight: bold; margin-top: -20px;">ID.5</div>
+                        <div style="font-family: vw-text; font-size: 20px; font-weight: 200;">ID.5 style 77kwh Pro 174PS 1-speed automatic 5 door | Electric | Consumption: 16.7 kWh/62mi 1 and C02 emissions: 0 g/km 1</div>
+                    </div>
+                </div>
+                <div>
+                    <img class="main-car-image" style="width: 100; margin-left: -20%" src="./images/d2c25ae20a55f7aeb07e8baa73e35e57dc525cd61830b91014fae98ed8b1f99a.webp"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

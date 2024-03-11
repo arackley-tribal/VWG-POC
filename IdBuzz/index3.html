@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<style>
+    @font-face {
+        font-family: 'vw-head';
+        font-weight: 400;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff2') format('woff2'),
+            url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-head';
+        font-weight: 700;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Bold.woff2') format('woff2'),
+            url('./fonts/VW Head/webfonts/VWHeadWeb-Bold.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-head';
+        font-weight: 200;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Light.woff2') format('woff2'),
+            url('./fonts/VW Head/webfonts/VWHeadWeb-Light.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-text';
+        font-weight: 400;
+        font-display: swap;
+        src: url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff2') format('woff2'),
+            url('./fonts/VW Head/webfonts/VWHeadWeb-Regular.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'vw-text';
+        font-weight: 700;
+        font-display: swap;
+        src: url('./fonts/VW Text/webfonts/VWTextWeb-Bold.woff2') format('woff2'),
+            url('./fonts/VW Head/webfonts/webfonts/VWTextWeb-Bold.woff') format('woff');
+    }
+
+    .main-text {
+        animation: backInRight;
+        /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 2s;
+        /* don't forget to set a duration! */
+        animation-fill-mode: none;
+        font-family: vw-head, Helvetica, Arial, sans-serif;
+        color: white;
+        padding: 20px
+    }
+
+    html {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background: radial-gradient(circle at 0% 0%, rgb(0, 67, 122) 0%, rgb(0, 30, 80) 100%);
+        padding: 0;
+        margin: 0;
+    }
+
+    .canvas-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .spacer {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    header {
+        position: sticky;
+        height: 80px;
+        width: 100%;
+        top: 0;
+        background-color: white;
+    }
+
+    .id-buzz-main-hero-text {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .car-text{
+        font-family: vw-head, Helvetica, Arial, sans-serif;
+        color: white;
+        padding: 20px;
+        font-size: 2em;
+        font-weight: bold;
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+        color: black;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        width: 500px;
+    }
+
+    #car-text-1 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    #car-text-2 {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+
+    #car-text-3 {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+
+.slides {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.slides .list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.slides .slide {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.slide .background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  will-change: transform;
+  background-size: cover;
+}
+
+.slide .content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+  width: 95%;
+  padding: 3rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 40rem;
+  position: relative;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 4.6rem;
+  line-height: 1.25em;
+  font-weight: 500;
+}
+</style>
+
+<body>
+    <div class="spacer">
+        <div class="id-buzz-main-hero-text">
+            <div class="main-text" style="margin-top: 50px; display: flex; flex-direction: column;">
+                <div style="font-family: vw-text; font-size: 15em; font-weight: bold;">ID.Buzz</div>
+                <div style="font-family: vw-text; font-size: 1em; font-weight: 200;">Fully connected, fully electric,
+                    and fully loaded with new ideas. No wonder the ID. Buzz is the What Car? 2023 Car of the Year</div>
+            </div>
+        </div>
+        <video width="100%" height="100%" autoplay muted loop class="video">
+            <source src="./videos/Scope_DrivingTemplate__1920x1080.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="canvas-container">
+        <canvas id="hero-lightpass"></canvas>
+        <div id="car-text-1" class="car-text">
+            <div style="font-family: vw-text; font-size: 2em; font-weight: bold;">Some Exciting text 1</div>
+            <div style="font-family: vw-text; font-size: 0.5em;">Experience environmentally friendly mobility together:
+                Whether with the whole family or on a trip with friends, whether in the city or in the country, the new
+                ID. Buzz is a multifunctional all-rounder, suitable for everyday use, and convenient - not least due to
+                the small turning circle of just over 11 metres.</div>
+        </div>
+        <div id="car-text-2" class="car-text">
+            <div style="font-family: vw-text; font-size: 2em; font-weight: bold;">Some Exciting text 2</div>
+            <div style="font-family: vw-text; font-size: 0.5em;">A large part of the unique appearance of the ID. Buzz
+                is the modern lighting design. In conjunction with the standard Keyless Advanced locking and starting
+                system, when you approach the vehicle, its LED matrix headlights (only on Style) pivot and light up with
+                a friendly “open eye” as a greeting.</div>
+        </div>
+        <div id="car-text-3" class="car-text">
+            <div style="font-family: vw-text; font-size: 2em; font-weight: bold;">Some Exciting text 3</div>
+            <div style="font-family: vw-text; font-size: 0.5em;">A large part of the unique appearance of the ID. Buzz
+                is the modern lighting design. In conjunction with the standard Keyless Advanced locking and starting
+                system, when you approach the vehicle, its LED matrix headlights (only on Style) pivot and light up with
+                a friendly “open eye” as a greeting.</div>
+        </div>
+    </div>
+    
+
+    <section class="slides">
+        <ul class="list">
+        <li class="slide">
+            <div class="background" style="background-image: url('./images/electric_vans-overview-id_buzz_single_tone2-16x9-2500x1406.webp');
+            "></div>
+            <div class="content">
+            SLIDE 1
+            </div>
+        </li>
+        <li class="slide">
+            <div class="background" style="background-image: url('./images/electric_vehicles-id_buzz-EV-tools2-16x9-1920x1440.webp');
+            "></div>
+            <div class="content">
+            SLIDE 2
+            </div>
+        </li>
+        <li class="slide">
+            <div class="background" style="background-image: url('./images/electric_vehicles-id_buzz-EV-tools3-16x9-1920x1440.webp');
+            "></div>
+            <div class="content">
+            SLIDE 3
+            </div>
+        </li>
+        <li class="slide">
+            <div class="background" style="background-image: url('./images/electric_vehicles-id_buzz-sideview-2_1-2560x1280.webp');
+            "></div>
+            <div class="content">
+            SLIDE 4
+            </div>
+        </li>
+        </li>
+        </ul>
+    </section>
+
+    <div class="horizontal-slide">
+        <section class="panel red">
+            ONE
+        </section>
+        <section class="panel orange">
+            TWO
+        </section>
+        <section class="panel purple">
+            THREE
+        </section>
+        <section class="panel green">
+            FOUR
+        </section>
+        <section class="panel gray">
+            FIVE
+        </section>
+    </div>
+</body>
+
+<script>
+    console.clear();
+
+    const canvas = document.getElementById("hero-lightpass");
+    const parent = document.getElementById("canvas-container");
+    const text1 = document.getElementById("car-text-1");
+    const text2 = document.getElementById("car-text-2");
+    const text3 = document.getElementById("car-text-3");
+    const context = canvas.getContext("2d");
+
+    canvas.width = 1920;
+    canvas.height = 1080;
+
+    const frameCount = 419;
+    const currentFrame = index => (
+        `./images/3D_Gen_VW_White_Studio__1920x1080/3D_Gen_VW_White_Studio__1920x1080_${(index + 1).toString().padStart(5, '0')}.jpg`
+    );
+
+    const images = [];
+    const airpods = {
+        frame: 0
+    };
+
+    for (let i = 0; i < frameCount; i++) {
+        const img = new Image();
+        const src = currentFrame(i);
+        img.src = src;
+        images.push(img);
+    }
+
+
+    const render = () => {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(images[airpods.frame], 0, 0);
+    }
+
+    const airportTimeline = gsap.to(airpods, {
+        frame: frameCount - 1,
+        snap: "frame",
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".canvas-container",
+            start: "top top",
+            end: "+=6000",
+            markers: true,
+            pin: true,
+            scrub: true
+        },
+        onUpdate() {
+            const time = this?.time();
+            // timeline 0 -> 0.5
+
+            if (0.4 > time) {
+                text3.style.display = "block"
+            } else {
+                text3.style.display = "none"
+            }
+
+            if (0.2 > time) {
+                text2.style.display = "block"
+                text1.style.display = "none"
+                text3.style.display = "none"
+            } else {
+                text2.style.display = "none"
+            }
+
+            if (0.1 > time){
+                text1.style.display = "block"
+                text2.style.display = "none"
+                text3.style.display = "none"
+            } else {
+                text1.style.display = "none"
+            }
+
+            render();
+        }
+    });
+
+    
+    images[0].onload = render;
+
+    // SLIDES
+    let container = document.querySelector(".slides"),
+    slides = gsap.utils.toArray(".slide"),
+    getRatio = (el) => window.innerHeight / (window.innerHeight + el.offsetHeight);
+
+    slides.forEach((slide, i) => {
+    let bg = slide.querySelector(".background"),
+        content = slide.querySelector(".content"),
+        tl = gsap.timeline({
+                scrollTrigger: {
+                trigger: slide,
+                start: () => i ? "top bottom" : "top top",
+                end: "bottom top",
+                scrub: true,
+                invalidateOnRefresh: true
+                }
+            });
+
+    tl.fromTo(bg, {
+        y: () => i ? -window.innerHeight * getRatio(slide) : 0
+    }, {
+        y: () => window.innerHeight * (1 - getRatio(slide)),
+        ease: "none"
+    });
+    tl.fromTo(content, {
+        y: () => i ? window.innerHeight * -getRatio(slide) * 2 : 0
+    }, {
+        y: () => window.innerHeight * getRatio(slide) * 2,
+        ease: "none"
+    }, 0);
+    });
+
+</script>
+
+</html>

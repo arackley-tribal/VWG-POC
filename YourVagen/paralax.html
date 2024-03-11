@@ -1,0 +1,168 @@
+>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 700;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 200;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff') format('woff');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            font-family: 'vw-head';
+        }
+
+        .background-container {
+            background-image: url('https://images.unsplash.com/photo-1502352981868-f957ab3e10eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dnclMjBjYXJzfGVufDB8fDB8fHww');
+            height: 100vh;
+            width: 100vw;
+            background-size: cover;
+            filter: blur(30px);
+            -webkit-filter: blur(30px);
+        }
+
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .centered-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            max-width: 500px;
+            color: white;
+        }
+
+        .title {
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            margin-top: 16px;
+        }
+
+        .main-cta {
+            background-color: white;
+            padding: 8px 16px;
+            border-radius: 16px;
+            color: black;
+            margin: auto;
+            margin-top: 32px;
+            width: 250px;
+            font-weight: bold;
+        }
+
+        .cta {
+            margin-top: 16px;
+        }
+
+        .image {
+            position: absolute;
+            border: 10px solid white;
+            height: 300px;
+            width: 400px;
+            overflow: hidden;
+            background-size: cover;
+        }
+
+        .image-1 {
+            rotate: -10deg;
+            background-image: url('https://plus.unsplash.com/premium_photo-1663090281719-0b9087b34a5f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        }
+
+        .image-2 {
+            rotate: 10deg;
+            right: 0;
+            background-image: url('https://plus.unsplash.com/premium_photo-1683734514962-bd55decb224b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        }
+
+        .image-3 {
+            rotate: 10deg;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?q=80&w=2738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        }
+
+        .image-4 {
+            rotate: -10deg;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://plus.unsplash.com/premium_photo-1661927381303-5091d5171fe2?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="background-container">
+    </div>
+
+    <div class="main-container">
+        <div class="centered-div">
+            <div class="title">FamWagen</div>
+            <div class="subtitle">Families come in all shapes and sizes... and together they laugh, cry, love, chat,
+                fight and dream in their Volkswagen.</div>
+            <div class="main-cta">Explore their stories</div>
+            <div class="cta">Find your FamWagen</div>
+        </div>
+        <div class="image-1 image" value="1"></div>
+        <div class="image-2 image" value="2"></div>
+        <div class="image-3 image" value="1"></div>
+        <div class="image-4 image" value="2"></div>
+    </div>
+
+    <script>
+        document.addEventListener("mousemove", parallax);
+        function parallax(event) {
+            this.querySelectorAll(".main-container .image").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 90;
+                const y = (window.innerHeight - event.pageY * position) / 90;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        }
+    </script>
+
+</body>
+
+</html>
