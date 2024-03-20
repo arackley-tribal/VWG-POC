@@ -1,8 +1,73 @@
+@font-face {
+  font-family: 'vw-head';
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff2') format('woff2'),
+    url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'vw-head';
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff2') format('woff2'),
+    url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'vw-head';
+  font-weight: 200;
+  font-display: swap;
+  src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff2') format('woff2'),
+    url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'vw-text';
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwtext-regular.woff2') format('woff2'),
+    url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwtext-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'vw-text';
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwtext-bold.woff2') format('woff2'),
+    url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwtext-bold.woff') format('woff');
+}
+
+body {
+  font-family: 'vw-text';
+}
+
+h1 {
+  font-family: 'vw-head';
+  font-weight: 400;
+}
+
+.bolder {
+  font-weight: 700;
+}
+
 .progress-bar {
   align-items: start;
   width: 0%;
   padding: 2px 8px;
   min-height: 22px;
+}
+
+.car-header {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://assets.volkswagen.com/is/image/volkswagenag/electric-id_range_v_shot_1-16_9-2500x1406?Zml0PWNyb3AsMSZmbXQ9d2VicCZxbHQ9Nzkmd2lkPTI1MDAmaGVpPTE0MDYmYWxpZ249MC44MywwLjAwJmJmYz1vZmYmZjIzZA==");
+}
+
+.sub-header {
+  font-size: 24px;
+  padding-bottom: 32px;
 }
 
 .progress {

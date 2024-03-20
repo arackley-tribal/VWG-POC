@@ -1,3 +1,4 @@
+export const pdfExtract = `
 VW Customer  
 Experience 
 Retailer 
@@ -1158,3 +1159,4 @@ Coaching
 Thankyou
 
 Volkswagen EV roadshow - Questions
+`

@@ -1,86 +1,4 @@
-
-Menu
-
-New models and configurator Browse available stock Compare our Volkswagen models Build your Volkswagen
-
-Electric and Hybrid cars
-
-Pure electric cars ID.3 ID.4 ID.4 GTX ID.5 ID.5 GTX The New ID.7 ID.7 Tourer e-Golf e-up! ID. Buzz Pure electric concepts
-
-Hybrid cars Tiguan eHybrid Golf GTE Golf Style eHybrid Passat GTE Passat Estate GTE Arteon Arteon Shooting Brake Touareg R eHybrid Hybrid concepts Keep me informed
-
-Should you go electric? New to electric How you can save with electric e-Mobility Tools EV Check App Servicing your electric car Electric FAQs e-Glossary
-
-Charging and range How to charge your electric car How far can you go Where to charge your electric car Paying for charging Charging at home and on the go ID. Charger We Charge Guide to the best charging apps EV route planner Ohme Home Charger
-
-Technology Brake energy recuperation Battery technology Driving technology ID. technology
-
-Sustainability Way to zero Climate change Recycling your battery Energy storage Brake energy recuperation Green electricity all the way Raw material recovery through recycling: what happens to the ID. battery?
-
-Our electric partnerships Tesco / Podpoint Zipcar Octopus energy BP pulse
-
-Our electric vision Leading the way in electric Our electric heritage Renewable Energy in Electric Mobility Keeping up the voltage: this much current flows through an electric car Buying or Leasing an Electric Car Maintenance of electric cars Electric Car Eco-Friendly Driving Power consumption and range: electric cars have nothing to hide Benefits of Small Electric Cars EV Charging Without a Garage or Driveway Electric Car Running Costs Electric Car Charging Stations Cost comparison: is an electric car more expensive than a petrol one? Benefits of Electric Company Cars How Family Friendly are Electric Cars?
-
-Discover electric
-
-Finance offers and fleet Personal finance and offers
-
-Lease offers Lease directly from Volkswagen Contract Hire offers Volkswagen Driverline
-
-Owners offers
-
-Fleet and company car drivers Fleet car prices Electric fleet cars Car Comparator and Calculators How your new car works Get in touch
-
-Personal finance options explained Solutions Personal Contract Plan Contract hire Hire purchase Tax free sales
-
-Motability
-
-Warranties and insurance Insurance Warranties
-
-Part exchange valuation
-
-Used cars
-
-All models Arteon Beetle CC Eos Fox Golf ID.3 ID.4 ID.5 ID. Buzz Jetta Passat Phaeton Polo Scirocco Sharan Taigo T-Cross Tiguan Touareg Touran T-Roc up!
-
-Browse by category Search for used Volkswagens Approved Used benefits and offers Part exchange
-
-Connected services
-
-VW Connect and We Connect Activation All services
-
-VW Connect and We Connect for your ID. All services Activation We Connect Start
-
-Car-Net Requirements Car-Net Activation Security & Service Guide & Inform e-Remote
-
-Upgrades Upgrades for your ID. Upgrades
-
-Owners and services Book a service or MOT
-
-Servicing and parts Why book with Volkswagen Service and maintenance plans All-in Service Plan Pricing for cars over 3 Years MOT test Roadside assistance and repairs Spare parts and oil
-
-About my car Warning lights Owner's Manuals ID software update How to guides Older cars Volkswagen Financial Services Account Login to myVolkswagen Important information
-
-Accessories and merchandise Most popular accessories Merchandise Offers 0% Aftersales Finance
-
-Need help? Contact us Need Help FAQs
-
-Volkswagen Life
-
-Volkswagen Magazine Volkswagen Polo. Big love for a small car. Volkswagen partners with Miraculous Sustainable Interiors for ID Models | Volkswagen UK Polo GTI Edition 25 10,000th Volkswagen Tiguan R World premiere of the ID. 2all concept Three musicians. Three creative visions. One All-New Taigo campaign Volkswagen Stories: Angel Grant The Golf Evolution Volkswagen Stories: Chandrin Katuwawala Official UEFA Euro 2020™ match ball carriers Meet Volkswagen’s ‘living billboard’ Volkswagen Stories: Chris Warne ID.3: Welcome to Volkswagen’s 3rd era 1970: The year our electric journey began Should you go electric? The future of electric travel Becoming ID. Fully charged event Tiny Buzz Volkswagen Stories: Timo Thornton ID. Buzz Artwork Wrap
-
-Volkswagen Merchandise News
-
---:--
-
-The ID.3More, more, more with Volkswagen Match
-
-Book a test drive Search available stock
-
-Home
-
-Electric and Hybrid cars
-
+export const id3Extract = `
 Pure electric cars
 
 ID.3
@@ -361,4 +279,4 @@ Every effort has been made to ensure the accuracy of the information above. Pric
 
 For fuel consumption and CO2 information for vehicles, view values in the configurator.
 
-Please be advised we may not be able to provide valuations for vehicles which are outside certain age or mileage ranges, specialist or customised, or not registered in the UK. The actual sale price is dependent on a number of additional factors, which you can discuss further with your retailer. T&Cs will apply.
+Please be advised we may not be able to provide valuations for vehicles which are outside certain age or mileage ranges, specialist or customised, or not registered in the UK. The actual sale price is dependent on a number of additional factors, which you can discuss further with your retailer. T&Cs will apply.`

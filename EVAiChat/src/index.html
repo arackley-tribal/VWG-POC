@@ -5,9 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="author" content="Xenova" />
-  <title>Transformers.js</title>
-  <meta name="description"
-    content="State-of-the-art Machine Learning for the web. Run 🤗 Transformers directly in your browser, with no need for a server!" />
+  <title>EV QnA</title>
 
   <!-- Favicon-->
   <!-- Icon made by Freepik (https://www.flaticon.com/free-icons/robot) -->
@@ -37,12 +35,15 @@
     </div>
 
     <!-- Header-->
-    <header class="bg-dark pt-3 pb-5">
+    <div class="car-header"></div>
+    <header class="bg-dark"
+      style="padding: 40px; background: radial-gradient(circle at 0% 0%, rgb(0, 67, 122) 0%, rgb(0, 30, 80) 100%);">
       <div class="container px-5">
         <div class="row gx-5 justify-content-center">
           <div class="col-lg-6">
             <div class="text-center">
-              <h1 class="display-5 fw-bolder text-white mb-2">Whats an EV</h1>
+              <h1 class="display-5 text-white mb-2">Whats <span class="bolder">an EV</span></h1>
+              <p class="text-white">Use the tool below to learn more about EV Vehicles and their place within VW</p>
             </div>
           </div>
         </div>
@@ -56,23 +57,18 @@
         <div task="question-answering" class="task-settings">
           <div class="row">
             <div class="col-lg-6">
-              <p class="mt-3 mb-0">Question:</p>
+              <p class="mt-3 mb-0 sub-header">Question:</p>
               <textarea id="qa-question-textbox" class="form-control"
-                rows="5">What proportion of the planet's rainforests are found in the Amazon?</textarea>
+                rows="5">What can you tell me about Lithium-ion batteries?</textarea>
             </div>
             <div class="col-lg-6">
-              <p class="mt-3 mb-0">Answer:</p>
+              <p class="mt-3 mb-0 sub-header">Answer:</p>
               <textarea id="qa-answer-textbox" class="form-control" rows="5"></textarea>
             </div>
           </div>
         </div>
         <div class="col-12 mt-2 d-flex justify-content-center">
-          <button id="generate" type="button" class="btn btn-primary">Generate</button>
-
-          <!-- <button class="btn btn-primary" type="button">
-                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                      <span class="visually-hidden">Loading...</span>
-                    </button> -->
+          <button id="generate" type="button" class="btn btn-primary">Answer</button>
         </div>
 
         <div id="progress" class="col-12 mt-4" style="display: none;">
