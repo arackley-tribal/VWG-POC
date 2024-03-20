@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="author" content="Xenova" />
+  <title>Transformers.js</title>
+  <meta name="description"
+    content="State-of-the-art Machine Learning for the web. Run 🤗 Transformers directly in your browser, with no need for a server!" />
+
+  <!-- Favicon-->
+  <!-- Icon made by Freepik (https://www.flaticon.com/free-icons/robot) -->
+  <link rel="icon" type="image/x-icon" href="./icons/favicon.ico" />
+
+  <!-- Bootstrap icons-->
+  <link href="./theme.css" rel="stylesheet" />
+  <link href="./css/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Page JS-->
+  <script type="module" src="/main.js" defer></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Modal -->
+    <div class="modal fade" id="content-modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-label">Viewing content</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header-->
+    <header class="bg-dark pt-3 pb-5">
+      <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-lg-6">
+            <div class="text-center">
+              <h1 class="display-5 fw-bolder text-white mb-2">Whats an EV</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Demo section-->
+    <section class="py-4 border-bottom" id="demo">
+      <div class="container px-5 my-4">
+
+        <div task="question-answering" class="task-settings">
+          <div class="row">
+            <div class="col-lg-6">
+              <p class="mt-3 mb-0">Question:</p>
+              <textarea id="qa-question-textbox" class="form-control"
+                rows="5">What proportion of the planet's rainforests are found in the Amazon?</textarea>
+            </div>
+            <div class="col-lg-6">
+              <p class="mt-3 mb-0">Answer:</p>
+              <textarea id="qa-answer-textbox" class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-2 d-flex justify-content-center">
+          <button id="generate" type="button" class="btn btn-primary">Generate</button>
+
+          <!-- <button class="btn btn-primary" type="button">
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      <span class="visually-hidden">Loading...</span>
+                    </button> -->
+        </div>
+
+        <div id="progress" class="col-12 mt-4" style="display: none;">
+          <div class="d-flex align-items-center position-relative py-2">
+            <div><strong>Loading model files...</strong> (only run once)</div>
+            <div class="spinner-border position-absolute" role="status" aria-hidden="true" style="right: 0">
+            </div>
+          </div>
+
+          <div id="progress-bars" class="d-flex justify-content-center flex-column gap-2 py-2"></div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+  </div>
+</body>
+
+</html>

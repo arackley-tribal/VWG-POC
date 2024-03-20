@@ -62,10 +62,11 @@
             position: absolute;
             width: 50%;
             height: 5rem;
-            top: 50%;
+            top: 40%;
             left: 0%;
             transform: translate(0%, -50%);
             text-align: right;
+            font-family: 'vw-head';
         }
 
         .cards li {
@@ -73,6 +74,7 @@
             font-weight: 500;
             list-style: none;
             padding: 0;
+            padding-right: 20px;
             margin: 0;
             height: 5rem;
             line-height: 6rem;
@@ -82,8 +84,8 @@
             top: 0;
             right: 0;
             border-radius: 0.8rem;
-            color: black;
             z-index: 100;
+            mix-blend-mode: multiply;
         }
 
         .stickyCard {
@@ -104,9 +106,30 @@
             top: 0;
             left: 0;
             border-radius: 0.8rem;
-            color: black;
+            color: white;
             font-weight: bold;
             z-index: 100;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15)
+        }
+
+        @media only screen and (max-width: 700px) {
+            .cards {
+                top: 20%;
+            }
+
+            .cards li {
+                height: 2rem;
+                line-height: 3rem;
+                font-size: 3rem;
+                padding-right: 0;
+            }
+
+            .stickyCard {
+                height: 2rem;
+                line-height: 3rem;
+                font-size: 3rem;
+                color: black;
+            }
         }
 
         .intersection {
@@ -116,6 +139,136 @@
         #video {
             display: none;
         }
+
+        .white-bg {
+            position: absolute;
+            width: 50%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255);
+            backdrop-filter: blur(4.5px);
+            -webkit-backdrop-filter: blur(4.5px);
+        }
+
+        @media only screen and (max-width: 700px) {
+            .white-bg {
+                width: 100%;
+                height: 50vh;
+            }
+        }
+
+        .image {
+            position: absolute;
+            border: 10px solid white;
+            height: 300px;
+            width: 400px;
+            overflow: hidden;
+            background-size: cover;
+        }
+
+        .image-3 {
+            rotate: 10deg;
+            right: 0;
+            top: -50px;
+            background-image: url('https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?q=80&w=2738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        }
+
+
+        .image-4 {
+            rotate: -10deg;
+            left: 40%;
+            bottom: -10%;
+            background-image: url('https://plus.unsplash.com/premium_photo-1661927381303-5091d5171fe2?q=80&w=3538&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        }
+
+        @media only screen and (max-width: 700px) {
+            .image {
+                width: 200px;
+                height: 150px;
+                border: 5px solid white;
+            }
+
+            .image-3 {
+                top: 50%;
+                right: -10%;
+            }
+
+            .image-4 {
+                left: -10%;
+            }
+        }
+
+        .inactive {
+            display: none;
+        }
+
+        .cta {
+            position: absolute;
+            background-color: #001E50;
+            color: white;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0px;
+            padding: 12px 32px;
+            left: -50%;
+            bottom: -100px;
+            border-radius: 500px;
+            width: 200px;
+            text-align: center;
+            font-family: "VW Text";
+        }
+
+        @media only screen and (max-width: 700px) {
+            .cta {
+                bottom: -650%;
+                left: -50%;
+            }
+        }
+
+        .footer {
+            position: absolute;
+            left: 80px;
+            bottom: 80px;
+            width: 288px;
+            font-family: "VW Text";
+        }
+
+
+        .url {
+            margin-top: 40px;
+        }
+
+
+        @media only screen and (max-width: 700px) {
+            .footer {
+                bottom: 60vh;
+                left: 15vw;
+            }
+
+            .url {
+                display: none;
+            }
+
+        }
+
+        .actions {
+            position: absolute;
+            bottom: 70px;
+            right: 70px;
+            display: flex;
+            gap: 10px;
+        }
+
+
+
+        .controls {
+            position: absolute;
+            left: 70px;
+            top: 43%;
+            transform: translate(0%, -50%);
+        }
     </style>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -124,23 +277,79 @@
 <body>
 
     <div id="gallery" class="gallery">
+        <div class="white-bg"></div>
+        <div class="image-3 image" value="1"></div>
+        <div class="image-4 image" value="2"></div>
+
+
         <video id="video" autoplay muted>
             <source src="./vw-car.mp4" type="video/mp4">
         </video>
         <ul class="cards">
-            <li id="1">your</li>
-            <li id="2">aarons</li>
-            <li id="3">hello</li>
-            <li id="4">maybe</li>
-            <li id="5">something</li>
-            <li id="6">random</li>
-            <li id="7">future</li>
-            <li id="8">world</li>
-            <li id="9">system</li>
-            <li id="10">banana</li>
+            <li id="1">Fam</li>
+            <li id="2">Woof</li>
+            <li id="3">Thrill</li>
+            <li id="4">Song</li>
+            <li id="5">Chill</li>
+            <li id="6">Vacay</li>
+            <li id="7">Band</li>
+            <li id="8">Holibob</li>
+            <li id="9">Mums</li>
+            <li id="10">Surf</li>
+            <li id="10">Freedom</li>
+            <li id="10">Pride</li>
+            <li id="10">Baa</li>
+            <li id="10">Hobby</li>
             <div class="intersection"></div>
-            <div class="stickyCard">wagen</div>
+            <div class="stickyCard">Wagen
+                <div class="cta">Explore The Story</div>
+            </div>
         </ul>
+
+        <div class="footer">
+            <div>
+                Families come in all shapes and sizes… and together they laugh, cry, love, chat, fight and dream in
+                their
+                Volkswagens.
+            </div>
+            <div class="url">
+                <b style="margin-bottom: 8px;">Find Your Wagen </b><br />
+                <a href="">Find</a>
+            </div>
+        </div>
+
+        <div class="controls">
+            <svg width="20" height="174" viewBox="0 0 20 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M2.93363 71.88C2.93363 74.742 3.47363 76.128 5.07563 76.128C6.65963 76.128 7.18163 74.742 7.18163 71.88C7.18163 69.018 6.65963 67.632 5.07563 67.632C3.47363 67.632 2.93363 69.018 2.93363 71.88ZM9.79163 71.88C9.79163 75.804 8.45963 78.27 5.07563 78.27C1.69163 78.27 0.323625 75.804 0.323625 71.88C0.323625 67.956 1.69163 65.49 5.07563 65.49C8.45963 65.49 9.79163 67.956 9.79163 71.88ZM14.7568 75.876V75.912H19.9048V78H11.3548V76.2L15.9268 71.754C16.6468 71.088 17.1688 70.422 17.1688 69.378C17.1688 68.424 16.3948 67.632 15.2968 67.632C14.1448 67.632 13.3708 68.208 12.6328 68.91L11.3188 67.29C11.9848 66.57 13.4788 65.49 15.2968 65.49C17.9248 65.49 19.7788 66.894 19.7788 69.378C19.7788 71.088 18.4648 72.402 17.8348 73.032L14.7568 75.876Z"
+                    fill="black" />
+                <path opacity="0.2"
+                    d="M1.99763 100.91H1.78163V98.768L4.80563 97.76H6.67763V107.912H9.05363V110H1.42163V107.912H4.17563V100.244H4.13963L1.99763 100.91ZM12.3268 104.492L12.0208 104.186L12.7048 97.76H19.4368V99.848H14.8288L14.5768 102.278C14.7748 102.26 15.1168 102.242 15.3688 102.242C18.0328 102.242 19.9228 103.304 19.9228 106.184C19.9228 108.776 17.9788 110.27 14.8108 110.27C13.9468 110.27 12.3808 110.036 11.1568 109.604L11.7328 107.498C12.8128 107.948 14.0908 108.128 14.8828 108.128C16.5028 108.128 17.3128 107.408 17.3128 106.184C17.3128 105.032 16.6108 104.384 14.7928 104.384C14.0188 104.384 13.1008 104.438 12.3268 104.492Z"
+                    fill="black" />
+                <path
+                    d="M11.4278 30.0001L11.4278 2.1227C12.4449 3.0918 14.1265 4.7849 16.01 6.8872L17 5.9995C16.9463 5.9395 11.6162 -2.35333e-07 10.7627 -2.72641e-07C9.8858 -3.10972e-07 4.5264 5.94 4.4727 5.9995L5.4627 6.8872C7.348 4.7823 9.0634 3.0747 10.0975 2.1051L10.0975 30.0001L11.4278 30.0001Z"
+                    fill="black" />
+                <path
+                    d="M9.5722 144L9.5722 171.877C8.5551 170.908 6.8735 169.215 4.99 167.113L4 168C4.0537 168.06 9.3838 174 10.2373 174C11.1142 174 16.4736 168.06 16.5273 168L15.5373 167.113C13.652 169.218 11.9366 170.925 10.9025 171.895L10.9025 144L9.5722 144Z"
+                    fill="black" />
+            </svg>
+
+        </div>
+
+        <div class="actions">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle opacity="0.2" cx="30" cy="30" r="29" stroke="white" stroke-width="2" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M29.8133 23L24.3656 26.1457H21V33.0274H24.3646L29.8123 36.173L29.8133 23ZM37.7732 32.5797L35.9198 30.7263L34.0665 32.5797C33.6569 32.9892 32.5181 31.8495 32.9277 31.4409L34.781 29.5875L32.9277 27.7341C32.5181 27.3245 33.6579 26.1857 34.0665 26.5953L35.9198 28.4487L37.7732 26.5953C38.1828 26.1857 39.3216 27.3255 38.912 27.7341L37.0587 29.5875L38.912 31.4409C39.3216 31.8504 38.1818 32.9892 37.7732 32.5797Z"
+                    fill="white" />
+            </svg>
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle opacity="0.2" cx="30" cy="30" r="29" stroke="white" stroke-width="2" />
+                <path d="M31.499 35.25V24.75H34.499V35.25H31.499ZM25.499 35.25V24.75H28.499V35.25H25.499Z"
+                    fill="white" />
+            </svg>
+
+        </div>
     </div>
 
 
@@ -235,7 +444,7 @@
                     }
                 });
             },
-            end: `+=600`,
+            end: `+=4000`,
             pin: ".gallery"
         });
 
@@ -255,6 +464,7 @@
                         videoIsPlaying = true;
                     }
                 }
+            } else {
             }
         }
 
@@ -321,6 +531,16 @@
                 ease: "none"
             });
             return seamlessLoop;
+        }
+
+        document.addEventListener("mousemove", parallax);
+        function parallax(event) {
+            this.querySelectorAll(".gallery .image").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 90;
+                const y = (window.innerHeight - event.pageY * position) / 90;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
         }
 
     </script>

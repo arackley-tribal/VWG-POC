@@ -1,0 +1,316 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 700;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 200;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff') format('woff');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'vw-text';
+        }
+
+        .hero {
+            background: black;
+            display: flex;
+            color: white;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .helper-text {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .heading {
+            font-size: 100px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'vw-head'
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .animate-text {
+            display: inline-flex;
+            flex-direction: column;
+            margin-right: 30px;
+            position: relative;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .prev {
+            top: -50vh;
+        }
+
+        .next {
+            top: 50vh;
+        }
+
+        button {
+            width: 150px;
+            height: 50px;
+            margin-top: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+
+
+        main {
+            min-height: 200vh;
+            background: white;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 200px;
+        }
+
+        .image-and-text {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 200px;
+        }
+
+        .placeholder-image {
+            height: 300px;
+            width: 500px;
+            background: grey;
+            flex-shrink: 0;
+        }
+
+        .image-and-text.reverse .placeholder-image {
+            order: 2;
+        }
+    </style>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        const { useState, useEffect, useRef } = React;
+        const { createRoot } = ReactDOM;
+
+        const rootElement = document.getElementById("app");
+        const root = createRoot(rootElement);
+        gsap.registerPlugin(Observer);
+        const easing = 'power3.out';
+
+
+        function App() {
+            const text = ['Fam', 'Woof', 'Thrill', 'Song', 'Chill', 'Vacay', 'Band', 'Holibob', 'Mums', 'Triple', 'Surf', 'Freedom', 'Pride', 'Baa', 'Hobby'];
+            let isAnimating = false;
+            const [index, setIndex] = useState(0);
+            const [observer, setObserver] = useState();
+            const prevText = useRef();
+            const currentText = useRef();
+            const nextText = useRef();
+            const hero = useRef();
+            useEffect(() => {
+                setObserver(Observer.create({
+                    type: "wheel,touch,pointer",
+                    wheelSpeed: -1,
+                    onDown: animateUp,
+                    onUp: animateDown,
+                    tolerance: 10,
+                    preventDefault: true
+                }));
+
+
+                const imageAndTexts = document.querySelectorAll('.image-and-text');
+
+                const intersectionObserver = new IntersectionObserver(entries => {
+                    if (entries[0].isIntersecting) {
+                        const target = entries[0].target;
+                        const image = target.querySelector('.placeholder-image');
+                        const text = target.querySelector('p');
+                        const reverse = target.classList.contains('reverse');
+
+                        animateImageAndText(image, text, reverse);
+                    };
+                });
+
+
+                imageAndTexts.forEach(el => intersectionObserver.observe(el));
+            }, []);
+
+            const animateDown = () => {
+                if (isAnimating) return;
+                setIndex(prevIndex => getIndex(prevIndex + 1));
+                animateText('down');
+                blockScroll();
+            };
+
+            const animateUp = () => {
+                if (isAnimating) return;
+                setIndex(prevIndex => getIndex(prevIndex - 1));
+                animateText('up');
+                blockScroll();
+            };
+
+            const animateText = direction => {
+                const tl = gsap.timeline();
+                const duration = 1;
+                const toAnimVals = {
+                    y: 0,
+                    ease: easing
+                };
+
+
+                const fromAnimVals = {
+                    y: `${direction === 'down' ? '50vh' : '-50vh'}`,
+                    ease: easing
+                };
+
+
+                tl.fromTo(currentText.current, { ...fromAnimVals, autoAlpha: 0 }, { ...toAnimVals, autoAlpha: 1, duration }, 0).
+                    fromTo(prevText.current, { ...fromAnimVals, autoAlpha: 1 }, { ...toAnimVals, autoAlpha: 0, duration }, 0).
+                    fromTo(nextText.current, { ...fromAnimVals, autoAlpha: 1 }, { ...toAnimVals, autoAlpha: 0, duration }, 0);
+            };
+
+            const getIndex = index => {
+                if (index >= text.length) {
+                    return 0;
+                } else if (index <= -1) {
+                    return text.length - 1;
+                } else {
+                    return index;
+                }
+            };
+
+            const blockScroll = () => {
+                isAnimating = true;
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 1300);
+            };
+
+            const seeMore = () => {
+                observer.disable();
+                const tl = gsap.timeline();
+                tl.to(hero.current, {
+                    height: '50vh',
+                    duration: 1,
+                    ease: easing
+                });
+
+            };
+
+            const animateImageAndText = (image, text, reverse) => {
+                const tl = gsap.timeline();
+                tl.fromTo(image, {
+                    autoAlpha: 0,
+                    x: reverse ? 100 : -100
+                },
+                    {
+                        autoAlpha: 1,
+                        x: 0,
+                        ease: easing,
+                        duration: 1
+                    },
+                    0.2).
+                    fromTo(text, {
+                        autoAlpha: 0,
+                        x: reverse ? -100 : 100
+                    },
+                        {
+                            autoAlpha: 1,
+                            x: 0,
+                            ease: easing,
+                            duration: 1
+                        },
+                        0.3);
+            };
+
+            return /*#__PURE__*/(
+                React.createElement(React.Fragment, null, /*#__PURE__*/
+                    React.createElement("section", { className: "hero", ref: hero }, /*#__PURE__*/
+                        React.createElement("div", { className: "heading" }, /*#__PURE__*/
+                            React.createElement("div", { className: "animate-text" }, /*#__PURE__*/
+                                React.createElement("span", { className: "text prev", ref: prevText }, text[index - 1]), /*#__PURE__*/
+                                React.createElement("span", { className: "text current", ref: currentText }, text[index]), /*#__PURE__*/
+                                React.createElement("span", { className: "text next", ref: nextText }, text[index + 1])), "Wagen"), /*#__PURE__*/
+
+
+
+                        React.createElement("button", { onClick: seeMore }, "See more")), /*#__PURE__*/
+
+                    React.createElement("main", null, /*#__PURE__*/
+                        React.createElement("div", { className: "image-and-text" }, /*#__PURE__*/
+                            React.createElement("div", { className: "placeholder-image", id: 'image-1' }), /*#__PURE__*/
+                            React.createElement("p", null, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem illo nulla assumenda fugiat, reprehenderit maxime ad suscipit ullam numquam hic laborum iusto iure, nam, praesentium ex provident tenetur? Esse, culpa.")), /*#__PURE__*/
+
+                        React.createElement("div", { className: "image-and-text reverse" }, /*#__PURE__*/
+                            React.createElement("div", { className: "placeholder-image" }), /*#__PURE__*/
+                            React.createElement("p", null, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem illo nulla assumenda fugiat, reprehenderit maxime ad suscipit ullam numquam hic laborum iusto iure, nam, praesentium ex provident tenetur? Esse, culpa.")), /*#__PURE__*/
+
+                        React.createElement("div", { className: "image-and-text" }, /*#__PURE__*/
+                            React.createElement("div", { className: "placeholder-image" }), /*#__PURE__*/
+                            React.createElement("p", null, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem illo nulla assumenda fugiat, reprehenderit maxime ad suscipit ullam numquam hic laborum iusto iure, nam, praesentium ex provident tenetur? Esse, culpa.")), /*#__PURE__*/
+
+                        React.createElement("div", { className: "image-and-text reverse" }, /*#__PURE__*/
+                            React.createElement("div", { className: "placeholder-image" }), /*#__PURE__*/
+                            React.createElement("p", null, "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem illo nulla assumenda fugiat, reprehenderit maxime ad suscipit ullam numquam hic laborum iusto iure, nam, praesentium ex provident tenetur? Esse, culpa.")))));
+
+
+
+
+        }
+
+        root.render( /*#__PURE__*/React.createElement(App, null));
+    </script>
+
+</body>
+
+</html>
