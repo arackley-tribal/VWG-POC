@@ -3,19 +3,7 @@ Charging and range
 
 Guide to the best charging apps
 
-The best EV charge point apps Apps that locate your nearest charging station are a must-have for electric and hybrid car drivers in need of a power boost. Just open your phone to be directed to your closest charge point. The e‑Golf and e‑up! are super speedy when it comes to charging, reaching 80% capacity in just 30 minutes, so you won’t be hanging around for long. e‑Golf owners typically use public charge points for about 40% of their charging needs, so an app could make life a whole lot easier. Even GTE drivers will benefit from having the information close at hand – just in case you want to recharge while you’re far from home. Explore our list of charge point apps below.
 
-Pod Point Our preferred charging partner Pod Point are the industry's EV charging experts. Pod Point run a network of over 1,700 public charging points which are universally compatible with all our electric vehicles. Pod Point's public charging points are where you need them, what's more many of them are free to use and if they aren't - a simple pay as you charge system is used.No membership fees, RFIDs needed, simply install the Pod Point application and find your nearest chargepoint and receive Google Map's directions to get there when you need to.If you use Pod Point to charge your vehicle at home, you can pair your home charger with their app and monitor both your public and home charging activity and all its associated costs all from your mobile!Find your nearest Pod Point public charger or explore Pod Point's public charging network. Find out more about Pod Point's networkOpens an external link
-
-BP Pulse
-
-BP Pulse is a subscription network that offers great value for those who regularly charge away from home. For a monthly fee it allows you to charge at almost 5000 charging points for free. Those that aren’t included come at a discounted rate, so you’re still saving with every charge. Learn more about BP PulseOpens an external link
-
-Ecotricity Ecotricity is the UK’s greenest energy provider. All their energy comes from the sun, sea and wind so you can drive happy knowing that you’re an emission-free driver from source to exhaust. You can pay-as-you-go for £3 + 17p per unit and they use a regular AC supply. Their network of public charge stations can be found at motorway service stations making them the ideal partner for longer journeys. They’re currently working on placing charging points on A roads and beyond so keep an eye out – because Ecotricity is coming to a road near you. Read more about EcotricityOpens an external link
-
-Zap-Map Unlike the others, Zap-Map isn’t a network but a locator for every public charging point in the UK. So wherever you may find yourself running low, Zap-Map can point you in the right direction. Just choose your model and the Connector Selector tool will direct you to the nearest suitable charging point for free. Learn more about Zap-MapOpens an external link
-
-Road trips? No problem. If you’re planning a long drive or are taking a trip to the countryside then it’s worth planning your charge stops so you know you’re never going to be caught short. The apps listed above are perfect for pointing you in the right direction, however the more remote the drive, the fewer charging stations there will be so it’s always a good idea to plan ahead. Familiarise yourself with what each app does so you can be sure you're getting the most from each one.
 
 The charging guide Everything you need to know about charging is in this guide. From how to charge, where you can do it and how quickly it takes - we’ve got you covered.
 

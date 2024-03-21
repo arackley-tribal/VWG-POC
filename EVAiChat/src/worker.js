@@ -11,7 +11,8 @@ const HF_TOKEN = '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';
 
 // Define task function mapping
 const TASK_FUNCTION_MAPPING = {
-    'question-answering': question_answering
+    'question-answering': question_answering,
+    'source-context': source_context
 }
 
 // Listen for messages from UI
@@ -64,7 +65,7 @@ class PipelineFactory {
 
 class QuestionAnsweringPipelineFactory extends PipelineFactory {
     static task = 'question-answering';
-    static model = 'Xenova/distilbert-base-cased-distilled-squad';
+    static model = 'Xenova/distilbert-base-uncased-distilled-squad';
 }
 
 async function question_answering(data) {
@@ -84,4 +85,7 @@ async function question_answering(data) {
     });
 
     return answer;
+}
+async function source_context(data) {
+
 }

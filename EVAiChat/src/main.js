@@ -7,289 +7,65 @@ const worker = new Worker(new URL('./worker.js', import.meta.url), {
   type: 'module',
 });
 
-let contextData = '';
-contextData = contextData + `
-Pure electric cars
+let dataSet = [
+  ` BP Pulse is a subscription network that offers great value for those who regularly charge away from home. For a monthly fee it allows you to charge at almost 5000 charging points for free. Those that aren’t included come at a discounted rate, so you’re still saving with every charge. Learn more about BP PulseOpens an external link`,
+  
+  `Our future is electric. Discover our range of incredible all-electric cars that feature everything you love about Volkswagen alongside innovative technologies that massively reduce your carbon footprint as you drive. Whether it’s the fun and dynamic performance of the ID.5 GTX or the class-leading technology found in the ID.3 and ID.4, our electric cars have something for every driver to fall in love with.`,
 
-ID.3
+  `Id.3, The new ID.3 continues to advance electric mobility at Volkswagen. The second generation of the ID.3 based on the MEB truly is more mature in many ways thanks to the new ID. software.`,
 
-The next evolution in electric driving  The new ID.3 keeps the future of electric mobility driving forwards. The clear lines of the exterior give the ID.3 a more mature look, while the interior is elegantly finished with quality materials. There is also a generous collection of Driver Assist systems to give you a helping hand on the road. Built on the modular electric drive matrix (MEB), the ID.3 comes with ID. Software installed. It upgrades charging functions, including Plug & Charge, and keeps your ID.3 up to date with post-purchase upgrades.
+  `Id.4, Dynamic, powerful and intelligent. The ID.4 is here. Combining the flexibility of an SUV with the sustainability and driving experience you only get with electric.`,
 
-Highlights
+  `Id. 5, The ID.5 is the first Volkswagen to combine sporty, elegant coupé design with the qualities of the ID. family: it offers a completely new sense of space, intuitive operation, is fully networked - and can be updated and upgraded "over-the-air". The high-quality coupé design clearly stands out from the appearance of conventional vehicles - and is unique in its segment. Discover all-electric driving in an inspiring shape.`,
 
-The new ID.3 Pro and Pro S Match, 1 of 3Memory function for Park Assist Plus, 2 of 3Augmented Reality Head up Display, 3 of 3
+  `The all-electric ID.5 GTX, Dual-motor all-wheel drive system, athletic coupé design and acceleration that will take your breath away: experience sporty electric performance in an ID. that seamlessly combines responsible driving and driving pleasure.`,
 
-1
+  `The all-electric ID.7, The fully electric fastback combines high range values, fast charging, ample space and intuitive operation in the new premium standard from Volkswagen.`,
 
-The new ID.3 Pro and Pro S Match ID.3 Match, provides the next evolution in electric driving. Now with more thought out assistance equipment, making your drive effortless.
+  `Electrifying our drives is an important step along the path toward CO2-neutral mobility for everyone. A PHEV enables purely electric driving over some distances thanks to the combination of the electric and petrol engine. For you, this means: Greater performance, driving comfort and more fun when driving off thanks to electric assistance, 	Practical electric ranges for day-to-day use & Brake energy recuperation extends electric range between charges`,
 
-Learn more about ID.3 Match
+  `ID.Buzz, This electric van brings Volkswagen’s iconic camper van into the new era so that you can find new adventures, no matter where you are. The ID. Buzz is the next generation of the multi-purpose vehicle (MPV).  It is based on the modular electric drive kit (MEB) platform and provides comfort and lots of space for long journeys. The MEB platform allows for different battery options to suit different vehicle purposes and budgets. Because the ID. Buzz is a concept vehicle you'll still have to wait a while before you see it on the market. But we’re working hard to ensure that it’ll be worth the wait.`,
 
-Memory function for Park Assist Plus Now you can teach your ID.3 to perform recurring parking manoeuvres. Learn more to see the video of it in action. Learn more
+  `Driving pleasure as standard: the Golf GTE, A powerful PHEV with an impressive short-term 180 kW (245 bhp) system performance for true driving pleasure.`,
 
-Augmented Reality Head up Display Now you have the directions displayed directly within your field of vision. Learn more
+  `The new Tiguan eHybrid Electrifying prospects: whether daily errands or spontaneous long journeys, the new Tiguan eHybrid gets you to your destination in a more relaxed way – and back again too. `,
 
-1
+  `Golf GTE. With its fusion of electric motor and TSI, it puts 150 kW (204 bhp) on the road.`,
 
-The new ID.3 Pro and Pro S Match ID.3 Match, provides the next evolution in electric driving. Now with more thought out assistance equipment, making your drive effortless.
+  `Golf Style eHybrid A PHEV with an electric motor and TSI petrol engine. That means you can drive with zero emissions in e-mode, or combine the combustion engine and electric motor in hybrid mode for maximum boost system power and efficient driving pleasure.`,
 
-Learn more about ID.3 Match
+  `The new Passat Electrified mobility of the future, step inside the new Passat eHybrid. An electric motor and TSI petrol engine work together to offer you an efficient plug-in hybrid.`,
 
-Memory function for Park Assist Plus Now you can teach your ID.3 to perform recurring parking manoeuvres. Learn more to see the video of it in action. Learn more
+  `Touareg R The dual drive power of the Touareg R eHybrid creates a uniquely varied driving experience with impressive performance.`,
 
-Augmented Reality Head up Display Now you have the directions displayed directly within your field of vision. Learn more
+  `New Tiguan eHybrid The new Tiguan eHybrid delivers a combined system power that is offered on 204PS and 272PS variants.`,
 
-See the New ID.3 for yourself
+  `Arteon With its plug-in hybrid drive system, this saloon-coupé combines efficiency and elegance in a class of its own: from the puristic design of its flowing silhouette to its exclusive interior.`,
 
---:--
+  `eTSI Engine The Golf 8 is Volkswagen’s first model to feature the e-TSI engine with mild-hybrid technology. e-TSI uses a lithium-ion battery to help power the engine at low speeds and drastically reduce both fuel consumption and emissions. The battery is recharged using energy from braking and coasting.`,
 
-Details about the new ID.3
+  `Arteon Shooting Brake Experience the best of both worlds with a Shooting Brake, which intelligently combines practicality and luxurious comfort. `,
 
-All (19) Infotainment (2) Design (8) IQ.DRIVE & assistance systems (7) Technical Features (2)
+  `The best EV charge point apps Apps that locate your nearest charging station are a must-have for electric and hybrid car drivers in need of a power boost. Just open your phone to be directed to your closest charge point. The e‑Golf and e‑up! are super speedy when it comes to charging, reaching 80% capacity in just 30 minutes, so you won’t be hanging around for long. e‑Golf owners typically use public charge points for about 40% of their charging needs, so an app could make life a whole lot easier. Even GTE drivers will benefit from having the information close at hand – just in case you want to recharge while you’re far from home. Explore our list of charge point apps below.
 
-1
+  Pod Point Our preferred charging partner Pod Point are the industry's EV charging experts. Pod Point run a network of over 1,700 public charging points which are universally compatible with all our electric vehicles. Pod Point's public charging points are where you need them, what's more many of them are free to use and if they aren't - a simple pay as you charge system is used.No membership fees, RFIDs needed, simply install the Pod Point application and find your nearest chargepoint and receive Google Map's directions to get there when you need to.If you use Pod Point to charge your vehicle at home, you can pair your home charger with their app and monitor both your public and home charging activity and all its associated costs all from your mobile!Find your nearest Pod Point public charger or explore Pod Point's public charging network. Find out more about Pod Point's networkOpens an external link
+  
+  BP Pulse
+  
+  BP Pulse is a subscription network that offers great value for those who regularly charge away from home. For a monthly fee it allows you to charge at almost 5000 charging points for free. Those that aren’t included come at a discounted rate, so you’re still saving with every charge. Learn more about BP PulseOpens an external link
+  
+  Ecotricity Ecotricity is the UK’s greenest energy provider. All their energy comes from the sun, sea and wind so you can drive happy knowing that you’re an emission-free driver from source to exhaust. You can pay-as-you-go for £3 + 17p per unit and they use a regular AC supply. Their network of public charge stations can be found at motorway service stations making them the ideal partner for longer journeys. They’re currently working on placing charging points on A roads and beyond so keep an eye out – because Ecotricity is coming to a road near you. Read more about EcotricityOpens an external link
+  
+  Zap-Map Unlike the others, Zap-Map isn’t a network but a locator for every public charging point in the UK. So wherever you may find yourself running low, Zap-Map can point you in the right direction. Just choose your model and the Connector Selector tool will direct you to the nearest suitable charging point for free. Learn more about Zap-MapOpens an external link
+  
+  Road trips? No problem. If you’re planning a long drive or are taking a trip to the countryside then it’s worth planning your charge stops so you know you’re never going to be caught short. The apps listed above are perfect for pointing you in the right direction, however the more remote the drive, the fewer charging stations there will be so it’s always a good idea to plan ahead. Familiarise yourself with what each app does so you can be sure you're getting the most from each one.`,
 
-ID.3 upgrades via We Connect
+  ' Lithium-ion batteries, of the type used in most electric vehicles (including Volkswagen electric vehicles) have a restricted lifespan. Battery capacity will reduce over time, with use and charging. Reduction in battery capacity will affect the performance of the vehicle, including the range achievable, and is one of a number of factors that may impact resale value. New vehicle performance figures (including battery capacity and range) may be provided for the purposes of comparison between vehicles. You should not rely on new vehicle performance figures (including battery capacity and range), in relation to used vehicles with older batteries, as they will not reflect used vehicle performance in the real world. For further information on battery degradation/preservation and the Volkswagen 8 year/100,00 mile new car battery warranty, please see here. Exclusions and Warranty Terms Apply.',
 
-Details of the new exterior
+]
 
-Details of the panoramic glass roof
 
-Wheel details
-
-Details about the Exterior packages
-
-1
-
-Details on interior
-
-Details on the comfortable seats
-
-Details on the sustainable materials used
-
-1
-
-Details on Ambient lighting
-
-Details on Travel Assist
-
-Details on Emergency Assist
-
-Details on Traffic hazard alert (Car2X)
-
-1
-
-Details on area view
-
-Details on Adaptive Cruise Control ACC and Front Assist
-
-Details on lane keeping and lane change assistants
-
-Details on Park Assist Plus
-
-Details on the IQ.Light
-
-Details on charging with Plug & Charge
-
-1
-
-Details on voice assistant
-
-1
-
-, 1 of 4, 2 of 4, 3 of 4, 4 of 4
-
-1
-
-The new ID.3 GTX More.Dynamic.
-
-Electric mobility continues to pick up speed with the new ID.3 GTX: with enhanced performance as well as a sporty design. The result? All-electric mobility at the cutting edge of technology. Experience electric performance that inspires.  
-
-Discover more about the ID.3 GTX Keep me informed about ID.3 GTX
-
-Easy, accessible charging, wherever you are
-
-There are many ways you can charge your ID.3, giving you the convenience and flexibility you need to keep your car running
-
-Ohme Wall Box
-
-Volkswagen recommends Ohme as our preferred wall box supplier. Your local Volkswagen Retailer can help you order a Ohme home charger and even guide you through the process of applying for a grant. You may be also eligible for the EV chargepoint grant⁠⁠2 if you own or rent a flat (you can get either £350 or 75% off the cost to buy and install a socket, whichever amount is lower.). Discover more about home wall boxes
-
-Octopus energy
-
-Octopus have designed a smart, green tariff especially for Volkswagen’s electric vehicle drivers, Octopus Go Green. Find out more about Octopus energy
-
-We Charge subscriptions
-
-E-mobility can be simple and fun – after all, you should be able to get anywhere in your electric car with ease. Simply open the We Connect ID. app and check the location of the nearest charging station – and you can charge your vehicle and get great prices according to your We Charge plan. Discover more about We Charge subscriptions
-
-2. The Office for Zero Emission Vehicles (OZEV) replaced the Electric Vehicle Homecharge scheme (EVHS) with the new EV charge point grant. The Government grants are subject to full terms and conditions and eligibility may be revised or withdrawn at any time without prior notice. This information is correct as of September 2022. Find out more about the EV chargepoint grant at https://www.gov.uk/electric-vehicle-chargepoint-grant-household
-
-Book an ID.3 test drive.
-
-Book an ID.3 test drive.
-
-Experience the future of driving with an all-electric ID.3! An expert will be with you to answer any questions you may have on charging, range, safety, or anything else you’re unsure about. They’ll introduce you to everything you need to know from wall boxes to energy providers, ensuring your transition to a life electric is as seamless as possible. 
-
-Instant torque delivers faster acceleration. 
-
-Increased cabin space.
-
-No engine noise. 
-
-Book a test drive
-
-Build and compare
-
-Pro
-
-Available from stock only. Electrically on the move with all the design and comfort elements for a well-rounded choice.From £37,430.00 Battery Range up to*: 269miCapacity: 58kWhAcceleration 0-62 mph: 7.4s Equipment Highlights:
-
-Alloy wheels 18" 'East Derry' Black
-
-High Beam Assist, automatic sensing for switching between dipped and main beam
-
-Wireless smartphone charger
-
-10 colour ambient lighting
-
-Remote electrically foldable door mirrors, puddle lights and reverse activated passenger's door mirror
-
-2 USB-C ports in the front, 2 USB-C charging sockets on the centre console in rear, charging capacity up to 45 W
-
-Find a retailer Search available stockOpens an external link
-
-Pro S
-
-Available from stock only. The car that goes further, the Pro S 77kWh will get you on your way. Available with 4 seats only.From £43,185 Battery Range up to*: 356miCapacity: 77kWhAcceleration 0-62 mph: 7.9s Equipment Highlights:
-
-Alloy wheels 19" 'Wellington'
-
-Bi-colour concept, Silver exterior roof trim and rear pillar, styling pack
-
-High Beam Assist, automatic sensing for switching between dipped and main beam
-
-10 colour ambient lighting
-
-Remote electrically foldable door mirrors, puddle lights and reverse activated passenger's door mirror
-
-2 USB-C ports in the front, 2 USB-C charging sockets on the centre console in rear, charging capacity up to 45 W
-
-ergoActive seats in front with power adjustment, memory feature and adjustable thigh support
-
-Find a retailer Search available stockOpens an external link
-
-Browse available ID.3 stock
-
-Pricing, offers and finance
-
-Below you’ll see an example of a Solutions Personal Contract Plan, complete with all the costs you need to know. To calculate your own plan, select the ‘Customise this offer’ button below and use it to edit the mileage and plan duration as well as your deposit and monthly repayments. Alternatively, select the 'Choose another trim' where you can view all available trims, batteries and then customise your selection.
-
-Helpful tools
-
-EV route planner Discover more
-
-Part Exchange Get a valuation
-
-Ask The Comparator Calculate your Benefit in KindOpens an external link
-
-Simulate Electric Range Explore range simulator
-
-Simulate charging times Explore charging times simulator
-
-Simulate running costs Explore running costs simulator
-
-Bring the showroom to your living room Experience Live Tour
-
-Bring the showroom to your living room Experience Live Tour
-
-Get an in depth look at a selection of our models guided by one of our Experts using either live chat or an optional video tour, carried out in real time. All without you needing to leave the house.
-
-Talk at a time that suits you with accessible opening times. 
-
-Wherever’s comfortable, from the sofa or on the go.
-
-No obligation to buy.
-
-Discover Live Tour
-
-See the ID.3 dimensions
-
-Here you’ll find all the dimensions for both the exterior and interior of the ID.3.  View dimensions
-
-Already an ID.3 owner?
-
-Owner's manuals Warranties Log into myVolkswagen Get to know your car Volkswagen Insurance
-
-Next steps
-
-Ready to meet your new ID.3?
-
-Whether you’d prefer to book a test drive or have an appointment, your local retailer is here to help you find your perfect ID.3.
-
-Find your local retailer Search available stock Use our finance calculatorOpens an external link
-
-Configure an ID.3
-
-Browse available stock
-
-Book a test drive online
-
-Configure an ID.3, 1 of 3Browse available stock, 2 of 3Book a test drive online, 3 of 3
-
-Configure an ID.3
-
-Browse available stock
-
-Book a test drive online
-
-You might also be interested in ID. software updateBenefit from over-the-Air Updates to ensure that your ID. remains up-to-date Join the ID. Drivers ClubWith your ID.3 you have not only decided for the next age of mobility; you'll also get access to the exclusive ID. Drivers Club. Explore our other pure Electric cars Discover our range of incredible all-electric cars that feature everything you love about Volkswagen
-
-Most popular ID.3 accessories
-
-Discover care products and charging solutions for your Volkswagen See all top accessories here
-
-3-pin domestic chargers
-
-With our charging cables you can charge your electric vehicle at home, via the wallbox or any domestic socket. See all top accessories here
-
-Bicycle carriers
-
-With our transport solutions, you’ll create more space for yourself and for your stuff. See all top accessories here
-
-Roof bars
-
-Whether you're travelling far, or on a summer staycation, our luaggage solutions ensure that the interior of your Volkswagen stays clean and protected. See all top accessories here
-
-*All vehicles are tested according to WLTP technical procedures. Figures shown are for comparability purposes; only compare fuel consumption, CO2 and equivalent electric range figures with other vehicles tested to the same technical procedures. These figures may not reflect real life driving results, which will depend upon a number of factors including the accessories fitted (post-registration), variations in weather, driving styles, speed, vehicle age, vehicle load (and, for battery electric vehicles3 and plug-in hybrid vehicles, the starting charge of the battery and battery age). Figures for plug-in hybrid vehicles were obtained using a combination of battery power and fuel. Plug-in hybrid vehicles require mains electricity for charging. Figures for battery electric vehicles were obtained after the battery had been fully charged. Battery electric vehicles require mains electricity for charging. Zero emissions while driving. Figures quoted are subject to change due to ongoing approvals/changes. Please consult your retailer for further information and range figures may include options not available in the UK. Data correct at March 2024.
-
-Explore Volkswagen
-
-Browse the range Fleet Technology Environment Partnering with Volkswagen Careers Service & parts Popular models
-
-Golf Polo ID.4 T-Roc Tiguan Commercial vehicles Used cars Useful tools
-
-Book a test drive online Book a Service or MOT online Finance calculator Find a retailer Request a quote Calculate your company car tax Social
-
-TikTok Facebook Twitter Instagram YouTube
-
-Need help Info for emergency responders Contact Us News Login Technology Connected services Privacy Compliance and Integrity Legal FAQs Find a retailer Manage cookies ID. Import Notice Volkswagen AG (Imprint & Legal texts) © Volkswagen 2024
-
-Important information :
-
-1. Due to the right-hand drive configuration the UK screen will be 10” (12” screen shown will not be available).
-
-3. Lithium-ion batteries, of the type used in most electric vehicles (including Volkswagen electric vehicles) have a restricted lifespan. Battery capacity will reduce over time, with use and charging. Reduction in battery capacity will affect the performance of the vehicle, including the range achievable, and is one of a number of factors that may impact resale value. New vehicle performance figures (including battery capacity and range) may be provided for the purposes of comparison between vehicles. You should not rely on new vehicle performance figures (including battery capacity and range), in relation to used vehicles with older batteries, as they will not reflect used vehicle performance in the real world. For further information on battery degradation/preservation and the Volkswagen 8 year/100,00 mile new car battery warranty, please see here. Exclusions and Warranty Terms Apply.
-
-^If you are selecting a Volkswagen ID.3, ID.4, ID.5 or ID.7 then prices shown are the MDP (Manufacturer's Direct Price).  This is the price set by Volkswagen which you pay for the vehicle.  Volkswagen ID vehicles are sold by Volkswagen UK, a trading division of Volkswagen Group United Kingdom Limited (please note that you will need to visit an authorised Volkswagen Retailer (acting as agent for Volkswagen UK) to order, purchase and take delivery of your Volkswagen ID vehicle).  The MDP includes delivery to an authorised Volkswagen Retailer (acting as agent for Volkswagen UK), number plates, new vehicle registration fee, the first year's Vehicle Excise Duty and VAT (calculated at 20%).  You can find out more about the Volkswagen model for selling ID vehicles by clicking https://www.volkswagen.co.uk/en/legal/mdp-explained.html.
-
-If you are selecting any other Volkswagen vehicle (excluding the Volkswagen ID.3, ID.4, ID.5 and ID.7) then prices listed are Manufacturer’s ‘On the road’ Recommended Retail Price. Actual prices are set by Volkswagen authorised retailers in their sole discretion – always obtain these prices from your chosen Volkswagen Retailer.  Recommended On-The-Road (OTR) retail prices include: delivery charge, number plates, new vehicle registration fee, the first year's Vehicle Excise Duty and VAT (calculated at 20%). 
-
-Every effort has been made to ensure the accuracy of the information above. Prices are taken from the Volkswagen website - this website contains a large number of products and it is always possible that, despite our best efforts, some of the products listed may be incorrectly priced. Volkswagen may change prices at any time (this includes where there are government changes in regulation and/or legislation). There may be a delay to any price displaying correctly on our materials and it is always possible that, despite our best efforts, some vehicles may be incorrectly priced. Always check prices with your local retailer.
-
-For fuel consumption and CO2 information for vehicles, view values in the configurator.
-
-Please be advised we may not be able to provide valuations for vehicles which are outside certain age or mileage ranges, specialist or customised, or not registered in the UK. The actual sale price is dependent on a number of additional factors, which you can discuss further with your retailer. T&Cs will apply.`
+let contextData = dataSet.join(' ');
 
 // text generation inputs
 const QA_QUESTION_TEXTBOX = document.getElementById('qa-question-textbox');
@@ -307,16 +83,23 @@ function isVisible(e) {
   return !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
 }
 
+
 GENERATE_BUTTON.addEventListener('click', async (e) => {
+
+  let max_length = 384
+  let stride = 128
+
   // Set and pass generation settings to web worker
   let data = {
     task: 'question-answering',
-    generation: Object.fromEntries([...GENERATION_OPTIONS]
-      .filter(isVisible) // Only use parameters that are visible on screen
-      .map(x => {
-        let value = parseValue(x.value, x.getAttribute('datatype'));
-        return [x.getAttribute('param-name'), value]
-      }))
+    generation: {
+      max_length: max_length,
+      truncation: "only_second",
+      stride: stride,
+      return_overflowing_tokens: true,
+      return_offsets_mapping: true,
+      padding: max_length
+    }
   };
 
   data.context = contextData
