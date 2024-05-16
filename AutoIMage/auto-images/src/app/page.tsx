@@ -2,9 +2,17 @@
 import { useState } from "react";
 import InstagramPost from "./components/InstagramPost";
 import { permutations, _cartesianProductOf } from "./utils/permutations";
+import InstagramVerticalPost from "./components/InstagramVerticalPost";
 
 export default function Home() {
   const [bgColor, setBgColor] = useState('black')
+
+  const [boldTitle, setBoldTitle] = useState(
+    [
+      'http://localhost:3000/image-sets/backgrounds/1.png',
+      'http://localhost:3000/image-sets/backgrounds/2.png',
+      'http://localhost:3000/image-sets/backgrounds/3.png'
+    ])
 
   /*
   const perms = _cartesianProductOf(
@@ -29,12 +37,13 @@ export default function Home() {
 
   const perms = _cartesianProductOf(
     [
-      [ 'http://localhost:3000/image-sets/backgrounds/1.png',
-        'http://localhost:3000/image-sets/backgrounds/2.png',
-        'http://localhost:3000/image-sets/backgrounds/3.png'
+      [ 'http://localhost:3000/image-sets/backgrounds/1',
+        'http://localhost:3000/image-sets/backgrounds/2',
+        'http://localhost:3000/image-sets/backgrounds/3'
       ],
-      ['https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30360/exterior-front/1080.png',],
-      ['GET £2,500', 'GET £11,500'],
+      ['https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30360/exterior-front/1080.png',
+      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30260/exterior-front/1080.png'],
+      ['SAVE £2,500','GET £2,500', 'GET £11,500'],
       ['TOWARDS YOUR T-ROC FINANCE DEPOSIT'],
       ['WITH SOLUTIONS PCP'],
       ['Representative'],
@@ -81,15 +90,31 @@ export default function Home() {
           <button className="bg-black p-2 rounded text-blue-900" onClick={() => setBgColor('black')}></button>
         </div>
       </div>
-      <div className="pt-8" style={{width: '100vw', height: '100vh', overflow: 'scroll'}}>
-        <div className="mt-8 grid flex-wrap gap-8 p-4" style={{zIndex: 100, overflow: 'scroll', gridTemplateColumns: 'repeat(auto-fit, minmax(1080px, auto))'}}>
+      <div className="flex">
+        {/*
+          <div className="mt-12 p-2" style={{width: '250px', backgroundColor: 'white'}}>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Bold Title
+              </label>
+              <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="boldTitle" type="text" placeholder="boldTitle" />
+            </div>
+          </div>
+        */}
+        <div style={{width: '100vw', height: '100vh', overflow: 'scroll'}}>
+        <div className="mt-8 flex gap-8 p-4 flex-col" style={{zIndex: 100, gridTemplateColumns: 'repeat(auto-fit, minmax(1080px, auto))'}}>
           {perms.map((values : any) => {
             return (
+              <div className="flex gap-2">
                 <InstagramPost width={1080} height={1080} values={values} configuration={configuration} id={uuidv4()} />
+                <InstagramVerticalPost width={1080} height={1920} values={values} configuration={configuration} id={uuidv4()} />
+              </div>
             )
           })}
         </div>
       </div>
+      </div>
+      
       
     </main>
   );

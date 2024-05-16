@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { toPng } from 'html-to-image';
 
-type InstagramPostProps = { 
+type InstagramVerticalPostProps = { 
     width: number;
     height: number;
     values: any;
@@ -11,7 +11,7 @@ type InstagramPostProps = {
     id: any;
 }
 
-export function InstagramPost(props: InstagramPostProps) {
+export function InstagramVerticalPost(props: InstagramVerticalPostProps) {
     const elementRef = useRef(null);
 
     const htmlToImageConvert = async () => {
@@ -30,14 +30,14 @@ export function InstagramPost(props: InstagramPostProps) {
         <div ref={elementRef} style={{
             width: props.width,
             height: props.height, 
-            backgroundImage: `url("${props.values[0]}.png")`,
+            backgroundImage: `url("${props.values[0]}-tall.png")`,
             padding: '5%',
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between'
         }}>
-            <div style={{fontFamily: 'vw-head', fontSize: '77px', lineHeight: '72px' }}>
+            <div style={{fontFamily: 'vw-head', fontSize: '77px', lineHeight: '72px', marginTop: '100px' }}>
                 <div style={{fontWeight: 'bold'}}>{props.values[2]}</div>
                 <div style={{fontWeight: '200'}}>{props.values[3]}</div>
                 <div style={{fontSize: '51px', fontWeight: '200'}}>{props.values[4]}</div>
@@ -45,12 +45,12 @@ export function InstagramPost(props: InstagramPostProps) {
             
             <img style={{
                 position: 'absolute',
-                top: '300px',
-                scale: 1.2,
+                top: '750px',
+                scale: 1.4,
                 marginLeft: '-50px'
             }} src={props.values[1]} />
 
-            <div>
+            <div style={{marginBottom: '200px'}}>
                 <div style={{fontSize: '36px', fontWeight: '200'}}>{props.values[5]}</div>
                 <div style={{display: 'flex'}}>
                     <div style={{minWidth: '350px',fontSize: '74px', marginTop:'-20px', fontWeight: 'bold'}}>{props.values[6]}</div>
@@ -62,4 +62,4 @@ export function InstagramPost(props: InstagramPostProps) {
     )
 }
 
-export default InstagramPost
+export default InstagramVerticalPost
