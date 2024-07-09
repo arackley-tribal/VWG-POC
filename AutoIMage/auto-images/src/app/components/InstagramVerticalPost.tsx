@@ -15,19 +15,23 @@ export function InstagramVerticalPost(props: InstagramVerticalPostProps) {
     const elementRef = useRef(null);
 
     const htmlToImageConvert = async () => {
-        if(elementRef.current){
-            const dataUtrl = await toPng(elementRef.current, { cacheBust: false })
-            const link = document.createElement("a");
-            link.download = `${props.id}.png`;
-            link.href = dataUtrl;
-            link.click();
-        }
+        console.log('clicked')
+        toPng(elementRef.current, { cacheBust: false })
+            .then((dataUrl) => {
+                const link = document.createElement("a");
+                link.download = "my-image-name.png";
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
       };
 
     return (
-        <div id={props.id}>
-        {props.id}
-        <div ref={elementRef} style={{
+        <div ref={elementRef} id={props.id} style={{overflow: 'hidden'}} data-savable>
+        {props.id} <button onClick={htmlToImageConvert}>Download</button>
+        <div style={{
             width: props.width,
             height: props.height, 
             backgroundImage: `url("${props.values[0]}-tall.png")`,

@@ -25,7 +25,7 @@ export function InstagramPost(props: InstagramPostProps) {
       };
 
     return (
-        <div id={props.id}>
+        <div id={props.id} style={{overflow: 'hidden'}} data-savable>
         {props.id}
         <div ref={elementRef} style={{
             width: props.width,

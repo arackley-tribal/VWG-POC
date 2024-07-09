@@ -23,7 +23,9 @@ export default function Home() {
       ],
       ['https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30205/exterior-front/1080.png',
       'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30251/exterior-front/1080.png',
-      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30260/exterior-front/1080.png'],
+      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30260/exterior-front/1080.png'
+      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30360/exterior-side/1080.png',
+      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30360/exterior-rear/1080.png'],
       ['GET £2,500','SPRING SALE','NEW OFFER'],
       ['TOWARDS YOUR T-ROC FINANCE DEPOSIT','TOWARDS YOUR FINANCE DEPOSIT','TOWARDS YOUR DEPOSIT'],
       ['WITH SOLUTIONS PCP'],
@@ -38,20 +40,22 @@ export default function Home() {
   const perms = _cartesianProductOf(
     [
       [ 'http://localhost:3000/image-sets/backgrounds/1',
-        'http://localhost:3000/image-sets/backgrounds/2',
-        'http://localhost:3000/image-sets/backgrounds/3'
+      'http://localhost:3000/image-sets/backgrounds/2',
+      'http://localhost:3000/image-sets/backgrounds/3'
       ],
       ['https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30360/exterior-front/1080.png',
-      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30260/exterior-front/1080.png'],
-      ['SAVE £2,500','GET £2,500', 'GET £11,500'],
-      ['TOWARDS YOUR T-ROC FINANCE DEPOSIT'],
-      ['WITH SOLUTIONS PCP'],
+      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30360/exterior-side/1080.png',
+      'https://www.volkswagen.co.uk/api/image/2.3/car/hero/model/id/30360/exterior-rear/1080.png',
+      ],
+      ['HEY AARON!'],
+      ['YOU CAN SAVE £750 ON THE NEW T-ROC'],
+      ['CLICK HERE TO FIND OUR MORE'],
       ['Representative'],
       ['7.5% APR'],
       ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel auctor lorem. Vivamus et tristique sem. Sed nec velit sit amet tortor euismod sollicitudin. Ut nec justo mattis, rutrum urna nec.']
     ]
   )
-/*
+  /*
   const perms = _cartesianProductOf(
     [
       [ 'http://localhost:3000/image-sets/backgrounds/1.png'
