@@ -39176,13 +39176,13 @@ const data = [
 // Function to extract messages and feedback status, then save to CSV file
 function exportMessagesToCSV(data) {
     // Initialize CSV content with headers
-    let csvContent = "Id,Message,Feedback\n";
+    let csvContent = "Id,Type,Message,Feedback\n";
 
     data.forEach(session => {
         session.messages.forEach(message => {
             // Add message content and feedback status to CSV content
-            csvContent += `${session.sessionId},"${message.content.replace(/"/g, '""')}",${message.feedback ? message.feedback : 'n/a'}\n`;
-        });
+            csvContent += `${session.sessionId},${message.role == 'bot' ? 'Answer' : 'Question' },"${message.content.replace(/"/g, '""')}",${message.feedback ? message.feedback : 'n/a'}\n`;
+        })
     });
 
     // Write CSV content to file
