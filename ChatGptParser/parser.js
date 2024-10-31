@@ -39181,7 +39181,7 @@ function exportMessagesToCSV(data) {
     data.forEach(session => {
         session.messages.forEach(message => {
             // Add message content and feedback status to CSV content
-            csvContent += `${session.sessionId},${message.role == 'bot' ? 'Answer' : 'Question' },"${message.content.replace(/"/g, '""')}",${message.feedback ? message.feedback : 'n/a'}\n`;
+            csvContent += `${session.sessionId},${message.role == 'bot' ? 'Answer' : 'Question' },"${message.content}",${message.feedback ? message.feedback : 'n/a'}\n`;
         })
     });
 
