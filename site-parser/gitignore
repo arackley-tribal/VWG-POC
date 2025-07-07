@@ -1,0 +1,34 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Jupyter & Colab
+.ipynb_checkpoints/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# Environment variables
+.env
+
+# Output folders
+reports/
+*.zip
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker artifacts
+*.log
+*.pid
+*.sock

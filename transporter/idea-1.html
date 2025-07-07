@@ -1,0 +1,194 @@
+>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 700;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 200;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff') format('woff');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            font-family: 'vw-head';
+        }
+
+        .background-container {
+            background-image: url('./TR003118PIC-2.webp');
+            height: 100vh;
+            width: 100vw;
+            background-size: cover;
+        }
+
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .centered-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            max-width: 500px;
+            color: white;
+        }
+
+        .title {
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            margin-top: 16px;
+        }
+
+        .main-cta {
+            background-color: white;
+            padding: 8px 16px;
+            border-radius: 16px;
+            color: black;
+            margin: auto;
+            margin-top: 32px;
+            width: 250px;
+            font-weight: bold;
+        }
+
+        .cta {
+            margin-top: 16px;
+        }
+
+        .image {
+            position: absolute;
+            border: 2px solid white;
+            width: 400px;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background-size: cover;
+        }
+
+        .image-1 {
+            rotate: -10deg;
+            left: 25%;
+            top: 15%;
+        }
+
+        .image-2 {
+            rotate: 10deg;
+            right: 20%;
+            top: 30%;
+            height: 200px;
+            background-image: url('https://plus.unsplash.com/premium_photo-1683734514962-bd55decb224b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        }
+
+        .image-3 {
+            rotate: 10deg;
+            bottom: 20%;
+            left: 50%;
+            height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?q=80&w=2738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="background-container">
+    </div>
+
+    <div class="main-container">
+        <div class="image-1 image" value="1">
+            <video class="video" width="100%" src="./horizontal-video.mp4"
+                poster="https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?q=80&w=2738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </div>
+        <div class="image-2 image" value="1">
+            <video class="video" width="100%" src="./horizontal-video.mp4"
+                poster="https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?q=80&w=2738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </div>
+        <div class="image-3 image" value="1">
+            <video class="video" width="100%" src="./horizontal-video.mp4"
+                poster="https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?q=80&w=2738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </div>
+    </div>
+
+    
+    <script>
+        
+        document.addEventListener("mousemove", parallax);
+        function parallax(event) {
+
+            this.querySelectorAll(".main-container .image-1").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 90;
+                const y = (window.innerHeight - event.pageY * position) / 90;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+
+            this.querySelectorAll(".main-container .image-2").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position + 10) / 180;
+                const y = (window.innerHeight - event.pageY * position + 10) / 180;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+
+            this.querySelectorAll(".main-container .image-3").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position + 10) / 300;
+                const y = (window.innerHeight - event.pageY * position + 10) / 300;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+
+            const videos = this.querySelectorAll('.video');
+
+            videos.forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            
+            video.addEventListener('mouseleave', () => {
+                video.load();
+            });
+            });
+        }
+    </script>
+
+</body>
+
+</html>

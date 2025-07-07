@@ -1,0 +1,173 @@
+>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 700;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 200;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff') format('woff');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            font-family: 'vw-head';
+            overflow: hidden;
+        }
+
+        .content {
+            display: flex;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .col {
+            position: relative;
+            overflow: hidden;
+            flex-grow: 1;
+            flex-basis: 0;
+            transition: flex-grow .3s;
+        }
+
+        .col+.col {
+            border-left: 1px solid white;
+        }
+
+        .col:first-child {
+            margin-left: -100px;
+        }
+
+        .col:last-child {
+            margin-right: -100px;
+        }
+
+        .col::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: calc(100% + 200px);
+            margin-left: -100px;
+            display: block;
+            background-attachment: fixed;
+        }
+
+        .col:hover {
+            flex-grow: 3;
+        }
+
+        .col h1 {
+            margin: 0;
+            padding: 10px;
+            transform: skew(20deg, 0);
+        }
+
+        .col:first-child h1 {
+            margin-left: 40px;
+        }
+
+        .video:hover {
+            width: 100%;
+        }
+    </style>
+</head>
+
+
+<body style="position: relative;">
+
+    <div class="content">
+        <div class="col col1">
+            <video class="video" height="100%" src="./square-video.mp4"
+            poster="./potrait-iimage.png" >
+            </video>
+        </div>
+
+        <div class="col col2">
+            <video class="video" height="100%" src="./square-video.mp4"
+            poster="./potrait-iimage.png" >
+            </video>
+        </div>
+
+        <div class="col col3">
+            <video class="video" height="100%" src="./square-video.mp4"
+            poster="./potrait-iimage.png" >
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("mousemove", parallax);
+        function parallax(event) {
+            /*
+            this.querySelectorAll(".main-container .image-1").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 90;
+                const y = (window.innerHeight - event.pageY * position) / 90;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+
+            this.querySelectorAll(".main-container .image-2").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position + 10) / 180;
+                const y = (window.innerHeight - event.pageY * position + 10) / 180;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+
+            this.querySelectorAll(".main-container .image-3").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position + 10) / 300;
+                const y = (window.innerHeight - event.pageY * position + 10) / 300;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+            */
+
+            const videos = this.querySelectorAll('.video');
+            const bg = this.querySelector('.background-container');
+
+            videos.forEach(video => {
+                video.addEventListener('mouseenter', () => {
+                    video.play();
+                    bg.classList.add('blur');
+                });
+
+                video.addEventListener('mouseleave', () => {
+                    video.load();
+                    bg.classList.remove('blur');
+                });
+            });
+        }
+    </script>
+
+</body>
+
+</html>

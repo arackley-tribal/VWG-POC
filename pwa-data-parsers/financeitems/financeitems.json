@@ -1,0 +1,92 @@
+[
+	{
+		"id": "1",
+		"title": "Solutions Personal Contract Plan (PCP)",
+		"subtitle": "A Solutions Personal Contract Plan or PCP is currently the most popular type of car finance agreement. Solutions PCP gives you the flexibility at the beginning and end of your agreement. Watch our video to find out more.",
+		"text": "Solutions PCP is our flexible finance plan designed to allow you to drive a new or used vehicle sooner than you may think.\r- Flexible deposit\r- Fixed monthly payments\r- Agreed future value\r- 3 options at the end - Keep it, change it or own it",
+		"portraitImageFileName": "finance_solutionsPortrait.jpg",
+		"landscapeImageFileName": "finance_solutionsLandscape.jpg",
+		"assetFileName": "finance/finance_SolutionsPCP.mp4"
+	},
+	{
+		"id": "2",
+		"title": "Volkswagen Service Plan for cars under 1 year",
+		"subtitle": "For cars under 1 year old that haven’t yet had their first service.\nIf your car is under 1 year old and you want to have all your general maintenance work and tyre cover included as well, consider a Fixed Cost Maintenance plan.",
+		"portraitImageFileName": "technology_service_planPortrait.png",
+		"landscapeImageFileName": "technology_service_planLandscape.png",
+		"assetFileName": "technology_service_plan_apr22.mp4"
+	},
+    {
+        "id": "3",
+        "title": "Optional Final Payment",
+        "subtitle": "Some finance types give you a future value your car will be worth at the end of your finance agreement, this is called the optional final payment or guaranteed future value and it does just that. By giving you protection that your vehicle will be worth this amount as a minimum at the end of your finance term.",
+        "portraitImageFileName": "finance_optionalFinalPaymentPortrait.jpg",
+        "landscapeImageFileName": "finance_optionalFinalPaymentLandscape.jpg",
+        "assetFileName": "finance/finance_OptionalFinalPayment.mp4"
+    },
+	{
+		"id": "5",
+		"title": "Contract Hire (CH)",
+		"subtitle": "Contract Hire agreements are available for both personal and business customers and are ideal for customers simply wanting to pay a monthly rental for the vehicle, change it on a regular fixed period and have no disposal risk.",
+		"text": "Contract Hire is a rental agreement that allows you to drive a Volkswagen without needing to own it.\r- Fixed initial rental\r- Fixed monthly rentals throughout the term\r- Hand the car back at the end of your agreement",
+		"portraitImageFileName": "finance_contractHirePortrait.jpg",
+		"landscapeImageFileName": "finance_contractHireLandscape.jpg",
+		"assetFileName": "finance/finance_ContractHire.mp4"
+	},
+	{
+		"id": "6",
+		"title": "Personal Contract Hire (PCH)",
+		"subtitle": "Contract Hire is a straightforward hire agreement that does not offer customers the option to own the vehicle at the end of the contract period. A customer makes monthly fixed payments throughout the agreed term, and at the end of the contract the customer returns the vehicle (subject to terms and conditions regarding vehicle maintenance, servicing and mileage).",
+		"portraitImageFileName": "finance_pchPortrait.jpg",
+		"landscapeImageFileName": "finance_pchLandscape.jpg",
+		"assetFileName": "finance/finance_PersonalContractHire.mp4"
+	},
+	{
+		"id": "7",
+		"title": "Hire Purchase",
+		"subtitle": "HP or Hire Purchase agreements enable customers to purchase their vehicle, without a getting weighed down up front with the total cost of the car. Customers can break down the cost into a deposit and manageable monthly payments. At the end of the contract, the vehicle belongs to the customer.",
+		"portraitImageFileName": "finance_hirePurchasePortrait.jpg",
+		"landscapeImageFileName": "finance_hirePurchaseLandscape.jpg",
+		"assetFileName": "finance/finance_HirePurchase.mp4"
+	},
+	{
+		"id": "8",
+		"title": "Comparing Finance Quotes",
+		"subtitle": "Not sure which is the best finance type for you when it comes to buying your next car? Our video will help explain what to look for so you can compare quotes accurately.",
+		"portraitImageFileName": "finance_comparingPortrait.jpg",
+		"landscapeImageFileName": "finance_comparingLandscape.jpg",
+		"assetFileName": "finance/finance_ComparingFinanceQuotes.mp4"
+	},
+	{
+		"id": "9",
+		"title": "Representative APR",
+		"subtitle": "APR stands for the Annual Percentage Rate. The Representative APR indicates the annual costs applied to your loan (including not just the rate of interest but also any fees). All lenders have to calculate the APR in the same way, making it a reliable way to compare the costs of different loans.",
+		"portraitImageFileName": "finance_representativeAPRPortrait.jpg",
+		"landscapeImageFileName": "finance_representativeAPRLandscape.jpg",
+		"assetFileName": "finance/finance_RepresentativeAPR.mp4"
+	},
+	{
+		"id": "91",
+		"title": "APR (Annual Percentage Rate)",
+		"subtitle": "APR stands for Annual Percentage Rate and is a way of indicating the amount of interest you will have to pay over a year.",
+		"portraitImageFileName": "finance_APRPortrait.jpg",
+		"landscapeImageFileName": "finance_APRLandscape.jpg",
+		"assetFileName": "finance/finance_APR.mp4"
+	},
+	{
+		"id": "92",
+		"title": "Finance Equity",
+		"subtitle": "Equity is the value of your financial interest in a vehicle, calculated by subtracting the amount of the loan you have yet to pay off from the overall price of your car. If the actual value of your car exceeds the car’s guaranteed minimum future value, the extra money is equity that can be used as a deposit on your next car.",
+		"portraitImageFileName": "finance_equityPortrait.jpg",
+		"landscapeImageFileName": "finance_equityLandscape.jpg",
+		"assetFileName": "finance/finance_Equity.mp4"
+	},
+	{
+		"id": "93",
+		"title": "Early Settlement",
+		"subtitle": "Early Settlement is the termination of a finance agreement by paying all monies outstanding before the lease end date. When settling early it is important to note you could be liable for additional interest charges.",
+		"portraitImageFileName": "finance_earlySettlementPortrait.jpg",
+		"landscapeImageFileName": "finance_earlySettlementLandscape.jpg",
+		"assetFileName": "finance/finance_EarlySettlement.mp4"
+	}
+]

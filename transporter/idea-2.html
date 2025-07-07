@@ -1,0 +1,170 @@
+>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 700;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 200;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff') format('woff');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            font-family: 'vw-head';
+            overflow: hidden;
+        }
+
+        .background-container {
+            background-image: url('./TR003118PIC-2.webp');
+            height: 100vh;
+            width: 100vw;
+            background-size: cover;
+            transition: filter 0.5s linear;
+        }
+
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .video {
+            width: 550px;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background-size: cover;
+            margin-bottom: 30px;
+            text-align: right;
+            border: 0;
+            cursor: url('./Cursor.png'), auto;
+        }
+
+        .video:hover {
+            width: 800px;
+        }
+
+        .text {
+            font-family: 'vw-head';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .image-container {
+            position: absolute;
+            right:0;
+            padding: 30px;
+            text-align: right;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        .blur{
+            filter: blur(10px);
+        }
+    </style>
+</head>
+
+
+<body style="position: relative;">
+
+    <div class="background-container">
+    </div>
+
+    <div class="main-container">
+        <div class="image-container">
+            <video class="video" width="100%" src="./horizontal-video.mp4"
+            poster="./image-1.png" >
+            </video>
+            <video class="video" width="100%" src="./horizontal-video.mp4"
+                poster="./image-2.png" >
+            </video>
+            <video class="video" width="100%" src="./horizontal-video.mp4"
+            poster="./image-3.png" >
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("mousemove", parallax);
+        function parallax(event) {
+            /*
+            this.querySelectorAll(".main-container .image-1").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position) / 90;
+                const y = (window.innerHeight - event.pageY * position) / 90;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+
+            this.querySelectorAll(".main-container .image-2").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position + 10) / 180;
+                const y = (window.innerHeight - event.pageY * position + 10) / 180;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+
+            this.querySelectorAll(".main-container .image-3").forEach((shift) => {
+                const position = shift.getAttribute("value");
+                const x = (window.innerWidth - event.pageX * position + 10) / 300;
+                const y = (window.innerHeight - event.pageY * position + 10) / 300;
+                shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+            */
+
+            const videos = this.querySelectorAll('.video');
+            const bg = this.querySelector('.background-container');
+
+            videos.forEach(video => {
+                video.addEventListener('mouseenter', () => {
+                    video.play(); 
+                    bg.classList.add('blur');
+                });
+            
+                video.addEventListener('mouseleave', () => {
+                    video.load();
+                    bg.classList.remove('blur');
+                });
+            });
+        }
+    </script>
+
+</body>
+
+</html>

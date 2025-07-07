@@ -1,0 +1,15 @@
+playwright[async]
+playwright-stealth
+openai
+beautifulsoup4
+requests
+tqdm
+python-dotenv
+watchdog
+fpdf
+matplotlib
+wordcloud
+fastapi
+uvicorn
+python-multipart
+jinja2

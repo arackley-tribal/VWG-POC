@@ -1,0 +1,164 @@
+>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 700;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'vw-head';
+            font-weight: 200;
+            font-display: swap;
+            src: url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff2') format('woff2'),
+                url('https://www.volkswagen.co.uk/apps/clientlibs/vwa-ngw18/ngw18-frontend/clientlibs/statics/fonts/vwhead-light.woff') format('woff');
+        }
+
+        body {
+            background: #111;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            font-family: 'vw-head';
+            overflow: hidden;
+        }
+
+        .content{
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .left { 
+            height: 100vh;
+            width: 50vw;
+            overflow: scroll;
+            position: relative;
+        }   
+
+        .right {
+            height: 100vh;
+            width: 50vw;
+            background-image: url('car.png');
+            background-size: cover;
+            display: flex;
+        }
+
+        .inner-container {
+            height: 100vh;
+            position: relative;
+            margin-bottom: 25vh;
+        }
+
+        .header{
+            position: fixed;
+            font-size: 86px;
+            line-height: 90px;
+            font-family: 'vw-head';
+            font-weight: lighter;
+            color: white;
+            padding: 1%;
+            z-index: 2000;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .right-accent {
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="left">
+            <div class="header">we are the <br><strong><span id="story">shop owners</span></strong></div>
+            <div id="container-1" class="inner-container container-1">
+                <img width="100%" style="position: absolute; bottom: 0; left: 0;" src="./Group 10211.png" />
+            </div>
+            <div id="container-2" class="inner-container container-2">
+                <img width="100%" style="position: absolute; bottom: 0; left: 0;" src="./Group 10212.png" />
+            </div>
+            <div id="container-3" class="inner-container container-3">
+                <img width="100%" style="position: absolute; bottom: 0; left: 0;" src="./Group 10213.png" />
+            </div>
+        </div>
+        <div class="right">
+            <div id="right-container-1" class="right-accent"><img src="./Renders.png"/></div>
+            <div id="right-container-2" class="right-accent"><img src="./Renders-1.png"/></div>
+            <div id="right-container-3" class="right-accent"><img src="./Renders.png"/></div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        const height = window.innerHeight;
+        const scrollContainer = document.querySelector('.left');
+        const children = document.querySelectorAll('.inner-container');
+        const rightAccents = document.querySelectorAll('.right-accent');
+
+        const options = {
+            root: scrollContainer,
+            rootMargin: '0px 0px -50% 0px',
+            threshold: 0
+        };
+
+        // Create an intersection observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    rightAccents.forEach(rEntry => {
+                        rEntry.classList.add('hide')
+                    });
+
+                    const tREntry = document.querySelector(`#right-${entry.target.id}`)
+                    const storyContainer = document.querySelector('#story')
+                    switch (entry.target.id){
+                        case 'container-1':
+                            storyContainer.innerHTML = "shop owners"
+                            break;
+                        case 'container-2':
+                            storyContainer.innerHTML = "florists"
+                            break;
+                        case 'container-3':
+                            storyContainer.innerHTML = "plumbers"
+                            break;
+                        default:
+                            break;
+                    }
+                    tREntry.classList.remove('hide')
+                }
+            });
+        }, options);
+
+        // Observe each child
+        children.forEach(child => observer.observe(child));
+
+    </script>
+
+</body>
+
+</html>

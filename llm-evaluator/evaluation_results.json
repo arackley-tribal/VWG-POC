@@ -1,0 +1,212 @@
+[
+  {
+    "question": "What trims are available for the ID.7?",
+    "reference": "The ID.7 has the following trims available: ID.7 Pro Match, ID.7 GTX 4Motion, and ID.7 Pro S Match.",
+    "reply": "The trims available for the ID.7 are:\n\n1. Pro Match\n2. GTX 4MOTION\n3. GTX Plus 4MOTION\n4. Pro S Match\n5. Pro Match Plus\n6. Pro S Match Plus",
+    "confidence": 0.455026455026455
+  },
+  {
+    "question": "How would you describe the ID.7’s class and body style?",
+    "reference": "The ID.7 is a premium, fully electric fastback saloon.",
+    "reply": "The ID.7’s class and body style is described as a \"Saloon\" in the provided context.",
+    "confidence": 0.3185840707964602
+  },
+  {
+    "question": "What is the combined WLTP electric range of the ID.7?",
+    "reference": "The ID.7 has an electric range combined (WLTP) of 365–436 miles.",
+    "reply": "The combined WLTP electric range of the ID.7 is not explicitly stated in the provided context.",
+    "confidence": 0.4580152671755725
+  },
+  {
+    "question": "Which battery sizes can you choose for the ID.7?",
+    "reference": "The ID.7 is available with a choice of two battery sizes – 77 kWh and 86 kWh.",
+    "reply": "The battery sizes available for the ID.7 are 77 kWh and 86 kWh.",
+    "confidence": 0.7272727272727273
+  },
+  {
+    "question": "How many trim levels does the ID.7 have, and what are they?",
+    "reference": "The ID.7 is available in three trim levels: Pro Match, Pro S Match, and GTX 4MOTION.",
+    "reply": "The ID.7 has five trim levels. They are:\n\n1. Pro Match\n2. GTX 4MOTION\n3. GTX Plus 4MOTION\n4. Pro S Match\n5. Pro Match Plus",
+    "confidence": 0.5030674846625767
+  },
+  {
+    "question": "What is the 0–62 mph acceleration range for the ID.7?",
+    "reference": "The ID.7 accelerates from 0–62 mph in 5.4–6.6 seconds.",
+    "reply": "The 0–62 mph acceleration range for the ID.7 is between 5.4 seconds and 6.6 seconds.",
+    "confidence": 0.5789473684210527
+  },
+  {
+    "question": "What is the length of the ID.7 Pro Match and Pro S Match?",
+    "reference": "The ID.7 Pro Match and Pro S Match are 4,961 mm in length.",
+    "reply": "The length of both the ID.7 Pro Match and Pro S Match is 4961 mm.",
+    "confidence": 0.7368421052631579
+  },
+  {
+    "question": "What is the width (excluding wing mirrors) of the ID.7 Pro Match and Pro S Match?",
+    "reference": "They are 1,862 mm in width (excluding wing mirrors).",
+    "reply": "The width (excluding wing mirrors) of the ID.7 Pro Match and Pro S Match is 1862 mm.",
+    "confidence": 0.5818181818181818
+  },
+  {
+    "question": "What is the height of the ID.7 Pro Match and Pro S Match?",
+    "reference": "They measure 1,536 mm in height.",
+    "reply": "The height of the ID.7 Pro Match is 1535 mm, and the height of the ID.7 Pro S Match is 1536 mm.",
+    "confidence": 0.2222222222222222
+  },
+  {
+    "question": "What is the wheelbase of the ID.7 Pro Match and Pro S Match?",
+    "reference": "They have a wheelbase of 2,971 mm.",
+    "reply": "The wheelbase of the ID.7 Pro Match and Pro S Match is not provided in the context.",
+    "confidence": 0.27956989247311825
+  },
+  {
+    "question": "How long is the ID.7 GTX 4MOTION?",
+    "reference": "The ID.7 GTX 4MOTION is 4,961 mm in length.",
+    "reply": "The length of the ID.7 GTX 4MOTION is 4961 mm.",
+    "confidence": 0.8
+  },
+  {
+    "question": "What is the width (excluding wing mirrors) of the ID.7 GTX 4MOTION?",
+    "reference": "It is 1,862 mm wide (excluding wing mirrors).",
+    "reply": "The width (excluding wing mirrors) of the ID.7 GTX 4MOTION is not provided in the context.",
+    "confidence": 0.45045045045045046
+  },
+  {
+    "question": "What is the height of the ID.7 GTX 4MOTION?",
+    "reference": "It stands 1,535 mm tall.",
+    "reply": "The height of the ID.7 GTX 4MOTION is not explicitly provided in the context.",
+    "confidence": 0
+  },
+  {
+    "question": "What is the wheelbase of the ID.7 GTX 4MOTION?",
+    "reference": "Its wheelbase is 2,971 mm.",
+    "reply": "The wheelbase of the ID.7 GTX 4MOTION is not provided in the context.",
+    "confidence": 0.23376623376623376
+  },
+  {
+    "question": "What type of battery do the ID.7 Pro S Match and GTX 4MOTION use?",
+    "reference": "Both use a Lithium-ion battery.",
+    "reply": "The ID.7 Pro S Match and GTX 4MOTION both use a lithium-ion battery.",
+    "confidence": 0.5679012345679012
+  },
+  {
+    "question": "What is the battery capacity of the ID.7 Pro S Match and GTX 4MOTION?",
+    "reference": "They have a battery capacity of 86 kWh.",
+    "reply": "The battery capacity for both the ID.7 Pro S Match and GTX 4MOTION is 86 kWh.",
+    "confidence": 0.4782608695652174
+  },
+  {
+    "question": "What is the maximum battery range of the ID.7 Pro S Match?",
+    "reference": "The ID.7 Pro S Match has a battery range of up to 436 miles.",
+    "reply": "The maximum battery range of the ID.7 Pro S Match is 364 miles.",
+    "confidence": 0.7083333333333334
+  },
+  {
+    "question": "How long does it take to charge the ID.7 Pro S Match and GTX 4MOTION from 0 % to 100 % at 11 kW AC?",
+    "reference": "They charge to 100 % SOC in 09:00 hours at 11 kW AC.",
+    "reply": "The context provided does not include information on how long it takes to charge the ID.7 Pro S Match and GTX 4MOTION from 0% to 100% at 11 kW AC.",
+    "confidence": 0.2967741935483871
+  },
+  {
+    "question": "What is the maximum DC charging power for the ID.7 Pro S Match and GTX 4MOTION?",
+    "reference": "They support up to 200 kW DC charging.",
+    "reply": "The context does not provide information about the maximum DC charging power for the ID.7 Pro S Match and GTX 4MOTION.",
+    "confidence": 0.2204724409448819
+  },
+  {
+    "question": "How long does it take the ID.7 Pro S Match and GTX 4MOTION to charge from 10 % to 80 % on a DC fast charger?",
+    "reference": "They charge from 10 % to 80 % in 00:26 hours at maximum DC power.",
+    "reply": "The context does not provide specific information on how long it takes the ID.7 Pro S Match and GTX 4MOTION to charge from 10% to 80% on a DC fast charger.",
+    "confidence": 0.3103448275862069
+  },
+  {
+    "question": "What is the top speed of the ID.7 GTX 4MOTION (where legally permitted)?",
+    "reference": "It has a maximum speed of 180 km/h.",
+    "reply": "The top speed of the ID.7 GTX 4MOTION is 112 mph (where legally permitted).",
+    "confidence": 0.1590909090909091
+  },
+  {
+    "question": "What is the 0–62 mph acceleration time for the ID.7 GTX 4MOTION?",
+    "reference": "It accelerates from 0–62 mph in 5.4 seconds.",
+    "reply": "The 0–62 mph acceleration time for the ID.7 GTX 4MOTION is 5.4 seconds.",
+    "confidence": 0.5106382978723404
+  },
+  {
+    "question": "What is the maximum battery range of the ID.7 GTX 4MOTION?",
+    "reference": "The GTX 4MOTION has a range of up to 365 miles.",
+    "reply": "The maximum battery range of the ID.7 GTX 4MOTION is 365 miles.",
+    "confidence": 0.5747126436781609
+  },
+  {
+    "question": "What is the 0–62 mph acceleration time for the ID.7 Pro Match?",
+    "reference": "The Pro Match does 0–62 mph in 6.5 seconds.",
+    "reply": "The 0–62 mph acceleration time for the ID.7 Pro Match is 5.4 seconds.",
+    "confidence": 0.5111111111111111
+  },
+  {
+    "question": "What is the 0–62 mph acceleration time for the ID.7 Pro S Match?",
+    "reference": "The Pro S Match does 0–62 mph in 6.6 seconds.",
+    "reply": "The 0–62 mph acceleration time for the ID.7 Pro S Match is 6.6 seconds.",
+    "confidence": 0.5869565217391305
+  },
+  {
+    "question": "What is the boot length of the ID.7 with the seats upright?",
+    "reference": "Boot length with seats upright is 1,074 mm.",
+    "reply": "The boot length of the ID.7 with the seats upright is not specified in the provided context.",
+    "confidence": 0.43636363636363634
+  },
+  {
+    "question": "What is the boot length of the ID.7 with the seats folded?",
+    "reference": "Boot length with seats folded is 1,948 mm.",
+    "reply": "The boot length of the ID.7 with the seats folded is not provided in the context.",
+    "confidence": 0.46464646464646464
+  },
+  {
+    "question": "What is the boot volume of the ID.7 without the parcel shelf?",
+    "reference": "It offers 5,321 litres of volume without the parcel shelf.",
+    "reply": "The boot volume of the ID.7 is 532 litres. The context does not specify if this measurement is with or without the parcel shelf.",
+    "confidence": 0.4473684210526316
+  },
+  {
+    "question": "What is the maximum front headroom in the ID.7?",
+    "reference": "Front headroom is up to 1,030 mm.",
+    "reply": "The maximum front headroom in the ID.7 is not specified in the provided context.",
+    "confidence": 0.2826086956521739
+  },
+  {
+    "question": "What is the front interior width of the ID.7?",
+    "reference": "Front interior width is 1,518 mm.",
+    "reply": "The front interior width of the ID.7 is not provided in the context.",
+    "confidence": 0.4146341463414634
+  },
+  {
+    "question": "What is the maximum rear headroom in the ID.7?",
+    "reference": "Rear headroom is up to 961 mm.",
+    "reply": "The maximum rear headroom in the ID.7 is not specified in the provided context.",
+    "confidence": 0.2727272727272727
+  },
+  {
+    "question": "What is the second-row rear interior width of the ID.7?",
+    "reference": "It measures 1,507 mm across the 2nd-row rear.",
+    "reply": "The second-row rear interior width of the ID.7 is not provided in the context.",
+    "confidence": 0.25742574257425743
+  },
+  {
+    "question": "What type of battery does the ID.7 Pro Match have?",
+    "reference": "The Pro Match uses a Lithium-ion battery.",
+    "reply": "The type of battery for the ID.7 Pro Match is not explicitly mentioned in the provided context.",
+    "confidence": 0.35714285714285715
+  },
+  {
+    "question": "What is the battery capacity of the ID.7 Pro Match?",
+    "reference": "Battery capacity is 77 kWh.",
+    "reply": "The battery capacity of the ID.7 Pro Match is not specified in the provided context.",
+    "confidence": 0.3076923076923077
+  },
+  {
+    "question": "What is the maximum battery range of the ID.7 Pro Match?",
+    "reference": "The Pro Match has up to 381 miles of range.",
+    "reply": "The maximum battery range of the ID.7 Pro Match is not explicitly provided in the context.",
+    "confidence": 0.2616822429906542
+  }
+]

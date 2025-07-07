@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper</title>
+</head>
+<body>
+    <h1>Enter URL to Scrape</h1>
+    <form action="/scrape" method="post" enctype="multipart/form-data">
+        <label for="url">URL:</label>
+        <input type="text" name="url" required><br><br>
+
+        <label for="folder_name">Folder Name (Optional):</label>
+        <input type="text" name="folder_name"><br><br>
+
+        <label for="questions_file">Upload Questions File (Optional):</label>
+        <input type="file" name="questions_file"><br><br>
+
+        <button type="submit">Start Scraping</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+{
+	"id": "0",
+	"title": "Approved Used",
+	"subtitle": "Volkswagen Approved Used Plus Programme",
+	"text": "When you buy from a participating Volkswagen Retailer, and you purchase with a Solutions Personal Contract Plan you will receive",
+	"bullets": "+ 2 years' unlimited mileage warranty^ \r+ 2 years' Roadside Assistance^ \r+ Flexible finance options \r+ Multipoint Check \r+ Service history checks \r+ Independent vehicle history and mileage checks \r+ 30 day/1000 miles ‘no quibble’ exchange policy \r+ 5 days’ complimentary Volkswagen Drive Away Insurance† \r+ Experts in electric",
+	"summary": "13.4% APR Representative†",
+	"videoURL": "/videos/usedcars/VW-Approved-Used-2024.mp4",
+	"buttonTitle": "View Approved Used benefits",
+	"url": "http://%@.usedcars.volkswagen.co.uk",
+	"features": [
+		{
+			"id": "0",
+			"title": "2 years’ servicing included for vehicles up to 5 years old††",
+			"text": "",
+			"posterImageURL": "usedCarsApprovedBenefits",
+			"videoURL": "",
+			"buttonTitle": ""
+		},
+        {
+			"id": "1",
+			"title": "*2 years’ unlimited mileage Warranty‡",
+			"text": "",
+			"posterImageURL": "usedCars2YearsMileageWarranty",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_2_years_unlimited_mileage.mp4",
+			"buttonTitle": "Watch the video"
+		},
+		{
+			"id": "3",
+			"title": "*2 years’ Roadside Assistance‡",
+			"text": "",
+			"posterImageURL": "usedCars12MonthRoadsideAssistance",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_2_years_roadside_assistance.mp4",
+			"buttonTitle": "Watch the video"
+		},
+		{
+			"id": "4",
+			"title": "Multipoint check",
+			"text": "Our skilled, Volkswagen trained technicians carry out a thorough workshop and test drive inspection of every car before it can become an Approved Used Volkswagen.",
+			"posterImageURL": "usedCars142PointCheck",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_multipoint_check.mp4",
+			"buttonTitle": "Watch the video"
+		},
+		{
+			"id": "5",
+			"title": "Service history checks",
+			"text": "This certificate details your car’s entire Approved Used Retailer Network history and verifies the status of the Warranty.",
+			"posterImageURL": "usedCarsServiceHistoryCheck",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_service_history_checks.mp4",
+			"buttonTitle": "Watch the video"
+		},
+		{
+			"id": "6",
+			"title": "Independent vehicle history and mileage checks",
+			"text": "We check the vehicle identity and match it with the DVLA registration.",
+			"posterImageURL": "usedCarsHistoryAndMileageCheck",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_independance_vehicle_history_mileage_checks.mp4",
+			"buttonTitle": "Watch the video"
+		},
+		{
+			"id": "7",
+			"title": "No quibble exchange‡‡",
+			"text": "30 day/1000 miles ‘No Quibble’ Exchange Policy, if for any reason, you want to change the car.",
+			"posterImageURL": "usedCarsNoQuibbleExchange",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_no_quibble_exchange.mp4",
+			"buttonTitle": "Watch the video"
+		},
+		{
+			"id": "8",
+			"title": "Complimentary 5 days’ Volkswagen Drive Away Insurance^",
+			"text": "Every used Volkswagen, purchased from a Volkswagen Retailer, comes with five days' complimentary insurance (subject to eligibility).",
+			"posterImageURL": "usedCars5DayFreeInsurance",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_complimentary_5day_insurance.mp4",
+			"buttonTitle": "Watch the video"
+		},
+		{
+			"id": "9",
+			"title": "Experts in electric",
+			"text": "All electric vehicles in the Approved Used Volkswagen Programme receive a comprehensive multi point check where our highly trained technicians test the battery so you’ll know the current health and capacity. At handover, you will receive a battery health certificate for extra peace of mind.",
+			"posterImageURL": "usedCarsExpertsInElectric",
+			"videoURL": "/videos/usedcars/usedcars_approved_used_benefits_experts_in_electric.mp4",
+			"buttonTitle": "Watch the video"
+		},
+				{
+			"id": "10",
+			"title": "Battery health and degradation in Approved Used BEVs",
+			"text": "As Experts in electric we want to share as much information as we can with our customers about their future BEV, this includes battery state of health. This video helps to explain battery degradation to your customers.",
+			"posterImageURL": "usedCarsBatteryHealthCheck",
+			"videoURL": "/videos/usedcars/usedCars_battery_health_with_subtitles-nov_2023.mp4",
+			"buttonTitle": "Watch the video"
+		}
+	]
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraping Results</title>
+</head>
+<body>
+    <h1>Scraping Completed!</h1>
+    <p>Report ID: {{ report['id'] }}</p>
+    <p>Scraped URL: {{ report['url'] }}</p>
+
+    <h2>Download Report</h2>
+    <a href="/download/{{ report['id'] }}/report.json" download>Download Report (JSON)</a><br>
+    <a href="/download/{{ report['id'] }}/page.html" download>Download Scraped HTML</a><br>
+
+    <h2>Visuals</h2>
+    <a href="/download/{{ report['id'] }}/charts/summary_wordcloud.png" download>Download Word Cloud</a><br>
+    <a href="/download/{{ report['id'] }}/charts/keywords_bar_chart.png" download>Download Keyword Bar Chart</a><br>
+
+</body>
+</html>

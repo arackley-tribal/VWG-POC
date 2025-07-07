@@ -1,0 +1,33 @@
+2024-11-13 14:24:13,678 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2024-11-13 14:24:13,698 INFO o.a.j.JMeter: Loading user properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/user.properties
+2024-11-13 14:24:13,698 INFO o.a.j.JMeter: Loading system properties from: /opt/homebrew/Cellar/jmeter/5.6.3/libexec/bin/system.properties
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: Version 5.6.3
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: java.version=21.0.5
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: os.name=Mac OS X
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: os.arch=aarch64
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: os.version=14.7.1
+2024-11-13 14:24:13,700 INFO o.a.j.JMeter: file.encoding=UTF-8
+2024-11-13 14:24:13,701 INFO o.a.j.JMeter: java.awt.headless=null
+2024-11-13 14:24:13,701 INFO o.a.j.JMeter: Max memory     =1073741824
+2024-11-13 14:24:13,701 INFO o.a.j.JMeter: Available Processors =10
+2024-11-13 14:24:13,706 INFO o.a.j.JMeter: Default Locale=English (EN)
+2024-11-13 14:24:13,706 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2024-11-13 14:24:13,706 INFO o.a.j.JMeter: JMeterHome=/opt/homebrew/Cellar/jmeter/5.6.3/libexec
+2024-11-13 14:24:13,706 INFO o.a.j.JMeter: user.dir  =/Users/aaron.rackley/Documents/GitHub/VWG-POC/chat-load-testing
+2024-11-13 14:24:13,706 INFO o.a.j.JMeter: PWD       =/Users/aaron.rackley/Documents/GitHub/VWG-POC/chat-load-testing
+2024-11-13 14:24:13,710 INFO o.a.j.JMeter: IP: 192.168.0.20 Name: GB3TRDM05J9QW FullName: gb3trdm05j9qw
+2024-11-13 14:24:13,715 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2024-11-13 14:24:14,768 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2024-11-13 14:24:27,801 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.action.Command], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2024-11-13 14:24:27,978 INFO o.a.j.r.ClassFinder: Will scan jar /opt/homebrew/Cellar/jmeter/5.6.3/libexec/lib/ext/jmeter-plugins-manager-1.9.jar with filter ExtendsClassFilter [parents=[interface org.apache.jmeter.gui.plugin.MenuCreator], inner=false, contains=null, notContains=null]. Consider exposing JMeter plugins via META-INF/services, and add JMeter-Skip-Class-Scanning=true manifest attribute so JMeter can skip classfile scanning
+2024-11-13 14:24:28,059 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-a4be097e20920b992ebf56db639a43f7-gui
+2024-11-13 14:24:29,550 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.9, jmeter-core=5.6.3, jmeter-ftp=5.6.3, jmeter-http=5.6.3, jmeter-jdbc=5.6.3, jmeter-jms=5.6.3, jmeter-junit=5.6.3, jmeter-java=5.6.3, jmeter-ldap=5.6.3, jmeter-mail=5.6.3, jmeter-mongodb=5.6.3, jmeter-native=5.6.3, jmeter-tcp=5.6.3, jmeter-components=5.6.3]
+2024-11-13 14:24:29,550 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-plugins-manager]
+2024-11-13 14:25:21,784 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-11-13 14:25:21,784 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-11-13 14:25:21,784 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-11-13 14:25:21,784 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-11-13 14:25:21,784 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2024-11-13 14:25:21,784 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
