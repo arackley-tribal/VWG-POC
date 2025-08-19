@@ -448,7 +448,6 @@ function removeHTMLTags(input) {
     return input.includes('<') ? input.replace(/<[^>]*>/g, '') : input;
 }
 
-
 const categoryMapping = {
     'efficient technologies': 1,
     'performance': 2,
@@ -546,7 +545,9 @@ function generateSQL(json) {
             markdownContent += links;
         }
         markdownContent += `---\n\n`;
+
         markdownContent += turndownService.turndown(item.marketingDescription || '');
+
         const isHighlighted = item.isHighlighted || false;
         const categoryId = categoryMapping[item.subsection?.toLowerCase()] || 'NULL';
 

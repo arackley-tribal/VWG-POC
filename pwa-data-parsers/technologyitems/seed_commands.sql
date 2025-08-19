@@ -1,7 +1,20 @@
 
 -- Insert data into knowledge_hub_items
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'TSI', 'Our award-winning TSI technology offers you great performance with fuel economy and low emissions.Our turbocharged engines deliver more power when you need it and use less fuel when you don’t.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_tsi_poster.jpg', '---
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'TSI', 'Our award-winning TSI technology offers you great performance with fuel economy and low emissions.Our turbocharged engines deliver more power when you need it and use less fuel when you don’t.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_tsi_poster.jpg', 'TSI Petrol Engines
+==================
+
+When you drive one of our TSI cars you don’t have to choose between performance and economy. TSI engines offer an enjoyable and involving drive.
+
+TSI is our pioneering technology for petrol engines. TSI engines are compact, and high-powered. TSI technology blends the best of our TDI diesel and FSI (fuel stratified direct injection) petrol engines to give you excellent driveability and fuel economy.
+
+Acceleration is instant, whichever gear you’re in, so overtaking is safer and you can power smoothly up hills with no delay. By adding a turbocharger and a supercharger to the fuel-injected engine (hence TSI).
+
+The engine-driven supercharger operates at lower engine speeds with the turbocharger, powered by the exhaust gases, joining in as engine speed rises.
+
+The result is excellent driveability, no turbo lag and outstanding performance throughout the rev range.---
+
+---
 assets:
   - id: 45
     assetType: HOW_IT_WORKS
@@ -14,19 +27,8 @@ assets:
     title: How TSI works
 ---
 
-TSI Petrol Engines
-==================
-
-When you drive one of our TSI cars you don’t have to choose between performance and economy. TSI engines offer an enjoyable and involving drive.
-
-TSI is our pioneering technology for petrol engines. TSI engines are compact, and high-powered. TSI technology blends the best of our TDI diesel and FSI (fuel stratified direct injection) petrol engines to give you excellent driveability and fuel economy.
-
-Acceleration is instant, whichever gear you’re in, so overtaking is safer and you can power smoothly up hills with no delay. By adding a turbocharger and a supercharger to the fuel-injected engine (hence TSI).
-
-The engine-driven supercharger operates at lower engine speeds with the turbocharger, powered by the exhaust gases, joining in as engine speed rises.
-
-The result is excellent driveability, no turbo lag and outstanding performance throughout the rev range.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'award,winning,tsi,tsiour,technology,offers,fuel,adding,https,turbocharger'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('TSI'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -77,11 +79,9 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('TSI')
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('fsi'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'TDI', 'Super-efficient diesel engines for power with economy. Our turbocharged engines deliver more power when you need it and use less fuel when you don’t.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_tdi_poster.jpg', '---
----
-
-TDI Diesel Engines
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'TDI', 'Super-efficient diesel engines for power with economy. Our turbocharged engines deliver more power when you need it and use less fuel when you don’t.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_tdi_poster.jpg', 'TDI Diesel Engines
 ==================
 
 Our Turbocharged Direct Injection (TDI) diesel engines are responsive and fun to drive, as well as being very efficient. They offer more power, with great fuel economy, which all helps to lower emissions.
@@ -112,8 +112,13 @@ Your driving experience is quiet and refined because effective sound insulation 
 What’s the result?
 ------------------
 
-The great advantage of TDI engines is that they are very powerful, even at low revs, and economical across the entire speed range. As they burn fuel more efficiently they produce more power. What it means for you is much better performance, with more pulling power than you would get from traditional fuel injection systems. This efficiency also means that you save on fuel costs and emit less CO2, so helping to minimise your impact on the environment.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+The great advantage of TDI engines is that they are very powerful, even at low revs, and economical across the entire speed range. As they burn fuel more efficiently they produce more power. What it means for you is much better performance, with more pulling power than you would get from traditional fuel injection systems. This efficiency also means that you save on fuel costs and emit less CO2, so helping to minimise your impact on the environment.---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'efficient,diesel,engines,combine,love,feel,levels,identifies,supplied,air'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('TDI'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -148,11 +153,9 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('TDI')
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('tdi'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'BlueMotion Technologies', 'Lower emissions, greater economy.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_bluemotion_poster.jpg', '---
----
-
-BlueMotion Technologies
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'BlueMotion Technologies', 'Lower emissions, greater economy.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_bluemotion_poster.jpg', 'BlueMotion Technologies
 =======================
 
 We developed our BlueMotion technologies to help reduce the impact of driving on the environment.
@@ -169,8 +172,13 @@ Low rolling resistance tyres are fitted to most of our BlueMotion and BlueMotion
 
 Our efficient Start-Stop technology cuts emissions and saves fuel by automatically switching off your engine when waiting in queues or at traffic lights.
 
-It all makes our cars very efficient – but still great fun to drive, we promise.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+It all makes our cars very efficient – but still great fun to drive, we promise.---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'bluemotion,economy,developed,help,driving,identifies,polo,example,low,pay'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('BlueMotion Technologies'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -237,21 +245,9 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('BlueM
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('bluemotion-technologies'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'DSG', 'Our dual-clutch gearboxes offer the ease of an automatic with the responsiveness and economy of a manual.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_dsg_poster.jpg', '---
-assets:
-  - id: 1
-    assetType: HOW_IT_WORKS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_dsg_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_dsg_thumb.jpg
-    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_dsg.m4v
-    url: https://youtu.be/lLGxWLIxYG0
-    title: How DSG works
----
-
-DSG Dual-Clutch Gearbox
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'DSG', 'Our dual-clutch gearboxes offer the ease of an automatic with the responsiveness and economy of a manual.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_dsg_poster.jpg', 'DSG Dual-Clutch Gearbox
 =======================
 
 Our acclaimed dual-clutch gearbox (DSG) has two clutches with electronically controlled gear selection. DSG gives you:
@@ -267,8 +263,23 @@ When you turn the engine on and select Drive mode, one shaft selects first gear 
 
 The DSG gearbox gives you a choice of two driving programmes: normal and sport. In sport mode, the DSG leaves it longer to shift up the gears.
 
-DSG can be used manually, via the Tiptronic gearlever or the optional paddle shifts.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false
+DSG can be used manually, via the Tiptronic gearlever or the optional paddle shifts.---
+
+---
+assets:
+  - id: 1
+    assetType: HOW_IT_WORKS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_dsg_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_dsg_thumb.jpg
+    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_dsg.m4v
+    url: https://youtu.be/lLGxWLIxYG0
+    title: How DSG works
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false, 'dual,clutch,gearboxes,automatic,concept,conventional,twin,shafts,selects,while'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('DSG'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -311,31 +322,9 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('DSG')
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('dsg'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ESC', 'Our advanced Electronic Stability Control detects critical situations to stop skidding before it begins.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_electronicstabalisationcontrol_poster.jpg', '---
-assets:
-  - id: 2
-    assetType: DRIVER_BENEFITS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_electronicstabalisationcontrol_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_electronicstabalisationcontrol_thumb.jpg
-    assetFileName: >-
-      https://showroom-assets.volkswagen.co.uk/videos/technology_electronicstabalisationcontrol.mp4
-    url: https://youtu.be/jpGLRf2NU3w
-    title: ESC benefits
-  - id: 3
-    assetType: HOW_IT_WORKS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_esc_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_esc_thumb.jpg
-    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_esp.m4v
-    url: https://youtu.be/silAt0rlrDU
-    title: How ESC works
----
-
-ESC Electronic Stability Control
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ESC', 'Our advanced Electronic Stability Control detects critical situations to stop skidding before it begins.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_electronicstabalisationcontrol_poster.jpg', 'ESC Electronic Stability Control
 ================================
 
 ESC predicts what your car is about to do. It uses sensors to monitor the progress of your wheels and the moment they start to slip, ESC takes over by:
@@ -363,8 +352,33 @@ Trailer stabilisation
 
 The latest generation of ESC also offers trailer stabilisation. If it detects your trailer is starting to yaw, the anti-skidding technology automatically reduces engine power and applies the brakes to the right wheels dynamically, in phase with the yawing. This counteracts the snaking motion and stabilises the car and trailer. When everything is stable again the brakes and engine power return to normal control. The automatic braking process also turns on the brake lights to warn other drivers, even if the driver is not touching the brake pedal.
 
-Only when used with factory fit or approved accessory tow bars.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+Only when used with factory fit or approved accessory tow bars.---
+
+---
+assets:
+  - id: 2
+    assetType: DRIVER_BENEFITS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_electronicstabalisationcontrol_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_electronicstabalisationcontrol_thumb.jpg
+    assetFileName: >-
+      https://showroom-assets.volkswagen.co.uk/videos/technology_electronicstabalisationcontrol.mp4
+    url: https://youtu.be/jpGLRf2NU3w
+    title: ESC benefits
+  - id: 3
+    assetType: HOW_IT_WORKS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_esc_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_esc_thumb.jpg
+    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_esp.m4v
+    url: https://youtu.be/silAt0rlrDU
+    title: How ESC works
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'advanced,electronic,stability,escour,control,latest,drivers,times,happens,grip'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -559,8 +573,168 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC')
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('electronic-stability-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Lane Assist', 'Stops your car from drifting out of its lane, reducing the chance of an accident and making long motorway journeys much safer.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Lane_Assist-700x350_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ESC'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Lane Assist', 'Stops your car from drifting out of its lane, reducing the chance of an accident and making long motorway journeys much safer.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Lane_Assist-700x350_poster.jpg', 'Lane Assist
+===========
+
+The Lane Assist system is like a friendly co-driver. If it senses your car is drifting out of your driving lane it gently counter-steers the car back on line.
+
+Since many accidents are caused by cars leaving their lanes when the driver’s concentration falters, this innovative system makes driving safer and easier. The lane-keeping assistant uses a camera located in the rear-view mirror unit to monitor the road markings and prevent an unintended deviation. The system only intervenes if the indicators are not activated, so if you do want to change lanes and signal your intention, the intelligent system recognises this and switches off.
+
+When the system is switched on, Lane Assist automatically becomes active from 40 mph upwards. A camera built into the driver’s rear view mirror detects the lane markings and works out the position of the vehicle. If the car starts to drift off lane, the lane keeping assistant takes corrective action. If the maximum action it can take is not enough to stay in lane, or the speed falls below 40 mph Lane Assist warns you with a vibration of the steering wheel. Then it’s up to you to take correcting action.
+
+If Lane Assist is activated, a yellow control symbol, shaped like a road, lights up. As soon as the camera has analysed the road markings, this symbol turns green, showing the system is live. If your car then leaves its lane, Lane Assist takes soft and continuous correcting action. If you take your hands off the wheel, the system makes a sound and displays a message, making a takeover request.
+
+If you stop holding the wheel for longer, the function automatically turns itself off. You can counteract Lane Assist, if you wish, by softly steering against it.
+
+On selected models.---
+
+---
 assets:
   - id: 4
     dateAdded: ''2025-03-10T00:00:02''
@@ -583,21 +757,8 @@ assets:
     title: How Lane Assist works
 ---
 
-Lane Assist
-===========
-
-The Lane Assist system is like a friendly co-driver. If it senses your car is drifting out of your driving lane it gently counter-steers the car back on line.
-
-Since many accidents are caused by cars leaving their lanes when the driver’s concentration falters, this innovative system makes driving safer and easier. The lane-keeping assistant uses a camera located in the rear-view mirror unit to monitor the road markings and prevent an unintended deviation. The system only intervenes if the indicators are not activated, so if you do want to change lanes and signal your intention, the intelligent system recognises this and switches off.
-
-When the system is switched on, Lane Assist automatically becomes active from 40 mph upwards. A camera built into the driver’s rear view mirror detects the lane markings and works out the position of the vehicle. If the car starts to drift off lane, the lane keeping assistant takes corrective action. If the maximum action it can take is not enough to stay in lane, or the speed falls below 40 mph Lane Assist warns you with a vibration of the steering wheel. Then it’s up to you to take correcting action.
-
-If Lane Assist is activated, a yellow control symbol, shaped like a road, lights up. As soon as the camera has analysed the road markings, this symbol turns green, showing the system is live. If your car then leaves its lane, Lane Assist takes soft and continuous correcting action. If you take your hands off the wheel, the system makes a sound and displays a message, making a takeover request.
-
-If you stop holding the wheel for longer, the function automatically turns itself off. You can counteract Lane Assist, if you wish, by softly steering against it.
-
-On selected models.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'lane,reducing,making,concentration,makes,want,signal,intention,recognises,switches'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -976,8 +1137,230 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('lane-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Auto Hold', 'An extension of our electronic parking brake system that stops your car accidentally rolling back if you stop on a hill.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Auto_Hold-700x350_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30200') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30200'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Lane Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Auto Hold', 'An extension of our electronic parking brake system that stops your car accidentally rolling back if you stop on a hill.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Auto_Hold-700x350_poster.jpg', 'Auto Hold
+=========
+
+Auto hold is an extension of our electronic parking brake system. It stops your car from accidentally rolling backwards when you’re stationary, or setting off on a hill. That means you won’t need to keep applying the parking brake manually, check whether you’ve applied enough braking pressure, or worry about rolling back as you prepare to move off.
+
+It’s convenient, more comfortable, and safer in situations where your car needs to be kept stationary with the engine running - in slow moving traffic, for example.
+
+The system is operated via the ABS/ESP hydraulic unit. When you brake your car to a stop, auto hold keeps the braking pressure you last applied. You can take your foot off the brake pedal and all four wheel brakes will stay on.
+
+If the ABS wheel speed sensors detect any rolling, the braking force is automatically increased until your car comes to a standstill again. This may be the case if, for example, you brake gently to a stop on a hill. As soon as you press the accelerator again and, in the case of manual gearboxes, release the clutch, auto hold reduces the braking pressure again.
+
+For safety reasons the function always has to be reactivated by means of a button to the left of the gear lever when the engine has been switched off.---
+
+---
 assets:
   - id: 6
     dateAdded: ''2025-03-10T00:00:02''
@@ -991,19 +1374,8 @@ assets:
     title: How Auto Hold works
 ---
 
-Auto Hold
-=========
-
-Auto hold is an extension of our electronic parking brake system. It stops your car from accidentally rolling backwards when you’re stationary, or setting off on a hill. That means you won’t need to keep applying the parking brake manually, check whether you’ve applied enough braking pressure, or worry about rolling back as you prepare to move off.
-
-It’s convenient, more comfortable, and safer in situations where your car needs to be kept stationary with the engine running - in slow moving traffic, for example.
-
-The system is operated via the ABS/ESP hydraulic unit. When you brake your car to a stop, auto hold keeps the braking pressure you last applied. You can take your foot off the brake pedal and all four wheel brakes will stay on.
-
-If the ABS wheel speed sensors detect any rolling, the braking force is automatically increased until your car comes to a standstill again. This may be the case if, for example, you brake gently to a stop on a hill. As soon as you press the accelerator again and, in the case of manual gearboxes, release the clutch, auto hold reduces the braking pressure again.
-
-For safety reasons the function always has to be reactivated by means of a button to the left of the gear lever when the engine has been switched off.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'auto,parking,kept,engine,running,traffic,abs,case,clutch,reduces'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -1102,8 +1474,64 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('auto-hold'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Area View', 'Area View enables drivers to see the entire area surrounding their vehicle. It offers a number of views, which you can select according to the specific traffic situation and the action you intend to take.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Area-View-cover-poster-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Auto Hold'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Area View', 'Area View enables drivers to see the entire area surrounding their vehicle. It offers a number of views, which you can select according to the specific traffic situation and the action you intend to take.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Area-View-cover-poster-700x350.jpg', 'Area View
+=========
+
+Area View enables drivers to see the entire area surrounding their vehicle. It offers a number of views, which you can select according to the specific traffic situation and the action you intend to take.
+
+The all-round bird’s eye view of the area around the vehicle is provided by four cameras, which are discreetly integrated into the vehicle. The front camera is located in the radiator grille, the rear camera is fitted in the handle of the tailgate and the side cameras are accommodated in the side mirrors. The wide-angle cameras capture the entire area around the vehicle so that now the driver can even see into the blind spot.
+
+In the bird’s eye view, touch operation can be used to select the four cameras to give detail views of the areas in front of, behind and to the left and right of the vehicle.
+
+With Area View, you can see around corners. For example, when driving forwards out of a parking space or an exit you can see pedestrians and cyclists coming from the side. The cameras will show you other road users on the display of the radio navigation system before you can see them.
+
+In the front view mode, there is a choice between the above, split view, the sole front view (one perspective) as well as the front view with help lines for parking.
+
+In addition, Area View can be used for manoeuvres such as attaching trailers. The trailer view provides a line on the camera image, which accurately guides the driver up to the trailer hitch.---
+
+---
 assets:
   - id: 14
     assetType: DRIVER_BENEFITS
@@ -1117,21 +1545,8 @@ assets:
     title: Area View Driver benefits
 ---
 
-Area View
-=========
-
-Area View enables drivers to see the entire area surrounding their vehicle. It offers a number of views, which you can select according to the specific traffic situation and the action you intend to take.
-
-The all-round bird’s eye view of the area around the vehicle is provided by four cameras, which are discreetly integrated into the vehicle. The front camera is located in the radiator grille, the rear camera is fitted in the handle of the tailgate and the side cameras are accommodated in the side mirrors. The wide-angle cameras capture the entire area around the vehicle so that now the driver can even see into the blind spot.
-
-In the bird’s eye view, touch operation can be used to select the four cameras to give detail views of the areas in front of, behind and to the left and right of the vehicle.
-
-With Area View, you can see around corners. For example, when driving forwards out of a parking space or an exit you can see pedestrians and cyclists coming from the side. The cameras will show you other road users on the display of the radio navigation system before you can see them.
-
-In the front view mode, there is a choice between the above, split view, the sole front view (one perspective) as well as the front view with help lines for parking.
-
-In addition, Area View can be used for manoeuvres such as attaching trailers. The trailer view provides a line on the camera image, which accurately guides the driver up to the trailer hitch.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'area,drivers,rear,handle,capture,driver,cyclists,help,addition,located'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -1254,8 +1669,92 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('area-view'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Climate control', 'Fully automatic two-zone climate control lets you set different temperatures for the driver and front passenger areas of your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_climatronic_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Climate control', 'Fully automatic two-zone climate control lets you set different temperatures for the driver and front passenger areas of your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_climatronic_poster.jpg', 'Climate Control
+===============
+
+Our air conditioning and climate control systems ensure your journey is comfortable - whatever the weather outside. Air conditioning and climate control systems keep a constant, ideal temperature inside your car, ensuring you stay cool and comfortable at all times. Select the setting and it adjusts blower speed and operates the air distribution flaps automatically.
+
+The system’s electronic control monitors key influences, such as the position of the sun and the outside temperature, and adds more or less cool air accordingly. Integrating the control unit into the CAN data bus means extra features can be added. These include the automatic switch to air recirculation mode whenever the windscreen is washed to stop unwanted smells inside the car.
+
+Climate control also has a defrost function to clear fogged or iced-up windscreens. If the outside temperature is above the cooling system cuts in to dry the air before it is heated. It maintains a pleasant atmosphere in your car, keeping your powers of concentration sharp and your passengers more comfortable.
+
+3 and 4 zone is available on selected models.---
+
+---
 assets:
   - id: 22
     assetType: HOW_IT_WORKS
@@ -1268,17 +1767,8 @@ assets:
     title: How Climate control works
 ---
 
-Climate Control
-===============
-
-Our air conditioning and climate control systems ensure your journey is comfortable - whatever the weather outside. Air conditioning and climate control systems keep a constant, ideal temperature inside your car, ensuring you stay cool and comfortable at all times. Select the setting and it adjusts blower speed and operates the air distribution flaps automatically.
-
-The system’s electronic control monitors key influences, such as the position of the sun and the outside temperature, and adds more or less cool air accordingly. Integrating the control unit into the CAN data bus means extra features can be added. These include the automatic switch to air recirculation mode whenever the windscreen is washed to stop unwanted smells inside the car.
-
-Climate control also has a defrost function to clear fogged or iced-up windscreens. If the outside temperature is above the cooling system cuts in to dry the air before it is heated. It maintains a pleasant atmosphere in your car, keeping your powers of concentration sharp and your passengers more comfortable.
-
-3 and 4 zone is available on selected models.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false, 'climate,operates,flaps,key,sun,accordingly,unit,means,added,switch'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -1505,8 +1995,180 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Clima
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('climate-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'High Beam Assist', 'Automatically dipping high beam for control and safety.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_highbeamassist_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Climate control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'High Beam Assist', 'Automatically dipping high beam for control and safety.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_highbeamassist_poster.jpg', 'High Beam Assist
+================
+
+High Beam Assist dips your high beam automatically to improve driver control and safety for both the driver and other road users.
+
+The system is automatically activated when travelling over 37mph with your dipped beams on.
+
+Using a camera built into the rear-view mirror, the system automatically dips the headlights when it detects either oncoming traffic or vehicles ahead.
+
+It is easier than constantly switching from high to dipped beam and safer too, giving you the best view of the road ahead without dazzling other road users.---
+
+---
 assets:
   - id: 11
     assetType: HOW_IT_WORKS
@@ -1520,17 +2182,8 @@ assets:
     title: How High Beam Assist works
 ---
 
-High Beam Assist
-================
-
-High Beam Assist dips your high beam automatically to improve driver control and safety for both the driver and other road users.
-
-The system is automatically activated when travelling over 37mph with your dipped beams on.
-
-Using a camera built into the rear-view mirror, the system automatically dips the headlights when it detects either oncoming traffic or vehicles ahead.
-
-It is easier than constantly switching from high to dipped beam and safer too, giving you the best view of the road ahead without dazzling other road users.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'mirror,headlights,traffic,constantly,built,assets,rear,switching,qdb,view'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -1709,8 +2362,140 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('high-beam-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'City Emergency Braking', 'The City Emergency Braking system is an innovative safety technology.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_passatemergencybrake_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('High Beam Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'City Emergency Braking', 'The City Emergency Braking system is an innovative safety technology.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_passatemergencybrake_poster.jpg', 'City Emergency Braking
+======================
+
+The City Emergency Braking system is an innovative safety technology.
+
+Automatically activated at speeds under 18mph, it uses a laser sensor to detect the risk of an impending collision and automatically primes the brakes to make them more sensitive.
+
+If the driver does not brake and a collision is imminent then the system applies them automatically.
+
+Depending on speed and situation, City Emergency Braking can reduce accident severity and even avoid a crash.---
+
+---
 assets:
   - id: 19
     assetType: DRIVER_BENEFITS
@@ -1744,17 +2529,8 @@ assets:
     title: Benefits of City Emergency Braking
 ---
 
-City Emergency Braking
-======================
-
-The City Emergency Braking system is an innovative safety technology.
-
-Automatically activated at speeds under 18mph, it uses a laser sensor to detect the risk of an impending collision and automatically primes the brakes to make them more sensitive.
-
-If the driver does not brake and a collision is imminent then the system applies them automatically.
-
-Depending on speed and situation, City Emergency Braking can reduce accident severity and even avoid a crash.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'braking,collision,primes,sensitive,speed,detect,impending,applies,assettype,risk'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -1965,8 +2741,164 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('city-emergency-braking'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Rear View Camera', 'See behind your car with a camera in your boot.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Rear_View_Camera-700x350_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('City Emergency Braking'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Rear View Camera', 'See behind your car with a camera in your boot.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Rear_View_Camera-700x350_poster.jpg', 'Rear View Camera
+================
+
+A camera at the back of your car shows you what’s behind to make reversing safer and easier.
+
+Our rear view camera lets you spot any obstacles behind your car - even moving ones - quickly and easily, thanks to the camera built into the boot.
+
+The camera starts working as soon as you put your car into reverse gear. It shows the area behind your car on your radio or radio navigation system display offering you a clear reversing image with easy-to-follow guidelines. Superimposed graphic lines guide you to the optimal steering lock, guaranteeing fuss-free, smooth parking.
+
+Using the rear view camera means you‘ll be able to manoeuver quickly and easily, even into the most difficult parking space. It also alerts you to low-down obstacles which parking sensors cannot always detect. The reversing camera is also a great help when you’re hitching up a trailer.---
+
+---
 assets:
   - id: 12
     dateAdded: ''2025-03-10T00:00:02''
@@ -1991,17 +2923,8 @@ assets:
     title: How Rear View Camera works
 ---
 
-Rear View Camera
-================
-
-A camera at the back of your car shows you what’s behind to make reversing safer and easier.
-
-Our rear view camera lets you spot any obstacles behind your car - even moving ones - quickly and easily, thanks to the camera built into the boot.
-
-The camera starts working as soon as you put your car into reverse gear. It shows the area behind your car on your radio or radio navigation system display offering you a clear reversing image with easy-to-follow guidelines. Superimposed graphic lines guide you to the optimal steering lock, guaranteeing fuss-free, smooth parking.
-
-Using the rear view camera means you‘ll be able to manoeuver quickly and easily, even into the most difficult parking space. It also alerts you to low-down obstacles which parking sensors cannot always detect. The reversing camera is also a great help when you’re hitching up a trailer.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'radio,clear,easy,superimposed,lines,guide,steering,lock,guaranteeing,fuss'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -2372,21 +3295,241 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('rear-view-camera'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Discover Media nav/radio system', 'Takes you to your destination with great sounds.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discovernav_poster.jpg', '---
-assets:
-  - id: 28
-    assetType: HOW_IT_WORKS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discovernav_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_discovernav_thumb.jpg
-    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_DiscoverPro.m4v
-    url: https://youtu.be/HT4rShxXUwg
-    title: How Discover Media nav/radio system works
----
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371'))
+ON CONFLICT DO NOTHING;
 
-Discover Media nav/radio system
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rear View Camera'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Discover Media nav/radio system', 'Takes you to your destination with great sounds.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discovernav_poster.jpg', 'Discover Media nav/radio system
 ===============================
 
 The Discover Media Navigation System combines excellent navigation features with in-car media Infotainment – all controlled from its easy-to-use 6.5" or 8“ touchscreen colour display^.
@@ -2406,8 +3549,23 @@ Features & Specifications
 *   DAB, FM and AM radio reception
 *   4x20 watt output (front and rear speakers)
 *   Bluetooth connection for phone and media (HFP, A2DP \*, AVRCP \*\*)
-*   Volkswagen Media Control - allowing remote control of the infotainment system via smartphone or tablet',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+*   Volkswagen Media Control - allowing remote control of the infotainment system via smartphone or tablet---
+
+---
+assets:
+  - id: 28
+    assetType: HOW_IT_WORKS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discovernav_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_discovernav_thumb.jpg
+    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_DiscoverPro.m4v
+    url: https://youtu.be/HT4rShxXUwg
+    title: How Discover Media nav/radio system works
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'speed,limits,help,avoid,congestion,offers,routes,eco,friendly,based'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -2658,21 +3816,137 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Disco
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('discover-media-nav-radio-system'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Discover Pro nav/radio system', 'The ultimate in media entertainment and navigation.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discoverpro_poster.jpg', '---
-assets:
-  - id: 29
-    assetType: HOW_IT_WORKS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discoverpro_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_discoverpro_thumb.jpg
-    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_DiscoverPro.m4v
-    url: https://youtu.be/HT4rShxXUwg
-    title: How Discover Pro system works
----
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
 
-Discover Pro nav/radio system
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Media nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Discover Pro nav/radio system', 'The ultimate in media entertainment and navigation.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discoverpro_poster.jpg', 'Discover Pro nav/radio system
 =============================
 
 Our Discover Pro system offers a range of media entertainment and functionality at your fingertips on its 8.0 touchscreen colour display. Complete with navigation system, DVD drive and FM/AM radio, you’ll have everything you need for your journey.
@@ -2694,8 +3968,23 @@ Features & Specifications
 *   USB, AUX-IN, SD (2x)
 *   FM and AM radio reception
 *   4x20 watt output (front and rear speakers)
-*   Bluetooth connection for phone and media (HFP, A2DP \*, AVRCP \*\*)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+*   Bluetooth connection for phone and media (HFP, A2DP \*, AVRCP \*\*)---
+
+---
+assets:
+  - id: 29
+    assetType: HOW_IT_WORKS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_discoverpro_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_discoverpro_thumb.jpg
+    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_DiscoverPro.m4v
+    url: https://youtu.be/HT4rShxXUwg
+    title: How Discover Pro system works
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'help,european,displaying,useful,information,interest,speed,overtaking,zones,movies'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -2762,8 +4051,60 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Disco
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('discover-pro-nav-radio-system'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ACT', 'Active Cylinder Technology. New, innovative and fuel-saving technology.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_act_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Discover Pro nav/radio system'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ACT', 'Active Cylinder Technology. New, innovative and fuel-saving technology.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_act_poster.jpg', 'Active Cylinder Technology (ACT)
+================================
+
+Active Cylinder Management (ACT) saves you fuel by switching off two of your engine’s four cylinders.
+
+There are some situations when your car really doesn’t need all the power that’s available under its hood. Like when you’re driving around town for instance, or just coasting along in low speed areas. And that’s where the Active Cylinder Management (ACT) kicks in and intelligently shuts off the fuel supply to two of your engine’s cylinders.
+
+You probably won’t notice anything when this happens – it’ll be smooth running as always. The only difference will be a reduction in both your fuel consumption and your engine’s CO2 emissions. Depending on your driving style, you’ll be able to achieve lower CO2 emissions compared to the same engine without ACT.
+
+As soon as you need your engine to deliver more power, simply accelerate and ACT will discreetly reactivate the two cylinders. So you’ll be back to full performance and firing on all cylinders again. It’s that simple.---
+
+---
 assets:
   - id: 36
     assetType: HOW_IT_WORKS
@@ -2776,17 +4117,8 @@ assets:
     title: How ACT works
 ---
 
-Active Cylinder Technology (ACT)
-================================
-
-Active Cylinder Management (ACT) saves you fuel by switching off two of your engine’s four cylinders.
-
-There are some situations when your car really doesn’t need all the power that’s available under its hood. Like when you’re driving around town for instance, or just coasting along in low speed areas. And that’s where the Active Cylinder Management (ACT) kicks in and intelligently shuts off the fuel supply to two of your engine’s cylinders.
-
-You probably won’t notice anything when this happens – it’ll be smooth running as always. The only difference will be a reduction in both your fuel consumption and your engine’s CO2 emissions. Depending on your driving style, you’ll be able to achieve lower CO2 emissions compared to the same engine without ACT.
-
-As soon as you need your engine to deliver more power, simply accelerate and ACT will discreetly reactivate the two cylinders. So you’ll be back to full performance and firing on all cylinders again. It’s that simple.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false, 'cylinder,technology,new,saving,instance,speed,smooth,reduction,depending,able'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ACT'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -2813,8 +4145,18 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ACT')
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('active-cylinder-technology'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Ambient Lighting', 'Create a stylish atmosphere inside your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Ambient-Lighting-cover-poster-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Ambient Lighting', 'Create a stylish atmosphere inside your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Ambient-Lighting-cover-poster-700x350.jpg', 'Ambient Lighting
+================
+
+Ambient lighting bathes the interior of your car in subdued light when it gets dark.
+
+LEDs light areas such as doors, footwells and decorative inserts. The pleasant, discreet lighting complements the white illumination of switches and buttons in your car, creating a stylish atmosphere.
+
+When you’re driving at night, the glare-free light also helps you to find your bearings and locate things more easily.---
+
+---
 assets:
   - id: 42
     dateAdded: ''2025-03-10T00:00:02''
@@ -2829,15 +4171,8 @@ assets:
     title: How Ambient Lighting works
 ---
 
-Ambient Lighting
-================
-
-Ambient lighting bathes the interior of your car in subdued light when it gets dark.
-
-LEDs light areas such as doors, footwells and decorative inserts. The pleasant, discreet lighting complements the white illumination of switches and buttons in your car, creating a stylish atmosphere.
-
-When you’re driving at night, the glare-free light also helps you to find your bearings and locate things more easily.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false, 'ambient,discreet,white,buttons,find,things,dateadded,imagefilename,assets,switches'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -3184,8 +4519,196 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambie
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('ambient-lighting'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Front Assist', 'A traffic monitoring system that helps you avoid collisions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_frontassist_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ambient Lighting'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Front Assist', 'A traffic monitoring system that helps you avoid collisions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_frontassist_poster.jpg', 'Front Assist
+============
+
+Front Assist monitors the traffic situation in front of your car, warning you when you get too close and even applying the brakes to help avoid collision.
+
+Judging the speed and distance of other road users isn’t always easy, so Front Assist does it for you. It uses radar sensors to measure the distance and relative speed of other vehicles ahead and provides you with an early warning system. If it detects a potential rear-end collision, Front Assist alerts you visually and audibly, while also preparing the brakes for emergency braking.
+
+The city emergency brake function is active in urban traffic at speeds up to 19 miles per hour. If you don’t brake enough Front Assist boosts the braking pressure to prevent a collision. And if you don’t brake at all Front Assist automatically steps in and does it for you. It’s a bit like having an attentive front passenger beside you with their own brake pedal.
+
+That way Front Assist helps you prevent an accident, or at least minimise the consequences.---
+
+---
 assets:
   - id: 37
     assetType: HOW_IT_WORKS
@@ -3198,17 +4721,8 @@ assets:
     title: How Front Assist works
 ---
 
-Front Assist
-============
-
-Front Assist monitors the traffic situation in front of your car, warning you when you get too close and even applying the brakes to help avoid collision.
-
-Judging the speed and distance of other road users isn’t always easy, so Front Assist does it for you. It uses radar sensors to measure the distance and relative speed of other vehicles ahead and provides you with an early warning system. If it detects a potential rear-end collision, Front Assist alerts you visually and audibly, while also preparing the brakes for emergency braking.
-
-The city emergency brake function is active in urban traffic at speeds up to 19 miles per hour. If you don’t brake enough Front Assist boosts the braking pressure to prevent a collision. And if you don’t brake at all Front Assist automatically steps in and does it for you. It’s a bit like having an attentive front passenger beside you with their own brake pedal.
-
-That way Front Assist helps you prevent an accident, or at least minimise the consequences.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'front,helps,easy,uses,measure,potential,pedal,way,don,road'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -3363,8 +4877,144 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('front-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Driving Mode Selection', 'For a car tailored to your driving style.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_drivingmodeselection_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Front Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Driving Mode Selection', 'For a car tailored to your driving style.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_drivingmodeselection_poster.jpg', 'Driving Mode Selection
+======================
+
+Driving Mode Selection enables you to choose different settings that will change both your car’s performance and your driving experience – all at the push of a button.
+
+You can quickly and easily select one of the five driving modes using the touchscreen and change between normal, comfortable, sporty, individual or eco style. So depending on what type of driver you are and your driving situation, you’ll be able to tailor the car to your requirements.
+
+Want to drive in a more environmentally friendly way with less fuel consumption and emissions? Eco driving mode helps you do just that by optimising your engine and gearbox performance to save fuel. And it even reduces your air conditioning’s power consumption too.
+
+You can also set your car up for a sportier ride. Sports mode modifies the steering torque and produces a faster response with the accelerator pedal, steering and front lighting system. It also activates the seat belt tensioners and switches the dual-clutch gearbox DSG to position.
+
+Individual mode let’s you customise settings according to your own preferences. So you can tweak things like steering and accelerator pedal response, dynamic cornering lights and adaptive cruise control.
+
+Or for long distance driving you can enjoy your journey in maximum comfort mode.---
+
+---
 assets:
   - id: 38
     assetType: HOW_IT_WORKS
@@ -3378,21 +5028,8 @@ assets:
     title: How Driving Mode Selection works
 ---
 
-Driving Mode Selection
-======================
-
-Driving Mode Selection enables you to choose different settings that will change both your car’s performance and your driving experience – all at the push of a button.
-
-You can quickly and easily select one of the five driving modes using the touchscreen and change between normal, comfortable, sporty, individual or eco style. So depending on what type of driver you are and your driving situation, you’ll be able to tailor the car to your requirements.
-
-Want to drive in a more environmentally friendly way with less fuel consumption and emissions? Eco driving mode helps you do just that by optimising your engine and gearbox performance to save fuel. And it even reduces your air conditioning’s power consumption too.
-
-You can also set your car up for a sportier ride. Sports mode modifies the steering torque and produces a faster response with the accelerator pedal, steering and front lighting system. It also activates the seat belt tensioners and switches the dual-clutch gearbox DSG to position.
-
-Individual mode let’s you customise settings according to your own preferences. So you can tweak things like steering and accelerator pedal response, dynamic cornering lights and adaptive cruise control.
-
-Or for long distance driving you can enjoy your journey in maximum comfort mode.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false, 'style,individual,fuel,consumption,let,according,tweak,assettype,https,normal'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -3475,8 +5112,78 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Drivi
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('driving-mode-selection'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Cruise Control', 'Automatically keeps your car moving at a safe, constant speed.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_cruisecontrol_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Mode Selection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Cruise Control', 'Automatically keeps your car moving at a safe, constant speed.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_cruisecontrol_poster.jpg', 'Cruise Control
+==============
+
+Cruise control makes long journeys safer and more comfortable by regulating your car’s speed for you.
+
+Our cruise control system works electronically to help regulate your car’s speed. It reduces the stress on drivers and offers you more comfort on long journeys by keeping a constant speed. It’s particularly effective when you have to stay within speed limits for a long way - when driving through miles of roadworks on the motorway, for example - and cuts the risk of your speed creeping up by accident.
+
+The system works by memorising and maintaining the speed you select. It’s very flexible, too. You can increase or reduce speed manually - to a defined value - and you also have the option of returning to the speed most recently memorised.
+
+The cruise control system can be turned off simply by pressing a button or by pressing the brake or clutch pedals.
+
+For safety reasons, the cruise control system should not be used in heavy traffic or in difficult road conditions, such as heavy rain or ice.---
+
+---
 assets:
   - id: 39
     assetType: HOW_IT_WORKS
@@ -3490,19 +5197,8 @@ assets:
     title: How Cruise Control works
 ---
 
-Cruise Control
-==============
-
-Cruise control makes long journeys safer and more comfortable by regulating your car’s speed for you.
-
-Our cruise control system works electronically to help regulate your car’s speed. It reduces the stress on drivers and offers you more comfort on long journeys by keeping a constant speed. It’s particularly effective when you have to stay within speed limits for a long way - when driving through miles of roadworks on the motorway, for example - and cuts the risk of your speed creeping up by accident.
-
-The system works by memorising and maintaining the speed you select. It’s very flexible, too. You can increase or reduce speed manually - to a defined value - and you also have the option of returning to the speed most recently memorised.
-
-The cruise control system can be turned off simply by pressing a button or by pressing the brake or clutch pedals.
-
-For safety reasons, the cruise control system should not be used in heavy traffic or in difficult road conditions, such as heavy rain or ice.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false, 'cruise,safe,constant,effective,limits,miles,example,creeping,memorising,maintaining'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruise Control'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -3561,8 +5257,44 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruis
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('cruise-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Electronic Parking Brake', 'Lets you park quickly and easily - at the touch of a button.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_electronicparkingbrake_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruise Control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruise Control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruise Control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruise Control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruise Control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Cruise Control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Electronic Parking Brake', 'Lets you park quickly and easily - at the touch of a button.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_electronicparkingbrake_poster.jpg', 'Electronic Parking Brake
+========================
+
+Using our electronic parking brake couldn’t be easier. Just press the button and your car is securely parked and an indicator light shows to reassure you that the brake is on. When you‘re ready to drive off again just depress the brake pedal, push the button to release the parking brake and drive away.
+
+It gives you more space in the car, too, because the conventional handbrake lever is no longer needed. That means more storage space between the front seats.
+
+The electronic parking brake is operated by means of two geared electric motors on the rear disc brakes which when engaged will hold your car securely parked.
+
+Indicator lights in the instrument cluster and on the button show when the parking brake is on, while an audible signal also tells you that the brake is being applied.---
+
+---
 assets:
   - id: 40
     assetType: HOW_IT_WORKS
@@ -3576,17 +5308,8 @@ assets:
     title: How Electronic Parking Brake works
 ---
 
-Electronic Parking Brake
-========================
-
-Using our electronic parking brake couldn’t be easier. Just press the button and your car is securely parked and an indicator light shows to reassure you that the brake is on. When you‘re ready to drive off again just depress the brake pedal, push the button to release the parking brake and drive away.
-
-It gives you more space in the car, too, because the conventional handbrake lever is no longer needed. That means more storage space between the front seats.
-
-The electronic parking brake is operated by means of two geared electric motors on the rear disc brakes which when engaged will hold your car securely parked.
-
-Indicator lights in the instrument cluster and on the button show when the parking brake is on, while an audible signal also tells you that the brake is being applied.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false, 'touch,storage,seats,hold,https,means,while,edl,disc,longer'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -3773,8 +5496,180 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Elect
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('electronic-parking-brake'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Dynamic road sign display', 'Displays traffic sign information to keep you informed.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_signassist_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electronic Parking Brake'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Dynamic road sign display', 'Displays traffic sign information to keep you informed.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_signassist_poster.jpg', 'Dynamic road sign display
+=========================
+
+Dynamic road sign display gives you all the traffic sign information you need, so you’re always in the picture.
+
+A camera in the mirror base records important traffic signs, such as speed limits and no overtaking signs and then informs the driver – so you don’t miss them.
+
+The traffic signs are displayed on both the Digital Cockpit Display and the infotainment display. It also displays additional useful information. For example, the rain sensors detect when it’s starting to rain and monitors any speed restrictions in wet conditions.
+
+Dynamic road sign display helps you comply with regulations and drive safely, reducing the probability of you missing speed limits and no-overtaking signs.---
+
+---
 assets:
   - id: 41
     assetType: HOW_IT_WORKS
@@ -3787,17 +5682,8 @@ assets:
     title: How Dynamic road sign display works
 ---
 
-Dynamic road sign display
-=========================
-
-Dynamic road sign display gives you all the traffic sign information you need, so you’re always in the picture.
-
-A camera in the mirror base records important traffic signs, such as speed limits and no overtaking signs and then informs the driver – so you don’t miss them.
-
-The traffic signs are displayed on both the Digital Cockpit Display and the infotainment display. It also displays additional useful information. For example, the rain sensors detect when it’s starting to rain and monitors any speed restrictions in wet conditions.
-
-Dynamic road sign display helps you comply with regulations and drive safely, reducing the probability of you missing speed limits and no-overtaking signs.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'example,detect,monitors,wet,displayed,speed,additional,ssveuk,probability,signs'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -3952,11 +5838,137 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynam
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('dynamic-road-sign-display'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'BlueMotion Aerodynamics', 'The aerodynamic design of our cars produces less air resistance so they use less fuel. It also improves handling and means lower CO2 emissions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_bluemotionaerodynamics_poster.jpg', '---
----
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
 
-BlueMotion Aerodynamics
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic road sign display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'BlueMotion Aerodynamics', 'The aerodynamic design of our cars produces less air resistance so they use less fuel. It also improves handling and means lower CO2 emissions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_bluemotionaerodynamics_poster.jpg', 'BlueMotion Aerodynamics
 =======================
 
 The aerodynamic design of our cars produces less air resistance so they use less fuel. It also improves handling and means lower CO2 emissions.
@@ -3967,8 +5979,13 @@ How we’ve achieved this:
 
 *   The body is more steamlined and gaps between panels are narrower.
 *   Headlights and indicators are combined.
-*   Radiator grilles, underbody panels and spoilers are designed to reduce drag.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+*   Radiator grilles, underbody panels and spoilers are designed to reduce drag.---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'bluemotion,produces,radiator,designed,underbody,headlights,consumption,spoilers,combined,move'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('BlueMotion Aerodynamics'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4003,17 +6020,20 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('BlueM
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('bluemotion-aerodynamics'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Brake Recuperation', 'Recuperation recycles the energy normally lost during braking by storing and then using it for acceleration or starting, so saving fuel and cutting emissions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_brakerecuperation_poster.jpg', '---
----
-
-Brake Recuperation
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Brake Recuperation', 'Recuperation recycles the energy normally lost during braking by storing and then using it for acceleration or starting, so saving fuel and cutting emissions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_brakerecuperation_poster.jpg', 'Brake Recuperation
 ==================
 
 Recuperation recycles the energy normally lost during braking by storing and then using it for acceleration or starting, so saving fuel and cutting emissions.
 
-When you’re trying to save energy while driving it makes sense to recover it where you can.One way we’ve done this is to raise the alternator voltage when slowing down and braking. This increases battery charging and helps the car slow down. The alternator load is then reduced when accelerating to lighten the burden on the engine and cut fuel consumption. Recuperation is a feature of some of our BlueMotion cars.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+When you’re trying to save energy while driving it makes sense to recover it where you can.One way we’ve done this is to raise the alternator voltage when slowing down and braking. This increases battery charging and helps the car slow down. The alternator load is then reduced when accelerating to lighten the burden on the engine and cut fuel consumption. Recuperation is a feature of some of our BlueMotion cars.---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'brake,normally,slowing,increases,battery,helps,slow,load,reduced,lighten'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Brake Recuperation'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4048,15 +6068,18 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Brake
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('brake-recuperation'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Low Resistance Tyres', 'Low rolling resistance tyres are part of our BlueMotion Technologies and are fitted to most of our BlueMotion and BlueMotion Technology models.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_lowresistancetyres_poster.jpg', '---
----
-
-Low Resistance Tyres
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Low Resistance Tyres', 'Low rolling resistance tyres are part of our BlueMotion Technologies and are fitted to most of our BlueMotion and BlueMotion Technology models.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_lowresistancetyres_poster.jpg', 'Low Resistance Tyres
 ====================
 
-Low rolling resistance tyres are part of our BlueMotion Technologies and are fitted to most of our BlueMotion and BlueMotion Technology models. They need less engine power to move the car forward, saving fuel and helping to cut emissions, while still offering excellent performance.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+Low rolling resistance tyres are part of our BlueMotion Technologies and are fitted to most of our BlueMotion and BlueMotion Technology models. They need less engine power to move the car forward, saving fuel and helping to cut emissions, while still offering excellent performance.---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'tyres,offering,excellent,performance,emissions,while,cut,fuel,helping,saving'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Low Resistance Tyres'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4091,11 +6114,9 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Low R
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('low-resistance-tyres'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Volkswagen way to ZERO', 'We are faced by the greatest challenge in our company’s history. It is perhaps the greatest challenge in the history of mobility: we are addressing our responsibility for our share of global carbon emissions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-way_to_zero-poster.jpg', '---
----
-
-Volkswagen way to ZERO
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Volkswagen way to ZERO', 'We are faced by the greatest challenge in our company’s history. It is perhaps the greatest challenge in the history of mobility: we are addressing our responsibility for our share of global carbon emissions.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-way_to_zero-poster.jpg', 'Volkswagen way to ZERO
 ======================
 
 We are faced by the greatest challenge in our company’s history. It is perhaps the greatest challenge in the history of mobility: we are addressing our responsibility for our share of global carbon emissions.
@@ -4127,8 +6148,13 @@ And after delivery? We are partnering with OVO Energy so you can enjoy affordabl
 Important information
 ---------------------
 
-^Carbon emissions will be avoided and reduced directly at Volkswagen where possible. Upstream suppliers are obliged correspondingly to avoid and reduce emissions. Carbon emissions that cannot be avoided and reduced at Volkswagen and by corresponding commitments in the supply chain will be offset to the equivalent amount in certified climate protection projects.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+^Carbon emissions will be avoided and reduced directly at Volkswagen where possible. Upstream suppliers are obliged correspondingly to avoid and reduce emissions. Carbon emissions that cannot be avoided and reduced at Volkswagen and by corresponding commitments in the supply chain will be offset to the equivalent amount in certified climate protection projects.---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'way,challenge,able,drive,give,options,personal,certificate,excludes,post'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Volkswagen way to ZERO'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4163,30 +6189,9 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Volks
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('volkswagen-way-to-zero'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'AdBlue®', 'All Volkswagen diesel engines are AdBlue® and display SCR. SCR (Selective Catalytic Reduction) requires AdBlue®. AdBlue® is a water / urea based additive that cleans exhaust gases to comply with EU6 exhaust emissions regulations.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_adblue_poster.jpg', '---
-assets:
-  - id: 43
-    assetType: HOW_IT_WORKS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_adblue_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_adblue_thumb.jpg
-    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_adblue.mp4
-    url: https://youtu.be/pa2v-gffDwI
-    title: How AdBlue® works
-  - id: 107
-    assetType: HOW_IT_WORKS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_adblue_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_adblue_thumb.jpg
-    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_adblue.mp4
-    url: https://youtu.be/pa2v-gffDwI
-    title: AdBlue®
----
-
-How does the system work?
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'AdBlue®', 'All Volkswagen diesel engines are AdBlue® and display SCR. SCR (Selective Catalytic Reduction) requires AdBlue®. AdBlue® is a water / urea based additive that cleans exhaust gases to comply with EU6 exhaust emissions regulations.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_adblue_poster.jpg', 'How does the system work?
 =========================
 
 AdBlue®, a water/urea based additive, is stored in a tank (like diesel fuel), however, unlike fuel it is not injected into the engine, but directly into a specially modified part of the vehicle’s exhaust. This begins a chemical reaction which removes the polluting oxides of nitrogen (NOx), converting them into harmless oxygen and nitrogen in a process known as Selective Catalytic Reduction, or SCR for short. SCR is only applicable to diesel engines and the more economically you drive, typically, the less AdBlue® you will use.
@@ -4255,8 +6260,32 @@ Important Information
 *   Prevent anything from contaminating AdBlue®
 *   If small quantities of AdBlue® come into contact with the vehicle’s paintwork, for example, wipe them off and if necessary rinse the area with water
 
-Please refer to your Volkswagen Owner’s manual for official guidance on use and operation of all our technology.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+Please refer to your Volkswagen Owner’s manual for official guidance on use and operation of all our technology.---
+
+---
+assets:
+  - id: 43
+    assetType: HOW_IT_WORKS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_adblue_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_adblue_thumb.jpg
+    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_adblue.mp4
+    url: https://youtu.be/pa2v-gffDwI
+    title: How AdBlue® works
+  - id: 107
+    assetType: HOW_IT_WORKS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_adblue_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_adblue_thumb.jpg
+    assetFileName: https://showroom-assets.volkswagen.co.uk/videos/technology_adblue.mp4
+    url: https://youtu.be/pa2v-gffDwI
+    title: AdBlue®
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'removes,nitrogen,nox,oxygen,known,advice,message,range,ignition,required'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AdBlue®'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4307,11 +6336,9 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AdBlu
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('adblue'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'NCAP', 'Euro NCAP is the European New Car Assessment Programme.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_ncap_poster.jpg', '---
----
-
-NCAP
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'NCAP', 'Euro NCAP is the European New Car Assessment Programme.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_ncap_poster.jpg', 'NCAP
 ====
 
 All our cars go through a comprehensive programme of crash tests, before they are launched onto the market. NCAP’s tough independent crash tests are carried out on many of our cars.
@@ -4331,8 +6358,13 @@ What does that mean for you?
 
 Safety will always be a vital factor when you come to choose a new car. So checking your new Volkswagen’s Euro NCAP rating will give you extra peace of mind.
 
-To see the full details of each test visit the Euro NCAP website at [www.euroncap.com/en](http://www.euroncap.com/en)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+To see the full details of each test visit the Euro NCAP website at [www.euroncap.com/en](http://www.euroncap.com/en)---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'ncap,european,new,pedestrian,latest,checking,factor,carried,assessments,overall'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('NCAP'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4359,8 +6391,18 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('NCAP'
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('ncap'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Gesture Control', 'With just a single hand movement, you can switch radio station, songs, or photos.– included with optional Discover Navigation Pro.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_gesture2_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Gesture Control', 'With just a single hand movement, you can switch radio station, songs, or photos.– included with optional Discover Navigation Pro.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_gesture2_poster.jpg', 'Gesture Control
+===============
+
+With just a single hand movement, you can switch radio station, songs, or photos.– included with optional Discover Navigation Pro.
+
+Small gestures can achieve a lot in everyday life, but also when it comes to gesture control in your car. This function makes it even more convenient to operate the optional Discover Navigation Pro system. It enables you to easily move around in the main menu and various submenus using a right-to-left swipe gesture to switch pages. For example, with just a single hand movement, you can switch radio station, songs, or photos. For each gesture, you use a colour code on the user interface to see where gesture control works and where it doesn''t - after all, the traditional control options are of course also available for use at any time. Included as part of Discover Navigation Pro.
+
+On Selected models.---
+
+---
 assets:
   - id: 34
     assetType: HOW_IT_WORKS
@@ -4373,15 +6415,8 @@ assets:
     title: How Gesture Control works
 ---
 
-Gesture Control
-===============
-
-With just a single hand movement, you can switch radio station, songs, or photos.– included with optional Discover Navigation Pro.
-
-Small gestures can achieve a lot in everyday life, but also when it comes to gesture control in your car. This function makes it even more convenient to operate the optional Discover Navigation Pro system. It enables you to easily move around in the main menu and various submenus using a right-to-left swipe gesture to switch pages. For example, with just a single hand movement, you can switch radio station, songs, or photos. For each gesture, you use a colour code on the user interface to see where gesture control works and where it doesn''t - after all, the traditional control options are of course also available for use at any time. Included as part of Discover Navigation Pro.
-
-On Selected models.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'gesture,movement,function,operate,swipe,pages,works,comes,submenus,using'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Gesture Control'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4408,8 +6443,24 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Gestu
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('gesture-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Adaptive Cruise Control (ACC) with predictive cruise control', 'Adaptive Cruise Control (ACC) with predictive cruise control, including Front assist, radar sensor controlled distance monitoring system, City emergency braking system, cruise control and speed limiter.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_adaptive_cruise_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Adaptive Cruise Control (ACC) with predictive cruise control', 'Adaptive Cruise Control (ACC) with predictive cruise control, including Front assist, radar sensor controlled distance monitoring system, City emergency braking system, cruise control and speed limiter.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_adaptive_cruise_poster.jpg', 'Adaptive Cruise Control (ACC) with predictive cruise control, including Front assist, radar sensor controlled distance monitoring system, City emergency braking system, cruise control and speed limiter
+=========================================================================================================================================================================================================
+
+The ACC system now also monitors speed limits and route data from the navigation system in order to automatically adjust vehicle speed. Until now, the system was implemented purely as a cruise control system that maintained a desired gap to the vehicle ahead: Set the desired speed, and done – the Adaptive Cruise Control brakes and accelerates the vehicle. As outlined previously, the new Arteon is the first Volkswagen that can also react to changing parameters along the route – within system limits. Here’s how it works: ACC utilises a radar sensor (for distance monitoring), a camera in the windscreen and the route information from the navigation system. Using the camera and the interconnected Dynamic Road Sign Display, the Arteon is able to "see" speed limits; it can even recognise city limits. The ACC adapts to these speed changes. At the same time, the vehicle determines its position and predictively adjusts vehicle speed prior to bends, roundabouts and junctions using the front camera and route information from the navigation system. The Front Assist area monitoring system with City Emergency Braking is permanently integrated into ACC. Working in combination with the automatically shifting DSG gearbox, the ACC will automatically set the Arteon in motion from a standstill in situations such as traffic jams or city driving. The adaptive cruise control is active at speeds ranging from 0 to 210 km/h.
+
+*   Adaptive Cruise Control, automatic acceleration and braking to maintain a specified distance to the vehicle ahead.
+*   City emergency braking, active in traffic at speeds up to 19mph, the system will boost brake pressure if required to help prevent a collision.
+*   Road recognition, using the front camera and route information from the navigation data, the system predictively adjusts the vehicle’s speed prior to bends, roundabouts and junctions.
+*   Front Assist, monitors the traffic situation in front of your car, warning you when you get too close and even applying the brakes, if necessary, to help avoid a collision.
+*   Speed assist, using the front camera, dynamic road sign recognition and route information from the navigation data, the system can ‘see’ speed limits and automatically adjusts to the speed changes.
+*   Speed limiter.
+*   Traffic jam assist, Stop and Go (DSG only).
+
+The intelligent technology of ACC with predictive cruise control cannot overcome the laws of physics and functions only within the limits of the system. It is the driver’s responsibility to have full concentration and control of the vehicle, as well as ensuring appropriate speeds by observing the maximum speed limits and road positioning of the car at all times.---
+
+---
 assets:
   - id: 81
     assetType: DRIVER_BENEFITS
@@ -4423,21 +6474,8 @@ assets:
     title: ACC driver benefits
 ---
 
-Adaptive Cruise Control (ACC) with predictive cruise control, including Front assist, radar sensor controlled distance monitoring system, City emergency braking system, cruise control and speed limiter
-=========================================================================================================================================================================================================
-
-The ACC system now also monitors speed limits and route data from the navigation system in order to automatically adjust vehicle speed. Until now, the system was implemented purely as a cruise control system that maintained a desired gap to the vehicle ahead: Set the desired speed, and done – the Adaptive Cruise Control brakes and accelerates the vehicle. As outlined previously, the new Arteon is the first Volkswagen that can also react to changing parameters along the route – within system limits. Here’s how it works: ACC utilises a radar sensor (for distance monitoring), a camera in the windscreen and the route information from the navigation system. Using the camera and the interconnected Dynamic Road Sign Display, the Arteon is able to "see" speed limits; it can even recognise city limits. The ACC adapts to these speed changes. At the same time, the vehicle determines its position and predictively adjusts vehicle speed prior to bends, roundabouts and junctions using the front camera and route information from the navigation system. The Front Assist area monitoring system with City Emergency Braking is permanently integrated into ACC. Working in combination with the automatically shifting DSG gearbox, the ACC will automatically set the Arteon in motion from a standstill in situations such as traffic jams or city driving. The adaptive cruise control is active at speeds ranging from 0 to 210 km/h.
-
-*   Adaptive Cruise Control, automatic acceleration and braking to maintain a specified distance to the vehicle ahead.
-*   City emergency braking, active in traffic at speeds up to 19mph, the system will boost brake pressure if required to help prevent a collision.
-*   Road recognition, using the front camera and route information from the navigation data, the system predictively adjusts the vehicle’s speed prior to bends, roundabouts and junctions.
-*   Front Assist, monitors the traffic situation in front of your car, warning you when you get too close and even applying the brakes, if necessary, to help avoid a collision.
-*   Speed assist, using the front camera, dynamic road sign recognition and route information from the navigation data, the system can ‘see’ speed limits and automatically adjusts to the speed changes.
-*   Speed limiter.
-*   Traffic jam assist, Stop and Go (DSG only).
-
-The intelligent technology of ACC with predictive cruise control cannot overcome the laws of physics and functions only within the limits of the system. It is the driver’s responsibility to have full concentration and control of the vehicle, as well as ensuring appropriate speeds by observing the maximum speed limits and road positioning of the car at all times.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'set,works,recognition,parameters,prevent,maximum,dsg,collision,driver,maintained'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4704,8 +6742,142 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adapt
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('adaptive-cruise-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Emergency Assist with emergency lane change assist', 'Driver intervention should sensors detect the driver is incapable of driving. Automatic hazard light activation while bringing the vehicle to a controlled stop within its lane. Only with DSG engines. Not in conjunction with Side scan.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_emergency_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC) with predictive cruise control'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Emergency Assist with emergency lane change assist', 'Driver intervention should sensors detect the driver is incapable of driving. Automatic hazard light activation while bringing the vehicle to a controlled stop within its lane. Only with DSG engines. Not in conjunction with Side scan.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_emergency_poster.jpg', 'Emergency Assist including emergency lane change assist - Driver intervention should sensors detect the driver is incapable of driving. Automatic hazard light activation while bringing the vehicle to a controlled stop within its lane. Only with DSG engines. Not in conjunction with Side scan
+===================================================================================================================================================================================================================================================================================================
+
+Driver intervention should sensors detect the driver is incapable of driving. Initially by visual and audible warnings and a braking jolt. If no response, the systems initiate automatic hazard light activation while slowing the vehicle down, steering the vehicle into the left hand lane and bringing it to a controlled stop, traffic behind permitting. The Rear Proactive Occupant Protection system is enabled with this option. Only in conjunction with DSG Gearbox. Must be ordered in conjunction with Park Assist and rear-view camera.---
+
+---
 assets:
   - id: 82
     assetType: DRIVER_BENEFITS
@@ -4719,11 +6891,8 @@ assets:
     title: Emergency Assist driver benefits
 ---
 
-Emergency Assist including emergency lane change assist - Driver intervention should sensors detect the driver is incapable of driving. Automatic hazard light activation while bringing the vehicle to a controlled stop within its lane. Only with DSG engines. Not in conjunction with Side scan
-===================================================================================================================================================================================================================================================================================================
-
-Driver intervention should sensors detect the driver is incapable of driving. Initially by visual and audible warnings and a braking jolt. If no response, the systems initiate automatic hazard light activation while slowing the vehicle down, steering the vehicle into the left hand lane and bringing it to a controlled stop, traffic behind permitting. The Rear Proactive Occupant Protection system is enabled with this option. Only in conjunction with DSG Gearbox. Must be ordered in conjunction with Park Assist and rear-view camera.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'gearbox,park,view,assettype,imagefilename,systems,initiate,enabled,option,response'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4838,8 +7007,64 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emerg
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('emergency-lane-change-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Dynamic Chassis Control (DCC)', 'Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_adaptive_chassis_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Emergency Assist with emergency lane change assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Dynamic Chassis Control (DCC)', 'Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_adaptive_chassis_poster.jpg', 'Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics
+=================================================================================================================
+
+Choice of four preset modes: Eco, Normal, Comfort and Sport, as well as an Individual mode that allows up to 43 selectable stages.
+
+For the first time the controlled shock absorbers can be almost infinitely adjusted across an expanded range from the individual settings submenu (Comfort+ to Sport+). Beyond the familiar ''Comfort'' setting, the driver can increase ride comfort even further by moving the control slider to the left (Comfort+); a setting that is sportier than the familiar ''Sport'' setting can be set by moving the slider to the right (Sport+). The driver can make adjustments between the Comfort, Normal and Sport profiles. Thus, the driver has the ability to choose a truly personalised setting.---
+
+---
 assets:
   - id: 83
     assetType: DRIVER_BENEFITS
@@ -4853,13 +7078,8 @@ assets:
     title: DCC driver benefits
 ---
 
-Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics
-=================================================================================================================
-
-Choice of four preset modes: Eco, Normal, Comfort and Sport, as well as an Individual mode that allows up to 43 selectable stages.
-
-For the first time the controlled shock absorbers can be almost infinitely adjusted across an expanded range from the individual settings submenu (Comfort+ to Sport+). Beyond the familiar ''Comfort'' setting, the driver can increase ride comfort even further by moving the control slider to the left (Comfort+); a setting that is sportier than the familiar ''Sport'' setting can be set by moving the slider to the right (Sport+). The driver can make adjustments between the Comfort, Normal and Sport profiles. Thus, the driver has the ability to choose a truly personalised setting.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'expanded,range,settings,submenu,familiar,imagefilename,sport,infinitely,absorbers,assettype'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -4910,8 +7130,38 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynam
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('dynamic-chassis-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Dynamic Chassis Control (DCC)', 'DCC Adaptive Chassis Control - For an individual driving experience', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_dcc_feature_film_cover_sep22-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Dynamic Chassis Control (DCC)', 'DCC Adaptive Chassis Control - For an individual driving experience', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_dcc_feature_film_cover_sep22-poster.jpg', 'DCC Adaptive Chassis Control - For an individual driving experience
+===================================================================
+
+With DCC adaptive chassis control, your Volkswagen finds the perfect balance between comfort and sportiness. Adaptive damper control minimises unwanted rolling and pitching movements of the vehicle, maximising your driving pleasure.
+
+The vehicle’s driving characteristics can be adapted to your needs. This includes, for example, a noticeably smoother ride on uneven road surfaces. You can switch from the sporty dynamic mode to comfort mode at any time.
+
+Adaptive damper control uses sensors to read the road surface and the driving situation. The system uses these data to adjust the damping for each individual wheel a thousand times a second – faster than the blink of an eye.
+
+If you want, you can even adjust your driving experience incrementally in the “Individual” menu.
+
+Watch the video and discover how DCC with Adaptive Chassis Control helps your Volkswagen strike the perfect balance between comfort and performance.---
+
+---
 assets:
   - id: 84
     assetType: DRIVER_BENEFITS
@@ -4925,19 +7175,8 @@ assets:
     title: ID. DCC driver benefits
 ---
 
-DCC Adaptive Chassis Control - For an individual driving experience
-===================================================================
-
-With DCC adaptive chassis control, your Volkswagen finds the perfect balance between comfort and sportiness. Adaptive damper control minimises unwanted rolling and pitching movements of the vehicle, maximising your driving pleasure.
-
-The vehicle’s driving characteristics can be adapted to your needs. This includes, for example, a noticeably smoother ride on uneven road surfaces. You can switch from the sporty dynamic mode to comfort mode at any time.
-
-Adaptive damper control uses sensors to read the road surface and the driving situation. The system uses these data to adjust the damping for each individual wheel a thousand times a second – faster than the blink of an eye.
-
-If you want, you can even adjust your driving experience incrementally in the “Individual” menu.
-
-Watch the video and discover how DCC with Adaptive Chassis Control helps your Volkswagen strike the perfect balance between comfort and performance.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'adapted,example,ride,road,surfaces,switch,mode,want,pleasure,faster'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -5004,8 +7243,50 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. D
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-dynamic-chassis-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Digital Cockpit Pro', 'With the Digital Cockpit Pro, you can enjoy the advantages of an instrument cluster with a high resolution colour display.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_activeinfodisplay_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Digital Cockpit Pro', 'With the Digital Cockpit Pro, you can enjoy the advantages of an instrument cluster with a high resolution colour display.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_activeinfodisplay_poster.jpg', 'Digital Cockpit Pro
+===================
+
+Thanks to the optional Digital Cockpit Pro, you can enjoy the advantages of an instrument cluster with a high resolution colour display. With various information profiles, you can decide which specific data are displayed in the instrument cluster in addition to the usual gauges such as the rev counter, speedometer and odometer.
+
+You can select this information profile quickly and easily using the optional multifunctional steering wheel: depending on your precise needs, you can access detailed Driving Data, for example, or show a visual display of your driver assistance systems. This means the display area can be even better used, because you can also show additional data within the dials.
+
+In the Discover Navigation Infotainment system, you can decide whether you would like to see the navigation map in the Digital Cockpit Pro, or have the classic view on the system display. With Discover Navigation Pro, both display options are available simultaneously.---
+
+---
 assets:
   - id: 85
     assetType: DRIVER_BENEFITS
@@ -5019,15 +7300,8 @@ assets:
     title: Digital Cockpit Pro driver benefits
 ---
 
-Digital Cockpit Pro
-===================
-
-Thanks to the optional Digital Cockpit Pro, you can enjoy the advantages of an instrument cluster with a high resolution colour display. With various information profiles, you can decide which specific data are displayed in the instrument cluster in addition to the usual gauges such as the rev counter, speedometer and odometer.
-
-You can select this information profile quickly and easily using the optional multifunctional steering wheel: depending on your precise needs, you can access detailed Driving Data, for example, or show a visual display of your driver assistance systems. This means the display area can be even better used, because you can also show additional data within the dials.
-
-In the Discover Navigation Infotainment system, you can decide whether you would like to see the navigation map in the Digital Cockpit Pro, or have the classic view on the system display. With Discover Navigation Pro, both display options are available simultaneously.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false, 'pro,odometer,profile,easily,multifunctional,depending,access,detailed,example,show'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -5198,22 +7472,153 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digit
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('digital-cockpit-pro'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Driver Alert System', 'Our new Driver Alert System gives early warning of when you need to take a break on long and tiring journeys, making motorway driving safer.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_driveralertsystem_poster.jpg', '---
-assets:
-  - id: 56
-    assetType: DRIVER_BENEFITS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_driveralertsystem_poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_driveralertsystem_thumb.jpg
-    assetFileName: >-
-      https://showroom-assets.volkswagen.co.uk/videos/technology_driveralertsystem.mp4
-    url: https://youtu.be/WqR3YbjxyS0
-    title: Driver Alert System benefits
----
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
 
-Why do we need this?
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Digital Cockpit Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Driver Alert System', 'Our new Driver Alert System gives early warning of when you need to take a break on long and tiring journeys, making motorway driving safer.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_driveralertsystem_poster.jpg', 'Why do we need this?
 ====================
 
 Did you know that overtired drivers cause up to 25 per cent of all accidents on motorways? These accidents tend to be particularly serious because the sleepy driver has no chance to react and take avoiding action. So giving drivers early warning they need to take a break is vital for safer travel.
@@ -5228,8 +7633,24 @@ How does it warn the driver?
 
 If the system detects that you’re starting to lose concentration it will alert you with a visual display on the dashboard and a warning sound. If you haven’t taken a break within 15 minutes, the system will repeat the warning.
 
-So it’s always up to you to plan rest breaks into your journeys, of course, but you’ll find our new Driver Alert System a helpful aid to safer driving.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+So it’s always up to you to plan rest breaks into your journeys, of course, but you’ll find our new Driver Alert System a helpful aid to safer driving.---
+
+---
+assets:
+  - id: 56
+    assetType: DRIVER_BENEFITS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_driveralertsystem_poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_driveralertsystem_thumb.jpg
+    assetFileName: >-
+      https://showroom-assets.volkswagen.co.uk/videos/technology_driveralertsystem.mp4
+    url: https://youtu.be/WqR3YbjxyS0
+    title: Driver Alert System benefits
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'cause,motorways,serious,movements,example,judge,starting,feel,continually,signals'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -5464,8 +7885,222 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Drive
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('driver-alert-system'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Easy Open Power Tailgate', 'Got your hands full and your car key in your pocket? Hands free boot opening uses a sensor beneath the rear bumper to automatically open the boot as you approach. Perfect when you need a helping hand.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_easyopenpowertailgate_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driver Alert System'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Easy Open Power Tailgate', 'Got your hands full and your car key in your pocket? Hands free boot opening uses a sensor beneath the rear bumper to automatically open the boot as you approach. Perfect when you need a helping hand.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_easyopenpowertailgate_poster.jpg', 'Easy Open Power Tailgate
+========================
+
+Got your hands full and your car key in your pocket? Hands free boot opening uses a sensor beneath the rear bumper to automatically open the boot as you approach. Perfect when you need a helping hand.---
+
+---
 assets:
   - id: 57
     assetType: DRIVER_BENEFITS
@@ -5479,11 +8114,8 @@ assets:
     title: Easy Open Power Tailgate driver benefits
 ---
 
-Easy Open Power Tailgate
-========================
-
-Got your hands full and your car key in your pocket? Hands free boot opening uses a sensor beneath the rear bumper to automatically open the boot as you approach. Perfect when you need a helping hand.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'syscrtvnrta,imagefilename,key,url,showroom,https,free,uses,bumper,hand'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -5598,8 +8230,88 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('easy-open-power-tailgate'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Keyless Entry', 'Keyless Entry is our automatic locking and starting system. It’s very convenient as you just have to carry the key, which houses an ID sender.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Keyless_Entry-700x350_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Easy Open Power Tailgate'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Keyless Entry', 'Keyless Entry is our automatic locking and starting system. It’s very convenient as you just have to carry the key, which houses an ID sender.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Keyless_Entry-700x350_poster.jpg', 'Keyless Entry
+=============
+
+Keyless Entry is our automatic locking and starting system. It’s very convenient as you just have to carry the key, which houses an ID sender.
+
+The key is identified via sensors in the door handles and a radio pulse generator in the key housing when you are within 1.50 metres of your car. It automatically unlocks as soon as the door handle (or boot lid) is operated. The system also releases the steering lock and turns on the ignition electronically, without inserting the key. Provided you have the key on you while inside the car, the engine can be started by simply pressing the starter button. However, the key can also be used like a conventional one to operate the central locking and start the car via the ignition. When leaving the car, you simply press the locking button on the door handles.---
+
+---
 assets:
   - id: 59
     dateAdded: ''2025-03-10T00:00:02''
@@ -5614,13 +8326,8 @@ assets:
     title: Keyless Entry driver benefits
 ---
 
-Keyless Entry
-=============
-
-Keyless Entry is our automatic locking and starting system. It’s very convenient as you just have to carry the key, which houses an ID sender.
-
-The key is identified via sensors in the door handles and a radio pulse generator in the key housing when you are within 1.50 metres of your car. It automatically unlocks as soon as the door handle (or boot lid) is operated. The system also releases the steering lock and turns on the ignition electronically, without inserting the key. Provided you have the key on you while inside the car, the engine can be started by simply pressing the starter button. However, the key can also be used like a conventional one to operate the central locking and start the car via the ignition. When leaving the car, you simply press the locking button on the door handles.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'keyless,locking,boot,releases,lock,turns,electronically,inserting,provided,engine'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -5823,8 +8530,174 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyle
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('keyless-entry'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Comfort Seats with Memory Function', '''The optional comfort seats with memory function offer an upper backrest adjustment function that makes it possible to angle the top third of the backrest, thus providing better support for the shoulders.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_memoryseats_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Comfort Seats with Memory Function', '''The optional comfort seats with memory function offer an upper backrest adjustment function that makes it possible to angle the top third of the backrest, thus providing better support for the shoulders.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_memoryseats_poster.jpg', 'Comfort Seats with Memory Function
+==================================
+
+The optional comfort seats with memory function offer an upper backrest adjustment function that makes it possible to angle the top third of the backrest, thus providing better support for the shoulders. Despite additional assemblies in the upper backrest, it has been possible to further increase rear knee room, thanks to the seats’ slim design. The seats still have a lumbar support that can be adjusted in four directions, a memory function for both front seats, electrically adjustable head restraints, and electric belt height adjusters. In addition to being adjustable in eight directions, like standard seats, comfort seats also have electric fore/aft, height, inclination and backrest angle adjustment for an even better fit. Switches for adjusting the seats are easily accessible on the side trim and can be operated intuitively.---
+
+---
 assets:
   - id: 60
     assetType: DRIVER_BENEFITS
@@ -5837,11 +8710,8 @@ assets:
     title: Comfort Seats with Memory Function driver benefits
 ---
 
-Comfort Seats with Memory Function
-==================================
-
-The optional comfort seats with memory function offer an upper backrest adjustment function that makes it possible to angle the top third of the backrest, thus providing better support for the shoulders. Despite additional assemblies in the upper backrest, it has been possible to further increase rear knee room, thanks to the seats’ slim design. The seats still have a lumbar support that can be adjusted in four directions, a memory function for both front seats, electrically adjustable head restraints, and electric belt height adjusters. In addition to being adjustable in eight directions, like standard seats, comfort seats also have electric fore/aft, height, inclination and backrest angle adjustment for an even better fit. Switches for adjusting the seats are easily accessible on the side trim and can be operated intuitively.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false, 'room,slim,lumbar,directions,assets,assettype,imagefilename,increase,design,trim'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Comfort Seats with Memory Function'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -5892,8 +8762,36 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Comfo
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('memory-seats'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Rain Sensor', 'The rain sensors automatically regulate the frequency of your windscreen wipers, according to how heavily it is raining.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_rainsensor_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Comfort Seats with Memory Function') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Comfort Seats with Memory Function'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Comfort Seats with Memory Function') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Comfort Seats with Memory Function'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Rain Sensor', 'The rain sensors automatically regulate the frequency of your windscreen wipers, according to how heavily it is raining.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_rainsensor_poster.jpg', 'Rain Sensor
+===========
+
+Our rain sensors mean you won’t have to keep switching your wipers on and off, or adjusting their speed, according to how hard it is raining. This clever system uses an LED sensor, fitted behind your internal mirror, to detect the amount of rain falling on your windscreen and adjusts the wiper accordingly.
+
+You can also choose different settings, depending on how sensitive you want the rain sensor to be. If you choose the most sensitive setting the wipers will clean off just a few spots of rain, whilst the least sensitive setting will wait a little longer before starting to work. And you don‘t even have to worry about reversing. When the sensor is on and you select reverse gear, the rear wipers will automatically wipe away any rain.
+
+The sensor system consists of a number of infrared light-emitting diodes (LEDs) and a central photodiode. The light emitted by the LEDs is reflected by the windscreen onto the photo sensor. The more drops of water there are on the windscreen, the less light the sensor receives. This information is passed to an electronic control unit, which adapts the wipe intervals of the windscreen wiper accordingly.
+
+And the design means that dirt, minor defects and ageing of the windscreen do not impair its efficiency. You’ll find driving in wet conditions safer and more comfortable because the rain sensor does the hard work, leaving you to concentrate fully on the road. It’s especially useful in situations when your visibility is suddenly impaired - while overtaking lorries on a wet road, for example.---
+
+---
 assets:
   - id: 61
     assetType: DRIVER_BENEFITS
@@ -5906,17 +8804,8 @@ assets:
     title: Rain Sensor driver benefits
 ---
 
-Rain Sensor
-===========
-
-Our rain sensors mean you won’t have to keep switching your wipers on and off, or adjusting their speed, according to how hard it is raining. This clever system uses an LED sensor, fitted behind your internal mirror, to detect the amount of rain falling on your windscreen and adjusts the wiper accordingly.
-
-You can also choose different settings, depending on how sensitive you want the rain sensor to be. If you choose the most sensitive setting the wipers will clean off just a few spots of rain, whilst the least sensitive setting will wait a little longer before starting to work. And you don‘t even have to worry about reversing. When the sensor is on and you select reverse gear, the rear wipers will automatically wipe away any rain.
-
-The sensor system consists of a number of infrared light-emitting diodes (LEDs) and a central photodiode. The light emitted by the LEDs is reflected by the windscreen onto the photo sensor. The more drops of water there are on the windscreen, the less light the sensor receives. This information is passed to an electronic control unit, which adapts the wipe intervals of the windscreen wiper accordingly.
-
-And the design means that dirt, minor defects and ageing of the windscreen do not impair its efficiency. You’ll find driving in wet conditions safer and more comfortable because the rain sensor does the hard work, leaving you to concentrate fully on the road. It’s especially useful in situations when your visibility is suddenly impaired - while overtaking lorries on a wet road, for example.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'rain,automatically,falling,wiper,work,rear,wipe,emitted,driving,wet'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -6199,8 +9088,261 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('rain-sensor'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Isofix child seat fixings', 'Your child’s safety is a priority - for us, as well as for you. That’s why we use Isofix child seat fixings in all our cars.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_isofixchildseat_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30200') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30200'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Rain Sensor'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Isofix child seat fixings', 'Your child’s safety is a priority - for us, as well as for you. That’s why we use Isofix child seat fixings in all our cars.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_isofixchildseat_poster.jpg', 'Isofix child seat fixings
+=========================
+
+Isofix is being adopted worldwide as a safer way to travel with your children. The Isofix child seat fixes directly into compatible fittings in your Volkswagen, creating a secure link. It’s quick, simple and there’s no need to use the adult seatbelts.
+
+Studies have shown many child car seats are not fitted properly, putting your children at risk. With Isofix, securing your child’s car seat properly is much easier, reducing the risk of injury in an accident.
+
+Why do we use Isofix?
+---------------------
+
+Car manufacturers wanted to create the best, uniform standard for fitting child seats safely, and they came up with Isofix. Isofix child seats can be used in all cars which have compatible factory-fitted fixings. The child seat preparation has two mountings fixed to the body of the car. The compatible child seat fits securely to these mountings by two support arms. They are easy to fit and offer high levels of safety because they are fixed rigidly to the car body. All our cars have Isofix fittings in the back seats.---
+
+---
 assets:
   - id: 65
     assetType: DRIVER_BENEFITS
@@ -6214,18 +9356,8 @@ assets:
     title: Isofix child seat fixings driver benefits
 ---
 
-Isofix child seat fixings
-=========================
-
-Isofix is being adopted worldwide as a safer way to travel with your children. The Isofix child seat fixes directly into compatible fittings in your Volkswagen, creating a secure link. It’s quick, simple and there’s no need to use the adult seatbelts.
-
-Studies have shown many child car seats are not fitted properly, putting your children at risk. With Isofix, securing your child’s car seat properly is much easier, reducing the risk of injury in an accident.
-
-Why do we use Isofix?
----------------------
-
-Car manufacturers wanted to create the best, uniform standard for fitting child seats safely, and they came up with Isofix. Isofix child seats can be used in all cars which have compatible factory-fitted fixings. The child seat preparation has two mountings fixed to the body of the car. The compatible child seat fits securely to these mountings by two support arms. They are easy to fit and offer high levels of safety because they are fixed rigidly to the car body. All our cars have Isofix fittings in the back seats.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'seatbelts,seats,fitted,uniform,standard,levels,shown,because,studies,fit'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -6452,8 +9584,214 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofi
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('isofix-child-seat'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Misfuel Prevention device', 'Prevents you from putting in the wrong fuel into your Volkswagen.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_misfuelpreventiondevice_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Isofix child seat fixings'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Misfuel Prevention device', 'Prevents you from putting in the wrong fuel into your Volkswagen.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_misfuelpreventiondevice_poster.jpg', 'Misfuel Prevention device
+=========================
+
+Fitted on the filler neck of the Diesel fuel tank, the Misfuel Prevention Device has a mechanically locking flap that prevents a non-Diesel fuel nozzle from being inserted. So it ensures you always get it right and stops you from filling up with the wrong type of fuel.---
+
+---
 assets:
   - id: 66
     assetType: HOW_IT_WORKS
@@ -6467,11 +9805,8 @@ assets:
     title: How Misfuel Prevention device works
 ---
 
-Misfuel Prevention device
-=========================
-
-Fitted on the filler neck of the Diesel fuel tank, the Misfuel Prevention Device has a mechanically locking flap that prevents a non-Diesel fuel nozzle from being inserted. So it ensures you always get it right and stops you from filling up with the wrong type of fuel.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 2 LIMIT 1), 0, false, 'fuel,ensures,assettype,https,type,nozzle,qlaftzgqax,stops,assetfilename,tank'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Misfuel Prevention device'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -6498,8 +9833,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Misfu
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('misfuel-prevention-device'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Home Safe Lights', 'The ‘coming home’ and ‘leaving home’ functions are designed to improve your convenience and comfort.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Home_Safe_Lights-700x350_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Home Safe Lights', 'The ‘coming home’ and ‘leaving home’ functions are designed to improve your convenience and comfort.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Home_Safe_Lights-700x350_poster.jpg', 'Home Safe Lights
+================
+
+When you get out of your car, various lights, including the dipped-beam headlights, courtesy lights in the exterior mirrors, rear lights and number-plate lighting, all stay on for a short while before they are switched off automatically. The same lights are switched on when you unlock your car with the remote control. In this way your car’s lights help to illuminate the way to and from your front door, whenever you arrive or set off in the dark. Note the functioning described does differ between models, please refer to the model pricelists for specific details.---
+
+---
 assets:
   - id: 67
     dateAdded: ''2025-03-10T00:00:02''
@@ -6514,11 +9855,8 @@ assets:
     title: Home Safe Lights Driver benefits
 ---
 
-Home Safe Lights
-================
-
-When you get out of your car, various lights, including the dipped-beam headlights, courtesy lights in the exterior mirrors, rear lights and number-plate lighting, all stay on for a short while before they are switched off automatically. The same lights are switched on when you unlock your car with the remote control. In this way your car’s lights help to illuminate the way to and from your front door, whenever you arrive or set off in the dark. Note the functioning described does differ between models, please refer to the model pricelists for specific details.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'safe,functions,designed,convenience,comfort,lights,various,dipped,courtesy,mirrors'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -6681,8 +10019,142 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('home-safe-lights'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Bicycle Roof Rack', 'Transport up to two bicycles on your roof rack. Keep your bikes safe and secure using this easy to fit bicycle carrier, made from matt chrome plated steel.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_bicycleroofrack_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Home Safe Lights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Bicycle Roof Rack', 'Transport up to two bicycles on your roof rack. Keep your bikes safe and secure using this easy to fit bicycle carrier, made from matt chrome plated steel.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_bicycleroofrack_poster.jpg', 'Bicycle Roof Rack
+=================
+
+Keep your bikes safe and secure using this easy to fit bicycle carrier, made from matt chrome plated steel. It attaches to the existing genuine roof bars of your vehicle and can carry two bicycles safely and securely. The bicycle holder is City-Crash tested and lockable for extra peace of mind and what’s more you can still access the boot for added convenience.---
+
+---
 assets:
   - id: 68
     assetType: DRIVER_BENEFITS
@@ -6696,11 +10168,8 @@ assets:
     title: Bicycle Roof Rack
 ---
 
-Bicycle Roof Rack
-=================
-
-Keep your bikes safe and secure using this easy to fit bicycle carrier, made from matt chrome plated steel. It attaches to the existing genuine roof bars of your vehicle and can carry two bicycles safely and securely. The bicycle holder is City-Crash tested and lockable for extra peace of mind and what’s more you can still access the boot for added convenience.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'rack,tested,lockable,peace,mind,boot,added,assets,assettype,driver'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Bicycle Roof Rack'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -6727,8 +10196,18 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Bicyc
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('bicycle-roof-rack'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Parking Sensors', 'Parking sensors make reversing into tricky spaces easier and help prevent minor damage to your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Parking_Sensors-700x350_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Parking Sensors', 'Parking sensors make reversing into tricky spaces easier and help prevent minor damage to your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Parking_Sensors-700x350_poster.jpg', 'Parking Sensors
+===============
+
+If you drive a lot in towns and cities you’ll often find yourself having to manoeuvre your car into some tight parking spots. The result can often be minor damage. Our parking sensors make your job easier by warning when you’re getting too close to something, preventing small knocks and scratches.
+
+The system has up to six ultrasonic sensors located in the rear - and sometimes the front - bumpers. Compact, and painted in the body colour, they blend in well and are barely visible. The sensors monitor a range of up to 150 centimetres behind and, depending on the model, in front of the vehicle. The system swings into action when you engage reverse gear, or at very low speed.
+
+It uses the principle of the echo sounder to detect obstacles and their distance from your car. If it senses you are too close it starts to sound an intermittent warning tone which gets faster the nearer you are. Get so close that a collision is imminent and the warning signal becomes continuous. If your car has a radio or radio navigation display this gives you extra help by showing exactly how close any obstacles are.---
+
+---
 assets:
   - id: 69
     dateAdded: ''2025-03-10T00:00:02''
@@ -6743,15 +10222,8 @@ assets:
     title: Parking Sensors driver benefits
 ---
 
-Parking Sensors
-===============
-
-If you drive a lot in towns and cities you’ll often find yourself having to manoeuvre your car into some tight parking spots. The result can often be minor damage. Our parking sensors make your job easier by warning when you’re getting too close to something, preventing small knocks and scratches.
-
-The system has up to six ultrasonic sensors located in the rear - and sometimes the front - bumpers. Compact, and painted in the body colour, they blend in well and are barely visible. The sensors monitor a range of up to 150 centimetres behind and, depending on the model, in front of the vehicle. The system swings into action when you engage reverse gear, or at very low speed.
-
-It uses the principle of the echo sounder to detect obstacles and their distance from your car. If it senses you are too close it starts to sound an intermittent warning tone which gets faster the nearer you are. Get so close that a collision is imminent and the warning signal becomes continuous. If your car has a radio or radio navigation display this gives you extra help by showing exactly how close any obstacles are.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'parking,reversing,easier,body,colour,barely,visible,monitor,range,depending'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7082,8 +10554,226 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parki
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('parking-sensors'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Side Scan', 'When you want to change lanes, Side Scan warns you about the vehicles that are in your blind spot.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_passatsidescan_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Parking Sensors'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Side Scan', 'When you want to change lanes, Side Scan warns you about the vehicles that are in your blind spot.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_passatsidescan_poster.jpg', 'Side Scan
+=========
+
+When you indicate that you’re about to change lanes, our Side Scan assistant warns you about approaching traffic.
+
+If there are cars behind you or in your blind spot, LED lights will flash in your wing mirrors to alert you.
+
+The system is designed to alert you only when necessary: stationary objects or oncoming vehicles don’t trigger warnings.---
+
+---
 assets:
   - id: 70
     assetType: DRIVER_BENEFITS
@@ -7097,15 +10787,8 @@ assets:
     title: Side Scan driver benefits
 ---
 
-Side Scan
-=========
-
-When you indicate that you’re about to change lanes, our Side Scan assistant warns you about approaching traffic.
-
-If there are cars behind you or in your blind spot, LED lights will flash in your wing mirrors to alert you.
-
-The system is designed to alert you only when necessary: stationary objects or oncoming vehicles don’t trigger warnings.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'side,lanes,wing,designed,objects,don,assets,imagefilename,assettype,led'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7252,8 +10935,130 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('side-scan'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Service Plan', 'Volkswagen Service Plan for cars under 1 year', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_service_plan_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Side Scan'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Service Plan', 'Volkswagen Service Plan for cars under 1 year', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_service_plan_poster.jpg', 'Service Plan
+============
+
+For cars under 1 year old that haven’t yet had their first service.
+
+A Volkswagen Service Plan covers the first two consecutive services with an option to pay upfront or spread over 24 monthly payments.
+
+If your car is under 1 year old and you want to have all your general maintenance work and tyre cover included as well, [consider a Fixed Cost Maintenance plan.](https://www.volkswagen.co.uk/en/owners-and-drivers/servicing/service-plans/buy-a-service-plan/fixed-cost-maintenance.html)---
+
+---
 assets:
   - id: 71
     assetType: DRIVER_BENEFITS
@@ -7267,15 +11072,8 @@ assets:
     title: Service Plan driver benefits
 ---
 
-Service Plan
-============
-
-For cars under 1 year old that haven’t yet had their first service.
-
-A Volkswagen Service Plan covers the first two consecutive services with an option to pay upfront or spread over 24 monthly payments.
-
-If your car is under 1 year old and you want to have all your general maintenance work and tyre cover included as well, [consider a Fixed Cost Maintenance plan.](https://www.volkswagen.co.uk/en/owners-and-drivers/servicing/service-plans/buy-a-service-plan/fixed-cost-maintenance.html)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'service,yearservice,old,payments,want,work,included,cost,consider,buy'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Service Plan'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7302,17 +11100,20 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Servi
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('serviceplan'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT '4MOTION', '4MOTION gives you great grip on the road, come rain, wind or snow. So, however treacherous the road surface, you get a sure-footed car with huge levels of traction.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_4Motion_poster.jpg', '---
----
-
-4MOTION
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT '4MOTION', '4MOTION gives you great grip on the road, come rain, wind or snow. So, however treacherous the road surface, you get a sure-footed car with huge levels of traction.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_4Motion_poster.jpg', '4MOTION
 =======
 
 Our four-wheel drive systems work hard to keep you safe, linking with other active safety systems on your Volkswagen to constantly monitor driving conditions. It reacts to even the slightest wheel slip and automatically sends the right amount of power to the wheels with the most grip. The second it detects a problem, it delivers extra traction where it''s needed.
 
-As a driver, you get reassuring stability and optimum control. And the confidence that your Volkswagen can safely tackle the roughest roads and the worst weather conditions. That lets you relax and enjoy your drive, knowing that 4MOTION is always on the alert to keep you safe and help you out of tricky situations. It will take snow and ice, slippery roads and muddy tracks in its stride, and help you get out of places where a normal car would be stuck.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+As a driver, you get reassuring stability and optimum control. And the confidence that your Volkswagen can safely tackle the roughest roads and the worst weather conditions. That lets you relax and enjoy your drive, knowing that 4MOTION is always on the alert to keep you safe and help you out of tricky situations. It will take snow and ice, slippery roads and muddy tracks in its stride, and help you get out of places where a normal car would be stuck.---
+
+---
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'motion,road,levels,wheel,amount,second,delivers,needed,driver,stability'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('4MOTION'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7323,8 +11124,21 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('4
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Proactive occupant protection', 'Front is standard, Rear is optional and is included with the addition of Emergency assist or Side Assist Plus options.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_proactive_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Proactive occupant protection', 'Front is standard, Rear is optional and is included with the addition of Emergency assist or Side Assist Plus options.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_arteon_proactive_poster.jpg', 'Proactive occupant protection – Front is standard / Rear is optional and is included with the addition of Emergency assist or Side Assist Plus options
+======================================================================================================================================================
+
+Proactive occupant protection system. For the first time, the PreCrash sensors are not only able to react to car handling processes (for instance, as registered via ESC) and acute collision hazards from the front (detected via Front Assist), but also to hazards from the rear. The PreCrash system uses sensors of the Side Assist lane change assistant. The system uses radar sensors to continuously monitor the positions and speeds of the cars behind the Arteon. The proactive rear occupant protection system evaluates this data. It does this not only while the vehicle is in motion, but also when it is stationary (with the motor running or in start-stop mode); such as when waiting at a red light. When another vehicle approaches the new gran turismo, the system calculates the probability of a collision using data on the positions and speeds of both cars. If there is an imminent danger of a collision, the PreCrash assistance system reacts in the blink of an eye. The hazard warning lights activate immediately; at the same time all windows are closed to just a small gap (for optimal bolstering of the side airbags) as is the sunroof. While this is happening, the belt tensioners tighten the front seatbelts. Last but not least, the optional electrically adjustable front seats are aligned. The belts, head restraints and airbags are now able to provide maximum protection.
+
+Side Assist Plus
+----------------
+
+The brand new Side Assist Plus feature comes with rear traffic alert. Radar-sensors control the warning system for changing lanes and blind spot, when you’re driving at 6mph or above.
+
+The system notices fast-approaching vehicles in adjacent lanes, and provides a visual warning through a light placed in the wing mirror.---
+
+---
 assets:
   - id: 84
     assetType: DRIVER_BENEFITS
@@ -7338,18 +11152,8 @@ assets:
     title: Proactive occupant protection
 ---
 
-Proactive occupant protection – Front is standard / Rear is optional and is included with the addition of Emergency assist or Side Assist Plus options
-======================================================================================================================================================
-
-Proactive occupant protection system. For the first time, the PreCrash sensors are not only able to react to car handling processes (for instance, as registered via ESC) and acute collision hazards from the front (detected via Front Assist), but also to hazards from the rear. The PreCrash system uses sensors of the Side Assist lane change assistant. The system uses radar sensors to continuously monitor the positions and speeds of the cars behind the Arteon. The proactive rear occupant protection system evaluates this data. It does this not only while the vehicle is in motion, but also when it is stationary (with the motor running or in start-stop mode); such as when waiting at a red light. When another vehicle approaches the new gran turismo, the system calculates the probability of a collision using data on the positions and speeds of both cars. If there is an imminent danger of a collision, the PreCrash assistance system reacts in the blink of an eye. The hazard warning lights activate immediately; at the same time all windows are closed to just a small gap (for optimal bolstering of the side airbags) as is the sunroof. While this is happening, the belt tensioners tighten the front seatbelts. Last but not least, the optional electrically adjustable front seats are aligned. The belts, head restraints and airbags are now able to provide maximum protection.
-
-Side Assist Plus
-----------------
-
-The brand new Side Assist Plus feature comes with rear traffic alert. Radar-sensors control the warning system for changing lanes and blind spot, when you’re driving at 6mph or above.
-
-The system notices fast-approaching vehicles in adjacent lanes, and provides a visual warning through a light placed in the wing mirror.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'optional,light,turismo,same,closed,optimal,airbags,aligned,head,restraints'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7544,8 +11348,142 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proac
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('precrash'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Running boards', 'A running board is a footboard which extends along side of a vehicle. Not only do they look great providing a sportier feel, they are practical with helping passengers easily board and leave the vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_running_board_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Proactive occupant protection'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Running boards', 'A running board is a footboard which extends along side of a vehicle. Not only do they look great providing a sportier feel, they are practical with helping passengers easily board and leave the vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_running_board_poster.jpg', 'Running boards
+==============
+
+A running board is a footboard which extends along side of a vehicle. Not only do they look great providing a sportier feel, they are practical with helping passengers easily board and leave the vehicle.---
+
+---
 assets:
   - id: 109
     assetType: DRIVER_BENEFITS
@@ -7558,11 +11496,8 @@ assets:
     title: Running Boards
 ---
 
-Running boards
-==============
-
-A running board is a footboard which extends along side of a vehicle. Not only do they look great providing a sportier feel, they are practical with helping passengers easily board and leave the vehicle.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 8 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 8 LIMIT 1), 0, false, 'running,footboard,vbmc,https,title,url,showroom,imagefilename,look,sportier'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Running boards'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7573,8 +11508,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('R
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'eTSI', 'Power, redefined', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_etsi_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'eTSI', 'Power, redefined', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_etsi_poster.jpg', 'eTSI Mild Hybrid Engines
+========================
+
+The eTSI with mild hybrid technology is a significant new feature. A starter-alternator provides extra assistance for the engine when starting off and at low speeds. The lithium-ion batteries are charged under braking and while coasting. This achieves a significant reduction in fuel consumption and emissions.---
+
+---
 assets:
   - id: 45
     assetType: HOW_IT_WORKS
@@ -7587,11 +11528,8 @@ assets:
     title: How eTSI works
 ---
 
-eTSI Mild Hybrid Engines
-========================
-
-The eTSI with mild hybrid technology is a significant new feature. A starter-alternator provides extra assistance for the engine when starting off and at low speeds. The lithium-ion batteries are charged under braking and while coasting. This achieves a significant reduction in fuel consumption and emissions.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'redefinedetsi,mild,hybrid,etsipower,engines,ion,batteries,charged,braking,while'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('eTSI'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7634,8 +11572,41 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('eTSI'
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('etsi'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Mobile Online Services', 'Mobile Online Services refers to the next generation of Volkswagen''s in-car digital services.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Connect_thumb@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('eTSI') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('eTSI'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Mobile Online Services', 'Mobile Online Services refers to the next generation of Volkswagen''s in-car digital services.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Connect_thumb@2x.png', 'Mobile Online Services
+======================
+
+From navigation and safety to entertainment and personalisation, Mobile Online Services gives you access to a huge variety of features.
+
+Standard Features
+-----------------
+
+Features such as Emergency Call Service and eCall Emergency System come as standard with Mobile Online Services.
+
+VW Connect
+----------
+
+VW Connect opens up Volkswagen’s digital services to you and makes you Volkswagen connected. Following a one-off activation, you can use VW Connect’s features free of charge. All you have to do is sign up to VW Connect online via Volkswagen.
+
+VW Connect Plus
+---------------
+
+For even more convenience and entertainment, with your Volkswagen ID and “VW Connect Plus” activation, you have access to extra smart functions: from smart navigation with real-time information and media streaming and Internet radio to using your smartphone as a remote control.
+
+Usage of these services requires you to sign up online to a separate VW Connect Plus contract with Volkswagen AG.
+
+You can view all VW Connect and VW Connect Plus services at a glance here: [www.volkswagen.co.uk/en/connected-services.html](https://www.volkswagen.co.uk/en/connected-services.html)---
+
+---
 assets:
   - id: 121
     assetType: DRIVER_BENEFITS
@@ -7659,30 +11630,8 @@ assets:
     title: In-Car Shop
 ---
 
-Mobile Online Services
-======================
-
-From navigation and safety to entertainment and personalisation, Mobile Online Services gives you access to a huge variety of features.
-
-Standard Features
------------------
-
-Features such as Emergency Call Service and eCall Emergency System come as standard with Mobile Online Services.
-
-VW Connect
-----------
-
-VW Connect opens up Volkswagen’s digital services to you and makes you Volkswagen connected. Following a one-off activation, you can use VW Connect’s features free of charge. All you have to do is sign up to VW Connect online via Volkswagen.
-
-VW Connect Plus
----------------
-
-For even more convenience and entertainment, with your Volkswagen ID and “VW Connect Plus” activation, you have access to extra smart functions: from smart navigation with real-time information and media streaming and Internet radio to using your smartphone as a remote control.
-
-Usage of these services requires you to sign up online to a separate VW Connect Plus contract with Volkswagen AG.
-
-You can view all VW Connect and VW Connect Plus services at a glance here: [www.volkswagen.co.uk/en/connected-services.html](https://www.volkswagen.co.uk/en/connected-services.html)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false, 'next,radio,remote,separate,view,media,requires,activation,streaming,internet'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -7901,22 +11850,193 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobil
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('we-connect'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Mobile Online Services (ID.Models Only)', 'Mobile Online Services refers to the next generation of Volkswagen''s in-car digital services', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Connect-StartID_thumb@2x.png', '---
-assets:
-  - id: 124
-    assetType: HOW_IT_WORKS
-    imageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_activation_enrolment_film_mar22-poster.jpg
-    thumbnailImageFileName: >-
-      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_activation_enrolment_film_mar22-thumb.jpg
-    assetFileName: >-
-      https://showroom-assets.volkswagen.co.uk/videos/technology_activation_enrolment_film_mar22.mp4
-    url: https://youtu.be/A_vVWx5-BZ4
-    title: Activation
----
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
 
-Mobile Online Services (ID.Models Only)
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30371'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Mobile Online Services (ID.Models Only)', 'Mobile Online Services refers to the next generation of Volkswagen''s in-car digital services', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Connect-StartID_thumb@2x.png', 'Mobile Online Services (ID.Models Only)
 =======================================
 
 The eCall emergency system is available immediately. And with the MobileOnline services, you can bring digital assistants on board, get the latest information on charging and traffic and remotely control selected functions from your smartphone.
@@ -7949,8 +12069,24 @@ Entertainment
 
 Listen to live radio stations or podcasts via Internet Radio and enjoy all the freedoms of a Wi-Fi hotspot for up to eight mobile devices. The data volume required for this can be supplied from your smartphone via tethering or conveniently via a paid contract with the external mobile communications partner Cubic Telecom.
 
-For more information on Volkswagen app Start/ID, please visit: [https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/driving-technology/we-connect-id.html](https://www.volkswagen.co.uk/en/connected-services/we-connect-id/we-connect-start.html)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false
+For more information on Volkswagen app Start/ID, please visit: [https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/driving-technology/we-connect-id.html](https://www.volkswagen.co.uk/en/connected-services/we-connect-id/we-connect-start.html)---
+
+---
+assets:
+  - id: 124
+    assetType: HOW_IT_WORKS
+    imageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_activation_enrolment_film_mar22-poster.jpg
+    thumbnailImageFileName: >-
+      https://showroom-assets.volkswagen.co.uk/images/technologyItems/thumb/technology_activation_enrolment_film_mar22-thumb.jpg
+    assetFileName: >-
+      https://showroom-assets.volkswagen.co.uk/videos/technology_activation_enrolment_film_mar22.mp4
+    url: https://youtu.be/A_vVWx5-BZ4
+    title: Activation
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false, 'charging,trust,automatically,regular,automatic,listen,required,tethering,conveniently,contract'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services (ID.Models Only)'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8001,8 +12137,41 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobil
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('mobile-online-services-id-models-only'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'We Charge', 'We Charge is the smart service you can use to charge your ID. model across Europe at over 250,000 charge points with ease.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Charge_thumb@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services (ID.Models Only)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Mobile Online Services (ID.Models Only)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'We Charge', 'We Charge is the smart service you can use to charge your ID. model across Europe at over 250,000 charge points with ease.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Charge_thumb@2x.png', 'We Charge
+=========
+
+E-mobility can be simple and fun – after all, you should be able to get anywhere with ease. Simply open the Volkswagen.app and check the location of the nearest charging station – and you can charge your vehicle and collect special prices with your Volkswagen ID.
+
+We Charge in the Volkswagen app.
+--------------------------------
+
+We Charge functions are integrated into the Volkswagen app. Use the app to search and find public charging stations and check their availability in real time. You can view all your charging sessions for full cost transparency. Control of your charging card and plans is just a tap away.
+
+We Charge in-car app
+--------------------
+
+With Over-the-Air Update, it’s easy to connect your We Charge app to your navigation system. You can filter charging stations by capacity and availability in We Charge view and start route guidance without leaving the navigation app. That way, you can stay connected any time and find charging stations anywhere.
+
+Electric Vehicle Route Planner
+------------------------------
+
+With our route planner, you can find many charging stations and add them to your route planning as a destination or stopover. Journeys can be planned along the public charging network, taking into account individual settings such as battery level along the route. Visit [https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html](https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/electric-vehicle-route-planner.html) to start routing.
+
+For more information on our We Charge plans, please visit [www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/we-charge.html](https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/we-charge.html)
+
+You can view the We Charge brochure here: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge\_Brochure\_EN\_98x98\_doublepages.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge_Brochure_EN_98x98_doublepages.pdf)---
+
+---
 assets:
   - id: 126
     assetType: HOW_IT_WORKS
@@ -8066,30 +12235,8 @@ assets:
     title: Billing
 ---
 
-We Charge
-=========
-
-E-mobility can be simple and fun – after all, you should be able to get anywhere with ease. Simply open the Volkswagen.app and check the location of the nearest charging station – and you can charge your vehicle and collect special prices with your Volkswagen ID.
-
-We Charge in the Volkswagen app.
---------------------------------
-
-We Charge functions are integrated into the Volkswagen app. Use the app to search and find public charging stations and check their availability in real time. You can view all your charging sessions for full cost transparency. Control of your charging card and plans is just a tap away.
-
-We Charge in-car app
---------------------
-
-With Over-the-Air Update, it’s easy to connect your We Charge app to your navigation system. You can filter charging stations by capacity and availability in We Charge view and start route guidance without leaving the navigation app. That way, you can stay connected any time and find charging stations anywhere.
-
-Electric Vehicle Route Planner
-------------------------------
-
-With our route planner, you can find many charging stations and add them to your route planning as a destination or stopover. Journeys can be planned along the public charging network, taking into account individual settings such as battery level along the route. Visit [https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html](https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/electric-vehicle-route-planner.html) to start routing.
-
-For more information on our We Charge plans, please visit [www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/we-charge.html](https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/we-charge.html)
-
-You can view the We Charge brochure here: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge\_Brochure\_EN\_98x98\_doublepages.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge_Brochure_EN_98x98_doublepages.pdf)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false, 'charge,smart,service,model,europe,points,ease,mobility,location,station'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('We Charge'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8132,8 +12279,31 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('We Ch
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('we-charge'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Upgrades', 'Upgrades allow you to make your Volkswagen even more connected. Using your car’s infotainment system, you can instantly purchase navigation upgrades, driver assist systems, and more.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Upgrade_thumb@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Upgrades', 'Upgrades allow you to make your Volkswagen even more connected. Using your car’s infotainment system, you can instantly purchase navigation upgrades, driver assist systems, and more.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_We-Upgrade_thumb@2x.png', 'Upgrade
+=======
+
+Upgrades allow you to make your Volkswagen even more connected. Simply using your car’s infotainment system or the Volkswagen Connect shop, you can instantly purchase navigation upgrades, driver assist systems, and more. You can view the Upgradesavailable for your vehicle below as a Mobile Online Services primary user and conveniently purchase them directly online.
+
+Upgrades for Connect ready vehicless
+------------------------------------
+
+*   Navigation: Add navigation functions for your Ready 2 Discover infotainment system and enhance your vehicle with intuitive navigation. Activating these functions allows you to access integrated, intuitive navigation with a 2D map display for Europe and points of interest (POIs). Once activated in the vehicle, these functions are permanently available to you and do not require an Internet connection or a We Connect contract. As well as these handy offline functions, you can access additional useful online services with the We Connect Plus licence. The Online Traffic Information service keeps you, the primary user, informed of changes and hazards along your route almost in real time, while the Online Route Calculation service provides optimal and forward-looking route guidance. Online Map Update automatically updates your map material at regular intervals when your vehicle is online, when you select the ‘Share my position’ setting in your infotainment system.
+*   Voice Control: By saying “Hello Volkswagen”, you enter into a natural dialogue – for safe and convenient control of selected telephony, media or navigation functions. Activate voice control for your infotainment system Ready 2 Discover or Discover Media and control numerous vehicle functions using your voice. After all, depending on the vehicle model and equipment, many selected functions can be controlled using your voice. This allows you to focus completely on the road and enjoy driving even more.
+*   App Connect: With App-Connect, selected apps and content are transmitted directly to the display of the infotainment system in your Volkswagen and can be comfortably and clearly controlled within your line of vision. That makes it incredibly easy to access music, news, maps or audiobooks, for example. Volkswagen offers three interfaces for connecting smartphones, with numerous options: Apple CarPlay™, Android Auto™ by Google and MirrorLink®. Wireless use of Apple CarPlay™ and Android Auto™ by Google is also available as a We Upgrade function for the Discover Media navigation system and Ready 2 Discover. To avoid distraction, only certified apps can be started during the journey.
+
+More We Upgrade functions for your Golf
+---------------------------------------
+
+*   Adaptive Cruise Control ACC: Adaptive Cruise Control (ACC) keeps to a constant pre-set speed of your choice, up to 130 mph. When your Golf approaches another vehicle in front, ACC adapts the speed automatically, keeping your pre-set distance from the other vehicle (within the system’s limits).
+*   Light Assist: With the Light Assist main beam control system, you’ll see driving at night in your Golf in a whole new light. Light Assist uses a camera installed behind the windscreen to detect oncoming traffic or vehicles driving ahead and automatically switch between dipped and main beam (within the system’s limits).
+*   Dynamic Road Sign Display: Dynamic Road Sign Display can detect speed limits, overtaking bans and hazard signs on camera (within system limitations) and show this on the multi-function display. So it’s easier to keep track of what''s going on in traffic.
+*   Mood Lighting: The expansion of the basic ambient lighting enables the interior to be lit according to mood, thanks to the individual choice of colour. Mood Lighting offers an expanded range of colours and a wider selection for creating lighting accents as a We Upgrade function. Whether you prefer cooler or warmer lighting, you’re in the bright lights of the big city or on a dark country road: on every trip, you can create a different atmosphere to suit you and your passengers.
+
+For more information on which We Upgrade functions are available for your vehicle and current offer prices, please visit [www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions](https://www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions)---
+
+---
 assets:
   - id: 134
     assetType: HOW_IT_WORKS
@@ -8227,28 +12397,8 @@ assets:
     title: Adaptive Cruise Control
 ---
 
-Upgrade
-=======
-
-Upgrades allow you to make your Volkswagen even more connected. Simply using your car’s infotainment system or the Volkswagen Connect shop, you can instantly purchase navigation upgrades, driver assist systems, and more. You can view the Upgradesavailable for your vehicle below as a Mobile Online Services primary user and conveniently purchase them directly online.
-
-Upgrades for Connect ready vehicless
-------------------------------------
-
-*   Navigation: Add navigation functions for your Ready 2 Discover infotainment system and enhance your vehicle with intuitive navigation. Activating these functions allows you to access integrated, intuitive navigation with a 2D map display for Europe and points of interest (POIs). Once activated in the vehicle, these functions are permanently available to you and do not require an Internet connection or a We Connect contract. As well as these handy offline functions, you can access additional useful online services with the We Connect Plus licence. The Online Traffic Information service keeps you, the primary user, informed of changes and hazards along your route almost in real time, while the Online Route Calculation service provides optimal and forward-looking route guidance. Online Map Update automatically updates your map material at regular intervals when your vehicle is online, when you select the ‘Share my position’ setting in your infotainment system.
-*   Voice Control: By saying “Hello Volkswagen”, you enter into a natural dialogue – for safe and convenient control of selected telephony, media or navigation functions. Activate voice control for your infotainment system Ready 2 Discover or Discover Media and control numerous vehicle functions using your voice. After all, depending on the vehicle model and equipment, many selected functions can be controlled using your voice. This allows you to focus completely on the road and enjoy driving even more.
-*   App Connect: With App-Connect, selected apps and content are transmitted directly to the display of the infotainment system in your Volkswagen and can be comfortably and clearly controlled within your line of vision. That makes it incredibly easy to access music, news, maps or audiobooks, for example. Volkswagen offers three interfaces for connecting smartphones, with numerous options: Apple CarPlay™, Android Auto™ by Google and MirrorLink®. Wireless use of Apple CarPlay™ and Android Auto™ by Google is also available as a We Upgrade function for the Discover Media navigation system and Ready 2 Discover. To avoid distraction, only certified apps can be started during the journey.
-
-More We Upgrade functions for your Golf
----------------------------------------
-
-*   Adaptive Cruise Control ACC: Adaptive Cruise Control (ACC) keeps to a constant pre-set speed of your choice, up to 130 mph. When your Golf approaches another vehicle in front, ACC adapts the speed automatically, keeping your pre-set distance from the other vehicle (within the system’s limits).
-*   Light Assist: With the Light Assist main beam control system, you’ll see driving at night in your Golf in a whole new light. Light Assist uses a camera installed behind the windscreen to detect oncoming traffic or vehicles driving ahead and automatically switch between dipped and main beam (within the system’s limits).
-*   Dynamic Road Sign Display: Dynamic Road Sign Display can detect speed limits, overtaking bans and hazard signs on camera (within system limitations) and show this on the multi-function display. So it’s easier to keep track of what''s going on in traffic.
-*   Mood Lighting: The expansion of the basic ambient lighting enables the interior to be lit according to mood, thanks to the individual choice of colour. Mood Lighting offers an expanded range of colours and a wider selection for creating lighting accents as a We Upgrade function. Whether you prefer cooler or warmer lighting, you’re in the bright lights of the big city or on a dark country road: on every trip, you can create a different atmosphere to suit you and your passengers.
-
-For more information on which We Upgrade functions are available for your vehicle and current offer prices, please visit [www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions](https://www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false, 'allow,make,connected,connection,handy,guidance,update,setting,control,telephony'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Upgrades'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8275,8 +12425,36 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Upgra
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('upgrade'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Activation', 'Find out how to activate your mobile online services via the Volkswagen app along with detailed instructions.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Activation_thumb@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Activation', 'Find out how to activate your mobile online services via the Volkswagen app along with detailed instructions.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Activation_thumb@2x.png', 'Activation
+==========
+
+Straight from your car or using your smartphone: bring VW Connect into your Volkswagen. Select your Volkswagen model and follow one of the two text guides to activate mobile online services straight from your vehicle or using the app.
+
+Activation guides
+-----------------
+
+ID. family
+----------
+
+Guide on activating the Volkswagen app: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Start\_Activation\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Start_Activation_EN.pdf)
+
+Golf 8 and model versions
+-------------------------
+
+Activation in the vehicle: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Activation\_Golf\_8\_Vehicle\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Activation_Golf_8_Vehicle_EN.pdf)
+
+Guide on activation using the Volkswagen app: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We-Connect-Activation-Golf8-App-EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We-Connect-Activation-Golf8-App-EN.pdf)
+
+More We Connect-ready models
+----------------------------
+
+Activation in the vehicle: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Activation\_Vehicle\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Activation_Vehicle_EN.pdf)
+
+Guide on activation using the Volkswagen app: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Activation\_App\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Activation_App_EN.pdf)---
+
+---
 assets:
   - id: 144
     assetType: HOW_IT_WORKS
@@ -8310,33 +12488,8 @@ assets:
     title: Mobile Online Services, Start/ID Activation
 ---
 
-Activation
-==========
-
-Straight from your car or using your smartphone: bring VW Connect into your Volkswagen. Select your Volkswagen model and follow one of the two text guides to activate mobile online services straight from your vehicle or using the app.
-
-Activation guides
------------------
-
-ID. family
-----------
-
-Guide on activating the Volkswagen app: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Start\_Activation\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Start_Activation_EN.pdf)
-
-Golf 8 and model versions
--------------------------
-
-Activation in the vehicle: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Activation\_Golf\_8\_Vehicle\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Activation_Golf_8_Vehicle_EN.pdf)
-
-Guide on activation using the Volkswagen app: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We-Connect-Activation-Golf8-App-EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We-Connect-Activation-Golf8-App-EN.pdf)
-
-More We Connect-ready models
-----------------------------
-
-Activation in the vehicle: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Activation\_Vehicle\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Activation_Vehicle_EN.pdf)
-
-Guide on activation using the Volkswagen app: [www.volkswagen.co.uk/idhub/content/dam/onehub\_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We\_Connect\_Activation\_App\_EN.pdf](https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/we-connect/activation-manuals/en/We_Connect_Activation_App_EN.pdf)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 7 LIMIT 1), 0, false, 'activate,mobile,online,text,model,idhub,straight,using,select,activationfind'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Activation'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8363,8 +12516,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Activ
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('activation'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Air Care Climatronic', 'An intelligent air conditioning system that ensures better air quality by preventing potentially harmful pollutants from entering the car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_pro_performance_air_care_climatronic-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Air Care Climatronic', 'An intelligent air conditioning system that ensures better air quality by preventing potentially harmful pollutants from entering the car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_pro_performance_air_care_climatronic-poster.jpg', 'ID. Air Care Climatronic
+========================
+
+An intelligent air conditioning system that ensures better air quality by preventing potentially harmful pollutants from entering the car and enables individual temperature control for driver and passenger.---
+
+---
 assets:
   - id: 148
     assetType: HOW_IT_WORKS
@@ -8378,11 +12537,8 @@ assets:
     title: ID. Air Care Climatronic
 ---
 
-ID. Air Care Climatronic
-========================
-
-An intelligent air conditioning system that ensures better air quality by preventing potentially harmful pollutants from entering the car and enables individual temperature control for driver and passenger.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'conditioning,https,showroom,assets,assettype,works,citjztneabk,watch,control,driver'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8489,8 +12645,78 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. A
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-air-care-climatronic'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Advanced dynamic light assist for LED Matrix headlights', 'Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_pro_performance_light_assist-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Advanced dynamic light assist for LED Matrix headlights', 'Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_pro_performance_light_assist-poster.jpg', 'ID. Advanced dynamic light assist for LED Matrix headlights
+===========================================================
+
+Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.---
+
+---
 assets:
   - id: 150
     assetType: HOW_IT_WORKS
@@ -8504,11 +12730,8 @@ assets:
     title: ID. Advanced dynamic light assist for LED Matrix headlights
 ---
 
-ID. Advanced dynamic light assist for LED Matrix headlights
-===========================================================
-
-Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'watch,crarq,https,showroom,www,title,youtube,automatically,headlights,based'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8583,8 +12806,62 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. A
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('advanced-dynamic-light-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Interior Ambient lighting with 30 colour options', 'Choose from ten or thirty standard colours (depending on ID. model) and gently illuminate the interior.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id_instructional-lighting-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Advanced dynamic light assist for LED Matrix headlights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Interior Ambient lighting with 30 colour options', 'Choose from ten or thirty standard colours (depending on ID. model) and gently illuminate the interior.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id_instructional-lighting-poster.jpg', 'ID. Interior Ambient lighting with 30 colour options
+====================================================
+
+Choose from ten or thirty standard colours (depending on ID. model) and gently illuminate the interior. This includes the dash panel, the mobile phone holder and the doors. Whether cooler or warmer lighting – it’s your choice.---
+
+---
 assets:
   - id: 152
     assetType: HOW_IT_WORKS
@@ -8598,11 +12875,8 @@ assets:
     title: ID. Interior Ambient lighting with 30 colour options
 ---
 
-ID. Interior Ambient lighting with 30 colour options
-====================================================
-
-Choose from ten or thirty standard colours (depending on ID. model) and gently illuminate the interior. This includes the dash panel, the mobile phone holder and the doors. Whether cooler or warmer lighting – it’s your choice.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'warmer,choice,assets,works,showroom,doors,whether,cooler,mobile,phone'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8685,8 +12959,62 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. I
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('interior-ambient-lighting'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. AR head-up Display', 'Sends useful information straight into the windscreen’s field of vision, making driving easier for you.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id_instructional-ar_head_up_display-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Interior Ambient lighting with 30 colour options'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. AR head-up Display', 'Sends useful information straight into the windscreen’s field of vision, making driving easier for you.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id_instructional-ar_head_up_display-poster.jpg', 'ID. AR head-up Display
+======================
+
+Sends useful information straight into the windscreen’s field of vision, making driving easier for you. Allowing you, for example, to see the navigation information exactly where you have to drive or turn off and keep your eyes on the road.---
+
+---
 assets:
   - id: 154
     assetType: HOW_IT_WORKS
@@ -8705,11 +13033,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/software-and-technology/driving-technology/augmented-reality-head-up-display.html
 ---
 
-ID. AR head-up Display
-======================
-
-Sends useful information straight into the windscreen’s field of vision, making driving easier for you. Allowing you, for example, to see the navigation information exactly where you have to drive or turn off and keep your eyes on the road.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'head,straight,assets,works,showroom,software,turn,road,www,https'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8808,8 +13133,64 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. A
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-ar-head-up-display'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Heat Pump', 'Volkswagen''s highly efficient heat pump system compresses refrigerant under high pressure. The process produces heat which is used to help keep the car’s interior cosy. It also saves using energy from the battery, which helps to increase range.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id7_feature-heat_pump-poster-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. AR head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Heat Pump', 'Volkswagen''s highly efficient heat pump system compresses refrigerant under high pressure. The process produces heat which is used to help keep the car’s interior cosy. It also saves using energy from the battery, which helps to increase range.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id7_feature-heat_pump-poster-700x350.jpg', 'ID. Heat Pump
+=============
+
+Volkswagen heat pump technology is more efficient than traditional electric heaters because it requires less energy to produce the same amount of heat. Additionally, by using waste heat from various sources, it reduces the drain on the vehicle’s battery, which significantly increases range. Overall, the technology minimises energy consumption, making our ID. Range even more environmentally friendly.
+
+For more information, please visit: [www.volkswagen.co.uk/en/electric-and-hybrid/software-and-technology/id-technology/heat-pump.html](https://www.volkswagen.co.uk/en/electric-and-hybrid/software-and-technology/id-technology/heat-pump.html)---
+
+---
 assets:
   - id: 156
     assetType: HOW_IT_WORKS
@@ -8833,13 +13214,8 @@ assets:
     title: ID. Heat Pump
 ---
 
-ID. Heat Pump
-=============
-
-Volkswagen heat pump technology is more efficient than traditional electric heaters because it requires less energy to produce the same amount of heat. Additionally, by using waste heat from various sources, it reduces the drain on the vehicle’s battery, which significantly increases range. Overall, the technology minimises energy consumption, making our ID. Range even more environmentally friendly.
-
-For more information, please visit: [www.volkswagen.co.uk/en/electric-and-hybrid/software-and-technology/id-technology/heat-pump.html](https://www.volkswagen.co.uk/en/electric-and-hybrid/software-and-technology/id-technology/heat-pump.html)',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'heat,pump,cosy,saves,energy,battery,www,hybrid,increases,additionally'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8914,8 +13290,62 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. H
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-heat-pump'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Eco Assistant', 'Helps you drive in an energy conserving manner by using navigation data and the sensors of several  assistance systems in the vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_eco_assistant_ellie-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30270'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Heat Pump'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Eco Assistant', 'Helps you drive in an energy conserving manner by using navigation data and the sensors of several  assistance systems in the vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_eco_assistant_ellie-poster.jpg', 'ID. Eco Assistant
+=================
+
+Helps you drive in an energy conserving manner by using navigation data and the sensors of several assistance systems in the vehicle. Various symbols will be shown on the driver''s display and head-up display to indicate ways the driver can conserve energy.---
+
+---
 assets:
   - id: 158
     assetType: HOW_IT_WORKS
@@ -8929,11 +13359,8 @@ assets:
     title: ID. Eco Assistant
 ---
 
-ID. Eco Assistant
-=================
-
-Helps you drive in an energy conserving manner by using navigation data and the sensors of several assistance systems in the vehicle. Various symbols will be shown on the driver''s display and head-up display to indicate ways the driver can conserve energy.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'eco,conserving,https,assettype,ways,conserve,driver,display,head,showroom'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Eco Assistant'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -8960,8 +13387,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. E
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-eco-assistant'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Travel Assist', 'Travel Assist provides you with an extremely useful driving assistant in your vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_travel_assist-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Travel Assist', 'Travel Assist provides you with an extremely useful driving assistant in your vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_travel_assist-poster.jpg', 'ID. Travel Assist
+=================
+
+Travel Assist provides you with an extremely useful driving assistant in your vehicle. After all, at the press of a button it delivers a high level of driving comfort by supporting you in monotonous and tiring driving situations. Particularly on motorways and busy highways, Travel Assist is able to keep you in the lane and at a set speed while simultaneously monitoring the distance to the traffic in front. You can relaxedly drive through traffic jams and congested traffic.---
+
+---
 assets:
   - id: 160
     assetType: HOW_IT_WORKS
@@ -8975,11 +13408,8 @@ assets:
     title: ID. Travel Assist
 ---
 
-ID. Travel Assist
-=================
-
-Travel Assist provides you with an extremely useful driving assistant in your vehicle. After all, at the press of a button it delivers a high level of driving comfort by supporting you in monotonous and tiring driving situations. Particularly on motorways and busy highways, Travel Assist is able to keep you in the lane and at a set speed while simultaneously monitoring the distance to the traffic in front. You can relaxedly drive through traffic jams and congested traffic.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'travel,extremely,motorways,speed,monitoring,front,jams,assets,tiring,https'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -9038,8 +13468,53 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. T
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-travel-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Park Assist Plus', 'The Park Assist Plus functions park the vehicle automatically.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id5_pro_park_assist_plus-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Travel Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Park Assist Plus', 'The Park Assist Plus functions park the vehicle automatically.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id5_pro_park_assist_plus-poster.jpg', 'ID. Park Assist Plus
+====================
+
+The Park Assist Plus functions park the vehicle automatically. The vehicle takes over the longitudinal and lateral guidance. The driver is responsible for monitoring the surroundings, and applying brake and gas. You can override the system at any time and interrupt or cancel the parking process.
+
+Customer Benefit
+
+*   Assisted parking in difficult situations for the driver
+*   Function takes over both longitudinal and lateral control of the vehicle
+*   Collisions and associated minor damage should be avoided
+*   Environment display additionally warns of obstacles, even those temporarily detected from the side---
+
+---
 assets:
   - id: 162
     assetType: HOW_IT_WORKS
@@ -9053,18 +13528,8 @@ assets:
     title: ID. Park Assist Plus
 ---
 
-ID. Park Assist Plus
-====================
-
-The Park Assist Plus functions park the vehicle automatically. The vehicle takes over the longitudinal and lateral guidance. The driver is responsible for monitoring the surroundings, and applying brake and gas. You can override the system at any time and interrupt or cancel the parking process.
-
-Customer Benefit
-
-*   Assisted parking in difficult situations for the driver
-*   Function takes over both longitudinal and lateral control of the vehicle
-*   Collisions and associated minor damage should be avoided
-*   Environment display additionally warns of obstacles, even those temporarily detected from the side',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'functions,parking,customer,assisted,situations,temporarily,detected,side,assets,assettype'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -9123,8 +13588,46 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. P
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-park-assist-plus'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Light Assist', 'Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_pro_performance_light_assist-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Light Assist', 'Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_pro_performance_light_assist-poster.jpg', 'ID. Light Assist
+================
+
+Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.---
+
+---
 assets:
   - id: 164
     assetType: HOW_IT_WORKS
@@ -9138,11 +13641,8 @@ assets:
     title: ID. Light Assist
 ---
 
-ID. Light Assist
-================
-
-Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'light,automatically,title,https,showroom,youtu,xue,headlights,switching,high'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -9201,8 +13701,46 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. L
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-light-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Emergency Assist', 'If you do not show any driving activity due to a medical emergency, Emergency Assist can detect this and attempt to make you react.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_pro_performance_ef-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Emergency Assist', 'If you do not show any driving activity due to a medical emergency, Emergency Assist can detect this and attempt to make you react.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology_id4_pro_performance_ef-poster.jpg', 'ID. Emergency Assist
+====================
+
+If you do not show any driving activity due to a medical emergency, Emergency Assist can detect this and attempt to make you react. If it does not succeed, it can bring the vehicle to a controlled stop within the system limits and can thus possibly prevent an accident. (within the limits of the system).---
+
+---
 assets:
   - id: 166
     assetType: HOW_IT_WORKS
@@ -9216,11 +13754,8 @@ assets:
     title: ID. Emergency Assist
 ---
 
-ID. Emergency Assist
-====================
-
-If you do not show any driving activity due to a medical emergency, Emergency Assist can detect this and attempt to make you react. If it does not succeed, it can bring the vehicle to a controlled stop within the system limits and can thus possibly prevent an accident. (within the limits of the system).',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'emergency,activity,assets,prevent,https,assettype,showroom,possibly,limits,stop'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -9287,8 +13822,54 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. E
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-emergency-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Area View', 'With Area View you get four cameras that capture the area around the vehicle and transfer helpful information to the screen of the infotainment system.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id5_area_view_feature-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Emergency Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Area View', 'With Area View you get four cameras that capture the area around the vehicle and transfer helpful information to the screen of the infotainment system.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id5_area_view_feature-poster.jpg', 'ID. Area View
+=============
+
+Manoeuvring in the busy city centre, in a multi-storey car park or in rough terrain: there are many situations in which drivers could use a few extra eyes. With the optional Area View you get them in the form of four cameras that capture the area around the vehicle and transfer helpful information to the screen of the infotainment system. For example, you can see kerbs or parking markings better and even look around the corner.---
+
+---
 assets:
   - id: 168
     assetType: HOW_IT_WORKS
@@ -9302,11 +13883,8 @@ assets:
     title: ID. Area View
 ---
 
-ID. Area View
-=============
-
-Manoeuvring in the busy city centre, in a multi-storey car park or in rough terrain: there are many situations in which drivers could use a few extra eyes. With the optional Area View you get them in the form of four cameras that capture the area around the vehicle and transfer helpful information to the screen of the infotainment system. For example, you can see kerbs or parking markings better and even look around the corner.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'area,cameras,situations,drivers,could,extra,eyes,optional,form,works'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -9365,8 +13943,46 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. A
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-area-view'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Keyless Entry', 'Keyless access offers you convenient and secure access to your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_product_film_tutorial_keyless_access-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Area View'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Keyless Entry', 'Keyless access offers you convenient and secure access to your car.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_product_film_tutorial_keyless_access-poster.jpg', 'ID. Keyless Entry
+=================
+
+Keyless access offers you convenient and secure access to your car. The system has two components: the transmitter and the starter module. You just carry the transmitter - the starter module is built into the dashboard. Within a radius of 1.5 metres around the car rolling codes are exchanged between the key and the car and the transmitter switches the system to ''Open''. By the time you''re behind the wheel the steering lock has been released and the electrical system activated. If the key has been left inside the car by mistake, the system will refuse to lock it.---
+
+---
 assets:
   - id: 170
     assetType: HOW_IT_WORKS
@@ -9380,11 +13996,8 @@ assets:
     title: ID. Keyless Entry
 ---
 
-ID. Keyless Entry
-=================
-
-Keyless access offers you convenient and secure access to your car. The system has two components: the transmitter and the starter module. You just carry the transmitter - the starter module is built into the dashboard. Within a radius of 1.5 metres around the car rolling codes are exchanged between the key and the car and the transmitter switches the system to ''Open''. By the time you''re behind the wheel the steering lock has been released and the electrical system activated. If the key has been left inside the car by mistake, the system will refuse to lock it.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'keyless,convenient,switches,wheel,been,key,released,https,exchanged,module'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -9451,8 +14064,54 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. K
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-keyless-entry'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Adaptive Cruise Control (ACC)', 'Adaptive Cruise Control ACC helps you to maintain a previously set speed and preset minimum distance to the vehicle in front.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-polo_acc_adaptive_cruise_control-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Keyless Entry'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Adaptive Cruise Control (ACC)', 'Adaptive Cruise Control ACC helps you to maintain a previously set speed and preset minimum distance to the vehicle in front.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-polo_acc_adaptive_cruise_control-poster.jpg', 'Adaptive Cruise Control (ACC)
+=============================
+
+Adaptive Cruise Control ACC helps you to maintain a previously set speed and preset minimum distance to the vehicle in front. It also has predictive cruise control and cornering assistance. This means that ACC can adapt the vehicle’s speed to the relevant speed.---
+
+---
 assets:
   - id: 172
     assetType: HOW_IT_WORKS
@@ -9466,11 +14125,8 @@ assets:
     title: Adaptive Cruise Control (ACC)
 ---
 
-Adaptive Cruise Control (ACC)
-=============================
-
-Adaptive Cruise Control ACC helps you to maintain a previously set speed and preset minimum distance to the vehicle in front. It also has predictive cruise control and cornering assistance. This means that ACC can adapt the vehicle’s speed to the relevant speed.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'https,cornering,showroom,hob,adapt,assettype,title,predictive,minimum,front'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -9817,8 +14473,218 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adapt
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('adaptive-cruise-control'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Park Assist', 'Park Assist not only tells you whether a parking space is large enough when driving past – it can also drive into it for you.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-t_roc_park_assist_feature-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Adaptive Cruise Control (ACC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Park Assist', 'Park Assist not only tells you whether a parking space is large enough when driving past – it can also drive into it for you.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-t_roc_park_assist_feature-poster.jpg', 'Park Assist
+===========
+
+Park Assist not only tells you whether a parking space is large enough when driving past – it can also drive into it for you. You operate the clutch, accelerator and brake. And it does the rest.
+
+*   Sensors scan suitable parking spaces (up to max. 40 km/h)
+*   Parallel parking spaces must have one vehicle length plus 80 cm manoeuvring distance for driving into the space, and at least 25 cm in front of and behind the vehicle for driving out of a parking space
+*   Parking bays must have at least 35 cm clearance on both sides---
+
+---
 assets:
   - id: 174
     assetType: VIDEO
@@ -9832,15 +14698,8 @@ assets:
     title: Park Assist
 ---
 
-Park Assist
-===========
-
-Park Assist not only tells you whether a parking space is large enough when driving past – it can also drive into it for you. You operate the clutch, accelerator and brake. And it does the rest.
-
-*   Sensors scan suitable parking spaces (up to max. 40 km/h)
-*   Parallel parking spaces must have one vehicle length plus 80 cm manoeuvring distance for driving into the space, and at least 25 cm in front of and behind the vehicle for driving out of a parking space
-*   Parking bays must have at least 35 cm clearance on both sides',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'park,parking,spaces,max,scan,suitable,https,showroom,title,front'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10003,16 +14862,145 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('park-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Family Guide & Toolkit', 'Everything you need to know about our ID. Family range and switching to electric vehicles.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/id-family-guide-toolkit-header-v2@2x.jpg', '---
-ctas:
-  - title: Read the ID. Family Guide & Toolkit PDF here
-    validInMode: 1
-    url: >-
-      https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/electric/VW-ID-Family-Guide-Toolkit.pdf
----
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
 
-ID. Family Guide & Toolkit
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30252'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31705'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31005'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Park Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Family Guide & Toolkit', 'Everything you need to know about our ID. Family range and switching to electric vehicles.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/id-family-guide-toolkit-header-v2@2x.jpg', 'ID. Family Guide & Toolkit
 ==========================
 
 Everything you need to know about our ID. Family range and switching to electric vehicles.
@@ -10048,8 +15036,18 @@ Service Regime
 
 **PHEV**
 
-**Glossary (EV terms) and Helpful tools**',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 9 LIMIT 1), 0, false
+**Glossary (EV terms) and Helpful tools**---
+
+---
+ctas:
+  - title: Read the ID. Family Guide & Toolkit PDF here
+    validInMode: 1
+    url: >-
+      https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/electric/VW-ID-Family-Guide-Toolkit.pdf
+---
+
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 9 LIMIT 1), 0, false, 'range,navigation,located,bottom,pdf,content,cost,running,ovo,battery'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Family Guide & Toolkit'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10084,8 +15082,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. F
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('family-guide-toolkit'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Make switching a walk in the park: A step-by-step guide', 'Our handy guide will walk you through the whole going electric process', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_New-to-electric_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Make switching a walk in the park: A step-by-step guide', 'Our handy guide will walk you through the whole going electric process', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_New-to-electric_header@2x.png', 'Make switching a walk in the park: A step-by-step guide
+=======================================================
+
+Our handy guide will walk you through the whole going electric process, including choosing the right model and extras, an overview of the buying process, ways to save money as well as the waiting and handover period.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10093,11 +15097,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/making-the-switch/step-by-step.html
 ---
 
-Make switching a walk in the park: A step-by-step guide
-=======================================================
-
-Our handy guide will walk you through the whole going electric process, including choosing the right model and extras, an overview of the buying process, ways to save money as well as the waiting and handover period.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'switching,walk,park,title,find,url,https,hybrid,making,period'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Make switching a walk in the park: A step-by-step guide'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10124,8 +15125,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Make 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('new-to-electric'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Ways to save with electric', 'Making the switch to a Volkswagen electric vehicle comes with a number of financial benefits.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Grants-and-tax-breaks_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Ways to save with electric', 'Making the switch to a Volkswagen electric vehicle comes with a number of financial benefits.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Grants-and-tax-breaks_header@2x.png', 'Ways to save with electric
+==========================
+
+The government offer a range of money saving schemes such as a grant to make installing a wallbox charger at home cheaper for people living in flats and rental accommodation. Electric vehicles are also exempt from schemes such as the London Congestion Charge.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10133,11 +15140,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/running-costs/savings.html
 ---
 
-Ways to save with electric
-==========================
-
-The government offer a range of money saving schemes such as a grant to make installing a wallbox charger at home cheaper for people living in flats and rental accommodation. Electric vehicles are also exempt from schemes such as the London Congestion Charge.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'ways,comes,number,benefits,government,money,grant,wallbox,people,living'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ways to save with electric'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10164,8 +15168,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Ways 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('grants-and-tax-breaks'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Battery warranty and maintenance', 'Find out how to take care of your battery.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Battery-warranty-and-maintenance_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Battery warranty and maintenance', 'Find out how to take care of your battery.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Battery-warranty-and-maintenance_header@2x.png', 'Battery warranty and maintenance
+================================
+
+Find out how to take care of your battery. You’ll also discover our range of battery warranties designed to give you maximum protection.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10173,11 +15183,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/looking-after-your-ev/vehicle-and-battery-warranties.html
 ---
 
-Battery warranty and maintenance
-================================
-
-Find out how to take care of your battery. You’ll also discover our range of battery warranties designed to give you maximum protection.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'living,electric,html,www,url,protection,looking,validinmode,title,warranties'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Battery warranty and maintenance'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10204,8 +15211,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Batte
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('battery-warranty-and-maintenance'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Looking after your Volkswagen electric vehicle', 'Taking care of your Volkswagen electric vehicle could not be easier.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Electric-car-servicing_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Looking after your Volkswagen electric vehicle', 'Taking care of your Volkswagen electric vehicle could not be easier.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Electric-car-servicing_header@2x.png', 'Looking after your Volkswagen electric vehicle
+==============================================
+
+Maintenance of a Volkswagen electric vehicle is simpler than its combustion engine counterpart as it has fewer components.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10213,11 +15226,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/looking-after-your-ev.html
 ---
 
-Looking after your Volkswagen electric vehicle
-==============================================
-
-Maintenance of a Volkswagen electric vehicle is simpler than its combustion engine counterpart as it has fewer components.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'could,fewer,title,url,www,hybrid,living,html,combustion,validinmode'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Looking after your Volkswagen electric vehicle'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10244,8 +15254,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Looki
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('electric-car-servicing'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Electric FAQs', 'Quickly find answers to common questions.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Electric-FAQs_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Electric FAQs', 'Quickly find answers to common questions.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Electric-FAQs_header@2x.png', 'Electric FAQs
+=============
+
+Quickly find answers to some of the most commonly asked questions we get about electric driving.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10253,11 +15269,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/life-with-an-ev/faqs.html
 ---
 
-Electric FAQs
-=============
-
-Quickly find answers to some of the most commonly asked questions we get about electric driving.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'electric,common,faqs,living,www,life,validinmode,driving,hybrid,url'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electric FAQs'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10292,8 +15305,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Elect
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('electric-faqs'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'How do electric cars compare on cost', 'How much it costs to own an electric car.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_How-do-electric-cars-compare-on-cost_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'How do electric cars compare on cost', 'How much it costs to own an electric car.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_How-do-electric-cars-compare-on-cost_header@2x.png', 'How do electric cars compare on cost
+====================================
+
+Take a closer look at how much it costs to own an electric car. Includes information on grants and service costs.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10301,11 +15320,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/running-costs.html
 ---
 
-How do electric cars compare on cost
-====================================
-
-Take a closer look at how much it costs to own an electric car. Includes information on grants and service costs.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'url,www,living,running,title,hybrid,validinmode,service,https,ctas'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('How do electric cars compare on cost'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10340,8 +15356,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('How d
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('how-do-electric-cars-compare-on-cost'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'The latest news on everything electric', 'We have put together a selection of interesting articles for you about electric driving.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_discover_electric_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'The latest news on everything electric', 'We have put together a selection of interesting articles for you about electric driving.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_discover_electric_header@2x.png', 'The latest news on everything electric
+======================================
+
+We’ve put together a selection of interesting articles for you about electric driving. We hope you have fun browsing, reading, and discovering a whole new world of mobility.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10349,11 +15371,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/discover-electric.html
 ---
 
-The latest news on everything electric
-======================================
-
-We’ve put together a selection of interesting articles for you about electric driving. We hope you have fun browsing, reading, and discovering a whole new world of mobility.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'articles,validinmode,url,https,www,hybrid,living,discover,ctas,find'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('The latest news on everything electric'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10380,8 +15399,14 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('The l
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('discover-electric'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'GTE servicing', 'The perfect way to keep your GTE performing perfectly.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_GTE-servicing_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'GTE servicing', 'The perfect way to keep your GTE performing perfectly.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_GTE-servicing_header@2x.png', 'GTE servicing
+=============
+
+Find out why regular services are the best way to keep your GTE performing perfectly.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10389,11 +15414,8 @@ ctas:
       https://www.volkswagen.co.uk/en/owners-and-drivers/servicing/service-plans/service-schedules/gte-servicing.html
 ---
 
-GTE servicing
-=============
-
-Find out why regular services are the best way to keep your GTE performing perfectly.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 10 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 10 LIMIT 1), 0, false, 'gte,performing,service,owners,plans,www,html,url,drivers,validinmode'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('GTE servicing'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10404,19 +15426,22 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('G
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Plug-in Hybrid', 'A Plug-in Hybrid combines an electric motor with a modern conventional petrol engine.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_New-to-hybrid_thumb@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Plug-in Hybrid', 'A Plug-in Hybrid combines an electric motor with a modern conventional petrol engine.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_New-to-hybrid_thumb@2x.png', 'Plug-in Hybrid
+==============
+
+Whilst you’ll be able to cover most day-to-day distances in fully electric mode, for longer journeys you’ll still have the added confidence of being able to switch to petrol. Plug-in hybrids are a perfect stepping stone for people who aren’t quite ready to transition to fully electric.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
     url: https://www.volkswagen.co.uk/en/electric-and-hybrid/hybrid-cars.html
 ---
 
-Plug-in Hybrid
-==============
-
-Whilst you’ll be able to cover most day-to-day distances in fully electric mode, for longer journeys you’ll still have the added confidence of being able to switch to petrol. Plug-in hybrids are a perfect stepping stone for people who aren’t quite ready to transition to fully electric.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 10 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 10 LIMIT 1), 0, false, 'plug,combines,modern,engine,whilst,day,stone,ready,validinmode,www'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Plug-in Hybrid'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10427,8 +15452,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('P
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'How far can an electric vehicle really go?', 'Get an estimated range for our electric vehicles.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_How-far-can-you-go_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'How far can an electric vehicle really go?', 'Get an estimated range for our electric vehicles.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_How-far-can-you-go_header@2x.png', 'How far can an electric vehicle really go?
+==========================================
+
+Use our range simulator tool to get an estimated range based on factors such as your driving style, battery size and Volkswagen electric vehicle model.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10436,11 +15467,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/range/range-simulator.html
 ---
 
-How far can an electric vehicle really go?
-==========================================
-
-Use our range simulator tool to get an estimated range based on factors such as your driving style, battery size and Volkswagen electric vehicle model.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'https,www,hybrid,charging,find,validinmode,model,style,ctas,simulator'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('How far can an electric vehicle really go?'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10451,8 +15479,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('H
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Charging times simulator', 'Choose from a series of options and the Charging Times Simulator will provide you with an accurate estimation.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Where-to-charge-your-electric-car_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Charging times simulator', 'Choose from a series of options and the Charging Times Simulator will provide you with an accurate estimation.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Where-to-charge-your-electric-car_header@2x.png', 'Charging times simulator
+========================
+
+Charging times can vary depending on factors such as - your Volkswagen electric vehicle model, where you charge, which type of charger you use, and the outside temperature.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10460,11 +15494,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/charging-time.html
 ---
 
-Charging times simulator
-========================
-
-Charging times can vary depending on factors such as - your Volkswagen electric vehicle model, where you charge, which type of charger you use, and the outside temperature.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'url,https,hybrid,www,find,title,validinmode,temperature,charger,ctas'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Charging times simulator'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10475,8 +15506,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('C
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Charging on the go with We Charge', 'As part of the Volkswagen app, We Charge makes charging when you are out and about a breeze.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Paying-for-charging_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Charging on the go with We Charge', 'As part of the Volkswagen app, We Charge makes charging when you are out and about a breeze.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Paying-for-charging_header@2x.png', 'Charging on the go with We Charge
+=================================
+
+There are three different charging plans to choose from, each tailored to specific charging needs. The Volkswagen app makes it easy for you to set up your Volkswagen ID. and start using the charging card.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10484,11 +15521,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/we-charge.html
 ---
 
-Charging on the go with We Charge
-=================================
-
-There are three different charging plans to choose from, each tailored to specific charging needs. The Volkswagen app makes it easy for you to set up your Volkswagen ID. and start using the charging card.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'charging,charge,makes,ctas,validinmode,www,hybrid,html,https,using'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Charging on the go with We Charge'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10499,8 +15533,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('C
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'How to charge an electric vehicle', 'Charging times are faster and ranges are longer, making having and electric Volkswagen even easier.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Charging-at-home-and-on-the-go_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'How to charge an electric vehicle', 'Charging times are faster and ranges are longer, making having and electric Volkswagen even easier.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Charging-at-home-and-on-the-go_header@2x.png', 'How to charge an electric vehicle
+=================================
+
+With the charging infrastructure rapidly growing, there are lots of places and ways to charge your Volkswagen electric vehicle. Let us take you through some of the most popular options.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10508,11 +15548,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging.html
 ---
 
-How to charge an electric vehicle
-=================================
-
-With the charging infrastructure rapidly growing, there are lots of places and ways to charge your Volkswagen electric vehicle. Let us take you through some of the most popular options.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'ranges,having,validinmode,www,ctas,charging,hybrid,let,url,easier'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('How to charge an electric vehicle'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10523,8 +15560,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('H
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Guide to the best charging apps', 'Take a look at the apps that make topping up your car''s battery simple.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Guide-to-the-best-charging-apps_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Guide to the best charging apps', 'Take a look at the apps that make topping up your car''s battery simple.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Guide-to-the-best-charging-apps_header@2x.png', 'Guide to the best charging apps
+===============================
+
+From finding charging points to payment, take a look at the apps that make topping up your car'' ''s battery simple.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10532,11 +15575,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/best-apps.html
 ---
 
-Guide to the best charging apps
-===============================
-
-From finding charging points to payment, take a look at the apps that make topping up your car'' ''s battery simple.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'make,range,html,www,electric,hybrid,payment,validinmode,https,url'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Guide to the best charging apps'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10547,8 +15587,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('G
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Where to charge your electric vehicle', 'Map out your journey making sure there are charging stations along the way should you need them.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Electric-vehicle-route-finder_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Where to charge your electric vehicle', 'Map out your journey making sure there are charging stations along the way should you need them.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Electric-vehicle-route-finder_header@2x.png', 'Where to charge your electric vehicle
+=====================================
+
+As part of your sat nav, the EV Route Planner maps out your journey making sure there are charging stations along the way should you need them.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10556,11 +15602,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html
 ---
 
-Where to charge your electric vehicle
-=====================================
-
-As part of your sat nav, the EV Route Planner maps out your journey making sure there are charging stations along the way should you need them.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'sure,living,lifestyle,html,www,hybrid,planner,route,validinmode,url'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Where to charge your electric vehicle'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10571,8 +15614,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('W
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Electric vehicle batteries: the power of technology', 'Volkswagen electric vehicles are fitted with our most advanced battery technology.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Battery-safety-FAQs_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Electric vehicle batteries: the power of technology', 'Volkswagen electric vehicles are fitted with our most advanced battery technology.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Battery-safety-FAQs_header@2x.png', 'Electric vehicle batteries: the power of technology
+===================================================
+
+Our innovative new systems mean significantly faster charging times and much increased ranges. Read on to learn more about the heart of your car.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10580,11 +15629,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/battery-technology.html
 ---
 
-Electric vehicle batteries: the power of technology
-===================================================
-
-Our innovative new systems mean significantly faster charging times and much increased ranges. Read on to learn more about the heart of your car.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'ctas,title,validinmode,url,www,hybrid,read,https,learn,charging'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Electric vehicle batteries: the power of technology'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10595,8 +15641,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('E
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Brake energy recuperation', 'Discover how braking helps your battery go for longer.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Brake-energy-recuperation_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Brake energy recuperation', 'Discover how braking helps your battery go for longer.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Brake-energy-recuperation_header@2x.png', 'Brake energy recuperation
+=========================
+
+Electric Volkswagens harness the power of braking to help the battery go for longer.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10604,11 +15656,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/range/brake-energy-recuperation.html
 ---
 
-Brake energy recuperation
-=========================
-
-Electric Volkswagens harness the power of braking to help the battery go for longer.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'battery,validinmode,www,charging,ctas,hybrid,help,url,https,harness'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Brake energy recuperation'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10619,8 +15668,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('B
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Volkswagen ID. Technology', 'Home to our most advanced technology', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Autonomous-driving_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Volkswagen ID. Technology', 'Home to our most advanced technology', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Autonomous-driving_header@2x.png', 'Volkswagen ID. Technology
+=========================
+
+Intuitive Drive Assist systems to keep you safer, an infotainment system that keeps you connected, entertained and in control, and over-the-air updates that ensure your car''s software is always up to date.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10628,11 +15683,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/driving-technology/id.html
 ---
 
-Volkswagen ID. Technology
-=========================
-
-Intuitive Drive Assist systems to keep you safer, an infotainment system that keeps you connected, entertained and in control, and over-the-air updates that ensure your car''s software is always up to date.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'advanced,technologyvolkswagen,technology,technologyhome,intuitive,drive,systems,safer,keeps,connected'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Volkswagen ID. Technology'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10643,8 +15695,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('V
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Driving Sustainibility', 'We are driving towards a sustainable future. We would like you to join us.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Climate-change_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Driving Sustainibility', 'We are driving towards a sustainable future. We would like you to join us.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Climate-change_header@2x.png', 'Driving Sustainibility
+======================
+
+From design and manufacture, all the way through to ownership, charging and recycling, our all-electric ID. Range is designed to protect people and the environment.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10652,11 +15710,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/sustainability.html
 ---
 
-Driving Sustainibility
-======================
-
-From design and manufacture, all the way through to ownership, charging and recycling, our all-electric ID. Range is designed to protect people and the environment.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'driving,future,electric,designed,environment,title,find,url,https,hybrid'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Driving Sustainibility'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10667,8 +15722,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('D
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID Battery recycling', 'Discover what happens to the ID. battery.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_ID-Battery-recycling_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID Battery recycling', 'Discover what happens to the ID. battery.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_ID-Battery-recycling_header@2x.png', 'ID Battery recycling
+====================
+
+Discover what happens to the ID. battery once it reaches the end of its lifecycle.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10676,11 +15737,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/sustainability/battery-recycling.html
 ---
 
-ID Battery recycling
-====================
-
-Discover what happens to the ID. battery once it reaches the end of its lifecycle.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'battery,www,living,sustainability,html,electric,validinmode,hybrid,url,ctas'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID Battery recycling'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10691,8 +15749,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('I
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Brake energy recuperation', 'Your ID.’s brakes can help keep the battery running longer.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Brake-energy-recuperation_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Brake energy recuperation', 'Your ID.’s brakes can help keep the battery running longer.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Brake-energy-recuperation_header@2x.png', 'Brake energy recuperation
+=========================
+
+Your ID.’s brakes can help keep the battery running longer.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10700,11 +15764,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/sustainability/brake-energy-recuperation.html
 ---
 
-Brake energy recuperation
-=========================
-
-Your ID.’s brakes can help keep the battery running longer.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'battery,sustainability,www,electric,hybrid,validinmode,url,https,ctas,recuperation'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Brake energy recuperation'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10715,8 +15776,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('B
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'The carbon footprint of electric cars', 'Find out more about the carbon footprint of electric cars here.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Green-electricity-all-the-way_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'The carbon footprint of electric cars', 'Find out more about the carbon footprint of electric cars here.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Green-electricity-all-the-way_header@2x.png', 'The carbon footprint of electric cars
+=====================================
+
+Electric cars don''t emit particulates or CO2 when driving. This is probably their most obvious benefit over combustion engines. But electric cars have a better carbon footprint over their entire lifetime, not just when they are being driven.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10724,11 +15791,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/discover-electric/the-carbon-footprint-of-electric-cars.html
 ---
 
-The carbon footprint of electric cars
-=====================================
-
-Electric cars don''t emit particulates or CO2 when driving. This is probably their most obvious benefit over combustion engines. But electric cars have a better carbon footprint over their entire lifetime, not just when they are being driven.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 1 LIMIT 1), 0, false, 'hybrid,living,discover,www,https,combustion,validinmode,url,engines,find'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('The carbon footprint of electric cars'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10739,8 +15803,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('T
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'We Charge and BP Pulse', 'Some charging solutions to keep you on the move.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_bp_pulse_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'We Charge and BP Pulse', 'Some charging solutions to keep you on the move.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_bp_pulse_header@2x.png', 'We Charge and BP Pulse
+======================
+
+For a monthly fee, BP Pulse allows you to charge at almost 5000 charging points for free. Those that aren’t included come at a discounted rate, so you’re still saving with every charge.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10748,11 +15818,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/we-charge.html
 ---
 
-We Charge and BP Pulse
-======================
-
-For a monthly fee, BP Pulse allows you to charge at almost 5000 charging points for free. Those that aren’t included come at a discounted rate, so you’re still saving with every charge.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 12 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 12 LIMIT 1), 0, false, 'charge,move,monthly,allows,points,included,saving,ctas,validinmode,url'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('We Charge and BP Pulse'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10763,8 +15830,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('W
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Zipcar', 'Discover UK’s largest fleet of shared electric cars.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Zipcar_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Zipcar', 'Discover UK’s largest fleet of shared electric cars.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Zipcar_header@2x.png', 'Zipcar
+======
+
+Discover how Volkswagen and Zipcar have delivered the UK’s largest fleet of shared electric cars to London’s streets.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10772,11 +15845,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/discover-electric/zipcar.html
 ---
 
-Zipcar
-======
-
-Discover how Volkswagen and Zipcar have delivered the UK’s largest fleet of shared electric cars to London’s streets.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 12 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 12 LIMIT 1), 0, false, 'largest,fleet,shared,hybrid,living,url,https,www,title,find'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Zipcar'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10787,8 +15857,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Z
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'OVO energy', 'Discover the benefits of switching to OVO energy and see if you are eligible to receive FREE miles by switching to OVO', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/VW_OVO-energy_desktop_1920x1080.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'OVO energy', 'Discover the benefits of switching to OVO energy and see if you are eligible to receive FREE miles by switching to OVO', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/VW_OVO-energy_desktop_1920x1080.jpg', 'OVO energy
+==========
+
+We are partnering with OVO energy so you can enjoy affordable charging at home and if eligible, receive FREE miles by switching to OVO.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10796,11 +15872,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/making-the-switch/charging/ovo-energy.html
 ---
 
-OVO energy
-==========
-
-We are partnering with OVO energy so you can enjoy affordable charging at home and if eligible, receive FREE miles by switching to OVO.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 12 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 12 LIMIT 1), 0, false, 'ovo,energy,making,switch,www,electric,hybrid,validinmode,free,enjoy'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('OVO energy'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10811,8 +15884,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('O
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Maintaining Electric Car Batteries in Cold Weather', 'Find out how batteries behave in cold/winter weather.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_maintaining-ev-car-batteries_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Maintaining Electric Car Batteries in Cold Weather', 'Find out how batteries behave in cold/winter weather.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_maintaining-ev-car-batteries_header@2x.png', 'Maintaining Electric Car Batteries in Cold Weather
+==================================================
+
+Freezing weather and minus temperatures drain lithium-ion batteries more quickly. It''s the same with your smartphone as it is with your electric car. Why is this, and how can you protect your battery and charge it properly in cold weather?---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10820,11 +15899,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/discover-electric/electric-car-batteries-in-cold-weather.html
 ---
 
-Maintaining Electric Car Batteries in Cold Weather
-==================================================
-
-Freezing weather and minus temperatures drain lithium-ion batteries more quickly. It''s the same with your smartphone as it is with your electric car. Why is this, and how can you protect your battery and charge it properly in cold weather?',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'ctas,validinmode,www,living,battery,properly,discover,smartphone,protect,hybrid'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Maintaining Electric Car Batteries in Cold Weather'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10835,8 +15911,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('M
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Life with an electric car', 'Switching to electric can seem complicated and confusing.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Paying-for-charging_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Life with an electric car', 'Switching to electric can seem complicated and confusing.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_Paying-for-charging_header@2x.png', 'Life with an electric car
+=========================
+
+We are here to make it simple and walk you through all the common questions that you might have and the many advantages of choosing to go electric with Volkswagen.---
+
+---
 ctas:
   - title: View range simulator
     validInMode: 1
@@ -10844,11 +15926,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/life-with-an-ev.html
 ---
 
-Life with an electric car
-=========================
-
-We are here to make it simple and walk you through all the common questions that you might have and the many advantages of choosing to go electric with Volkswagen.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = NULL LIMIT 1), 0, false, 'complicated,ctas,range,simulator,url,https,hybrid,html,title,advantages'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Life with an electric car'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10859,8 +15938,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('L
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'EV home charging', 'We''ve made charging at home a breeze with our partners Ohme and OVO energy by your side.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_charging_range-ohme-408x204_header@2x.png', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'EV home charging', 'We''ve made charging at home a breeze with our partners Ohme and OVO energy by your side.', 'https://showroom-assets.volkswagen.co.uk/images/contentItems/ev_hub_charging_range-ohme-408x204_header@2x.png', 'EV home charging
+================
+
+To help make your switch to electric as smooth as possible, we have partnered with Ohme, who provide and install home wallboxes, and OVO, our recommended energy provider.---
+
+---
 ctas:
   - title: Find out more
     validInMode: 1
@@ -10868,11 +15953,8 @@ ctas:
       https://www.volkswagen.co.uk/en/electric-and-hybrid/making-the-switch/charging.html
 ---
 
-EV home charging
-================
-
-To help make your switch to electric as smooth as possible, we have partnered with Ohme, who provide and install home wallboxes, and OVO, our recommended energy provider.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 11 LIMIT 1), 0, false, 'made,charging,breeze,chargingwe,partners,ovo,energy,validinmode,www,making'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('EV home charging'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -10883,8 +15965,14 @@ WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('E
 -- Insert mappings for knowledge_hub_item_body_styles_mapping
 -- Insert mappings for knowledge_hub_item_spec_item_pr_numbers_mapping
 -- Insert mappings for knowledge_hub_item_synonyms_mapping
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Air Care Climatronic', 'The 3-zone Pure Air Climatronic automatically ensures clean air and healthy air conditioning in the interior of the vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technolog-golf_air_care_climatronic-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Air Care Climatronic', 'The 3-zone Pure Air Climatronic automatically ensures clean air and healthy air conditioning in the interior of the vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technolog-golf_air_care_climatronic-poster.jpg', 'Air Care Climatronic
+====================
+
+The 3-zone Pure Air Climatronic automatically ensures clean air and healthy air conditioning in the interior of the vehicle. An air quality sensor and an anti-allergenic filter keep the air quality at a constantly high level and prevent the intrusion of harmful substances, including fungal spores and allergens. Using the 3-zone climate control and the selectable climate profiles, all the passengers can choose their own individual feel-good climate settings. The Gentle climate profile is specifically designed to meet the needs of sensitive people and small children. Thanks to sun and humidity sensors, the optimum air conditioning and healthy air humidity is achieved, depending on the intensity and direction of the direct sunlight. This means that misted windows are also a thing of the past.---
+
+---
 assets:
   - id: 261
     assetType: HOW_IT_WORKS
@@ -10898,11 +15986,8 @@ assets:
     title: Air Care Climatronic
 ---
 
-Air Care Climatronic
-====================
-
-The 3-zone Pure Air Climatronic automatically ensures clean air and healthy air conditioning in the interior of the vehicle. An air quality sensor and an anti-allergenic filter keep the air quality at a constantly high level and prevent the intrusion of harmful substances, including fungal spores and allergens. Using the 3-zone climate control and the selectable climate profiles, all the passengers can choose their own individual feel-good climate settings. The Gentle climate profile is specifically designed to meet the needs of sensitive people and small children. Thanks to sun and humidity sensors, the optimum air conditioning and healthy air humidity is achieved, depending on the intensity and direction of the direct sunlight. This means that misted windows are also a thing of the past.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 4 LIMIT 1), 0, false, 'substances,spores,climate,control,profiles,own,good,gentle,specifically,meet'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11017,8 +16102,96 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air C
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('air-care-climatronic'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID. Park Assist Plus with memory function', 'The memory function is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-park_assist_w_memory-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31101'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31160'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31501'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Air Care Climatronic'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID. Park Assist Plus with memory function', 'The memory function is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-park_assist_w_memory-poster.jpg', 'ID. Park Assist Plus with memory function
+=========================================
+
+Now you can teach your car to perform recurring parking manoeuvres. The memory function for the Park Assist Plus is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.
+
+If you choose the Park Assist Plus with the memory function, your car is capable of identifying parallel parking spaces at a speed of up to 24 mph and parking bays at a speed of up to 12 mph. In addition, you can teach your car up to five individual parking manoeuvres. The memory function records parking manoeuvres at speeds below 24 mph with a distance of up to 50 metres. For example, when you park your car in a carport or a garage. You only have to park your Volkswagen once yourself and then save the parking manoeuvre. Afterwards, your car is capable of repeating the parking manoeuvre on its own. You only have to supervise the parking manoeuvre and intervene if necessary.---
+
+---
 assets:
   - id: 266
     assetType: HOW_IT_WORKS
@@ -11032,13 +16205,8 @@ assets:
     title: ID. Park Assist Plus with memory function
 ---
 
-ID. Park Assist Plus with memory function
-=========================================
-
-Now you can teach your car to perform recurring parking manoeuvres. The memory function for the Park Assist Plus is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.
-
-If you choose the Park Assist Plus with the memory function, your car is capable of identifying parallel parking spaces at a speed of up to 24 mph and parking bays at a speed of up to 12 mph. In addition, you can teach your car up to five individual parking manoeuvres. The memory function records parking manoeuvres at speeds below 24 mph with a distance of up to 50 metres. For example, when you park your car in a carport or a garage. You only have to park your Volkswagen once yourself and then save the parking manoeuvre. Afterwards, your car is capable of repeating the parking manoeuvre on its own. You only have to supervise the parking manoeuvre and intervene if necessary.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'carport,showroom,manoeuvre,metres,works,addition,own,https,garage,speeds'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus with memory function'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11097,8 +16265,38 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. P
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id-park-assist-plus-with-memory-function'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID.7 Air Care Climatronic with Smart Vents', 'Smart air vents automatically distribute the air throughout the interior by means of dynamic movements.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_id7_air_care_climatronic_poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus with memory function') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus with memory function'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus with memory function') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus with memory function'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus with memory function') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID. Park Assist Plus with memory function'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID.7 Air Care Climatronic with Smart Vents', 'Smart air vents automatically distribute the air throughout the interior by means of dynamic movements.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_id7_air_care_climatronic_poster.jpg', 'ID.7 Air Care Climatronic with Smart Vents
+==========================================
+
+Smart air vents automatically distribute the air throughout the interior by means of dynamic movements. What’s more, provided the function is activated, cooling or heating already starts as soon as the driver approaches the ID.7 with the key. The air flows in the interior can be adjusted individually om the settings of the central infotainment system display.---
+
+---
 assets:
   - id: 268
     assetType: HOW_IT_WORKS
@@ -11112,11 +16310,8 @@ assets:
     title: ID.7 Air Care Climatronic with Smart Vents
 ---
 
-ID.7 Air Care Climatronic with Smart Vents
-==========================================
-
-Smart air vents automatically distribute the air throughout the interior by means of dynamic movements. What’s more, provided the function is activated, cooling or heating already starts as soon as the driver approaches the ID.7 with the key. The air flows in the interior can be adjusted individually om the settings of the central infotainment system display.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'flows,individually,infotainment,assettype,https,showroom,driver,approaches,key,works'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Air Care Climatronic with Smart Vents'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11151,8 +16346,22 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id7-air-care-climatronic-with-smart-vents'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID.7 Ergo Active Premium Seats', 'With the adaptive seat Climatronic, the driver and front passenger can activate an automatic mode for the seat climate.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_id7_ergoactive_premium_seat-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Air Care Climatronic with Smart Vents') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Air Care Climatronic with Smart Vents'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID.7 Ergo Active Premium Seats', 'With the adaptive seat Climatronic, the driver and front passenger can activate an automatic mode for the seat climate.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_id7_ergoactive_premium_seat-poster.jpg', 'ID.7 Ergo Active Premium Seats
+==============================
+
+With the adaptive seat Climatronic, the driver and front passenger can activate an automatic mode for the seat climate; here, temperature and moisture sensors in the seats detect the cooling and/or heating requirement and control the climate accordingly. Three special modes can also be selected: maximum heating, maximum ventilation or maximum drying.---
+
+---
 assets:
   - id: 270
     assetType: HOW_IT_WORKS
@@ -11166,11 +16375,8 @@ assets:
     title: ID.7 Ergo Active Premium Seats
 ---
 
-ID.7 Ergo Active Premium Seats
-==============================
-
-With the adaptive seat Climatronic, the driver and front passenger can activate an automatic mode for the seat climate; here, temperature and moisture sensors in the seats detect the cooling and/or heating requirement and control the climate accordingly. Three special modes can also be selected: maximum heating, maximum ventilation or maximum drying.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'accordingly,special,selected,maximum,showroom,control,fqrpznkvx,requirement,assets,works'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Ergo Active Premium Seats'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11205,8 +16411,22 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id7-ergo-active-premium-seats'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'ID.7 Panoramic Sunroof with Smart Glass', 'The large glass area can be controlled with ease with a swipe of the hand or via voice control, and adjusted to be either transparent or opaque.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_id7_panoramic_sunroof_with_smart_glass-poster.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Ergo Active Premium Seats') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Ergo Active Premium Seats'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'ID.7 Panoramic Sunroof with Smart Glass', 'The large glass area can be controlled with ease with a swipe of the hand or via voice control, and adjusted to be either transparent or opaque.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/technology-id_id7_panoramic_sunroof_with_smart_glass-poster.jpg', 'ID.7 Panoramic Sunroof with Smart Glass
+=======================================
+
+The electric panoramic sunroof offers heavenly views. The large glass area is not only an eye-catcher, it can be controlled with ease with a swipe of the hand over a functional surface in the headliner or via voice control, and adjusted to be either transparent or opaque. The translucency is controlled by means of electrochromic voltage.---
+
+---
 assets:
   - id: 272
     assetType: HOW_IT_WORKS
@@ -11220,11 +16440,8 @@ assets:
     title: ID.7 Panoramic Sunroof with Smart Glass
 ---
 
-ID.7 Panoramic Sunroof with Smart Glass
-=======================================
-
-The electric panoramic sunroof offers heavenly views. The large glass area is not only an eye-catcher, it can be controlled with ease with a swipe of the hand over a functional surface in the headliner or via voice control, and adjusted to be either transparent or opaque. The translucency is controlled by means of electrochromic voltage.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 6 LIMIT 1), 0, false, 'https,assettype,showroom,ushxdw,electrochromic,assets,works,youtu,area,offers'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Panoramic Sunroof with Smart Glass'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11259,8 +16476,22 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('id7-panoramic-sunroof-with-smart-glass'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Touareg Park Assist Pro', 'Touareg Park Assist Pro adds Area view, Intelligent Park Assist and Park Assist; enabling the system to find parking space and assist with parking.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Touareg_Park_Assist_Pro-700x350_poster.jpeg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Panoramic Sunroof with Smart Glass') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('ID.7 Panoramic Sunroof with Smart Glass'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Touareg Park Assist Pro', 'Touareg Park Assist Pro adds Area view, Intelligent Park Assist and Park Assist; enabling the system to find parking space and assist with parking.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Touareg_Park_Assist_Pro-700x350_poster.jpeg', 'Touareg Park Assist Pro
+=======================
+
+Touareg Park Assist Pro adds Area view, Intelligent Park Assist and Park Assist; enabling the system to find parking space and assist with parking. As above, with the addition of smartphone functionality – enabling parking manoeuvres to be carried out via the app (requires Volkswagen Park Assist Pro App).---
+
+---
 assets:
   - id: 274
     assetType: HOW_IT_WORKS
@@ -11274,11 +16505,8 @@ assets:
     title: Touareg Park Assist Pro
 ---
 
-Touareg Park Assist Pro
-=======================
-
-Touareg Park Assist Pro adds Area view, Intelligent Park Assist and Park Assist; enabling the system to find parking space and assist with parking. As above, with the addition of smartphone functionality – enabling parking manoeuvres to be carried out via the app (requires Volkswagen Park Assist Pro App).',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'requires,adxboyeu,showroom,manoeuvres,pro,https,youtu,url,addition,works'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touareg Park Assist Pro'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11321,8 +16549,22 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touar
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('touareg-park-assist-pro'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Touareg HD Matrix Headlights', 'IQ Light HD Matrix headlights are standard and offer intelligent and adaptive lighting.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Touareg_HD-Matrix_Headlights-700x350_poster.jpeg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touareg Park Assist Pro') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touareg Park Assist Pro'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Touareg HD Matrix Headlights', 'IQ Light HD Matrix headlights are standard and offer intelligent and adaptive lighting.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/Touareg_HD-Matrix_Headlights-700x350_poster.jpeg', 'Touareg HD Matrix Headlights
+============================
+
+IQ Light HD Matrix headlights are standard and offer intelligent and adaptive lighting; including better illumination of bends; High beam assist prevents glare to oncoming vehicles; improved lighting of road signs, lane light. With Night Vision added, the marker light can help recognise and illuminate people at the side of the road.---
+
+---
 assets:
   - id: 276
     assetType: HOW_IT_WORKS
@@ -11336,11 +16578,8 @@ assets:
     title: Touareg HD Matrix Headlights
 ---
 
-Touareg HD Matrix Headlights
-============================
-
-IQ Light HD Matrix headlights are standard and offer intelligent and adaptive lighting; including better illumination of bends; High beam assist prevents glare to oncoming vehicles; improved lighting of road signs, lane light. With Night Vision added, the marker light can help recognise and illuminate people at the side of the road.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'headlights,road,signs,night,marker,recognise,side,assettype,https,vehicles'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touareg HD Matrix Headlights'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11407,8 +16646,22 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touar
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('touareg-hd-matrix-headlights'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Travel Assist', 'Travel Assist provides you with an extremely useful driving assistant in your vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/travel-assist-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touareg HD Matrix Headlights') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Touareg HD Matrix Headlights'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Travel Assist', 'Travel Assist provides you with an extremely useful driving assistant in your vehicle.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/travel-assist-700x350.jpg', 'Travel Assist
+=============
+
+Travel Assist provides you with an extremely useful driving assistant in your vehicle. After all, at the press of a button it delivers a high level of driving comfort by supporting you in monotonous and tiring driving situations. Particularly on motorways and busy highways, Travel Assist is able to keep you in the lane and at a set speed while simultaneously monitoring the distance to the traffic in front. You can relaxedly drive through traffic jams and congested traffic.---
+
+---
 assets:
   - id: 278
     assetType: HOW_IT_WORKS
@@ -11422,11 +16675,8 @@ assets:
     title: Travel Assist
 ---
 
-Travel Assist
-=============
-
-Travel Assist provides you with an extremely useful driving assistant in your vehicle. After all, at the press of a button it delivers a high level of driving comfort by supporting you in monotonous and tiring driving situations. Particularly on motorways and busy highways, Travel Assist is able to keep you in the lane and at a set speed while simultaneously monitoring the distance to the traffic in front. You can relaxedly drive through traffic jams and congested traffic.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'travel,extremely,motorways,speed,monitoring,front,jams,assets,tiring,https'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Travel Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11477,8 +16727,38 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trave
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('travel-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Light Assist', 'Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/light-assist-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Travel Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Travel Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Travel Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Travel Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Travel Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Travel Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Light Assist', 'Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/light-assist-700x350.jpg', 'Light Assist
+============
+
+Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.---
+
+---
 assets:
   - id: 280
     assetType: HOW_IT_WORKS
@@ -11492,11 +16772,8 @@ assets:
     title: Light Assist
 ---
 
-Light Assist
-============
-
-Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car''s surroundings.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'light,automatically,zhbfjgak,url,https,showroom,jpg,feature,youtu,headlights'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11603,8 +16880,96 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('light-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Dynamic Chassis Control (DCC)', 'Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/DCC-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31511'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Dynamic Chassis Control (DCC)', 'Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/DCC-700x350.jpg', 'Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics
+=================================================================================================================
+
+Choice of four preset modes: Eco, Normal, Comfort and Sport, as well as an Individual mode that allows up to 43 selectable stages.
+
+For the first time the controlled shock absorbers can be almost infinitely adjusted across an expanded range from the individual settings submenu (Comfort+ to Sport+). Beyond the familiar ''Comfort'' setting, the driver can increase ride comfort even further by moving the control slider to the left (Comfort+); a setting that is sportier than the familiar ''Sport'' setting can be set by moving the slider to the right (Sport+). The driver can make adjustments between the Comfort, Normal and Sport profiles. Thus, the driver has the ability to choose a truly personalised setting.---
+
+---
 assets:
   - id: 283
     assetType: DRIVER_BENEFITS
@@ -11618,13 +16983,8 @@ assets:
     title: Dynamic Chassis Control
 ---
 
-Dynamic Chassis Control (DCC) Allows individual tuning of shock absorption and other driving mode characteristics
-=================================================================================================================
-
-Choice of four preset modes: Eco, Normal, Comfort and Sport, as well as an Individual mode that allows up to 43 selectable stages.
-
-For the first time the controlled shock absorbers can be almost infinitely adjusted across an expanded range from the individual settings submenu (Comfort+ to Sport+). Beyond the familiar ''Comfort'' setting, the driver can increase ride comfort even further by moving the control slider to the left (Comfort+); a setting that is sportier than the familiar ''Sport'' setting can be set by moving the slider to the right (Sport+). The driver can make adjustments between the Comfort, Normal and Sport profiles. Thus, the driver has the ability to choose a truly personalised setting.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'expanded,range,settings,submenu,familiar,imagefilename,rubev,sport,infinitely,url'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11835,8 +17195,136 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynam
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('dynamic-chassis-control-dcc'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Dynamic Light Assist', 'Dynamic Light Assist improves visibility at night. The system can detect oncoming vehicles and vehicles ahead and automatically masks the corresponding areas of your main beam headlights.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/dynamic-light-assist-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('x'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30361'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30503'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31350'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31300'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31120'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31601'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control (DCC)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Dynamic Light Assist', 'Dynamic Light Assist improves visibility at night. The system can detect oncoming vehicles and vehicles ahead and automatically masks the corresponding areas of your main beam headlights.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/dynamic-light-assist-700x350.jpg', 'Dynamic Light Assist
+====================
+
+Dynamic Light Assist improves visibility at night. The system can detect oncoming vehicles and vehicles ahead and automatically masks the corresponding areas of your main beam headlights.
+
+In built-up areas, the vehicle also switches automatically from main beam to dipped beam. For you this means that you can drive for longer and more often with the main beam on. Streets are thus better illuminated and obstacles can be detected earlier.---
+
+---
 assets:
   - id: 285
     assetType: HOW_IT_WORKS
@@ -11850,13 +17338,8 @@ assets:
     title: How Dynamic Light Assist works
 ---
 
-Dynamic Light Assist
-====================
-
-Dynamic Light Assist improves visibility at night. The system can detect oncoming vehicles and vehicles ahead and automatically masks the corresponding areas of your main beam headlights.
-
-In built-up areas, the vehicle also switches automatically from main beam to dipped beam. For you this means that you can drive for longer and more often with the main beam on. Streets are thus better illuminated and obstacles can be detected earlier.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'improves,assettype,https,works,detected,drive,tcross,earlier,streets,assets'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -11939,8 +17422,70 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynam
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('dynamic-light-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'AR Head-up Display', 'Driving information including current speed is projected onto the windscreen within driver''s field of vision.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/hud-poster-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30251'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30205'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30260'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30360'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Light Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30372'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'AR Head-up Display', 'Driving information including current speed is projected onto the windscreen within driver''s field of vision.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/hud-poster-700x350.jpg', 'AR Head-up Display
+==================
+
+Driving information including current speed is projected onto the windscreen within driver''s field of vision reducing the time that drivers'' eyes are averted from the road---
+
+---
 assets:
   - id: 287
     dateAdded: ''2025-03-11T00:00:02''
@@ -11954,11 +17499,8 @@ assets:
     title: How AR Head-up Display works
 ---
 
-AR Head-up Display
-==================
-
-Driving information including current speed is projected onto the windscreen within driver''s field of vision reducing the time that drivers'' eyes are averted from the road',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'head,current,imagefilename,https,assets,dateadded,assettype,wjop,eyes,averted'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -12121,8 +17663,102 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR He
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('ar-head-up-display'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Trailer Assist', 'Trailer Assist takes care of the steering whilst you are manoeuvering with a trailer.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/trailer-assist-poster-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30602'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30652'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31150') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31150'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30550'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30560'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30275'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30290'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('30297'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('AR Head-up Display'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Trailer Assist', 'Trailer Assist takes care of the steering whilst you are manoeuvering with a trailer.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/trailer-assist-poster-700x350.jpg', 'Trailer Assist
+==============
+
+Trailer Assist takes care of the steering whilst you are manoeuvering with a trailer. Your car will steer automatically while you just need to take care of changing gear, accelerating and braking. This means you remain in control at all times.---
+
+---
 assets:
   - id: 289
     dateAdded: ''2025-03-11T00:00:02''
@@ -12137,11 +17773,8 @@ assets:
     title: How Trailer Assist works
 ---
 
-Trailer Assist
-==============
-
-Trailer Assist takes care of the steering whilst you are manoeuvering with a trailer. Your car will steer automatically while you just need to take care of changing gear, accelerating and braking. This means you remain in control at all times.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'trailer,care,control,times,dateadded,assettype,imagefilename,https,braking,assets'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -12200,8 +17833,46 @@ WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trail
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('trailer-assist'))
 ON CONFLICT DO NOTHING;
 
-INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)
-SELECT 'Dynamic Chassis Control Pro (DCC Pro)', 'Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, offers you the possibility to adapt the running gear to suit your needs.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/dcc-pro-poster-700x350.jpg', '---
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31150') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31150'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Trailer Assist'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31706'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)
+SELECT 'Dynamic Chassis Control Pro (DCC Pro)', 'Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, offers you the possibility to adapt the running gear to suit your needs.', 'https://showroom-assets.volkswagen.co.uk/images/technologyItems/poster/dcc-pro-poster-700x350.jpg', 'Dynamic Chassis Control Pro (DCC Pro)
+=====================================
+
+Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, available as a option from Life, offers you the possibility to adapt the running gear to suit your needs. The electronically controlled shock absorbers with innovative two-valve technology react in milliseconds to the road conditions and the driving situation and automatically adapt the damping behaviour. The two-valve technology enables extremely precise adjustment to ensure a high degree of comfort and dynamics. With DCC Pro, you can choose from different driving profiles such as comfort, sport or individual. Individual mode allows you to set your preferences using the slider. The vehicle dynamics settings contained in the driving profile selection further enhance vehicle handling and therefore ensure greater driving pleasure and precision.---
+
+---
 assets:
   - id: 291
     dateAdded: ''2025-03-11T00:00:02''
@@ -12215,11 +17886,8 @@ assets:
     title: How Dynamic Chassis Control Pro works
 ---
 
-Dynamic Chassis Control Pro (DCC Pro)
-=====================================
-
-Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, available as a option from Life, offers you the possibility to adapt the running gear to suit your needs. The electronically controlled shock absorbers with innovative two-valve technology react in milliseconds to the road conditions and the driving situation and automatically adapt the damping behaviour. The two-valve technology enables extremely precise adjustment to ensure a high degree of comfort and dynamics. With DCC Pro, you can choose from different driving profiles such as comfort, sport or individual. Individual mode allows you to set your preferences using the slider. The vehicle dynamics settings contained in the driving profile selection further enhance vehicle handling and therefore ensure greater driving pleasure and precision.',
-  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false
+',
+  (SELECT id FROM knowledge_hub_categories WHERE id = 3 LIMIT 1), 0, false, 'conditions,automatically,behaviour,enables,adjustment,degree,profile,selection,enhance,handling'
 WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)'));
 
 -- Insert mappings for knowledge_hub_item_fuel_types_mapping
@@ -12292,5 +17960,30 @@ SELECT
   (SELECT id FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('dynamic-chassis-control-pro') LIMIT 1)
 WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)'))
 AND EXISTS (SELECT 1 FROM knowledge_hub_item_synonyms WHERE LOWER(name) = LOWER('dynamic-chassis-control-pro'))
+ON CONFLICT DO NOTHING;
+
+-- Insert mappings for knowledge_hub_item_models_mapping
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31102'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31150') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31150'))
+ON CONFLICT DO NOTHING;
+
+INSERT INTO knowledge_hub_item_models_mapping (item_id, model_id)
+SELECT
+  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)') LIMIT 1),
+  (SELECT id FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355') LIMIT 1)
+WHERE EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('Dynamic Chassis Control Pro (DCC Pro)'))
+AND EXISTS (SELECT 1 FROM knowledge_hub_item_models WHERE LOWER(code) = LOWER('31355'))
 ON CONFLICT DO NOTHING;
 

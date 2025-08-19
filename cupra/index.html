@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D World Experience - Car Launch POC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            background: #0c0c2e;
+            background: linear-gradient(90deg, rgba(12, 12, 46, 1) 0%, rgba(141, 87, 199, 1) 37%, rgba(12, 12, 46, 1) 51%, rgba(63, 188, 242, 1) 82%, rgba(12, 12, 46, 1) 100%);
+        }
+        #container {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #0c0c2e;
+            background: linear-gradient(90deg, rgba(12, 12, 46, 1) 0%, rgba(141, 87, 199, 1) 37%, rgba(12, 12, 46, 1) 51%, rgba(63, 188, 242, 1) 82%, rgba(12, 12, 46, 1) 100%);
+
+        }
+        #info-panel {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            max-width: 300px;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 0, 255, 0.2); /* Magenta border */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        #manchester-info {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 0, 255, 0.3); /* Magenta border */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: none;
+        }
+        #manchester-info.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        #back-button {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(255, 0, 255, 0.1); /* Magenta background */
+            border: 1px solid rgba(255, 0, 255, 0.3); /* Magenta border */
+            color: white;
+            border-radius: 9999px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+            pointer-events: none;
+        }
+        #back-button.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        #back-button:hover {
+            background-color: rgba(255, 0, 255, 0.2);
+        }
+        #city-controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            display: grid;
+            grid-template-areas:
+                ". up ."
+                "left down right"
+                "rotl zoomin rot_right"
+                ". zoomout .";
+            gap: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+            pointer-events: none;
+            user-select: none;
+        }
+        #city-controls.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        #city-controls button {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #city-controls button:active {
+             background-color: rgba(255, 255, 255, 0.2);
+        }
+        #btn-forward { grid-area: up; }
+        #btn-backward { grid-area: down; }
+        #btn-left { grid-area: left; }
+        #btn-right { grid-area: right; }
+        #btn-zin { grid-area: zoomin; }
+        #btn-zout { grid-area: zoomout; }
+        #btn-rotl { grid-area: rotl; }
+        #btn-rotr { grid-area: rot_right; }
+
+        /* Subpage Styles */
+        #subpage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+            pointer-events: none;
+        }
+        #subpage.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        #subpage-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+        #photo-gallery {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            perspective: 1000px;
+        }
+        .gallery-photo {
+            position: absolute;
+            width: 250px;
+            height: 180px;
+            background-size: cover;
+            border-radius: 0.5rem;
+            border: 2px solid white;
+            transition: transform 0.2s ease-out;
+        }
+        #close-subpage {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid white;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container"></div>
+
+    <div id="info-panel">
+        <h1 class="text-xl font-bold mb-2">Project Unveil</h1>
+        <p class="text-sm text-gray-300">Rotate the globe to explore. A signal has been detected in the UK. Click the light source to investigate.</p>
+    </div>
+
+    <div id="manchester-info">
+        <h2 class="text-2xl font-bold mb-2">Location Locked: Manchester</h2>
+        <p class="text-gray-300">The source of the signal. The reveal is imminent.</p>
+    </div>
+    
+    <button id="back-button">
+        &larr; Back to Globe
+    </button>
+
+    <div id="city-controls">
+        <button id="btn-forward">&uarr;</button>
+        <button id="btn-left">&larr;</button>
+        <button id="btn-backward">&darr;</button>
+        <button id="btn-right">&rarr;</button>
+        <button id="btn-zin">+</button>
+        <button id="btn-zout">-</button>
+        <button id="btn-rotl">&#8634;</button>
+        <button id="btn-rotr">&#8635;</button>
+    </div>
+
+    <div id="subpage">
+        <div id="subpage-bg"></div>
+        <div id="photo-gallery">
+            <!-- Photos will be added here dynamically -->
+        </div>
+        <button id="close-subpage">X</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        // --- SCENE SETUP ---
+        let scene, camera, renderer, controls;
+        let globe, ukLightEmitter, manchesterScene, earthMesh;
+        let nightclub, playingField, carFactory, fashionHouse;
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        let isZoomed = false;
+        const magentaColor = new THREE.Color(0xff00ff);
+        const purpleColor = new THREE.Color(0x9400D3);
+        const greenColor = new THREE.Color(0x00ff00);
+        const orangeColor = new THREE.Color(0xffa500);
+        const pinkColor = new THREE.Color(0xff69b4);
+        const cyanColor = new THREE.Color(0x00ffff);
+        const cars = [];
+        const moveState = { forward: false, backward: false, left: false, right: false, rotateLeft: false, rotateRight: false, zoomIn: false, zoomOut: false };
+        let cameraTarget = new THREE.Vector3(0, 0, 0);
+
+        // --- DOM Elements ---
+        const container = document.getElementById('container');
+        const manchesterInfoPanel = document.getElementById('manchester-info');
+        const backButton = document.getElementById('back-button');
+        const cityControls = document.getElementById('city-controls');
+        const subpage = document.getElementById('subpage');
+        const subpageBG = document.getElementById('subpage-bg');
+        const photoGallery = document.getElementById('photo-gallery');
+        const closeSubpageBtn = document.getElementById('close-subpage');
+
+        // --- INITIALIZATION ---
+        function init() {
+            scene = new THREE.Scene();
+            scene.fog = new THREE.Fog(0x05050c, 15, 60);
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 15;
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setClearColor(0x05050c, 0);
+            container.appendChild(renderer.domElement);
+            const ambientLight = new THREE.AmbientLight(0x404040, 1);
+            scene.add(ambientLight);
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.screenSpacePanning = false;
+            controls.minDistance = 12;
+            controls.maxDistance = 30;
+            controls.enablePan = false;
+
+            createStars();
+            createGlobe();
+            createManchester();
+
+            window.addEventListener('resize', onWindowResize);
+            window.addEventListener('click', onSceneClick);
+            backButton.addEventListener('click', zoomOutFromManchester);
+            setupCityControls();
+            setupSubpage();
+        }
+
+        // --- OBJECT CREATION ---
+
+        function createStars() {
+            const starGeometry = new THREE.BufferGeometry();
+            const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 });
+            const starVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = (Math.random() - 0.5) * 2000;
+                const dist = Math.sqrt(x*x + y*y + z*z);
+                if(dist > 100) starVertices.push(x, y, z);
+            }
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            const stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+        }
+
+        const worldGeoJson = {
+          "type": "FeatureCollection",
+          "features": [
+            { "type": "Feature", "properties": { "name": "Greenland" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -44, 83 ], [ -12, 82 ], [ -20, 70 ], [ -58, 60 ], [ -70, 72 ], [ -52, 80 ], [ -44, 83 ] ] ] } },
+            { "type": "Feature", "properties": { "name": "Canada" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -120, 82 ], [ -60, 82 ], [ -52, 70 ], [ -60, 50 ], [ -100, 48 ], [ -124, 50 ], [ -130, 60 ], [ -120, 82 ] ] ] ] } },
+            { "type": "Feature", "properties": { "name": "USA" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -124, 49 ], [ -100, 48 ], [ -70, 45 ], [ -80, 30 ], [ -120, 30 ], [ -124, 49 ] ] ] } },
+            { "type": "Feature", "properties": { "name": "South America" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -80, 12 ], [ -50, 15 ], [ -40, -10 ], [ -50, -30 ], [ -60, -55 ], [ -75, -40 ], [ -80, 12 ] ] ] } },
+            { "type": "Feature", "properties": { "name": "Africa" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -18, 35 ], [ 35, 35 ], [ 50, 10 ], [ 35, -35 ], [ 18, -35 ], [ -10, 5 ], [ -18, 35 ] ] ] } },
+            { "type": "Feature", "properties": { "name": "Europe" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -10, 60 ], [ 30, 60 ], [ 40, 40 ], [ 10, 38 ], [ -10, 40 ], [ -10, 60 ] ] ] } },
+            { "type": "Feature", "properties": { "name": "Asia" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 30, 60 ], [ 140, 60 ], [ 120, 10 ], [ 80, 10 ], [ 40, 40 ], [ 30, 60 ] ] ], [ [ [ 130, 45 ], [ 145, 40 ], [ 135, 25 ], [ 130, 45 ] ] ] ] } },
+            { "type": "Feature", "properties": { "name": "Australia" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 115, -15 ], [ 150, -15 ], [ 152, -38 ], [ 118, -35 ], [ 115, -15 ] ] ] } }
+          ]
+        };
+
+        function createGlobe() {
+            globe = new THREE.Group();
+            scene.add(globe);
+            const canvas = document.createElement('canvas');
+            const w = 2048; const h = 1024;
+            canvas.width = w; canvas.height = h;
+            const context = canvas.getContext('2d');
+            context.fillStyle = '#000000';
+            context.fillRect(0, 0, w, h);
+            context.strokeStyle = `rgba(${magentaColor.r*255}, ${magentaColor.g*255}, ${magentaColor.b*255}, 1.0)`;
+            context.lineWidth = 12;
+            context.beginPath();
+            worldGeoJson.features.forEach(feature => {
+                const coords = feature.geometry.coordinates;
+                if (feature.geometry.type === 'Polygon') {
+                    drawPolygon(context, coords, w, h);
+                } else if (feature.geometry.type === 'MultiPolygon') {
+                    coords.forEach(polygonCoords => drawPolygon(context, polygonCoords, w, h));
+                }
+            });
+            context.stroke();
+            const texture = new THREE.CanvasTexture(canvas);
+            const geometry = new THREE.SphereGeometry(5, 64, 64);
+            const shaderMaterial = new THREE.ShaderMaterial({
+                uniforms: {
+                    time: { value: 0 }, baseTexture: { value: texture }, waveColor: { value: cyanColor },
+                },
+                vertexShader: `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+                fragmentShader: `
+                    uniform sampler2D baseTexture; uniform float time; uniform vec3 waveColor; varying vec2 vUv;
+                    float random(vec2 st) { return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123); }
+                    float noise(vec2 st) {
+                        vec2 i = floor(st); vec2 f = fract(st);
+                        float a = random(i); float b = random(i + vec2(1.0, 0.0));
+                        float c = random(i + vec2(0.0, 1.0)); float d = random(i + vec2(1.0, 1.0));
+                        vec2 u = f * f * (3.0 - 2.0 * f);
+                        return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.y * u.x;
+                    }
+                    void main() {
+                        vec4 texColor = texture2D(baseTexture, vUv);
+                        if (texColor.r > 0.1) { gl_FragColor = texColor; return; }
+                        float line1 = fract(vUv.y * 30.0 - time * 0.4); line1 = 1.0 - smoothstep(0.0, 0.02, line1) + smoothstep(0.03, 0.05, line1);
+                        float line2 = fract(vUv.x * 20.0 + vUv.y * 10.0 + time * 0.2); line2 = 1.0 - smoothstep(0.0, 0.02, line2) + smoothstep(0.03, 0.05, line2);
+                        float wavePattern = max(line1, line2);
+                        float maskNoise = noise(vUv * 5.0 - time * 0.1);
+                        wavePattern *= step(0.6, maskNoise);
+                        vec3 finalColor = vec3(0.05, 0.05, 0.1); finalColor += waveColor * wavePattern;
+                        gl_FragColor = vec4(finalColor, 1.0);
+                    }`
+            });
+            earthMesh = new THREE.Mesh(geometry, shaderMaterial);
+            globe.add(earthMesh);
+            const atmosphereGeo = new THREE.SphereGeometry(5.2, 64, 64);
+            const atmosphereMat = new THREE.ShaderMaterial({
+                vertexShader: `varying vec3 vNormal; void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+                fragmentShader: `varying vec3 vNormal; void main() { float intensity = pow(0.7 - dot(vNormal, vec3(0, 0, 1.0)), 2.0); gl_FragColor = vec4(${magentaColor.r}, ${magentaColor.g}, ${magentaColor.b}, 1.0) * intensity; }`,
+                blending: THREE.AdditiveBlending, side: THREE.BackSide, transparent: true
+            });
+            const atmosphere = new THREE.Mesh(atmosphereGeo, atmosphereMat);
+            globe.add(atmosphere);
+            const lat = 53.48 * Math.PI / 180; const lon = -2.24 * Math.PI / 180; const radius = 5;
+            const x = -radius * Math.cos(lat) * Math.cos(lon); const y = radius * Math.sin(lat); const z = radius * Math.cos(lat) * Math.sin(lon);
+            const emitterPosition = new THREE.Vector3(x, y, z);
+            const emitterGeo = new THREE.SphereGeometry(0.1, 16, 16);
+            const emitterMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.9 });
+            ukLightEmitter = new THREE.Mesh(emitterGeo, emitterMat);
+            ukLightEmitter.position.copy(emitterPosition);
+            ukLightEmitter.name = "uk_emitter";
+            globe.add(ukLightEmitter);
+            const pointLight = new THREE.PointLight(magentaColor, 2, 8);
+            pointLight.position.copy(emitterPosition);
+            globe.add(pointLight);
+        }
+
+        function drawPolygon(context, polygon, canvasWidth, canvasHeight) {
+            polygon[0].forEach((point, index) => {
+                const x = (point[0] + 180) * (canvasWidth / 360);
+                const y = (90 - point[1]) * (canvasHeight / 180);
+                if (index === 0) { context.moveTo(x, y); } else { context.lineTo(x, y); }
+            });
+        }
+        
+        function createManchester() {
+            manchesterScene = new THREE.Group();
+            manchesterScene.visible = false;
+            scene.add(manchesterScene);
+            const groundLevel = -2;
+            const groundGeo = new THREE.PlaneGeometry(80, 80);
+            const groundMat = new THREE.MeshBasicMaterial({ color: 0x05050c });
+            const ground = new THREE.Mesh(groundGeo, groundMat);
+            ground.rotation.x = -Math.PI / 2;
+            ground.position.y = groundLevel;
+            manchesterScene.add(ground);
+
+            const boxGeo = new THREE.BoxGeometry(1, 1, 1);
+            const cylinderGeo = new THREE.CylinderGeometry(0.5, 0.5, 1, 16);
+            const buildingMat = new THREE.MeshStandardMaterial({ color: 0x080812, metalness: 0.1, roughness: 0.9 });
+            
+            function createBuilding(shape, x, z, scaleX, scaleZ, height, isSpecial = false, specialColor = magentaColor) {
+                const buildingGroup = new THREE.Group();
+                let buildingGeo = shape === 'box' ? boxGeo : cylinderGeo;
+                const mat = isSpecial ? new THREE.MeshStandardMaterial({ color: specialColor, emissive: specialColor, emissiveIntensity: 0.5 }) : buildingMat;
+                const building = new THREE.Mesh(buildingGeo, mat);
+                building.scale.set(scaleX, height, scaleZ);
+                building.position.set(0, height / 2 + groundLevel, 0);
+                building.rotation.y = (Math.random() - 0.5) * Math.PI / 16;
+                buildingGroup.add(building);
+                
+                const edges = new THREE.EdgesGeometry(building.geometry);
+                const lineMat = new THREE.LineBasicMaterial({ color: isSpecial ? specialColor.clone().multiplyScalar(1.5) : magentaColor });
+                const wireframe = new THREE.LineSegments(edges, lineMat);
+                wireframe.scale.copy(building.scale);
+                wireframe.position.copy(building.position);
+                wireframe.rotation.copy(building.rotation);
+                buildingGroup.add(wireframe);
+                
+                buildingGroup.position.set(x, 0, z);
+                manchesterScene.add(buildingGroup);
+                return buildingGroup;
+            };
+
+            const cityBounds = 35;
+            const financialDistrictRadius = 12;
+            const carPaths = [];
+            const roadMat = new THREE.LineBasicMaterial({ color: cyanColor });
+            
+            const specialLocations = [
+                { name: 'nightclub', x: 10, z: -12, placed: false },
+                { name: 'playing_field', x: -15, z: 15, placed: false },
+                { name: 'car_factory', x: -20, z: -10, placed: false },
+                { name: 'fashion_house', x: 18, z: 8, placed: false },
+            ];
+
+            let currentZ = -cityBounds;
+            while(currentZ < cityBounds) {
+                const blockDepth = Math.random() * 8 + 4;
+                if (currentZ + blockDepth > cityBounds) break;
+                let currentX = -cityBounds;
+                
+                const hPoints = [new THREE.Vector3(-cityBounds, groundLevel + 0.01, currentZ), new THREE.Vector3(cityBounds, groundLevel + 0.01, currentZ)];
+                const hGeo = new THREE.BufferGeometry().setFromPoints(hPoints);
+                const hLine = new THREE.Line(hGeo, roadMat);
+                manchesterScene.add(hLine);
+                carPaths.push(new THREE.CatmullRomCurve3(hPoints));
+
+                while(currentX < cityBounds) {
+                    const blockWidth = Math.random() * 8 + 4;
+                    if (currentX + blockWidth > cityBounds) break;
+                    
+                    const vPoints = [new THREE.Vector3(currentX, groundLevel + 0.01, currentZ), new THREE.Vector3(currentX, groundLevel + 0.01, currentZ + blockDepth)];
+                    const vGeo = new THREE.BufferGeometry().setFromPoints(vPoints);
+                    const vLine = new THREE.Line(vGeo, roadMat);
+                    manchesterScene.add(vLine);
+                    
+                    let blockIsSpecial = false;
+                    for(const loc of specialLocations) {
+                        if (!loc.placed && loc.x >= currentX && loc.x < currentX + blockWidth && loc.z >= currentZ && loc.z < currentZ + blockDepth) {
+                            const locX = currentX + blockWidth / 2;
+                            const locZ = currentZ + blockDepth / 2;
+
+                            if(loc.name === 'nightclub') {
+                                nightclub = createBuilding('box', locX, locZ, blockWidth * 0.6, blockDepth * 0.6, 8, true, purpleColor);
+                                nightclub.name = "nightclub";
+                                const personGeo = new THREE.CylinderGeometry(0.1, 0.1, 0.5, 8);
+                                for(let i = 0; i < 5; i++) {
+                                    const personMat = new THREE.MeshBasicMaterial({color: 0xcccccc});
+                                    const person = new THREE.Mesh(personGeo, personMat);
+                                    person.position.set(i * 0.3 - 1, 0.25, blockDepth * 0.35);
+                                    nightclub.add(person);
+                                }
+                            } else if (loc.name === 'playing_field') {
+                                playingField = new THREE.Group();
+                                const fieldCanvas = document.createElement('canvas');
+                                fieldCanvas.width = 256; fieldCanvas.height = 256;
+                                const ctx = fieldCanvas.getContext('2d');
+                                ctx.fillStyle = '#006400';
+                                ctx.fillRect(0,0,256,256);
+                                ctx.strokeStyle = 'white';
+                                ctx.lineWidth = 5;
+                                ctx.strokeRect(10,10,236,236);
+                                ctx.beginPath();
+                                ctx.moveTo(128,10); ctx.lineTo(128,246);
+                                ctx.stroke();
+                                ctx.beginPath();
+                                ctx.arc(128, 128, 30, 0, Math.PI * 2);
+                                ctx.stroke();
+                                const fieldTexture = new THREE.CanvasTexture(fieldCanvas);
+                                const fieldMat = new THREE.MeshStandardMaterial({ map: fieldTexture, emissive: greenColor, emissiveIntensity: 0.1 });
+                                const fieldGeo = new THREE.PlaneGeometry(blockWidth * 0.9, blockDepth * 0.9);
+                                const fieldMesh = new THREE.Mesh(fieldGeo, fieldMat);
+                                fieldMesh.rotation.x = -Math.PI / 2;
+                                playingField.add(fieldMesh);
+                                
+                                const playerGeo = new THREE.CylinderGeometry(0.1, 0.1, 0.5, 8);
+                                for(let i = 0; i < 10; i++) {
+                                    const playerMat = new THREE.MeshBasicMaterial({color: Math.random() > 0.5 ? 0xff0000 : 0x0000ff});
+                                    const player = new THREE.Mesh(playerGeo, playerMat);
+                                    player.position.set((Math.random() - 0.5) * blockWidth * 0.8, 0.25, (Math.random() - 0.5) * blockDepth * 0.8);
+                                    playingField.add(player);
+                                }
+
+                                playingField.position.set(locX, groundLevel + 0.02, locZ);
+                                playingField.name = "playing_field";
+                                manchesterScene.add(playingField);
+                            } else if (loc.name === 'car_factory') {
+                                carFactory = createBuilding('box', locX, locZ, blockWidth * 0.7, blockDepth * 0.7, 10, true, orangeColor);
+                                carFactory.name = "car_factory";
+                                const smokestack = createBuilding('cylinder', 0, 0, blockWidth * 0.1, blockDepth * 0.1, 15, true, orangeColor);
+                                smokestack.position.set(blockWidth * 0.3, 0, blockDepth * 0.3);
+                                carFactory.add(smokestack);
+                            } else if (loc.name === 'fashion_house') {
+                                fashionHouse = createBuilding('cylinder', locX, locZ, blockWidth * 0.3, blockDepth * 0.3, 15, true, pinkColor);
+                                fashionHouse.name = "fashion_house";
+                                const lineMat = new THREE.LineBasicMaterial({color: pinkColor.clone().multiplyScalar(2)});
+                                for(let i = 0; i < 8; i++) {
+                                    const angle = (i/8) * Math.PI * 2;
+                                    const x = Math.cos(angle) * blockWidth * 0.3;
+                                    const z = Math.sin(angle) * blockWidth * 0.3;
+                                    const points = [new THREE.Vector3(x, -7.5, z), new THREE.Vector3(x, 7.5, z)];
+                                    const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
+                                    const line = new THREE.Line(lineGeo, lineMat);
+                                    fashionHouse.children[0].add(line);
+                                }
+                            }
+                            loc.placed = true;
+                            blockIsSpecial = true;
+                            break;
+                        }
+                    }
+
+                    if (!blockIsSpecial) {
+                        const buildingsInBlock = Math.floor(Math.random() * 4) + 1;
+                        for (let i = 0; i < buildingsInBlock; i++) {
+                            const buildingX = currentX + Math.random() * blockWidth;
+                            const buildingZ = currentZ + Math.random() * blockDepth;
+                            
+                            const distFromCenter = Math.sqrt(buildingX*buildingX + buildingZ*buildingZ);
+                            let maxHeight, minHeight;
+
+                            if (distFromCenter < financialDistrictRadius) {
+                                maxHeight = 20; minHeight = 8;
+                            } else {
+                                maxHeight = 6; minHeight = 1;
+                            }
+                            const height = Math.random() * (maxHeight - minHeight) + minHeight;
+
+                            const buildingType = Math.random();
+                            if (buildingType < 0.8 || distFromCenter > financialDistrictRadius) {
+                                const buildingSize = Math.min(blockWidth, blockDepth) / buildingsInBlock * (Math.random() * 0.5 + 0.5);
+                                createBuilding('box', buildingX, buildingZ, buildingSize, buildingSize, height);
+                            } else {
+                                const radius = Math.min(blockWidth, blockDepth) / buildingsInBlock * (Math.random() * 0.3 + 0.4);
+                                createBuilding('cylinder', buildingX, buildingZ, radius, radius, height);
+                            }
+                        }
+                    }
+                    currentX += blockWidth;
+                }
+                currentZ += blockDepth;
+            }
+
+            const carGeo = new THREE.BoxGeometry(0.4, 0.1, 0.1);
+            const carMat = new THREE.MeshBasicMaterial({ color: 0xffffff, toneMapped: false });
+            for (let i = 0; i < 60; i++) {
+                const car = new THREE.Mesh(carGeo, carMat);
+                const carSize = Math.random() * 0.5 + 0.7;
+                car.scale.set(carSize, carSize, carSize);
+                const path = carPaths[Math.floor(Math.random() * carPaths.length)];
+                const progress = Math.random();
+                car.position.copy(path.getPointAt(progress));
+                manchesterScene.add(car);
+                cars.push({ mesh: car, path: path, progress: progress, speed: (Math.random() * 0.1 + 0.1) * 0.001 });
+            }
+        }
+
+        // --- EVENT HANDLERS & ANIMATION ---
+
+        function setupCityControls() {
+            const controlsMap = {
+                'btn-forward': 'forward', 'btn-backward': 'backward',
+                'btn-left': 'left', 'btn-right': 'right',
+                'btn-zin': 'zoomIn', 'btn-zout': 'zoomOut',
+                'btn-rotl': 'rotateLeft', 'btn-rotr': 'rotateRight'
+            };
+
+            for (const [id, key] of Object.entries(controlsMap)) {
+                const button = document.getElementById(id);
+                button.addEventListener('mousedown', () => moveState[key] = true);
+                button.addEventListener('mouseup', () => moveState[key] = false);
+                button.addEventListener('mouseleave', () => moveState[key] = false);
+                button.addEventListener('touchstart', (e) => { e.preventDefault(); moveState[key] = true; });
+                button.addEventListener('touchend', () => moveState[key] = false);
+            }
+        }
+
+        function setupSubpage() {
+            closeSubpageBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent click from reaching the canvas
+                subpage.classList.remove('visible');
+            });
+
+            photoGallery.addEventListener('mousemove', (e) => {
+                const rect = photoGallery.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const moveX = (x - centerX) / centerX;
+                const moveY = (y - centerY) / centerY;
+
+                const photos = photoGallery.children;
+                for (let i = 0; i < photos.length; i++) {
+                    const photo = photos[i];
+                    const depth = parseFloat(photo.dataset.depth || 0);
+                    photo.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
+                }
+            });
+        }
+
+        function openNightclubSubpage() {
+            subpageBG.style.backgroundImage = `url('https://placehold.co/1920x1080/1a001a/f0f?text=DJ+Set')`;
+            photoGallery.innerHTML = '';
+            const photoPositions = [
+                { top: '10%', left: '15%', depth: 20 }, { top: '30%', left: '50%', depth: -30 },
+                { top: '60%', left: '25%', depth: 10 }, { top: '50%', left: '70%', depth: -15 },
+            ];
+            photoPositions.forEach((pos, i) => {
+                const photoEl = document.createElement('div');
+                photoEl.className = 'gallery-photo';
+                photoEl.style.backgroundImage = `url('https://placehold.co/250x180/333/fff?text=Club+Photo+${i+1}')`;
+                photoEl.style.top = pos.top; photoEl.style.left = pos.left; photoEl.dataset.depth = pos.depth;
+                photoGallery.appendChild(photoEl);
+            });
+            subpage.classList.add('visible');
+        }
+        
+        function openPlayingFieldSubpage() {
+            subpageBG.style.backgroundImage = `url('./field/main.png')`;
+            photoGallery.innerHTML = '';
+            const photoPositions = [
+                { top: '15%', left: '20%', depth: -25 }, { top: '40%', left: '60%', depth: 15 },
+                { top: '65%', left: '30%', depth: -10 }, { top: '55%', left: '75%', depth: 25 },
+                { top: '80%', left: '50%', depth: -5 }
+            ];
+            const photos = [
+                './field/image-1.png', './field/image-2.png',
+                './field/image-3.png', './field/image-4.png', './field/image-5.png'
+            ];
+                
+            photoPositions.forEach((pos, i) => {
+                const photoEl = document.createElement('div');
+                photoEl.className = 'gallery-photo';
+                photoEl.style.backgroundImage = `url('${photos[i]}')`;
+                photoEl.style.top = pos.top; photoEl.style.left = pos.left; photoEl.dataset.depth = pos.depth;
+                photoGallery.appendChild(photoEl);
+            });
+            subpage.classList.add('visible');
+        }
+
+        function openCarFactorySubpage() {
+            subpageBG.style.backgroundImage = `url('https://placehold.co/1920x1080/4d3d00/ffa500?text=Assembly+Line')`;
+            photoGallery.innerHTML = '';
+            const photoPositions = [
+                { top: '20%', left: '10%', depth: 10 }, { top: '50%', left: '40%', depth: -20 },
+                { top: '30%', left: '70%', depth: 25 }, { top: '70%', left: '55%', depth: -5 },
+            ];
+            photoPositions.forEach((pos, i) => {
+                const photoEl = document.createElement('div');
+                photoEl.className = 'gallery-photo';
+                photoEl.style.backgroundImage = `url('https://placehold.co/250x180/333/fff?text=Factory+Photo+${i+1}')`;
+                photoEl.style.top = pos.top; photoEl.style.left = pos.left; photoEl.dataset.depth = pos.depth;
+                photoGallery.appendChild(photoEl);
+            });
+            subpage.classList.add('visible');
+        }
+
+        function openFashionHouseSubpage() {
+            subpageBG.style.backgroundImage = `url('https://placehold.co/1920x1080/4d0026/ff69b4?text=Runway+Show')`;
+            photoGallery.innerHTML = '';
+            const photoPositions = [
+                { top: '10%', left: '60%', depth: -15 }, { top: '45%', left: '25%', depth: 20 },
+                { top: '60%', left: '70%', depth: -5 }, { top: '25%', left: '40%', depth: 10 },
+            ];
+            photoPositions.forEach((pos, i) => {
+                const photoEl = document.createElement('div');
+                photoEl.className = 'gallery-photo';
+                photoEl.style.backgroundImage = `url('https://placehold.co/250x180/333/fff?text=Fashion+Photo+${i+1}')`;
+                photoEl.style.top = pos.top; photoEl.style.left = pos.left; photoEl.dataset.depth = pos.depth;
+                photoGallery.appendChild(photoEl);
+            });
+            subpage.classList.add('visible');
+        }
+
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function onSceneClick(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+
+            if (isZoomed) {
+                const intersects = raycaster.intersectObjects(manchesterScene.children, true);
+                for (let i = 0; i < intersects.length; i++) {
+                    let obj = intersects[i].object;
+                    while(obj.parent && !obj.name) {
+                        obj = obj.parent;
+                    }
+                    if (obj.name === "nightclub") { openNightclubSubpage(); return; }
+                    if (obj.name === "playing_field") { openPlayingFieldSubpage(); return; }
+                    if (obj.name === "car_factory") { openCarFactorySubpage(); return; }
+                    if (obj.name === "fashion_house") { openFashionHouseSubpage(); return; }
+                }
+            } else {
+                const intersects = raycaster.intersectObjects(globe.children);
+                for (let i = 0; i < intersects.length; i++) {
+                    if (intersects[i].object.name === "uk_emitter") {
+                        zoomToManchester();
+                        return;
+                    }
+                }
+            }
+        }
+        
+        const tween = (duration, onUpdate, onComplete) => {
+            const startTime = performance.now();
+            const tick = (currentTime) => {
+                let elapsed = currentTime - startTime;
+                let progress = Math.min(elapsed / duration, 1);
+                progress = 0.5 - 0.5 * Math.cos(progress * Math.PI);
+                onUpdate(progress);
+                if (progress < 1) { requestAnimationFrame(tick); } else { if(onComplete) onComplete(); }
+            };
+            requestAnimationFrame(tick);
+        };
+
+        function zoomToManchester() {
+            isZoomed = true;
+            controls.enabled = false;
+            const targetPosition = new THREE.Vector3(0, 25, 30);
+            const startPos = camera.position.clone();
+            cameraTarget.set(0, 0, 0);
+            globe.visible = false;
+            manchesterScene.visible = true;
+            tween(2000, (progress) => {
+                camera.position.lerpVectors(startPos, targetPosition, progress);
+                camera.lookAt(cameraTarget);
+            }, () => {
+                manchesterInfoPanel.classList.add('visible');
+                backButton.classList.add('visible');
+                cityControls.classList.add('visible');
+            });
+        }
+        
+        function zoomOutFromManchester() {
+            isZoomed = false;
+            manchesterInfoPanel.classList.remove('visible');
+            backButton.classList.remove('visible');
+            cityControls.classList.remove('visible');
+            subpage.classList.remove('visible');
+            const targetPosition = new THREE.Vector3(0, 0, 15);
+            const startPos = camera.position.clone();
+            tween(2000, (progress) => {
+                camera.position.lerpVectors(startPos, targetPosition, progress);
+                camera.lookAt(new THREE.Vector3(0,0,0));
+            }, () => {
+                controls.enabled = true;
+                controls.target.set(0, 0, 0);
+                globe.visible = true;
+                manchesterScene.visible = false;
+            });
+        }
+
+        function updateCamera() {
+            const moveSpeed = 0.25;
+            const rotateSpeed = 0.02;
+            const zoomSpeed = 0.3;
+
+            const forwardDir = new THREE.Vector3();
+            camera.getWorldDirection(forwardDir);
+            forwardDir.y = 0;
+            forwardDir.normalize();
+
+            const rightDir = new THREE.Vector3().crossVectors(new THREE.Vector3(0,1,0), forwardDir).normalize();
+
+            if (moveState.forward) camera.position.addScaledVector(forwardDir, moveSpeed);
+            if (moveState.backward) camera.position.addScaledVector(forwardDir, -moveSpeed);
+            if (moveState.left) camera.position.addScaledVector(rightDir, -moveSpeed);
+            if (moveState.right) camera.position.addScaledVector(rightDir, moveSpeed);
+            
+            const zoomDir = new THREE.Vector3();
+            camera.getWorldDirection(zoomDir);
+            if (moveState.zoomIn) camera.position.addScaledVector(zoomDir, zoomSpeed);
+            if (moveState.zoomOut) camera.position.addScaledVector(zoomDir, -zoomSpeed);
+
+            if (moveState.rotateLeft) camera.rotation.y += rotateSpeed;
+            if (moveState.rotateRight) camera.rotation.y -= rotateSpeed;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            if (earthMesh && earthMesh.material.uniforms && earthMesh.material.uniforms.time) {
+                earthMesh.material.uniforms.time.value = performance.now() / 5000;
+            }
+
+            if (ukLightEmitter) {
+                const time = Date.now() * 0.005;
+                const scale = 1.0 + 0.3 * Math.sin(time);
+                ukLightEmitter.scale.set(scale, scale, scale);
+            }
+            
+            if (isZoomed) {
+                if (!subpage.classList.contains('visible')) {
+                    updateCamera();
+                }
+                cars.forEach(car => {
+                    car.progress = (car.progress + car.speed) % 1;
+                    const newPosition = car.path.getPointAt(car.progress);
+                    const nextPosition = car.path.getPointAt((car.progress + 0.001) % 1);
+                    car.mesh.position.copy(newPosition);
+                    car.mesh.lookAt(nextPosition);
+                });
+            } else {
+                controls.update();
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        // --- START ---
+        init();
+        animate();
+    </script>
+</body>
+</html>

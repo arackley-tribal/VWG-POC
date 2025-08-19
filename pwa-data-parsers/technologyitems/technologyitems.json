@@ -164,27 +164,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30300/x/x/1AQ",
-                "30503/x/x/1AE",
-                "31501/x/x/1AQ",
-                "31350/x/x/1AQ",
-                "31501/x/x/1AE",
-                "31355/x/x/1AE",
-                "31511/x/x/1AQ",
-                "30602/x/x/1AQ",
-                "30652/x/x/1AQ",
-                "31511/x/x/1AE",
-                "30101/x/x/1AT",
                 "30205/x/x/1AS",
+                "30260/x/x/1AE",
+                "30251/x/x/1AS",
+                "30260/x/x/1AS",
                 "30360/x/x/1AS",
                 "30372/x/x/1AS",
-                "30360/x/x/1AS",
-                "30252/x/x/1AS",
+                "30602/x/x/1AQ",
+                "30652/x/x/1AQ",
                 "31005/x/x/1AS",
-                "31101/x/x/1AS",
-                "31160/x/x/1AS",
-                "30260/x/x/1AS",
-                "30251/x/x/1AS"
+                "31355/x/x/1AE",
+                "31511/x/x/1AQ"
             ]
         },
         {
@@ -228,50 +218,36 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "x/x/x/6I1",
-                "x/x/x/6I2",
-                "31501/x/x/6I1",
-                "31511/x/x/6I1",
                 "30205/x/x/6I1",
-                "30360/x/x/6I1",
-                "31160/x/x/6I1",
-                "30275/x/x/6I1",
-                "31102/x/x/6I1",
-                "30602/x/x/6I1",
-                "30652/x/x/6I1",
                 "30205/x/x/6I2",
                 "30260/x/x/6I2",
-                "30360/x/x/6I2",
-                "30372/x/x/6I2",
-                "31355/x/x/6I2",
-                "30300/x/x/6I6",
-                "30503/x/x/6I6",
-                "31101/x/x/6I6",
-                "31300/x/x/6I6",
-                "31350/x/x/6I6",
-                "31501/x/x/6I6",
-                "31511/x/x/6I6",
-                "31705/x/x/6I6",
+                "30275/x/x/6I1",
+                "30290/x/x/6I1",
+                "30290/x/x/6I6",
                 "30297/x/x/6I6",
+                "30297/x/x/6I1",
+                "30360/x/x/6I2",
+                "30360/x/x/6I1",
                 "30372/x/x/6I6",
                 "30550/x/x/6I6",
-                "31102/x/x/6I6",
-                "31355/x/x/6I6",
-                "30602/x/x/6I6",
-                "30652/x/x/6I6",
                 "30560/x/x/6I6",
-                "31101/x/x/7Y1",
-                "30361/x/x/7Y4",
+                "30602/x/x/6I6",
+                "30602/x/x/PF2",
+                "30602/x/x/6I1",
+                "30652/x/x/6I6",
+                "30652/x/x/PF2",
                 "31005/x/x/7Y4",
                 "31005/x/x/7Y5",
-                "30200/x/x/7Y9",
-                "31601/x/x/7Y9",
-                "30602/x/x/PF2",
-                "30652/x/x/PF2",
-                "31705/x/x/PF5",
-                "x/x/x/PF8",
-                "30361/x/x/PFA",
-                "x/x/x/PFT"
+                "31102/x/x/6I1",
+                "31102/x/x/6I6",
+                "31150/x/x/6I1",
+                "31150/x/x/6I6",
+                "31355/x/x/6I2",
+                "31355/x/x/6I6",
+                "31511/x/x/6I1",
+                "31511/x/x/6I2",
+                "31511/x/x/6I6",
+                "31706/x/x/6I1"
             ]
         },
         {
@@ -307,13 +283,9 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "x/x/x/UH2",
                 "30360/x/x/UH2",
                 "30372/x/x/UH2",
-                "30602/x/x/UH2",
-                "30652/x/x/UH2",
-                "x/x/x/UG6",
-                "x/x/x/UH4"
+                "30602/x/x/UH2"
             ]
         },
         {
@@ -348,17 +320,13 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31101/x/x/KA6",
-                "31501/x/x/KA6",
-                "31511/x/x/KA6",
-                "30270/x/x/KA6",
-                "31705/x/x/PF2",
-                "31705/x/x/PF3",
-                "31706/x/x/KA6",
-                "31705/x/x/KA6",
-                "31102/x/x/KA6",
                 "30602/x/x/KA6",
-                "30652/x/x/KA6"
+                "30652/x/x/KA6",
+                "31102/x/x/KA6",
+                "31150/x/x/KA6",
+                "31150/x/x/PFB",
+                "31511/x/x/KA6",
+                "31706/x/x/KA6"
             ]
         },
         {
@@ -392,30 +360,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "x/x/x/9AD",
-                "x/x/x/9AE",
-                "x/x/x/9AH",
-                "30252/x/x/9AK",
-                "30101/x/x/9AK",
                 "30205/x/x/9AK",
+                "30251/x/x/9AK",
                 "30260/x/x/9AK",
                 "30360/x/x/9AK",
                 "30372/x/x/9AK",
-                "30252/x/x/9AK",
-                "30251/x/x/9AK",
-                "31601/x/x/9JA",
-                "31501/x/x/KH0",
-                "31511/x/x/KH0",
-                "30503/x/x/KH7",
                 "31005/x/x/KH7",
-                "31101/x/x/KH7",
-                "31120/x/x/KH7",
-                "31300/x/x/KH7",
-                "31350/x/x/KH7",
-                "31160/x/x/KH7",
                 "31102/x/x/KH7",
+                "31150/x/x/KH7",
                 "31355/x/x/KH7",
-                "31300/x/x/PKJ"
+                "31511/x/x/KH0",
+                "31706/x/x/9AE"
             ]
         },
         {
@@ -449,24 +404,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30361/x/x/8G1",
-                "31501/x/x/8G1",
-                "31511/x/x/8G1",
                 "30205/x/x/8G1",
+                "30205/x/x/8G4",
                 "30260/x/x/8G1",
-                "30360/x/x/8G1",
-                "30372/x/x/8G1",
-                "31705/x/x/8G1",
-                "31160/x/x/8G1",
-                "30503/x/x/8G1",
-                "30300/x/x/8G1",
+                "30260/x/x/8G1",
+                "30260/x/x/8G4",
                 "30275/x/x/8G1",
+                "30372/x/x/8G1",
                 "30550/x/x/8G1",
                 "30602/x/x/8G1",
                 "30652/x/x/8G1",
-                "30205/x/x/8G4",
-                "30260/x/x/8G4",
-                "30361/x/x/PFD"
+                "31511/x/x/8G1"
             ]
         },
         {
@@ -518,29 +466,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30252/x/x/6K2",
-                "30361/x/x/6K2",
-                "31101/x/x/6K2",
                 "30205/x/x/6K2",
-                "30361/x/x/6K4",
-                "30371/x/x/6K4",
-                "31101/x/x/6K4",
-                "31501/x/x/6K4",
-                "31511/x/x/6K4",
                 "30205/x/x/6K4",
-                "30360/x/x/6K4",
-                "30372/x/x/6K4",
-                "30251/x/x/6K4",
-                "31102/x/x/6K4",
-                "x/x/x/6K8",
-                "30371/x/x/8T7",
-                "30371/x/x/8T8",
-                "31160/x/x/8T8",
-                "30503/x/x/8J3",
-                "30270/x/x/8J3",
+                "30260/x/x/6K4",
                 "30290/x/x/8J3",
                 "30297/x/x/8J3",
-                "30260/x/x/6KA"
+                "30360/x/x/6K4",
+                "30372/x/x/6K4",
+                "30602/x/x/8J3",
+                "30652/x/x/8J3",
+                "31102/x/x/6K4",
+                "31511/x/x/6K4"
             ]
         },
         {
@@ -584,49 +520,25 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30371/x/x/KA1",
-                "31005/x/x/KA1",
-                "30101/x/x/KA1",
-                "30205/x/x/KA1",
-                "30260/x/x/KA1",
+                "30275/x/x/KA2",
+                "30290/x/x/KA2",
+                "30297/x/x/KA6",
                 "30360/x/x/KA1",
                 "30372/x/x/KA1",
-                "30252/x/x/KA1",
-                "30251/x/x/KA1",
-                "31101/x/x/KA2",
-                "31120/x/x/KA2",
-                "31705/x/x/KA2",
-                "30270/x/x/KA2",
-                "30290/x/x/KA2",
-                "31160/x/x/KA2",
-                "30300/x/x/KA2",
-                "30503/x/x/KA2",
-                "30275/x/x/KA2",
-                "31501/x/x/KA2",
-                "31511/x/x/KA2",
-                "31102/x/x/KA2",
-                "31355/x/x/KA2",
+                "30560/x/x/KA6",
                 "30602/x/x/KA2",
                 "30652/x/x/KA2",
-                "30560/x/x/KA2",
-                "30275/x/x/KA6",
-                "31101/x/x/KA6",
-                "31120/x/x/KA6",
-                "31705/x/x/KA6",
-                "30297/x/x/KA6",
-                "31160/x/x/KA6",
-                "31511/x/x/KA6",
-                "31350/x/x/KA6",
-                "30550/x/x/KA6",
-                "31501/x/x/KA6",
+                "31005/x/x/KA1",
+                "31102/x/x/KA2",
                 "31102/x/x/KA6",
-                "31355/x/x/KA6",
-                "31705/x/x/PF1",
-                "31501/x/x/P12",
-                "x/x/x/PP2",
-                "31160/x/x/PRY",
-                "31120/x/x/PRY",
-                "x/x/x/PRY"
+                "31150/x/x/KA2",
+                "31355/x/x/KA2",
+                "31355/x/x/KA2",
+                "31511/x/x/KA2",
+                "30205/x/x/KA1",
+                "30251/x/x/KA1",
+                "30260/x/x/KA1",
+                "30550/x/x/KA6"
             ]
         },
         {
@@ -659,34 +571,14 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30205/x/x/RBD",
-                "30252/x/x/RBD",
-                "30300/x/x/RBD",
-                "30360/x/x/RBD",
-                "30503/x/x/RBD",
-                "31005/x/x/RBD",
-                "31101/x/x/RBD",
-                "31160/x/x/RBD",
-                "31350/x/x/RBD",
-                "31501/x/x/RBD",
-                "31102/x/x/RBD",
-                "31355/x/x/RBD",
-                "30260/x/x/ZBD",
+                "30205/x/x/RBF",
                 "30251/x/x/ZBD",
-                "30205/x/x/RCB",
-                "30252/x/x/RCB",
-                "30300/x/x/RCB",
-                "30360/x/x/RCB",
-                "30503/x/x/RCB",
-                "31005/x/x/RCB",
-                "31101/x/x/RCB",
-                "31160/x/x/RCB",
-                "31501/x/x/RCB",
-                "30260/x/x/ZCB",
-                "31350/x/x/RCI",
-                "31501/x/x/RCI",
-                "31511/x/x/RCI",
-                "x/x/x/PRY"
+                "30260/x/x/ZBF",
+                "30360/x/x/RBF",
+                "31005/x/x/RBD",
+                "31102/x/x/RBD",
+                "31150/x/x/RBA",
+                "31355/x/x/7UT"
             ]
         },
         {
@@ -720,11 +612,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
+                "30205/x/x/RCC",
+                "30251/x/x/ZCB",
+                "30260/x/x/ZCC",
+                "30275/x/x/7UT",
+                "30360/x/x/RCC",
                 "30550/x/x/7UT",
                 "30560/x/x/7UT",
+                "31005/x/x/RCB",
                 "31102/x/x/RCB",
-                "31355/x/x/RCI",
-                "30251/x/x/ZCB"
+                "31355/x/x/7UT",
+                "31511/x/x/RCI"
             ]
         },
         {
@@ -789,46 +687,26 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30275/x/x/AE1",
-                "x/x/x/PA4",
-                "31300/x/x/PA5",
-                "31705/x/x/PA5",
-                "31120/x/x/PAP",
-                "31160/x/x/PAP",
-                "x/x/x/QQ2",
-                "30101/x/x/QQ3",
                 "30205/x/x/QQ3",
                 "30260/x/x/QQ3",
+                "30275/x/x/AE1",
                 "30360/x/x/QQ3",
-                "30372/x/x/QQ3",
-                "x/x/x/QQ4",
-                "31102/x/x/QQ4",
-                "31355/x/x/QQ6",
-                "31102/x/x/QQ8",
-                "31120/x/x/QQ8",
-                "31300/x/x/QQ8",
-                "31350/x/x/QQ8",
-                "30270/x/x/QQ8",
                 "30360/x/x/QQ8",
-                "31160/x/x/QQ8",
-                "30602/x/x/QQ8",
-                "30652/x/x/QQ8",
+                "30372/x/x/QQ3",
                 "30602/x/x/QQ9",
                 "30652/x/x/QQ9",
-                "30300/x/x/QQ9",
-                "30503/x/x/QQ9",
-                "31101/x/x/QQ9",
-                "31501/x/x/QQ9",
-                "31511/x/x/QQ9",
+                "31102/x/x/QQ4",
+                "31102/x/x/QQ8",
                 "31102/x/x/QQ9",
+                "31150/x/x/QQ4",
+                "31150/x/x/QQ8",
+                "31150/x/x/QQ9",
+                "31355/x/x/QQ6",
                 "31355/x/x/QQ9",
-                "30300/x/x/UD1",
-                "30503/x/x/UD1",
-                "31160/x/x/UD3",
-                "30602/x/x/UD7",
-                "30652/x/x/UD7",
-                "30602/x/x/UD9",
-                "30652/x/x/UD9"
+                "31511/x/x/QQ9",
+                "31706/x/x/QQ2",
+                "31706/x/x/PA5",
+                "31706/x/x/PA4"
             ]
         },
         {
@@ -861,22 +739,18 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
+                "30275/x/x/8J3",
                 "30290/x/x/8J3",
                 "30297/x/x/8J3",
-                "30503/x/x/8J3",
-                "30275/x/x/8J3",
-                "30602/x/x/8J3",
-                "30652/x/x/8J3",
-                "30560/x/x/8J5",
-                "30550/x/x/8J5",
-                "31102/x/x/8J5",
-                "31101/x/x/6K2",
                 "30360/x/x/6K4",
                 "30372/x/x/6K4",
-                "31101/x/x/6K4",
-                "31501/x/x/6K4",
-                "31511/x/x/6K4",
-                "31705/x/x/6K8"
+                "30550/x/x/8J5",
+                "30560/x/x/8J5",
+                "30602/x/x/8J3",
+                "30652/x/x/8J3",
+                "31102/x/x/8J5",
+                "31150/x/x/8J5",
+                "31511/x/x/6K4"
             ]
         },
         {
@@ -910,12 +784,12 @@
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
                 "30205/x/x/2H4",
-                "30252/x/x/2H5",
+                "30260/x/x/2H5",
                 "30251/x/x/2H5",
-                "30602/x/x/2H5",
-                "30652/x/x/2H5",
+                "30260/x/x/PDE",
                 "30560/x/x/2H5",
-                "30260/x/x/PDE"
+                "30602/x/x/2H5",
+                "30652/x/x/2H5"
             ]
         },
         {
@@ -948,10 +822,7 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "x/x/x/8T6",
-                "30205/x/x/8T6",
-                "30260/x/x/8T7",
-                "x/x/x/8T2"
+                "30205/x/x/8T6"
             ]
         },
         {
@@ -984,25 +855,12 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30300/x/x/UH2",
-                "30360/x/x/UH2",
-                "30372/x/x/UH2",
-                "30503/x/x/UH2",
-                "31501/x/x/UH2",
-                "31511/x/x/UH2",
-                "30361/x/x/UH2",
-                "30371/x/x/UH2",
-                "31005/x/x/UH2",
-                "31101/x/x/UH2",
-                "31160/x/x/UH2",
-                "31300/x/x/UH2",
-                "31350/x/x/UH2",
-                "31705/x/x/UH2",
-                "31120/x/x/UH2",
-                "31102/x/x/UH2",
-                "31355/x/x/UH2",
-                "30602/x/x/UH2",
                 "30652/x/x/UH2",
+                "31005/x/x/UH2",
+                "31102/x/x/UH2",
+                "31150/x/x/UH2",
+                "31355/x/x/UH2",
+                "31511/x/x/UH2",
                 "31706/x/x/UH4"
             ]
         },
@@ -1036,22 +894,21 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
+                "30560/x/x/QR9",
+                "30602/x/x/QR9",
+                "30652/x/x/QR9",
                 "31005/x/x/QR9",
-                "31101/x/x/QR9",
-                "30270/x/x/QR9",
-                "30290/x/x/QR9",
+                "31102/x/x/QR9",
                 "30205/x/x/QR9",
                 "30260/x/x/QR9",
+                "30275/x/x/QR9",
+                "30290/x/x/QR9",
                 "30297/x/x/QR9",
                 "30360/x/x/QR9",
                 "30372/x/x/QR9",
-                "31706/x/x/QR9",
-                "30275/x/x/QR9",
                 "30550/x/x/QR9",
-                "30602/x/x/QR9",
-                "30652/x/x/QR9",
-                "30560/x/x/QR9",
-                "31102/x/x/QR9"
+                "31150/x/x/QR9",
+                "31706/x/x/QR9"
             ]
         },
         {
@@ -1116,30 +973,6 @@
                 "low resistance tyres",
                 "lowresistancetyres",
                 "low-resistance-tyres"
-            ],
-            "fuelTypeIDs": [],
-            "fuelInjectionTypeIDs": [],
-            "efficiencyLevelIDs": [],
-            "emissionsControlTypeIDs": [],
-            "gearboxTypeIDs": [],
-            "driveTypeIDs": [],
-            "bodyStyleIDs": [],
-            "specItemPrNumbers": []
-        },
-        {
-            "id": 36,
-            "name": "Volkswagen way to ZERO",
-            "subtitle": "We are faced by the greatest challenge in our company’s history. It is perhaps the greatest challenge in the history of mobility: we are addressing our responsibility for our share of global carbon emissions.",
-            "marketingDescription": "<h1>Volkswagen way to ZERO</h1>\n<p>We are faced by the greatest challenge in our company’s history. It is perhaps the greatest challenge in the history of mobility: we are addressing our responsibility for our share of global carbon emissions.</p>\n<p>That is why we are committed to complying with the Paris Climate Agreement, with the goal of becoming a company with a net carbon-neutral^ balance by 2050. To achieve this, we will change things.</p>\n<h2>We will follow a new path.</h2>\n<p>And we want everyone to participate in this movement – by being able to choose from innovative drive systems. We want to give you options that will help you on your personal path to lower emissions. Only by doing this will we all reach our common goal.</p>\n<p>That is our way to zero emissions. And it starts here.</p>\n<h2>The first Volkswagen delivered with a net carbon-neutral balance: The all-electric ID.3</h2>\n<p>The all-electric ID.3 is the first Volkswagen ever that is not just produced with a carbon-neutral^ balance but which is also delivered to you with a carbon-neutral^ balance.</p>\n<p>Manufacture and delivery of the ID.3 to the retailer is independently certified as net carbon neutral by TUV Nord. Net carbon neutrality is achieved through a combination of both emission reduction and off-setting unavoidable emissions. You can download the TUV Nord certificate <a href=\"https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/electric/research/sustainability/ID3-customer-CO2-TUV-certificate.pdf\">here</a> This independent certification is audited and reconciled quarterly. It excludes use and life-cycle post-handover at the retailer.</p>\n<p>For production, we rely on energy efficiency and the use of green electricity to avoid emissions wherever possible. In the meantime, the share of emissions during the manufacturing phase that are unavoidable in the short term will be successively reduced and offset through certified climate projects.</p>\n<p>As the first climate protection project, we are supporting our partner Permian Global in the Kantigan Mentaya Project in protecting 149,800 hectares of Indonesian rain forest, which absorbs large quantities of CO2.</p>\n<p>And after delivery? We are partnering with OVO Energy so you can enjoy affordable, zero-emission charging at home. <a href=\"https://www.volkswagen.co.uk/en/electric-and-hybrid/making-the-switch/charging/ovo-energy.html\">Find out more</a></p>\n<p><a href=\"https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/sustainability/way-to-zero.html\">Find out more about Volkswagen way to ZERO</a></p>\n<h2>Important information</h2>\n<p>^Carbon emissions will be avoided and reduced directly at Volkswagen where possible. Upstream suppliers are obliged correspondingly to avoid and reduce emissions. Carbon emissions that cannot be avoided and reduced at Volkswagen and by corresponding commitments in the supply chain will be offset to the equivalent amount in certified climate protection projects.</p>",
-            "imageFileName": "/images/technologyItems/poster/technology-way_to_zero-poster.jpg",
-            "thumbnailImageFileName": "/images/technologyItems/thumb/technology-way_to_zero-thumb.jpg",
-            "assetFileName": null,
-            "assetCollection": [],
-            "subsection": "Efficient technologies",
-            "synonyms": [
-                "volkswagen way to zero",
-                "volkswagenwaytozero",
-                "volkswagen-way-to-zero"
             ],
             "fuelTypeIDs": [],
             "fuelInjectionTypeIDs": [],
@@ -1281,35 +1114,15 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30550/x/x/8T3",
                 "30205/x/x/8T7",
-                "30252/x/x/8T7",
-                "30260/x/x/8T7",
-                "30360/x/x/8T7",
-                "30372/x/x/8T7",
-                "30300/x/x/8T7",
-                "30503/x/x/8T7",
-                "31005/x/x/8T7",
-                "31101/x/x/8T7",
-                "31160/x/x/8T7",
-                "31350/x/x/8T7",
-                "31501/x/x/8T7",
-                "31511/x/x/8T7",
                 "30205/x/x/8T8",
-                "30252/x/x/8T8",
+                "30260/x/x/8T3",
+                "30260/x/x/8T7",
                 "30260/x/x/8T8",
-                "30360/x/x/8T8",
-                "30372/x/x/8T8",
-                "30300/x/x/8T8",
-                "30503/x/x/8T8",
+                "30550/x/x/8T3",
+                "31005/x/x/8T7",
                 "31005/x/x/8T8",
-                "31101/x/x/8T8",
-                "31160/x/x/8T8",
-                "31350/x/x/8T8",
-                "31501/x/x/8T8",
-                "31511/x/x/8T8",
-                "31706/x/x/8T8",
-                "31705/x/x/8T8"
+                "31511/x/x/8T8"
             ]
         },
         {
@@ -1344,15 +1157,13 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31501/x/x/6I6",
-                "31511/x/x/6I6",
+                "30260/x/x/6I6",
                 "30550/x/x/6I6",
+                "30560/x/x/6I6",
+                "30560/x/x/79H",
                 "30602/x/x/6I6",
                 "30652/x/x/6I6",
-                "30560/x/x/6I6",
-                "30602/x/x/PF2",
-                "30652/x/x/PF2",
-                "30560/x/x/79H"
+                "31511/x/x/6I6"
             ]
         },
         {
@@ -1386,7 +1197,6 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31501/x/x/2I0",
                 "31511/x/x/2I0"
             ]
         },
@@ -1421,10 +1231,10 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30550/x/x/2I0",
-                "30560/x/x/2I0",
                 "30290/x/x/2I0",
-                "30297/x/x/2I0"
+                "30297/x/x/2I0",
+                "30550/x/x/2I0",
+                "30560/x/x/2I0"
             ]
         },
         {
@@ -1432,16 +1242,17 @@
             "name": "Digital Cockpit Pro",
             "subtitle": "With the Digital Cockpit Pro, you can enjoy the advantages of an instrument cluster with a high resolution colour display.",
             "marketingDescription": "<h1>Digital Cockpit Pro</h1>\n<p>Thanks to the optional Digital Cockpit Pro, you can enjoy the advantages of an instrument cluster with a high resolution colour display. With various information profiles, you can decide which specific data are displayed in the instrument cluster in addition to the usual gauges such as the rev counter, speedometer and odometer.</p>\n<p>You can select this information profile quickly and easily using the optional multifunctional steering wheel: depending on your precise needs, you can access detailed Driving Data, for example, or show a visual display of your driver assistance systems. This means the display area can be even better used, because you can also show additional data within the dials.</p>\n<p>In the Discover Navigation Infotainment system, you can decide whether you would like to see the navigation map in the Digital Cockpit Pro, or have the classic view on the system display. With Discover Navigation Pro, both display options are available simultaneously.</p>",
-            "imageFileName": "/images/technologyItems/poster/technology_activeinfodisplay_poster.jpg",
-            "thumbnailImageFileName": "/images/technologyItems/thumb/technology_activeinfodisplay_thumb.jpg",
-            "assetFileName": "/videos/technology_activeinfodisplay.mp4",
+            "imageFileName": "/images/technologyItems/poster/GOLF_Digital_Cockpit_Pro_cover-700x350_poster.jpg",
+            "thumbnailImageFileName": "/images/technologyItems/thumb/GOLF_Digital_Cockpit_Pro_cover-204x102_thumb.jpg",
+            "assetFileName": "/videos/technology/GOLF_Digital_Cockpit_Pro.mp4",
             "assetCollection": [{
                 "id": 85,
+		"dateAdded": "2025-04-10T00:00:02",
                 "assetType": "DRIVER_BENEFITS",
-                "imageFileName": "/images/technologyItems/poster/technology_activeinfodisplay_poster.jpg",
-                "thumbnailImageFileName": "/images/technologyItems/thumb/technology_activeinfodisplay_thumb.jpg",
-                "assetFileName": "/videos/technology_activeinfodisplay.mp4",
-                "url": "https://youtu.be/m5gyz6LV5LA",
+                "imageFileName": "/images/technologyItems/poster/GOLF_Digital_Cockpit_Pro_cover-700x350_poster.jpg",
+                "thumbnailImageFileName": "/images/technologyItems/thumb/GOLF_Digital_Cockpit_Pro_cover-204x102_thumb.jpg",
+                "assetFileName": "/videos/technology/GOLF_Digital_Cockpit_Pro.mp4",
+                "url": "https://youtu.be/-iZk2KKPUpE",
                 "title": "Digital Cockpit Pro driver benefits"
             }],
             "subsection": "Comfort features",
@@ -1457,24 +1268,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30503/x/x/7J2",
-                "30300/x/x/7J2",
-                "30602/x/x/7J2",
-                "30652/x/x/7J2",
+                "30251/x/x/9S0",
                 "30260/x/x/9S0",
                 "30360/x/x/9S0",
-                "30205/x/x/9S0",
-                "30252/x/x/9S0",
-                "31005/x/x/9S0",
-                "31101/x/x/9S0",
-                "31160/x/x/9S0",
-                "31501/x/x/9S0",
-                "31511/x/x/9S0",
-                "30251/x/x/9S0",
-                "31705/x/x/9S7",
-                "31706/x/x/9S8",
                 "30372/x/x/9S0",
-                "31102/x/x/8DG"
+                "30602/x/x/7J2",
+                "30652/x/x/7J2",
+                "31005/x/x/9S0",
+                "31102/x/x/8DG",
+                "31150/x/x/8DG",
+                "31511/x/x/9S0",
+                "31706/x/x/9S8"
             ]
         },
         {
@@ -1507,32 +1311,23 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30270/x/x/EM1",
                 "30205/x/x/EM1",
-                "30290/x/x/EM1",
-                "30260/x/x/EM1",
-                "30360/x/x/EM1",
-                "30252/x/x/EM1",
-                "30300/x/x/EM1",
-                "30297/x/x/EM1",
-                "30503/x/x/EM1",
-                "31005/x/x/EM1",
-                "31101/x/x/EM1",
-                "31160/x/x/EM1",
-                "31300/x/x/EM1",
-                "31350/x/x/EM1",
-                "31501/x/x/EM1",
-                "31511/x/x/EM1",
-                "31705/x/x/EM1",
-                "30275/x/x/EM1",
-                "30372/x/x/EM1",
-                "31706/x/x/EM2",
                 "30251/x/x/EM2",
-                "31102/x/x/EM2",
-                "31355/x/x/EM2",
+                "30260/x/x/EM2",
+                "30275/x/x/EM2",
+                "30290/x/x/EM1",
+                "30297/x/x/EM1",
+                "30360/x/x/EM2",
+                "30372/x/x/EM2",
+                "30560/x/x/EM2",
                 "30602/x/x/EM2",
                 "30652/x/x/EM2",
-                "30560/x/x/EM2"
+                "31005/x/x/EM1",
+                "31102/x/x/EM2",
+                "31150/x/x/EM3",
+                "31355/x/x/EM2",
+                "31511/x/x/EM1",
+                "31706/x/x/EM2"
             ]
         },
         {
@@ -1565,17 +1360,13 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30503/x/x/5I6",
+                "30290/x/x/5I6",
                 "30297/x/x/5I6",
-                "31101/x/x/5I6",
-                "31160/x/x/5I6",
-                "31706/x/x/5I6",
                 "31102/x/x/5I6",
+                "31150/x/x/5I6",
+                "31150/x/x/PE4",
                 "31355/x/x/5I6",
-                "31705/x/x/PEH",
-                "31300/x/x/PEM",
-                "31705/x/x/PEV",
-                "31705/x/x/PEZ"
+                "31706/x/x/5I6"
             ]
         },
         {
@@ -1609,28 +1400,20 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31005/x/x/4F2",
-                "31101/x/x/4F2",
-                "31120/x/x/4F2",
-                "31300/x/x/4F2",
-                "31350/x/x/4F2",
                 "30205/x/x/4F2",
+                "30251/x/x/4F2",
                 "30260/x/x/4F2",
                 "30360/x/x/4F2",
                 "30372/x/x/4F2",
-                "31160/x/x/4F2",
-                "30252/x/x/4F2",
-                "31706/x/x/4F2",
                 "30550/x/x/4F2",
-                "30251/x/x/4F2",
-                "30300/x/x/4K6",
-                "31102/x/x/4K6",
-                "31355/x/x/4K6",
                 "30602/x/x/4K6",
-                "30652/x/x/4K6",
-                "x/x/x/P50",
-                "31120/x/x/PEL",
-                "31160/x/x/PEL"
+                "30652/x/x/4I6",
+                "31005/x/x/4F2",
+                "31102/x/x/4K6",
+                "31150/x/x/4K6",
+                "31150/x/x/PE4",
+                "31355/x/x/4K6",
+                "31706/x/x/4f2"
             ]
         },
         {
@@ -1663,9 +1446,9 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "x/x/x/WB3",
-                "x/x/x/WB4",
-                "30550/x/x/3IA"
+                "30560/x/x/3IA",
+                "30550/x/x/3IA",
+                "31706/x/x/WB4"
             ]
         },
         {
@@ -1698,38 +1481,23 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30200/x/x/8N6",
-                "30252/x/x/8N6",
-                "30300/x/x/8N6",
-                "30361/x/x/8N6",
-                "30371/x/x/8N6",
-                "30503/x/x/8N6",
-                "31005/x/x/8N6",
-                "31101/x/x/8N6",
-                "31120/x/x/8N6",
-                "31300/x/x/8N6",
-                "31350/x/x/8N6",
-                "31501/x/x/8N6",
-                "31511/x/x/8N6",
-                "30270/x/x/8N6",
-                "30290/x/x/8N6",
                 "30205/x/x/8N6",
+                "30251/x/x/8N6",
                 "30260/x/x/8N6",
+                "30275/x/x/8N6",
+                "30290/x/x/8N6",
                 "30297/x/x/8N6",
                 "30360/x/x/8N6",
                 "30372/x/x/8N6",
-                "31160/x/x/8N6",
-                "30275/x/x/8N6",
-                "30101/x/x/8N6",
                 "30550/x/x/8N6",
-                "30251/x/x/8N6",
-                "31102/x/x/8N6",
-                "31355/x/x/8N6",
+                "30560/x/x/8N6",
                 "30602/x/x/8N6",
                 "30652/x/x/8N6",
-                "30560/x/x/8N6",
-                "30200/x/x/PLA",
-                "30361/x/x/PLA"
+                "31005/x/x/8N6",
+                "31102/x/x/8N6",
+                "31150/x/x/8N6",
+                "31355/x/x/8N6",
+                "31511/x/x/8N6"
             ]
         },
         {
@@ -1762,31 +1530,23 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31120/x/x/3A0",
-                "31501/x/x/3A0",
-                "31511/x/x/3A0",
-                "31160/x/x/3A0",
-                "31300/x/x/3A0",
-                "31350/x/x/3A0",
-                "31706/x/x/3A0",
-                "30503/x/x/3A2",
-                "30270/x/x/3A2",
                 "30205/x/x/3A2",
+                "30260/x/x/3A2",
+                "30251/x/x/3A2",
+                "30260/x/x/3A2",
+                "30275/x/x/3A2",
                 "30290/x/x/3A2",
                 "30297/x/x/3A2",
-                "30260/x/x/3A2",
-                "30252/x/x/3A2",
-                "30300/x/x/3A2",
-                "30275/x/x/3A2",
+                "30360/x/x/3B4",
+                "30372/x/x/3B4",
                 "30550/x/x/3A2",
-                "30251/x/x/3A2",
-                "31355/x/x/3A2",
+                "30560/x/x/3A2",
                 "30602/x/x/3A2",
                 "30652/x/x/3A2",
-                "30560/x/x/3A2",
-                "30360/x/x/3B4",
                 "31005/x/x/3B4",
-                "30372/x/x/3B4"
+                "31355/x/x/3A2",
+                "31511/x/x/3A0",
+                "31706/x/x/3A0"
             ]
         },
         {
@@ -1851,23 +1611,16 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30101/x/x/8K3",
-                "31160/x/x/8K3",
-                "31120/x/x/8K3",
-                "30503/x/x/9I5",
-                "31101/x/x/9I5",
-                "31705/x/x/9I5",
                 "30205/x/x/9I5",
                 "30260/x/x/9I5",
                 "30360/x/x/9I5",
                 "30372/x/x/9I5",
-                "31160/x/x/9I5",
-                "31706/x/x/9I5",
-                "31102/x/x/9I5",
+                "30550/x/x/1J2",
                 "30602/x/x/9I5",
                 "30652/x/x/9I5",
-                "30550/x/x/1J2",
-                "x/x/x/PTD"
+                "31102/x/x/9I5",
+                "31150/x/x/9I5",
+                "31706/x/x/9I5"
             ]
         },
         {
@@ -1932,51 +1685,32 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31101/x/x/7X2",
-                "31705/x/x/7X2",
                 "30205/x/x/7X2",
-                "30300/x/x/7X2",
-                "31350/x/x/7X2",
-                "31511/x/x/7X2",
-                "31501/x/x/7X2",
-                "31601/x/x/7X2",
-                "30252/x/x/7X2",
-                "31005/x/x/7X2",
-                "30275/x/x/7X2",
+                "30251/x/x/7X5",
                 "30251/x/x/7X2",
-                "30602/x/x/7X2",
-                "30652/x/x/7X2",
-                "31101/x/x/7X5",
-                "31705/x/x/7X5",
                 "30260/x/x/7X5",
+                "30275/x/x/7X2",
+                "30290/x/x/8A2",
+                "30297/x/x/8A2",
                 "30360/x/x/7X5",
                 "30372/x/x/7X5",
-                "30300/x/x/7X5",
-                "31350/x/x/7X5",
-                "31511/x/x/7X5",
-                "31501/x/x/7X5",
-                "31601/x/x/7X5",
-                "31120/x/x/7X5",
-                "30252/x/x/7X5",
-                "31005/x/x/7X5",
-                "31160/x/x/7X5",
-                "30251/x/x/7X5",
-                "31355/x/x/7X5",
-                "31705/x/x/PF1",
-                "31705/x/x/PF2",
-                "30297/x/x/8A2",
-                "30270/x/x/8A2",
-                "30290/x/x/8A2",
-                "31102/x/x/8A2",
+                "30550/x/x/8A5",
                 "30560/x/x/8A2",
-                "30550/x/x/8A5"
+                "30602/x/x/7X2",
+                "30652/x/x/7X2",
+                "31005/x/x/7X5",
+                "31005/x/x/7X2",
+                "31102/x/x/8A2",
+                "31355/x/x/8A5",
+                "31511/x/x/7X5",
+                "31511/x/x/7X2"
             ]
         },
         {
             "id": 66,
-            "name": "Side Scan",
+            "name": "Side Scan (Side Assist)",
             "subtitle": "When you want to change lanes, Side Scan warns you about the vehicles that are in your blind spot.",
-            "marketingDescription": "<h1>Side Scan</h1>\n<p>When you indicate that you’re about to change lanes, our Side Scan assistant warns you about approaching traffic.</p>\n<p>If there are cars behind you or in your blind spot, LED lights will flash in your wing mirrors to alert you.</p>\n<p>The system is designed to alert you only when necessary: stationary objects or oncoming vehicles don’t trigger warnings.</p>",
+            "marketingDescription": "<h1>Side Scan (Side Assist)</h1>\n<p>When you indicate that you’re about to change lanes, our Side Scan assistant warns you about approaching traffic.</p>\n<p>If there are cars behind you or in your blind spot, LED lights will flash in your wing mirrors to alert you.</p>\n<p>The system is designed to alert you only when necessary: stationary objects or oncoming vehicles don’t trigger warnings.</p>",
             "imageFileName": "/images/technologyItems/poster/technology_passatsidescan_poster.jpg",
             "thumbnailImageFileName": "/images/technologyItems/thumb/technology_passatsidescan_thumb.jpg",
             "assetFileName": "/videos/technology_passatsidescan.mp4",
@@ -1992,7 +1726,9 @@
             "subsection": "Safety",
             "synonyms": [
                 "side scan",
-                "side-scan"
+                "side-scan",
+                "side scan side assist",
+                "side-scan-side-assist"
             ],
             "fuelTypeIDs": [],
             "fuelInjectionTypeIDs": [],
@@ -2002,21 +1738,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31101/x/x/7Y1",
-                "31501/x/x/7Y1",
-                "31511/x/x/7Y1",
-                "31705/x/x/7Y1",
-                "30270/x/x/7Y1",
+                "30205/x/x/7Y1",
                 "30260/x/x/7Y1",
+                "30290/x/x/79H",
+                "30297/x/x/79H",
                 "30372/x/x/7Y1",
-                "30300/x/x/7Y1",
-                "30503/x/x/7Y1",
-                "30252/x/x/7Y8",
-                "31705/x/x/PF5",
                 "30550/x/x/79H",
                 "31102/x/x/79H",
+                "31150/x/x/79H",
                 "31355/x/x/79H",
-                "x/x/x/PF8"
+                "31511/x/x/7Y1",
+                "31706/x/x/7Y1"
             ]
         },
         {
@@ -2101,26 +1833,18 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30300/x/x/7W2",
-                "30503/x/x/7W2",
-                "31501/x/x/7W2",
-                "31511/x/x/7W2",
-                "30270/x/x/7W2",
-                "30290/x/x/7W2",
                 "30260/x/x/7W2",
+                "30290/x/x/7W2",
                 "30297/x/x/7W2",
                 "30360/x/x/7W2",
-                "30300/x/x/7W4",
-                "30503/x/x/7W4",
-                "31101/x/x/7W4",
                 "30372/x/x/7W4",
-                "x/x/x/7W6",
                 "30550/x/x/7W7",
-                "31102/x/x/7W7",
                 "30602/x/x/7W7",
                 "30652/x/x/7W7",
-                "x/x/x/PF8",
-                "x/x/x/VL4"
+                "31102/x/x/7W7",
+                "31511/x/x/7W2",
+                "31511/x/x/VL4",
+                "31706/x/x/7W6"
             ]
         },
         {
@@ -2229,28 +1953,18 @@
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
                 "30205/x/x/YOS",
+                "30251/x/x/YOS",
                 "30260/x/x/YOS",
-                "30300/x/x/YOS",
                 "30360/x/x/YOS",
                 "30372/x/x/YOS",
-                "30503/x/x/YOS",
-                "30252/x/x/YOS",
-                "31501/x/x/YOS",
-                "31511/x/x/YOS",
-                "30361/x/x/YOS",
-                "30371/x/x/YOS",
-                "31005/x/x/YOS",
-                "31101/x/x/YOS",
-                "31160/x/x/YOS",
-                "31300/x/x/YOS",
-                "31350/x/x/YOS",
-                "31706/x/x/YOS",
-                "31120/x/x/YOS",
-                "30251/x/x/YOS",
-                "31102/x/x/YOS",
-                "31355/x/x/YOS",
                 "30602/x/x/YOS",
-                "30652/x/x/YOS"
+                "30652/x/x/YOS",
+                "31005/x/x/YOS",
+                "31102/x/x/YOS",
+                "31150/x/x/YOS",
+                "31355/x/x/YOS",
+                "31511/x/x/YOS",
+                "31706/x/x/YOS"
             ]
         },
         {
@@ -2287,14 +2001,18 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30560/x/x/EL5"
+                "30560/x/x/EL5",
+                "30550/x/x/EL5",
+                "30275/x/x/EL5",
+                "30290/x/x/EL5",
+                "30297/x/x/EL5"
             ]
         },
         {
             "id": 125,
             "name": "We Charge",
             "subtitle": "We Charge is the smart service you can use to charge your ID. model across Europe at over 250,000 charge points with ease.",
-            "marketingDescription": "<h1>We Charge</h1>\n<p>E-mobility can be simple and fun – after all, you should be able to get anywhere with ease. Simply open the Volkswagen.app and check the location of the nearest charging station – and you can charge your vehicle and collect special prices with your Volkswagen ID.</p><h2>We Charge in the Volkswagen app.</h2><p>We Charge functions are integrated into the Volkswagen app. Use the app to search and find public charging stations and check their availability in real time. You can view all your charging sessions for full cost transparency. Control of your charging card and plans is just a tap away.</p><h2>We Charge in-car app</h2><p>With Over-the-Air Update, it’s easy to connect your We Charge app to your navigation system. You can filter charging stations by capacity and availability in We Charge view and start route guidance without leaving the navigation app. That way, you can stay connected any time and find charging stations anywhere.</p><h2>Electric Vehicle Route Planner</h2><p>With our route planner, you can find many charging stations and add them to your route planning as a destination or stopover. Journeys can be planned along the public charging network, taking into account individual settings such as battery level along the route. Visit <a href=\"https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/electric-vehicle-route-planner.html\">https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html</a> to start routing.</p>\n<p>For more information on our We Charge plans, please visit <a href=\"https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/we-charge.html\">www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/we-charge.html</a></p>\n<p>You can view the We Charge brochure here: <a href=\"https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge_Brochure_EN_98x98_doublepages.pdf\">www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge_Brochure_EN_98x98_doublepages.pdf</a></p>",
+            "marketingDescription": "<h1>We Charge</h1>\n<p>E-mobility can be simple and fun – after all, you should be able to get anywhere with ease. Simply open the Volkswagen.app and check the location of the nearest charging station – and you can charge your vehicle and collect special prices with your Volkswagen ID.</p><h2>We Charge in the Volkswagen app.</h2><p>We Charge functions are integrated into the Volkswagen app. Use the app to search and find public charging stations and check their availability in real time. You can view all your charging sessions for full cost transparency. Control of your charging card and plans is just a tap away.</p><h2>We Charge in-car app</h2><p>With Over-the-Air Update, it’s easy to connect your We Charge app to your navigation system. You can filter charging stations by capacity and availability in We Charge view and start route guidance without leaving the navigation app. That way, you can stay connected any time and find charging stations anywhere.</p><h2>Electric Vehicle Route Planner</h2><p>With our route planner, you can find many charging stations and add them to your route planning as a destination or stopover. Journeys can be planned along the public charging network, taking into account individual settings such as battery level along the route. Visit <a href=\"https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html\">https://www.volkswagen.co.uk/en/electric-and-hybrid/living-electric/lifestyle/ev-route-planner.html</a> to start routing.</p>\n<p>For more information on our We Charge plans, please visit <a href=\"https://www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/charging/we-charge.html\">www.volkswagen.co.uk/en/electric-and-hybrid/charging-and-range/we-charge.html</a></p>\n<p>You can view the We Charge brochure here: <a href=\"https://www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge_Brochure_EN_98x98_doublepages.pdf\">www.volkswagen.co.uk/idhub/content/dam/onehub_master/pc/connectivity-and-mobility-services/mobility-services/we-charge/update/WeCharge_Brochure_EN_98x98_doublepages.pdf</a></p>",
             "imageFileName": "/images/contentItems/ev_hub_We-Charge_thumb@2x.png",
             "thumbnailImageFileName": "/images/contentItems/ev_hub_We-Charge_thumb@2x.png",
             "assetFileName": "/videos/technology_we_charge_tutorial_mar22.mp4",
@@ -2375,7 +2093,7 @@
             "id": 133,
             "name": "Upgrades",
             "subtitle": "Upgrades allow you to make your Volkswagen even more connected. Using your car’s infotainment system, you can instantly purchase navigation upgrades, driver assist systems, and more.",
-            "marketingDescription": "<h1>Upgrade</h1>\n<p>Upgrades allow you to make your Volkswagen even more connected. Simply using your car’s infotainment system or the Volkswagen Connect shop, you can instantly purchase navigation upgrades, driver assist systems, and more. You can view the Upgradesavailable for your vehicle below as a Mobile Online Services  primary user and conveniently purchase them directly online.</p><h2>Upgrades for  Connect ready vehicless</h2><ul><li>Navigation: Add navigation functions for your Ready 2 Discover infotainment system and enhance your vehicle with intuitive navigation. Activating these functions allows you to access integrated, intuitive navigation with a 2D map display for Europe and points of interest (POIs). Once activated in the vehicle, these functions are permanently available to you and do not require an Internet connection or a We Connect contract. As well as these handy offline functions, you can access additional useful online services with the We Connect Plus licence. The Online Traffic Information service keeps you, the primary user, informed of changes and hazards along your route almost in real time, while the Online Route Calculation service provides optimal and forward-looking route guidance. Online Map Update automatically updates your map material at regular intervals when your vehicle is online, when you select the ‘Share my position’ setting in your infotainment system.</li><li>Voice Control: By saying “Hello Volkswagen”, you enter into a natural dialogue – for safe and convenient control of selected telephony, media or navigation functions. Activate voice control for your infotainment system Ready 2 Discover or Discover Media and control numerous vehicle functions using your voice. After all, depending on the vehicle model and equipment, many selected functions can be controlled using your voice. This allows you to focus completely on the road and enjoy driving even more.</li><li>App Connect: With App-Connect, selected apps and content are transmitted directly to the display of the infotainment system in your Volkswagen and can be comfortably and clearly controlled within your line of vision. That makes it incredibly easy to access music, news, maps or audiobooks, for example. Volkswagen offers three interfaces for connecting smartphones, with numerous options: Apple CarPlay™, Android Auto™ by Google and MirrorLink®. Wireless use of Apple CarPlay™ and Android Auto™ by Google is also available as a We Upgrade function for the Discover Media navigation system and Ready 2 Discover. To avoid distraction, only certified apps can be started during the journey.</li></ul><h2>More We Upgrade functions for your Golf</h2><ul><li>Adaptive Cruise Control ACC: Adaptive Cruise Control (ACC) keeps to a constant pre-set speed of your choice, up to 130 mph. When your Golf approaches another vehicle in front, ACC adapts the speed automatically, keeping your pre-set distance from the other vehicle (within the system’s limits).</li><li>Light Assist: With the Light Assist main beam control system, you’ll see driving at night in your Golf in a whole new light. Light Assist uses a camera installed behind the windscreen to detect oncoming traffic or vehicles driving ahead and automatically switch between dipped and main beam (within the system’s limits).</li><li>Dynamic Road Sign Display: Dynamic Road Sign Display can detect speed limits, overtaking bans and hazard signs on camera (within system limitations) and show this on the multi-function display. So it’s easier to keep track of what's going on in traffic.</li><li>Mood Lighting: The expansion of the basic ambient lighting enables the interior to be lit according to mood, thanks to the individual choice of colour. Mood Lighting offers an expanded range of colours and a wider selection for creating lighting accents as a We Upgrade function. Whether you prefer cooler or warmer lighting, you’re in the bright lights of the big city or on a dark country road: on every trip, you can create a different atmosphere to suit you and your passengers.</li>\n</ul>\n<p>For more information on which We Upgrade functions are available for your vehicle and current offer prices, please visit <a href=\"https://www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions\">www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions</a></p>",
+            "marketingDescription": "<h1>Upgrade</h1>\n<p>Upgrades allow you to make your Volkswagen even more connected. Simply using your car’s infotainment system or the Volkswagen Connect shop, you can instantly purchase navigation upgrades, driver assist systems, and more. You can view the Upgrades available for your vehicle below as a Mobile Online Services  primary user and conveniently purchase them directly online.</p><h2>Upgrades for  Connect ready vehicless</h2><ul><li>Navigation: Add navigation functions for your Ready 2 Discover infotainment system and enhance your vehicle with intuitive navigation. Activating these functions allows you to access integrated, intuitive navigation with a 2D map display for Europe and points of interest (POIs). Once activated in the vehicle, these functions are permanently available to you and do not require an Internet connection or a We Connect contract. As well as these handy offline functions, you can access additional useful online services with the We Connect Plus licence. The Online Traffic Information service keeps you, the primary user, informed of changes and hazards along your route almost in real time, while the Online Route Calculation service provides optimal and forward-looking route guidance. Online Map Update automatically updates your map material at regular intervals when your vehicle is online, when you select the ‘Share my position’ setting in your infotainment system.</li><li>Voice Control: By saying “Hello Volkswagen”, you enter into a natural dialogue – for safe and convenient control of selected telephony, media or navigation functions. Activate voice control for your infotainment system Ready 2 Discover or Discover Media and control numerous vehicle functions using your voice. After all, depending on the vehicle model and equipment, many selected functions can be controlled using your voice. This allows you to focus completely on the road and enjoy driving even more.</li><li>App Connect: With App-Connect, selected apps and content are transmitted directly to the display of the infotainment system in your Volkswagen and can be comfortably and clearly controlled within your line of vision. That makes it incredibly easy to access music, news, maps or audiobooks, for example. Volkswagen offers three interfaces for connecting smartphones, with numerous options: Apple CarPlay™, Android Auto™ by Google and MirrorLink®. Wireless use of Apple CarPlay™ and Android Auto™ by Google is also available as a We Upgrade function for the Discover Media navigation system and Ready 2 Discover. To avoid distraction, only certified apps can be started during the journey.</li></ul><h2>More We Upgrade functions for your Golf</h2><ul><li>Adaptive Cruise Control ACC: Adaptive Cruise Control (ACC) keeps to a constant pre-set speed of your choice, up to 130 mph. When your Golf approaches another vehicle in front, ACC adapts the speed automatically, keeping your pre-set distance from the other vehicle (within the system’s limits).</li><li>Light Assist: With the Light Assist main beam control system, you’ll see driving at night in your Golf in a whole new light. Light Assist uses a camera installed behind the windscreen to detect oncoming traffic or vehicles driving ahead and automatically switch between dipped and main beam (within the system’s limits).</li><li>Dynamic Road Sign Display: Dynamic Road Sign Display can detect speed limits, overtaking bans and hazard signs on camera (within system limitations) and show this on the multi-function display. So it’s easier to keep track of what's going on in traffic.</li><li>Mood Lighting: The expansion of the basic ambient lighting enables the interior to be lit according to mood, thanks to the individual choice of colour. Mood Lighting offers an expanded range of colours and a wider selection for creating lighting accents as a We Upgrade function. Whether you prefer cooler or warmer lighting, you’re in the bright lights of the big city or on a dark country road: on every trip, you can create a different atmosphere to suit you and your passengers.</li>\n</ul>\n<p>For more information on which We Upgrade functions are available for your vehicle and current offer prices, please visit <a href=\"https://www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions\">www.volkswagen.co.uk/en/connected-services/we-connect/we-upgrade.html#we-upgrade-functions</a></p>",
             "imageFileName": "/images/contentItems/ev_hub_We-Upgrade_thumb@2x.png",
             "thumbnailImageFileName": "/images/contentItems/ev_hub_We-Upgrade_thumb@2x.png",
             "assetFileName": "/videos/technology_we_upgrade_tutorial_mar22.mp4",
@@ -2556,23 +2274,19 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30270/x/x/KC0",
-                "30270/x/x/KH4",
-                "30290/x/x/KH4",
                 "30275/x/x/KH4",
+                "30290/x/x/KH4",
                 "30290/x/x/KH7",
                 "30297/x/x/KH7",
                 "30550/x/x/KH7",
-                "31102/x/x/KH7",
-                "31355/x/x/KH7",
                 "30560/x/x/KH7"
             ]
         },
         {
             "id": 149,
-            "name": "ID. Advanced dynamic light assist for LED Matrix headlights",
+            "name": "ID. Advanced dynamic light assist for LED Matrix headlights",
             "subtitle": "Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car's surroundings.",
-            "marketingDescription": "<h1>ID. Advanced dynamic light assist for LED Matrix headlights</h1>\n<p>Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car's surroundings.</p>",
+            "marketingDescription": "<h1>ID. Advanced dynamic light assist for LED Matrix headlights</h1>\n<p>Supports you when driving at night by automatically switching between dimmed headlights and high beam lights based on the car's surroundings.</p>",
             "imageFileName": "/images/technologyItems/poster/technology-id_pro_performance_light_assist-poster.jpg",
             "thumbnailImageFileName": "/images/technologyItems/thumb/technology-id_pro_performance_light_assist-thumb.jpg",
             "assetFileName": "/videos/technology/technology-id_pro_performance_light_assist-video.mp4",
@@ -2584,7 +2298,7 @@
                 "thumbnailImageFileName": "/images/technologyItems/thumb/technology-id_pro_performance_light_assist-thumb.jpg",
                 "assetFileName": "/videos/technology/technology-id_pro_performance_light_assist-video.mp4",
                 "url": "https://www.youtube.com/watch?v=fu0E12crARQ",
-                "title": "ID. Advanced dynamic light assist for LED Matrix headlights"
+                "title": "ID. Advanced dynamic light assist for LED Matrix headlights"
             }],
             "subsection": "ID. technologies",
             "synonyms": [
@@ -2599,19 +2313,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30270/x/x/8G4",
                 "30290/x/x/8G4",
-                "30275/x/x/8G4",
                 "30297/x/x/8G4",
-                "30560/x/x/8G4",
-                "30550/x/x/8IV"
+                "30550/x/x/8IV",
+                "30560/x/x/8G4"
             ]
         },
         {
             "id": 151,
-            "name": "ID. Interior Ambient lighting with 30 colour options",
+            "name": "ID. Interior Ambient lighting with 30 colour options",
             "subtitle": "Choose from ten or thirty standard colours (depending on ID. model) and gently illuminate the interior.",
-            "marketingDescription": "<h1>ID. Interior Ambient lighting with 30 colour options</h1>\n<p>Choose from ten or thirty standard colours (depending on ID. model) and gently illuminate the interior. This includes the dash panel, the mobile phone holder and the doors. Whether cooler or warmer lighting – it’s your choice.</p>",
+            "marketingDescription": "<h1>ID. Interior Ambient lighting with 30 colour options</h1>\n<p>Choose from ten or thirty standard colours (depending on ID. model) and gently illuminate the interior. This includes the dash panel, the mobile phone holder and the doors. Whether cooler or warmer lighting – it’s your choice.</p>",
             "imageFileName": "/images/technologyItems/poster/technology_id_instructional-lighting-poster.jpg",
             "thumbnailImageFileName": "/images/technologyItems/thumb/technology_id_instructional-lighting-thumb.jpg",
             "assetFileName": "/videos/technology/technology_id_instructional-lighting.mp4",
@@ -2623,7 +2335,7 @@
                 "thumbnailImageFileName": "/images/technologyItems/thumb/technology_id_instructional-lighting-thumb.jpg",
                 "assetFileName": "/videos/technology/technology_id_instructional-lighting.mp4",
                 "url": "https://youtu.be/n1KLK5LU6Ow",
-                "title": "ID. Interior Ambient lighting with 30 colour options"
+                "title": "ID. Interior Ambient lighting with 30 colour options"
             }],
             "subsection": "ID. technologies",
             "synonyms": [
@@ -2638,20 +2350,18 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30270/x/x/QQ9",
+                "30275/x/x/AE2",
                 "30290/x/x/QQ9",
                 "30297/x/x/QQ9",
-                "30275/x/x/QQ9",
                 "30550/x/x/QQ9",
-                "30560/x/x/QQ9",
-                "30275/x/x/AE2"
+                "30560/x/x/QQ9"
             ]
         },
         {
             "id": 153,
-            "name": "ID. AR head-up Display",
+            "name": "ID. Augmented reality head-up Display",
             "subtitle": "Sends useful information straight into the windscreen’s field of vision, making driving easier for you.",
-            "marketingDescription": "<h1>ID. AR head-up Display</h1>\n<p>Sends useful information straight into the windscreen’s field of vision, making driving easier for you. Allowing you, for example, to see the navigation information exactly where you have to drive or turn off and keep your eyes on the road.</p>",
+            "marketingDescription": "<h1>ID. Augmented reality head-up Display</h1>\n<p>Sends useful information straight into the windscreen’s field of vision, making driving easier for you. Allowing you, for example, to see the navigation information exactly where you have to drive or turn off and keep your eyes on the road.</p>",
             "imageFileName": "/images/technologyItems/poster/technology_id_instructional-ar_head_up_display-poster.jpg",
             "thumbnailImageFileName": "/images/technologyItems/thumb/technology_id_instructional-ar_head_up_display-thumb.jpg",
             "assetFileName": "/videos/technology/technology_id_instructional-ar_head_up_display.mp4",
@@ -2663,12 +2373,14 @@
                 "thumbnailImageFileName": "/images/technologyItems/thumb/technology_id_instructional-ar_head_up_display-thumb.jpg",
                 "assetFileName": "/videos/technology/technology_id_instructional-ar_head_up_display.mp4",
                 "url": "https://youtu.be/o2xhc3FZ0t8",
-                "title": "ID. AR head-up Display"
+                "title": "ID. Augmented reality head-up Display"
             }],
             "subsection": "ID. technologies",
             "synonyms": [
                 "id ar head up display",
-                "id-ar-head-up-display"
+                "id-ar-head-up-display",
+                "id augmented reality head up display",
+                "id-augmented-reality-head-up-display"
             ],
             "fuelTypeIDs": [],
             "fuelInjectionTypeIDs": [],
@@ -2678,15 +2390,13 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30270/x/x/KS3",
-                "30290/x/x/KS3",
-                "30297/x/x/KS3",
                 "30275/x/x/KS3",
-                "30550/x/x/KS3",
-                "30560/x/x/KS3",
-                "30270/x/x/W3E",
+                "30290/x/x/KS3",
                 "30290/x/x/RD2",
-                "30297/x/x/RD2"
+                "30297/x/x/KS3",
+                "30297/x/x/RD2",
+                "30550/x/x/KS3",
+                "30560/x/x/KS3"
             ],
             "links": [{
                 "title": "Find out more",
@@ -2735,9 +2445,10 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30270/x/x/WPU",
-                "30290/x/x/WPU",
                 "30275/x/x/WPU",
+                "30290/x/x/WPU",
+                "30290/x/x/WPU",
+                "30297/x/x/WPU",
                 "30297/x/x/WPU",
                 "30550/x/x/WPU",
                 "30560/x/x/9M3"
@@ -2806,8 +2517,8 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30290/x/x/6I6",
                 "30275/x/x/6I6",
+                "30290/x/x/6I6",
                 "30297/x/x/6I6",
                 "30550/x/x/6I6"
             ]
@@ -2844,9 +2555,13 @@
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
                 "30290/x/x/8A2",
-                "30275/x/x/8A2",
                 "30297/x/x/8A2",
-                "30550/x/x/8A5"
+                "30550/x/x/8A2",
+                "30560/x/x/8A2",
+                "30290/x/x/8A5",
+                "30297/x/x/8A5",
+                "30275/x/x/8A2",
+                "30275/x/x/8A5"
             ]
         },
         {
@@ -2880,10 +2595,10 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30550/x/x/8G1",
                 "30290/x/x/8G4",
-                "30275/x/x/8G4",
-                "30297/x/x/8G4"
+                "30297/x/x/8G4",
+                "30550/x/x/8G4",
+                "30560/x/x/8G1"
             ]
         },
         {
@@ -2917,9 +2632,8 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30290/x/x/6I6",
                 "30275/x/x/6I6",
-                "30297/x/x/6I6",
+                "30297/x/x/8j3",
                 "30550/x/x/6I6",
                 "30560/x/x/6I6"
             ]
@@ -2992,8 +2706,8 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30290/x/x/4K6",
                 "30275/x/x/4K6",
+                "30290/x/x/4K6",
                 "30297/x/x/4K6",
                 "30550/x/x/4F2",
                 "30560/x/x/4F2"
@@ -3029,46 +2743,26 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30550/x/x/8T3",
-                "31102/x/x/8T3",
-                "31355/x/x/8T3",
-                "30602/x/x/8T3",
-                "30652/x/x/8T3",
-                "30560/x/x/8T3",
-                "30205/x/x/8T7",
-                "30252/x/x/8T7",
-                "30260/x/x/8T7",
-                "30300/x/x/8T7",
-                "30360/x/x/8T7",
-                "30372/x/x/8T7",
-                "30503/x/x/8T7",
-                "31005/x/x/8T7",
-                "31101/x/x/8T7",
-                "31160/x/x/8T7",
-                "31300/x/x/8T7",
-                "31350/x/x/8T7",
-                "31501/x/x/8T7",
-                "31511/x/x/8T7",
-                "30251/x/x/8T7",
-                "30205/x/x/8T8",
-                "30252/x/x/8T8",
-                "30260/x/x/8T8",
-                "30275/x/x/8T8",
-                "30290/x/x/8T8",
+                "30251/x/x/8T8",
+                "30275/x/x/8T3",
+                "30290/x/x/8T3",
                 "30297/x/x/8T8",
-                "30300/x/x/8T8",
+                "30360/x/x/8T7",
                 "30360/x/x/8T8",
                 "30372/x/x/8T8",
-                "30503/x/x/8T8",
+                "30550/x/x/8T3",
+                "30560/x/x/8T3",
+                "30602/x/x/8T3",
+                "30652/x/x/8T3",
+                "31005/x/x/8T7",
                 "31005/x/x/8T8",
-                "31101/x/x/8T8",
-                "31160/x/x/8T8",
-                "31300/x/x/8T8",
-                "31350/x/x/8T8",
-                "31501/x/x/8T8",
+                "31005/x/x/8T3",
+                "31102/x/x/8T7",
+                "31150/x/x/8T3",
+                "31355/x/x/8T3",
+                "31511/x/x/8T7",
                 "31511/x/x/8T8",
-                "31705/x/x/8T8",
-                "30251/x/x/8T8"
+                "31706/x/x/8T8"
             ]
         },
         {
@@ -3101,23 +2795,17 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
+                "30251/x/x/7X5",
                 "30260/x/x/7X5",
-                "30252/x/x/7X5",
-                "30300/x/x/7X5",
                 "30360/x/x/7X5",
                 "30372/x/x/7X5",
-                "30503/x/x/7X5",
-                "31101/x/x/7X5",
-                "31160/x/x/7X5",
-                "31501/x/x/7X5",
-                "31511/x/x/7X5",
-                "31705/x/x/7X5",
-                "31005/x/x/7X5",
-                "31350/x/x/7X5",
-                "31706/x/x/7X5",
-                "31300/x/x/7X5",
-                "30251/x/x/7X5",
-                "31355/x/x/8A2"
+                "31102/x/x/8A2",
+                "31102/x/x/8A5",
+                "31150/x/x/8A2",
+                "31150/x/x/8A5",
+                "31355/x/x/8A5",
+                "31355/x/x/FT4",
+                "31511/x/x/7X5"
             ]
         },
         {
@@ -3394,7 +3082,7 @@
             "id": 225,
             "name": "Plug-in Hybrid",
             "subtitle": "A Plug-in Hybrid combines an electric motor with a modern conventional petrol engine.",
-            "marketingDescription": "<h1>Plug-in Hybrid</h1>\n<p>Whilst you’ll be able to cover most day-to-day distances in fully electric mode, for longer journeys you’ll still have the added confidence of being able to switch to petrol. Plug-in hybrids are a perfect stepping stone for people who aren’t quite ready to transition to fully electric.</p>",
+            "marketingDescription": "<h1>Plug-in Hybrid</h1>\n<p>Whilst you’ll be able to cover most day-to-day distances in fully electric mode, for longer journeys you’ll still have the added confidence of being able to switch to petrol. Plug-in hybrids are a perfect stepping stone for people who aren’t quite ready to transition to fully electric.</p>",
             "imageFileName": "/images/contentItems/ev_hub_New-to-hybrid_thumb@2x.png",
             "thumbnailImageFileName": "/images/contentItems/ev_hub_New-to-hybrid_thumb@2x.png",
             "assetFileName": "",
@@ -3759,7 +3447,7 @@
         {
             "id": 253,
             "name": "We Charge and BP Pulse",
-            "subtitle": "Some charging solutions to keep you on the move.",
+            "subtitle": "Some charging solutions to keep you on the move.",
             "marketingDescription": "<h1>We Charge and BP Pulse</h1>\n<p>For a monthly fee, BP Pulse allows you to charge at almost 5000 charging points for free. Those that aren’t included come at a discounted rate, so you’re still saving with every charge.</p>",
             "imageFileName": "/images/contentItems/ev_hub_bp_pulse_header@2x.png",
             "thumbnailImageFileName": "/images/contentItems/ev_hub_bp_pulse_thumb@2x.png",
@@ -3947,24 +3635,21 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30300/x/x/KH7",
-                "30503/x/x/KH7",
-                "31101/x/x/KH7",
-                "31160/x/x/KH7",
-                "31350/x/x/KH7",
+                "30275/x/x/KH4",
                 "30550/x/x/KH7",
+                "30550/x/x/KH7",
+                "30560/x/x/KH7",
+                "30560/x/x/KH7",
                 "30602/x/x/KH7",
                 "30652/x/x/KH7",
-                "31350/x/x/KH0",
-                "31501/x/x/KH0",
-                "31511/x/x/KH0"
+                "31511/x/x/KH7"
             ]
         },
         {
             "id": 265,
             "name": "ID. Park Assist Plus with memory function",
-            "subtitle": "The memory function is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.",
-            "marketingDescription": "<h1>ID. Park Assist Plus with memory function</h1>\n<p>Now you can teach your car to perform recurring parking manoeuvres. The memory function for the Park Assist Plus is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.</p><p>If you choose the Park Assist Plus with the memory function, your car is capable of identifying parallel parking spaces at a speed of up to 24 mph and parking bays at a speed of up to 12 mph. In addition, you can teach your car up to five individual parking manoeuvres. The memory function records parking manoeuvres at speeds below 24 mph with a distance of up to 50 metres. For example, when you park your car in a carport or a garage. You only have to park your Volkswagen once yourself and then save the parking manoeuvre. Afterwards, your car is capable of repeating the parking manoeuvre on its own. You only have to supervise the parking manoeuvre and intervene if necessary.</p>",
+            "subtitle": "The memory function is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.",
+            "marketingDescription": "<h1>ID. Park Assist Plus with memory function</h1>\n<p>Now you can teach your car to perform recurring parking manoeuvres. The memory function for the Park Assist Plus is capable of saving up to 5 unique parking manoeuvres and can then repeat them independently under your supervision.</p><p>If you choose the Park Assist Plus with the memory function, your car is capable of identifying parallel parking spaces at a speed of up to 24 mph and parking bays at a speed of up to 12 mph. In addition, you can teach your car up to five individual parking manoeuvres. The memory function records parking manoeuvres at speeds below 24 mph with a distance of up to 50 metres. For example, when you park your car in a carport or a garage. You only have to park your Volkswagen once yourself and then save the parking manoeuvre. Afterwards, your car is capable of repeating the parking manoeuvre on its own. You only have to supervise the parking manoeuvre and intervene if necessary.</p>",
             "imageFileName": "/images/technologyItems/poster/technology-park_assist_w_memory-poster.jpg",
             "thumbnailImageFileName": "/images/technologyItems/thumb/technology-park_assist_w_memory-thumb.jpg",
             "assetFileName": "/videos/technology/technology-park_assist_w_memory.mp4",
@@ -3991,10 +3676,8 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30275/x/x/FT4",
                 "30550/x/x/FT4",
-                "30560/x/x/FT4",
-                "30560/x/x/8A2"
+                "30560/x/x/FT4"
             ]
         },
         {
@@ -4028,7 +3711,8 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30550/x/x/kh7"
+                "30550/x/x/KH7",
+				"30560/x/x/KH7"
             ]
         },
         {
@@ -4062,7 +3746,8 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30550/x/x/4d8"
+				"30550/x/x/4D8",
+                "30560/x/x/4D8"
             ]
         },
         {
@@ -4082,6 +3767,15 @@
                 "assetFileName": "/videos/technology/technology-id_id7_panoramic_sunroof_with_smart_glass_feature_film_en_with_disclaimer.mp4",
                 "url": "https://youtu.be/9E4L4uShxDw",
                 "title": "ID.7 Panoramic Sunroof with Smart Glass"
+            },
+            {
+                "id": 306,
+                "assetType": "HOW_IT_WORKS",
+                "imageFileName": "/images/technologyItems/poster/Always_On_Smart_Glass_ID.7_Tourer-March_2025_700x350_poster.jpg",
+                "thumbnailImageFileName": "/images/technologyItems/thumb/Always_On_Smart_Glass_ID.7_Tourer-March_2025_204x102_thumb.jpg",
+                "assetFileName": "/videos/technology/Always_On_Smart_Glass_ID.7_Tourer-March_2025.mp4",
+                "url": "https://youtu.be/uzILuezWkG4",
+                "title": "Introduction to ID.7 Panoramic Sunroof with Smart Glass"
             }],
             "subsection": "ID. technologies",
             "synonyms": [
@@ -4096,7 +3790,8 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30550/x/x/3fp"
+				"30550/x/x/3FP",
+                "30560/x/x/3FP"
             ]
         },
         {
@@ -4129,8 +3824,7 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31706/x/x/PF2",
-                "31706/x/x/PF3"
+                "31706/x/x/PF2"
             ]
         },
         {
@@ -4164,9 +3858,6 @@
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
                 "31706/x/x/8IV",
-                "31706/x/x/8IV",
-                "31706/x/x/8IV",
-                "31706/x/x/9R1",
                 "31706/x/x/9R1"
             ]
         },
@@ -4201,9 +3892,7 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30205/x/x/PF3",
-                "30251/x/x/PF3",
-                "30260/x/x/PF3"
+                "30251/x/x/6i2"
             ]
         },
         {
@@ -4237,16 +3926,14 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30300/x/x/8G1",
-                "30503/x/x/8G1",
-                        "30602/x/x/8G1",
-                        "30652/x/x/8G1",
-                            "30251/x/x/8G1",
-                        "30260/x/x/8G1",
-                        "30360/x/x/8G1",
+                "30260/x/x/8G1",
+                "30360/x/x/8G1",
+                "30360/x/x/8G1",
+                "30652/x/x/8G1",
                 "31102/x/x/8G1",
-                        "31355/x/x/8G1",
-                        "31511/x/x/8G1"
+                "31150/x/x/8G1",
+                "31355/x/x/9I5",
+                "31511/x/x/8G1"
             ]
         },
 {
@@ -4280,28 +3967,13 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "x/x/x/2H1",
-                "30361/x/x/2H4",
-                "30360/x/x/2H4",
-                "30372/x/x/2H4",
-                "31706/x/x/2H4",
-                "30300/x/x/2I0",
-                "30503/x/x/2I0",
-                "31350/x/x/2I0",
-                "30602/x/x/2I0",
-                "30652/x/x/2I0",
-                "30361/x/x/PDD",
-                "31300/x/x/PDD",
-                "31120/x/x/WDD",
-                "31601/x/x/WDD",
-                        "30300/x/x/PDD",
-                        "30503/x/x/PDD",
-                        "30360/x/x/PDD",
-                        "31355/x/x/PDD",
-                        "30300/x/x/PDD",
-                        "30503/x/x/PDD",
-                "31355/x/x/2I2",
-                "31102/x/x/2I2"
+                "30205/x/x/2I2",
+                "30372/x/x/PDD",
+                "30602/x/x/PDD",
+                "30652/x/x/PDD",
+                "31102/x/x/PDD",
+                "31355/x/x/PDD",
+                "31355/x/x/2H4"
             ]
         },
         {
@@ -4334,20 +4006,20 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "30251/x/x/8G4",
-                "30205/x/x/8G4",
-                "30260/x/x/8G4",
-                "30602/x/x/8G4",
-                "30652/x/x/8G4",
+                "30275/x/x/8G4",
+                "30290/x/x/8G4",
+                "30297/x/x/8G4",
                 "30360/x/x/8G4",
-                "30372/x/x/8G4"
+                "30372/x/x/8G4",
+                "30550/x/x/8G4",
+                "30560/x/x/8G4"
             ]
         },
         {
             "id": 286,
-            "name": "AR Head-up Display",
+            "name": "ID. Augmented reality head-up Display",
             "subtitle": "Driving information including current speed is projected onto the windscreen within driver's field of vision.",
-            "marketingDescription": "<h1>AR Head-up Display</h1>\n<p>Driving information including current speed is projected onto the windscreen within driver's field of vision reducing the time that drivers' eyes are averted from the road</p>",
+            "marketingDescription": "<h1>ID. Augmented reality head-up Display</h1>\n<p>Driving information including current speed is projected onto the windscreen within driver's field of vision reducing the time that drivers' eyes are averted from the road</p>",
             "imageFileName": "/images/technologyItems/poster/hud-poster-700x350.jpg",
             "thumbnailImageFileName": "/images/technologyItems/thumb/hud-thumb-204x102.jpg",
             "assetFileName": "/videos/technology/AR-HUD.mp4",
@@ -4359,7 +4031,7 @@
                 "thumbnailImageFileName": "/images/technologyItems/thumb/hud-thumb-204x102.jpg",
                 "assetFileName": "/videos/technology/AR-HUD.mp4",
                 "url": "https://youtu.be/wJop_uzDpwo",
-                "title": "How AR Head-up Display works"
+                "title": "How ID. Augmented reality head-up Display works"
             }],
             "subsection": "Safety",
             "synonyms": [
@@ -4374,23 +4046,13 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31706/x/x/KS1",
-                "30602/x/x/KS1",
+                "30260/x/x/KS1",
+                "30260/x/x/RBD",
                 "30652/x/x/KS1",
                 "31150/x/x/KS1",
-                "31102/x/x/KS1",
                 "31150/x/x/RBB",
-                "31102/x/x/RBD",
-	        "30550/x/x/KS3",				
-                "30560/x/x/KS3",
-		"30275/x/x/KS3",
-		"30290/x/x/KS3",
-		"30297/x/x/KS3",
-		"30275/x/x/PBA",
-		"30290/x/x/RD9",
-		"30297/x/x/RD9",
-		"30275/x/x/PBL",				
-                "31355/x/x/RCD"
+                "31355/x/x/RCD",				
+                "31706/x/x/KS1"
             ]
         },
         {
@@ -4425,16 +4087,16 @@
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
                 "31102/x/x/1M9",
+                "30260/x/x/1M9",
                 "31150/x/x/1M9",
-                "31355/x/x/WAG",
-                "31706/x/x/1D9"
+                "31355/x/x/WAG"
             ]
         },
         {
             "id": 290,
             "name": "Dynamic Chassis Control Pro (DCC Pro)",
-            "subtitle": "Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, offers you the possibility to adapt the running gear to suit your needs.",
-            "marketingDescription": "<h1>Dynamic Chassis Control Pro (DCC Pro)</h1>\n<p>Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, available as a option from Life, offers you the possibility to adapt the running gear to suit your needs. The electronically controlled shock absorbers with innovative two-valve technology react in milliseconds to the road conditions and the driving situation and automatically adapt the damping behaviour. The two-valve technology enables extremely precise adjustment to ensure a high degree of comfort and dynamics. With DCC Pro, you can choose from different driving profiles such as comfort, sport or individual. Individual mode allows you to set your preferences using the slider. The vehicle dynamics settings contained in the driving profile selection further enhance vehicle handling and therefore ensure greater driving pleasure and precision.</p>",
+            "subtitle": "Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, offers you the possibility to adapt the running gear to suit your needs.",
+            "marketingDescription": "<h1>Dynamic Chassis Control Pro (DCC Pro)</h1>\n<p>Whether you enjoy a sporty or a comfortable driving style, the optional dynamic chassis control DCC Pro, available as a option from Life, offers you the possibility to adapt the running gear to suit your needs. The electronically controlled shock absorbers with innovative two-valve technology react in milliseconds to the road conditions and the driving situation and automatically adapt the damping behaviour. The two-valve technology enables extremely precise adjustment to ensure a high degree of comfort and dynamics. With DCC Pro, you can choose from different driving profiles such as comfort, sport or individual. Individual mode allows you to set your preferences using the slider. The vehicle dynamics settings contained in the driving profile selection further enhance vehicle handling and therefore ensure greater driving pleasure and precision.</p>",
             "imageFileName": "/images/technologyItems/poster/dcc-pro-poster-700x350.jpg",
             "thumbnailImageFileName": "/images/technologyItems/thumb/dcc-pro-thumb-204x102.jpg",
             "assetFileName": "/videos/technology/DCC-Pro.mp4",
@@ -4461,13 +4123,348 @@
             "driveTypeIDs": [],
             "bodyStyleIDs": [],
             "specItemPrNumbers": [
-                "31102/x/x/212",
+                "30260/x/x/212",
+                "30260/x/x/PBB",
                 "31150/x/x/212",
-                "31355/x/x/212",
-                "31102/x/x/PBB",
                 "31150/x/x/PBB",
+                "31355/x/x/212",
                 "31355/x/x/PDD"
             ]
+        },
+        {
+            "id": 292,
+            "dateAdded": "2025-04-08T00:00:02",
+            "name": "Ohme Home Pro",
+            "subtitle": "Tethered EV charger with a colour screen. Designed for effortless home charging. This option will be excluded from your finance calculation and must be paid for separately.",
+            "marketingDescription": "<h1>Ohme Home Pro</h1>\n<p>Featuring a colour screen and a tethered 5m Type 2 cable (8m upgrade available as an optional extra), the Ohme Home Pro makes home EV charging effortless. Control your charging sessions directly on the charger itself or via your smartphone. Connect the Home Pro to the Ohme app to unlock smart features, including energy tariff syncing, automatic off-peak scheduling, and real-time cost tracking. Reliable tech that keeps your car ready and charges it at the lowest electricity rates. This option will be excluded from your finance calculation and must be paid for separately.</p>",
+            "imageFileName": "/images/technologyItems/poster/ohme-home-pro-poster.jpg",
+            "thumbnailImageFileName": "/images/technologyItems/thumb/ohme-homepro-thumb.jpg",
+            "assetFileName": "/videos/OhmeProduct_HP.mp4",
+            "includeInContentHub": true,
+            "assetCollection": [],
+            "subsection": "Charging and range",
+            "synonyms": [],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers":[
+                "30275/x/x/771",
+                "30290/x/x/525",
+                "30297/x/x/372",
+                "30550/x/x/598",
+                "30560/x/x/598"
+            ],
+            "links": [{
+                "title": "Find out more",
+                "validInMode": 1,
+                "url": "https://www.volkswagen.co.uk/en/electric-and-hybrid/driving-electric/charging/ohme-wallbox.html"
+            }]
+        },
+        {
+            "id": 293,
+            "dateAdded": "2025-04-08T00:00:02",
+            "name": "Ohme ePod",
+            "subtitle": "The flexible home EV charger option. Perfect for both Type 1 and Type 2 vehicles. This option will be excluded from your finance calculation and must be paid for separately.",
+            "marketingDescription": "<h1>Ohme ePod</h1>\n<p>Featuring a more compact design, the Ohme ePod comes without an attached cable, making it compatible with your Volkswagen ID. or Plug-in Hybrid vehicle (Type 1 or Type 2 cables). Blending seamlessly into any home setup, it's easily controlled via the buttons on the charger or your smartphone. Connect the ePod to the Ohme app to unlock smart features including charging schedules, real-time cost tracking, and tariff syncing to charge when prices are lowest. Your trusty plug-in partner for smarter charging and energy savings. This option will be excluded from your finance calculation and must be paid for separately.</p>",
+            "imageFileName": "/images/technologyItems/poster/ohme-epod-poster.jpg",
+            "thumbnailImageFileName": "/images/technologyItems/thumb/ohme-epod-thumb.jpg",
+            "assetFileName": "/videos/OhmeProduct_ePod.mp4",
+            "includeInContentHub": true,
+            "assetCollection": [],
+            "subsection": "Charging and range",
+            "synonyms": [],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": [
+                "30275/x/x/772",
+                "30290/x/x/526",
+                "30297/x/x/373",
+                "30550/x/x/599",
+                "30560/x/x/599"
+            ],
+            "links": [{
+                "title": "Find out more",
+                "validInMode": 1,
+                "url": "https://www.volkswagen.co.uk/en/electric-and-hybrid/driving-electric/charging/ohme-wallbox.html"
+            }]
+        },
+        {
+            "id": 294,
+            "name": "Intelligent Speed Assist",
+            "subtitle": "The Intelligent Speed Assist system uses camera technology to detect road signs and inform the driver of speed limits, overtaking restrictions, and danger signs.",
+            "marketingDescription": "<h1>Intelligent Speed Assist</h1>\n<p>The Intelligent Speed Assist system uses camera technology to detect road signs and inform the driver of speed limits, overtaking restrictions, and danger signs.  Speed limits and restrictions are identified and displayed, helping you stay aware of the road rules. If the speed limit is exceeded, the system provides a visual warning, and in some cases, an acoustic alert.</p>\n<p>From July 2024, all new vehicles in the EU will benefit from enhanced safety features thanks to the 'New Vehicle Safety Regulation' (also known as GSR2). This regulation updates the minimum performance standards for motor vehicles, introducing new Advanced Driver Assistance Systems (ADAS).</p>",
+			"imageFileName": "/images/technologyItems/poster/Intelligent_Speed_cover-700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/Intelligent_Speed_cover-204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/Intelligent_Speed_Assist.mp4",
+            "assetCollection": [{
+                "id": 295,
+		"dateAdded": "2025-04-10T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/Intelligent_Speed_cover-700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/Intelligent_Speed_cover-204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/Intelligent_Speed_Assist.mp4",
+				"url": "https://youtu.be/vXRedmvBdEk",
+                "title": "Introduction to Intelligent Speed Assist"
+            }],
+            "subsection": "Safety",
+            "synonyms": [
+                "intelligent speed assist",
+                "intelligent-speed-assist"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": [
+                "31150/x/x/x"
+            ]
+        },
+        {
+            "id": 296,
+            "name": "Driver Drowsiness and Attention Warning",
+            "subtitle": "Driver Drowsiness and Attention Warning evaluates driving behaviour when you reach speeds of 40mph or more.",
+            "marketingDescription": "<h1>Driver Drowsiness and Attention Warning</h1>\n<p>Driver Drowsiness and Attention Warning evaluates driving behaviour when you reach speeds of 40mph or more. It sends alert prompts to the driver when it detects signs of fatigue. The system has three warning levels that issue visual and audible alerts to prompt the driver to take a break.</p>\n<p>From July 2024, all new vehicles in the EU will benefit from enhanced safety features thanks to the 'New Vehicle Safety Regulation' (also known as GSR2). This regulation updates the minimum performance standards for motor vehicles, introducing new Advanced Driver Assistance Systems (ADAS).</p>",
+			"imageFileName": "/images/technologyItems/poster/Driver_Drowsiness_and_Attention_cover-700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/Driver_Drowsiness_and_Attention_cover-204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/Driver_Drowsiness_and_Attention.mp4",
+            "assetCollection": [{
+                "id": 297,
+		"dateAdded": "2025-04-10T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/Driver_Drowsiness_and_Attention_cover-700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/Driver_Drowsiness_and_Attention_cover-204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/Driver_Drowsiness_and_Attention.mp4",
+				"url": "https://youtu.be/LKy6m17IH0s",
+                "title": "Introduction to Driver Drowsiness and Attention Warning"
+            }],
+            "subsection": "Safety",
+            "synonyms": [
+                "driver drowsiness and attention warning",
+                "driver-drowsiness-and-attention-warning"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": [
+                "31150/x/x/x"
+            ]
+        },
+        {
+            "id": 298,
+            "name": "Cybersecurity Measures",
+            "subtitle": "The cybersecurity system is designed to reduce the risk of internet attacks or malware compromising vehicle functions, data, and control units.",
+            "marketingDescription": "<h1>Cybersecurity Measures</h1>\n<p>The cybersecurity system is designed to reduce the risk of internet attacks or malware compromising vehicle functions, data, and control units. Regular updates via an Authorised Volkswagen Repairer or over-the-air help to enhance the security, stability, and performance of your vehicle’s systems, much like updates for your smartphone or computer.</p>\n<p>From July 2024, all new vehicles in the EU will benefit from enhanced safety features thanks to the 'New Vehicle Safety Regulation' (also known as GSR2). This regulation updates the minimum performance standards for motor vehicles, introducing new Advanced Driver Assistance Systems (ADAS).</p>",
+			"imageFileName": "/images/technologyItems/poster/Cybersecurity_Measures_cover-700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/Cybersecurity_Measures_cover-204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/Cybersecurity_Measures.mp4",
+            "assetCollection": [{
+                "id": 299,
+		"dateAdded": "2025-04-10T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/Cybersecurity_Measures_cover-700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/Cybersecurity_Measures_cover-204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/Cybersecurity_Measures.mp4",
+				"url": "https://youtu.be/f7FPo0VQbXg",
+                "title": "Introduction to Cybersecurity Measures"
+            }],
+            "subsection": "Safety",
+            "synonyms": [
+                "cybersecurity measures",
+                "cybersecurity-measures"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": [
+                "31150/x/x/x"
+            ]
+        },
+        {
+            "id": 300,
+            "name": "Benefits of Volkswagen Plug in Hybrids",
+            "subtitle": "Our newly developed 2nd generation eHybrids are a vast improvement on the outgoing models.",
+            "marketingDescription": "<h1>Benefits of Volkswagen Plug in Hybrids</h1>\n<p>Our newly developed 2nd generation eHybrids are a vast improvement on the outgoing models. The 2nd generation combines 1.5TSI with a 19.7kwh battery and equipped with 11kw AC charging and a first for our eHybrids – now offering DC charging capability up to 40kw. Range has doubled, on average we now see 73-88 miles of all electric range.</p>",
+			"imageFileName": "/images/technologyItems/poster/Benefits_of_PHEVs_cover-700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/Benefits_of_PHEVs_cover-204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/Benefits_of_PHEVs.mp4",
+            "assetCollection": [{
+                "id": 301,
+		"dateAdded": "2025-04-10T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/Benefits_of_PHEVs_cover-700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/Benefits_of_PHEVs_cover-204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/Benefits_of_PHEVs.mp4",
+				"url": "https://youtu.be/tQ3q_vPKrYA",
+                "title": "Benefits of Volkswagen Plug in Hybrids"
+            }],
+            "subsection": "Considering hybrid",
+            "synonyms": [
+                "benefits of volkswagen plug in hybrids",
+                "benefits-of-volkswagen-plug-in-hybrids"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": []
+        },
+        {
+            "id": 302,
+            "name": "Overview of Volkswagen Plug-in Hybrid range",
+            "subtitle": "Our new range of Plug-in Hybrids, called Volkswagen eHybrid, offer a huge step forward in usability and electric range compared to the previous generation.",
+            "marketingDescription": "<h1> Overview of Volkswagen Plug-in Hybrid range</h1>\n<p>Our new range of Plug-in Hybrids, called Volkswagen eHybrid, offer a huge step forward in usability and electric range compared to the previous generation. They are class leading and offer benchmark levels of electric range capability. These are a great option for someone looking to take their first steps towards a full EV but who perhaps isn’t ready to commit to buying a Battery Electric Vehicle at the moment.</p>",
+			"imageFileName": "/images/technologyItems/poster/PHEV_Overview_cover-700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/PHEV_Overview_cover-204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/PHEV_Overview.mp4",
+            "assetCollection": [{
+                "id": 303,
+		"dateAdded": "2025-04-10T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/PHEV_Overview_cover-700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/PHEV_Overview_cover-204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/PHEV_Overview.mp4",
+				"url": "https://youtu.be/jS9zyWIsdVo",
+                "title": "Benefits of Volkswagen Plug in Hybrids"
+            }],
+            "subsection": "Considering hybrid",
+            "synonyms": [
+                "overview of volkswagen plug in hybrid range",
+                "overview-of-volkswagen-plug-in-hybrid-range"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": []
+        },
+        {
+            "id": 304,
+            "name": "IDA ChatGPT",
+            "subtitle": "Volkswagen models featuring the new-generation infotainment system are now also equipped with artificial intelligence (AI) of ChatGPT.",
+            "marketingDescription": "<h1>IDA ChatGPT</h1>\n<p>Volkswagen models featuring the new-generation infotainment system are now also equipped with artificial intelligence (AI) of ChatGPT. It can be accessed using the IDA voice assistant and offers a range of new options that go far beyond the voice control previously available. For example, customers can now have search results read out to them, and can interact with the car using natural language.</p>",
+			"imageFileName": "/images/technologyItems/poster/IDAxGPT_cover-700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/IDAxGPT_cover-204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/IDAxGPT.mp4",
+            "assetCollection": [{
+                "id": 305,
+		"dateAdded": "2025-04-10T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/IDAxGPT_cover-700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/IDAxGPT_cover-204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/IDAxGPT.mp4",
+				"url": "https://youtu.be/e4EtoMgGhL8",
+                "title": "Introduction to IDA ChatGPT"
+            }],
+            "subsection": "Infotainment",
+            "synonyms": [
+                "ida chatgpt",
+                "ida-chatgpt"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": [
+                "31150/x/x/x"
+            ]
+        },
+        {
+            "id": 307,
+            "name": "Tow bar with electric release, incl. trailer assist",
+            "subtitle": "The steering angle is decisive for precise reversing, and the optional Trailer Assist manoeuvring system will take care of steering for you.",
+            "marketingDescription": "<h1>Tow bar with electric release, incl. trailer assist</h1>\n<p>Manoeuvring with a trailer can become a test of patience if you don't have much practice. This is because the trailer doesn't always react as you may expect - among other things, the steering is reversed. The steering angle is decisive for precise reversing, and the optional Trailer Assist manoeuvring system will take care of steering for you. First select the reverse gear, push the parking aid button and use the mirror adjustment switch to set the direction in which the trailer should be steered. Your car will now steer automatically while you just need to take care of changing gear, accelerating and braking. This means you remain in control at all times.</p>",
+			"imageFileName": "/images/technologyItems/poster/Always_On_Trailer_Hitch_cover-700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/Always_On_Trailer_Hitch_cover-204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/Always_On_Trailer_Hitch_Passat_R_Line-March_2025.mp4",
+            "assetCollection": [{
+                "id": 308,
+		"dateAdded": "2025-04-10T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/Always_On_Trailer_Hitch_cover-700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/Always_On_Trailer_Hitch_cover-204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/Always_On_Trailer_Hitch_Passat_R_Line-March_2025.mp4",
+				"url": "https://youtu.be/pvZUmYd3FT0",
+                "title": "Tow bar with electric release"
+            }],
+            "subsection": "Safety",
+            "synonyms": [
+                "tow bar with electric release",
+                "tow-bar-with-electric-releas"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": [
+                "30260/x/x/1M9",
+                "31150/x/x/1M9",
+                "31355/x/x/WAG",
+                "31706/x/x/1D9"
+            ]
+        },
+        {
+            "id": 309,
+            "name": "Learn about Battery Degradation",
+            "subtitle": "Just like a smartphone battery, your electric car’s battery will gradually degrade. That’s just the nature of all rechargeable batteries. But don’t worry, in terms of your Volkswagen’s battery, we’re talking about a typical rate of 2.3% per year. There are a few simple steps you can take to keep it in the best possible shape.",
+            "marketingDescription": "<h1>Learn about Battery Degradation</h1>\n<p>Just like a smartphone battery, your electric car’s battery will gradually degrade. That’s just the nature of all rechargeable batteries. But don’t worry, in terms of your Volkswagen’s battery, we’re talking about a typical rate of 2.3% per year. There are a few simple steps you can take to keep it in the best possible shape. Just like a smartphone battery, your electric car’s battery will gradually degrade. That’s just the nature of all rechargeable batteries. But don’t worry, in terms of your Volkswagen’s battery, we’re talking about a typical rate of 2.3% per year. There are a few simple steps you can take to keep it in the best possible shape. We’re so confident in the quality of our batteries, that every Volkswagen electric battery, both all-electric and Hybrid, comes with a warranty. For all-electric cars, the warranty is for 8 years or 100,000, whichever comes first. It covers degradation to 70%. For our Hybrid cars, it’s 5 years or 100,000 miles, whichever comes first.</p>",
+			"imageFileName": "/images/technologyItems/poster/Battery_Degradation_cover2_700x350_poster.jpg",
+			"thumbnailImageFileName": "/images/technologyItems/thumb/Battery_Degradation_cover2_204x102_thumb.jpg",
+			"assetFileName": "/videos/technology/VW_Battery_Degradation_wSubs.mp4",
+            "assetCollection": [{
+                "id": 310,
+		"dateAdded": "2025-04-23T00:00:02",
+                "assetType": "HOW_IT_WORKS",
+				"imageFileName": "/images/technologyItems/poster/Battery_Degradation_cover2_700x350_poster.jpg",
+				"thumbnailImageFileName": "/images/technologyItems/thumb/Battery_Degradation_cover2_204x102_thumb.jpg",
+				"assetFileName": "/videos/technology/VW_Battery_Degradation_wSubs.mp4",
+				"url": "https://youtu.be/VxYEcbbceSA",
+                "title": "Battery Degradation"
+            }],
+            "subsection": "Considering electric",
+            "synonyms": [
+                "learn about battery degradation",
+                "learn-about-battery-degradation"
+            ],
+            "fuelTypeIDs": [],
+            "fuelInjectionTypeIDs": [],
+            "efficiencyLevelIDs": [],
+            "emissionsControlTypeIDs": [],
+            "gearboxTypeIDs": [],
+            "driveTypeIDs": [],
+            "bodyStyleIDs": [],
+            "specItemPrNumbers": []
         }
     ]
 }

@@ -22,7 +22,8 @@ function extractUniqueValues(json) {
         driveTypes: new Set(),
         bodyStyles: new Set(),
         specItemPrNumbers: new Set(),
-        synonyms: new Set()
+        synonyms: new Set(),
+        subsection: new Set()
     };
 
     json.technologyItems.forEach(item => {
@@ -35,6 +36,7 @@ function extractUniqueValues(json) {
         item.bodyStyleIDs?.forEach(id => uniqueEntries.bodyStyles.add(id));
         item.specItemPrNumbers?.forEach(id => uniqueEntries.specItemPrNumbers.add(id));
         item.synonyms?.forEach(id => uniqueEntries.synonyms.add(id));
+        uniqueEntries.subsection.add(item.subsection)
     });
 
     return uniqueEntries;
