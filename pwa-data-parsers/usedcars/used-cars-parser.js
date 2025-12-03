@@ -11,7 +11,26 @@ function sanitize(text) {
   return text ? text.replace(/'/g, "''") : '';
 }
 
-const baseUrl = "https://showroom-assets.volkswagen.co.uk/images/usedCars/";
+const baseUrl = "https://showroom-assets.volkswagen.co.uk/images/";
+
+const parseFeatures = (item.features || []).map(a => {
+  const copy = { ...a };
+
+  if (copy.buttonTitle) copy.buttonTitle = sanitize(copy.buttonTitle);
+  if (copy.title)       copy.title       = sanitize(copy.title); // fixed line
+
+  // Only prefix if it’s a relative path; don't force .jpg
+  if (copy.posterImageURL && !/^https?:\/\//.test(copy.posterImageURL)) {
+    copy.posterImageURL = baseUrl + copy.posterImageURL.replace(/^\/+/, '');
+  }
+
+  // Build assetFileName only when videoURL is relative; keep videoURL as-is
+  if (copy.videoURL && !/^https?:\/\//.test(copy.videoURL)) {
+    copy.assetFileName = baseUrl + copy.videoURL.replace(/^\/+/, '');
+  }
+
+  return copy;
+});
 
 // Generate SQL
 function generateSQL(item) {
@@ -19,33 +38,19 @@ function generateSQL(item) {
 
     const title = sanitize(item.title);
     const subtitle = sanitize(item.subtitle);
-    // YAML front matter for content
 
-    // YAML front matter for content
-    let content = `---\n`;
-    if(item.features?.length > 0) {
-        item.features.forEach(asset => {
-            if(asset.buttonTitle) {
-              asset.buttonTitle = sanitize(asset.buttonTitle)
-            }
-            if(asset.title) {
-              asset.buttonTitle = sanitize(asset.title)
-            }
-            if (asset.posterImageURL) {
-              asset.posterImageURL = baseUrl + asset.posterImageURL + '.jpg';
-            }
-            if (asset.videoURL) {
-                asset.videoURL = baseUrl + asset.videoURL;
-            }
-          });
-        const assets = yaml.dump({ assets: item.features || [] });
-        content += assets;
-    }
-    content += `---\n\n`;
+    // Front matter
+    let frontMatter = `---\n` + yaml.dump({ assets: features }) + `---\n\n`;
+
+    let secondaryMatter = "";
+    secondaryMatter = sanitize(item.text || '') + '\n' + sanitize(item.bullets || '');
+
+    let content = frontMatter + secondaryMatter;
+    const contentSql = sanitize(content);
 
     // Insert statement
     sql += `INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured)\n`;
-    sql += `SELECT '${title}', '${subtitle}', '${'https://showroom-assets.volkswagen.co.uk/images/usedcars/usedCarsExchange.jpg'}', '${content}',\n`;
+    sql += `SELECT '${title}', '${subtitle}', '${'https://showroom-assets.volkswagen.co.uk/images/usedcars/usedCarsExchange.jpg'}', '${contentSql}',\n`;
     sql += `  (SELECT id FROM knowledge_hub_categories WHERE LOWER(name) = LOWER('Used Cars') LIMIT 1), 0, false\n`;
     sql += `WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('${title}'));\n\n`;
 

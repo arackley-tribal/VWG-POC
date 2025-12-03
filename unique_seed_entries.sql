@@ -490,7 +490,18 @@ INSERT INTO "public"."specItemPrNumbers" (name) VALUES
   ('30550/x/x/599'),
   ('30560/x/x/599'),
   ('31150/x/x/x'),
-  ('31706/x/x/1D9');
+  ('31706/x/x/1D9'),
+  ('31355/x/x/GW2'),
+  ('31150/x/x/GW2'),
+  ('31102/x/x/GW2'),
+  ('30602/x/x/GW2'),
+  ('30290/x/x/GW2'),
+  ('30297/x/x/GW2'),
+  ('30550/x/x/GW2'),
+  ('30560/x/x/GW2'),
+  ('30275/x/x/GW2'),
+  ('30602/x/x/79H'),
+  ('30275/x/x/79H');
 
 -- Data for synonyms
 INSERT INTO "public"."synonyms" (name) VALUES
@@ -642,9 +653,6 @@ INSERT INTO "public"."synonyms" (name) VALUES
   ('id-keyless-entry'),
   ('park assist'),
   ('park-assist'),
-  ('id-family-guide-and-toolkit'),
-  ('family guide toolkit'),
-  ('family-guide-toolkit'),
   ('new to electric'),
   ('new-to-electric'),
   ('grants and tax breaks'),
@@ -704,7 +712,14 @@ INSERT INTO "public"."synonyms" (name) VALUES
   ('tow bar with electric release'),
   ('tow-bar-with-electric-releas'),
   ('learn about battery degradation'),
-  ('learn-about-battery-degradation');
+  ('learn-about-battery-degradation'),
+  ('connected travel assist'),
+  ('connected-travel-assist'),
+  ('Traffic Hazard Alert'),
+  ('traffic-hazard-alert'),
+  ('Exit Warning'),
+  ('exit-warning'),
+  ('adas');
 
 -- Data for subsection
 INSERT INTO "public"."subsection" (name) VALUES
@@ -716,7 +731,6 @@ INSERT INTO "public"."subsection" (name) VALUES
   ('ID. technologies'),
   ('Accessories'),
   ('Mobile Online Services'),
-  ('ID. Family Guide and Toolkit'),
   ('Considering electric'),
   ('Considering hybrid'),
   ('Charging and range'),

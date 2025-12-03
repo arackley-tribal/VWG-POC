@@ -464,7 +464,10 @@ const categoryMapping = {
     'finance': 13,
     'mobility': 14,
     'id. buzz': 15,
-    'used cars': 16
+    'used cars': 16,
+    'tips & tricks': 17,
+    'considering electric': 18,
+    'infotainment': 19
 };
 
 // Function to sanitize text for SQL inserts
@@ -486,7 +489,7 @@ function generateInsertStatements(table, column, values) {
 function generateMappingStatements(table, itemIdColumn, valueIdColumn, itemName, valueTable, valueColumn, values) {
     let sql = `-- Insert mappings for ${table}\n`;
     values.forEach(value => {
-        sql += `INSERT INTO ${table} (${itemIdColumn}, ${valueIdColumn})\n`;
+        sql += `INSERT INTO "public"."${table}" (${itemIdColumn}, ${valueIdColumn})\n`;
         sql += `SELECT\n`;
         sql += `  (SELECT id FROM knowledge_hub_items WHERE LOWER(name) = LOWER('${sanitize(itemName)}') LIMIT 1),\n`;
         sql += `  (SELECT id FROM ${valueTable} WHERE LOWER(${valueColumn}) = LOWER('${sanitize(value)}') LIMIT 1)\n`;
@@ -556,9 +559,11 @@ function generateSQL(json) {
         const descriptor = new KeywordDescriptor(combinedText);
         const keywords = descriptor.keywords.slice(0, 10);
 
-        sql += `INSERT INTO knowledge_hub_items (name, short_description, primary_image, content, category, popularity, featured, tags)\n`;
+        const count = item.count ? item.count : 0
+
+        sql += `INSERT INTO "public"."knowledge_hub_items" (name, short_description, primary_image, content, category, popularity, featured, tags)\n`;
         sql += `SELECT '${sanitize(item.name)}', '${sanitize(item.subtitle)}', '${sanitize(baseUrl + item.imageFileName)}', '${sanitize(markdownContent)}',\n`;
-        sql += `  (SELECT id FROM knowledge_hub_categories WHERE id = ${categoryId} LIMIT 1), 0, ${isHighlighted}, '${keywords}'\n`;
+        sql += `  (SELECT id FROM knowledge_hub_categories WHERE id = ${categoryId} LIMIT 1), ${count}, ${isHighlighted}, '${keywords}'\n`;
         sql += `WHERE NOT EXISTS (SELECT 1 FROM knowledge_hub_items WHERE LOWER(name) = LOWER('${sanitize(item.name)}'));\n\n`;
 
         // Generate mapping statements
